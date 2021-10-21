@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     public bool isJumping;
     private Vector3 velocity = Vector3.zero;
     public bool isOnGround;
-    public BoxCollider2D footCollider;
 
     // Update is called once per frame
     void Update()
