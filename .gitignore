@@ -1,1 +1,8 @@
-Jeu/Temp/UnityLockfile
+# Ignore Everything
+/*
+
+# Except for these:
+!/.gitignore
+!/Assets
+!/Packages
+!/ProjectSettings
