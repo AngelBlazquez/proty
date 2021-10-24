@@ -10,6 +10,13 @@ public class PlayerMovement : MonoBehaviour
     public bool isJumping;
     private Vector3 velocity = Vector3.zero;
     public bool isOnGround;
+    private Vector3 posInitial;
+
+    void Start()
+    {
+        posInitial = transform.position;
+    }
+
 
     // Update is called once per frame
     void Update()
