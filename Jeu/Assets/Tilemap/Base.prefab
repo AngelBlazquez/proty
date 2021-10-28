@@ -85,7 +85,8 @@ Tilemap:
   m_GameObject: {fileID: 7222330629493857823}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: -2, y: -1, z: 0}
+  - first: {x: -2, y: -7, z: 0}
+):Jeu/Assets/Pallets/Palette1.prefab
     second:
       serializedVersion: 2
       m_TileIndex: 15
@@ -103,7 +104,8 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-  - first: {x: 0, y: -1, z: 0}
+  - first: {x: -2, y: -4, z: 0}
+):Jeu/Assets/Pallets/Palette1.prefab
     second:
       serializedVersion: 2
       m_TileIndex: 17
@@ -112,7 +114,8 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-  - first: {x: 1, y: -1, z: 0}
+  - first: {x: 1, y: -4, z: 0}
+):Jeu/Assets/Pallets/Palette1.prefab
     second:
       serializedVersion: 2
       m_TileIndex: 18
@@ -121,7 +124,8 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-  - first: {x: 2, y: -1, z: 0}
+  - first: {x: -2, y: -3, z: 0}
+):Jeu/Assets/Pallets/Palette1.prefab
     second:
       serializedVersion: 2
       m_TileIndex: 19
@@ -300,13 +304,15 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 1758d00510fb2e740a64d265698a56a7, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: e2e7bf767b223f44bb4bc5cf3b6b49ab, type: 2}
+    m_Data: {fileID: 11400000, guid: 26267893a2d395847b88f8a78bbf5f29, type: 2}
+):Jeu/Assets/Pallets/Palette1.prefab
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 6096675556f1e154ba3bc864de2f86df, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: e46094c7249ad3c468c10cc7d17ff2ba, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: c4d672165e67e5c479fb08e3404e70fc, type: 2}
+    m_Data: {fileID: 11400000, guid: c7fcc54fea453b04681e2ebafbcebec9, type: 2}
+):Jeu/Assets/Pallets/Palette1.prefab
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 5468815510199672970, guid: 08d7cf798e94aea4cb77feeb99a89545,
@@ -341,37 +347,9 @@ Tilemap:
     m_Data: {fileID: 4512898492219782654, guid: 08d7cf798e94aea4cb77feeb99a89545,
       type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -7433566379712975906, guid: 08d7cf798e94aea4cb77feeb99a89545,
-      type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -3317513230538319102, guid: 08d7cf798e94aea4cb77feeb99a89545,
-      type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -2974920444930361601, guid: 08d7cf798e94aea4cb77feeb99a89545,
-      type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 6938735862501328723, guid: 08d7cf798e94aea4cb77feeb99a89545,
-      type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 6099026409178781279, guid: 08d7cf798e94aea4cb77feeb99a89545,
-      type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -1901749254055141174, guid: 08d7cf798e94aea4cb77feeb99a89545,
-      type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -7150294039105742734, guid: 08d7cf798e94aea4cb77feeb99a89545,
-      type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 4873065643424982180, guid: 08d7cf798e94aea4cb77feeb99a89545,
-      type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -15659167223050117, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
-  m_TileMatrixArray:
-  - m_RefCount: 20
     m_Data:
       e00: 1
       e01: 0
-      e02: 0
       e03: 0
       e10: 0
       e11: 1
@@ -386,13 +364,18 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 20
+  - m_RefCount: 12
+  - m_RefCount: 15
+):Jeu/Assets/Pallets/Palette1.prefab
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -2, y: -1, z: 0}
-  m_Size: {x: 5, y: 4, z: 1}
+  m_Origin: {x: -2, y: -4, z: 0}
+  m_Size: {x: 5, y: 5, z: 1}
+  m_Origin: {x: -2, y: -7, z: 0}
+  m_Size: {x: 5, y: 8, z: 1}
+):Jeu/Assets/Pallets/Palette1.prefab
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
