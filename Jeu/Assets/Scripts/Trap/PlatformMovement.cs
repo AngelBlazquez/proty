@@ -7,12 +7,14 @@ public class PlatformMovement : MonoBehaviour
     public List<Transform> waypoints;
     private int currentWaypoint;
     private bool reverse;
+    private bool targetReached;
 
     // Start is called before the first frame update
     void Start()
     {
         currentWaypoint = 0;
         reverse = false;
+        targetReached = false;
     }
 
     // Update is called once per frame
@@ -25,28 +27,34 @@ public class PlatformMovement : MonoBehaviour
             transform.position = Vector3.MoveTowards(pos, target.position, 15f * Time.fixedDeltaTime);
             float distance = Vector3.Distance(pos, target.position);
 
-            Debug.Log(distance.ToString());
-            if (distance < 1f)
+            if (distance < 1f && !targetReached)
             {
-                if (!reverse)
-                {
-                    currentWaypoint++;
-                    Debug.Log(distance.ToString());
-                }
-                else
-                {
-                    currentWaypoint--;
-                }
-
-                if (currentWaypoint == waypoints.Count-1)
-                {
-                    reverse = true;
-                }
-                else if (currentWaypoint == 0)
-                {
-                    reverse = false;
-                }
+                targetReached = true;
+                StartCoroutine(ChangeWaypoint());
             }
         }
+    }
+
+    IEnumerator ChangeWaypoint()
+    {
+        yield return new WaitForSeconds(1);
+        if (!reverse)
+        {
+            currentWaypoint++;
+        }
+        else
+        {
+            currentWaypoint--;
+        }
+
+        if (currentWaypoint == waypoints.Count - 1)
+        {
+            reverse = true;
+        }
+        else if (currentWaypoint == 0)
+        {
+            reverse = false;
+        }
+        targetReached = false;
     }
 }
