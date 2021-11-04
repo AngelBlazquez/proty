@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3106935183369368936}
   - component: {fileID: 3106935183369368919}
   - component: {fileID: 3106935183369368918}
-  - component: {fileID: 3106935183369368938}
+  - component: {fileID: 424879104}
   m_Layer: 0
-  m_Name: scie
+  m_Name: ScieMortelle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.395
---- !u!114 &3106935183369368938
+--- !u!114 &424879104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,6 +129,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3106935183369368917}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a95b5d129935e94c89b376e818d7dd5, type: 3}
+  m_Script: {fileID: 11500000, guid: a840cf7019c8f2945bb40a0c0a486127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
