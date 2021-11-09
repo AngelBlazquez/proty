@@ -13,7 +13,11 @@ GameObject:
   - component: {fileID: 6880704172027297792}
   - component: {fileID: 7813087277434851270}
   m_Layer: 0
+<<<<<<< HEAD
   m_Name: Spike
+=======
+  m_Name: CloudSpike
+>>>>>>> 8ea1c74 (Ajout du nuage qui chute (ou qui monte et qui chute))
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,6 +121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6a2f7e920f8e9347a0099dfb858a32a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   isShown: 1
+=======
+  isShown: 0
+>>>>>>> 8ea1c74 (Ajout du nuage qui chute (ou qui monte et qui chute))
   sr: {fileID: 1047982154604673623}
   ec2D: {fileID: 6880704172027297792}

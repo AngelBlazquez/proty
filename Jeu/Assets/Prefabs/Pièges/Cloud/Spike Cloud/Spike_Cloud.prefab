@@ -116,12 +116,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9001fb15aabcdc54d931cd6f16c32221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   sequence: 020000000100000000000000
+=======
+>>>>>>> 8ea1c74 (Ajout du nuage qui chute (ou qui monte et qui chute))
   cloudSpikes:
   - {fileID: 6953473648867108564}
   - {fileID: 1863882674244018967}
   - {fileID: 8126874067213960871}
+<<<<<<< HEAD
   spikeType: 2
+=======
+  spikeType: 0
+>>>>>>> 8ea1c74 (Ajout du nuage qui chute (ou qui monte et qui chute))
 --- !u!61 &9091112607654350719
 BoxCollider2D:
   m_ObjectHideFlags: 0
