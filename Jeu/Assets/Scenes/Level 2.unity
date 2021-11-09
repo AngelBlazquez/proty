@@ -1830,5 +1830,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spike_Cloud
       objectReference: {fileID: 0}
+    - target: {fileID: 7522917423554655578, guid: 5cdf2792843f34a4e9514e91133727d2,
+        type: 3}
+      propertyPath: spikeType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522917423554655578, guid: 5cdf2792843f34a4e9514e91133727d2,
+        type: 3}
+      propertyPath: sequence.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522917423554655578, guid: 5cdf2792843f34a4e9514e91133727d2,
+        type: 3}
+      propertyPath: sequence.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522917423554655578, guid: 5cdf2792843f34a4e9514e91133727d2,
+        type: 3}
+      propertyPath: sequence.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cdf2792843f34a4e9514e91133727d2, type: 3}
