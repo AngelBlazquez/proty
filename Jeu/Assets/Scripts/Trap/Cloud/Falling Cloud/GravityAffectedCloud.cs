@@ -24,8 +24,6 @@ public class GravityAffectedCloud : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
-        Debug.Log("Test");
-
     }
 
     IEnumerator MovingUpCoroutine()
