@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD:Jeu/Assets/Tilemap.meta
 guid: fb9be643dd64e3e468e354e884cf563b
 folderAsset: yes
@@ -7,6 +8,10 @@ DefaultImporter:
 guid: 0495f9c16752fa54a947264006aa22c9
 PrefabImporter:
 >>>>>>> 291dc44 (Plateforme qui bouge):Jeu/Assets/Prefabs/Platforms/Moving_Platform.prefab.meta
+=======
+guid: 0495f9c16752fa54a947264006aa22c9
+PrefabImporter:
+>>>>>>> 862d1ed38d1dad8c59d4b60faa6aa94d5e676737
   externalObjects: {}
   userData: 
   assetBundleName: 
