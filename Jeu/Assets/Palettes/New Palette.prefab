@@ -105,6 +105,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   - first: {x: -2, y: 4, z: 0}
     second:
@@ -116,6 +117,8 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
 >>>>>>> 3a0ff70 (test palette + fond)
+=======
+>>>>>>> 1642c91 (Test de mon coté, rien d'important pour le level)
   - first: {x: -1, y: 4, z: 0}
     second:
       serializedVersion: 2
@@ -135,6 +138,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   - first: {x: -3, y: 5, z: 0}
     second:
@@ -146,6 +150,8 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
 >>>>>>> 3a0ff70 (test palette + fond)
+=======
+>>>>>>> 1642c91 (Test de mon coté, rien d'important pour le level)
   - first: {x: -2, y: 5, z: 0}
     second:
       serializedVersion: 2
@@ -191,12 +197,17 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 6c11f60da2e104c4f8de00ee4680859d, type: 2}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - m_RefCount: 0
     m_Data: {fileID: 0}
 =======
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: e40eccd449c41254eafd01905eb0bd6c, type: 2}
 >>>>>>> 3a0ff70 (test palette + fond)
+=======
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+>>>>>>> 1642c91 (Test de mon coté, rien d'important pour le level)
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: a04a7fc82687c2d44b0b547abd7c5423, type: 2}
   - m_RefCount: 1
@@ -212,12 +223,17 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: f9d28d6b90514e541a6558958ee94ed3, type: 2}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - m_RefCount: 0
     m_Data: {fileID: 0}
 =======
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: a4598934c4ef8dc428040ac7c91b6b07, type: 2}
 >>>>>>> 3a0ff70 (test palette + fond)
+=======
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+>>>>>>> 1642c91 (Test de mon coté, rien d'important pour le level)
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 00e135e7ca937a740ac7ecb83bca19d4, type: 2}
   - m_RefCount: 1
@@ -246,6 +262,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 2e85ab0648d24d2418a7a8ceaae33a79, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
@@ -261,6 +278,14 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: b9306ef8d019b434f825acda3cbe2cf9, type: 3}
 >>>>>>> 3a0ff70 (test palette + fond)
+=======
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 7e110e0a31538ac4bb3f4c251e22288e, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+>>>>>>> 1642c91 (Test de mon coté, rien d'important pour le level)
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: dc76b49274f3ba4428bc7cdba1de7e65, type: 3}
   - m_RefCount: 1
@@ -269,10 +294,14 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: cca8a324a4000a74390ba997909a08cb, type: 3}
   m_TileMatrixArray:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - m_RefCount: 13
 =======
   - m_RefCount: 15
 >>>>>>> 3a0ff70 (test palette + fond)
+=======
+  - m_RefCount: 13
+>>>>>>> 1642c91 (Test de mon coté, rien d'important pour le level)
     m_Data:
       e00: 1
       e01: 0
@@ -292,10 +321,14 @@ Tilemap:
       e33: 1
   m_TileColorArray:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - m_RefCount: 13
 =======
   - m_RefCount: 15
 >>>>>>> 3a0ff70 (test palette + fond)
+=======
+  - m_RefCount: 13
+>>>>>>> 1642c91 (Test de mon coté, rien d'important pour le level)
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
