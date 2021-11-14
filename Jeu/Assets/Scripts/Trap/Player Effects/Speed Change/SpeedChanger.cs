@@ -19,6 +19,15 @@ public class SpeedChanger : MonoBehaviour
         oldSpeed = player.GetComponent<PlayerMovement>().moveSpeed;
     }
 
+<<<<<<< HEAD
+=======
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+>>>>>>> bfa27ab (Ajout des pieges changement de vitesse et inversion de gravité)
     IEnumerator boostTimeCoroutine()
     {
         player.GetComponent<PlayerMovement>().moveSpeed = playerSpeed;
@@ -28,6 +37,7 @@ public class SpeedChanger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+<<<<<<< HEAD
         if(collider.gameObject.name == "Player")
         {
             if (zone)
@@ -38,14 +48,31 @@ public class SpeedChanger : MonoBehaviour
             {
                 StartCoroutine(boostTimeCoroutine());
             }
+=======
+        if(zone)
+        {
+            player.GetComponent<PlayerMovement>().moveSpeed = playerSpeed;
+        } 
+        else
+        {
+            StartCoroutine(boostTimeCoroutine());
+>>>>>>> bfa27ab (Ajout des pieges changement de vitesse et inversion de gravité)
         }
     }
 
     private void OnTriggerExit2D(Collider2D collider)
     {
+<<<<<<< HEAD
         if(collider.gameObject.name == "Player" && zone)
         {
             player.GetComponent<PlayerMovement>().moveSpeed = oldSpeed;
         }
+=======
+        if (zone)
+        {
+            player.GetComponent<PlayerMovement>().moveSpeed = oldSpeed;
+        }
+
+>>>>>>> bfa27ab (Ajout des pieges changement de vitesse et inversion de gravité)
     }
 }
