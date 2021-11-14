@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class StaticCanon : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    public List<GameObject> bulletList;
     public Transform firePoint;
+    public int bulletForce;
+    
     private bool canFire;
 
 
@@ -20,7 +22,10 @@ public class StaticCanon : MonoBehaviour
     {
         if (canFire)
         {
-            Instantiate(bulletPrefab, firePoint.position, transform.rotation);
+            int nbBullet = Random.Range(0, bulletList.Count);
+            GameObject newBullet = Instantiate(bulletList[nbBullet], firePoint.position, transform.rotation) as GameObject;
+            newBullet.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletForce, ForceMode2D.Impulse);
+
             canFire = false;
             StartCoroutine(DelayBullet());
         }

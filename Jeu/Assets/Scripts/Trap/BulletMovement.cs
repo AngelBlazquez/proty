@@ -4,20 +4,16 @@ using UnityEngine;
 
 public class BulletMovement : MonoBehaviour
 {
-    public float speed = 10f;
-    private Vector3 direction;
-        
 
     // Start is called before the first frame update
     void Start()
     {
-        this.direction = Vector3.left;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        transform.Rotate(0, 0, 3);
     }
 
     private void OnTriggerEnter2D(Collider2D col)

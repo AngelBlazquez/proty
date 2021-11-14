@@ -23,13 +23,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302975023595120898}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.64, y: 1.08, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -5.37, y: 3.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1302975023802232747}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &1302975023802232746
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,13 +89,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8253413040056822349}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
   m_LocalPosition: {x: -2.54, y: 1.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1302975023802232747}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
 --- !u!212 &8046112895348014390
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -135,7 +135,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -181208662804672850, guid: 6d9c7e183a4f08a43a7a3097dab53abd,
+  m_Sprite: {fileID: 7448619665822257870, guid: 64c6a46fdb136aa489ca4061de474bf1,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -164,7 +164,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.42, y: 3}
+    oldSize: {x: 2.37, y: 3.32}
     newSize: {x: 2.42, y: 3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -206,6 +206,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d12a05faff96b4cbb712027066c313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 770566048498415946, guid: 6fd9ba08ad6705b4ebf915d920cb9d02,
-    type: 3}
+  bulletList:
+  - {fileID: 6990794544372635543, guid: 6fd9ba08ad6705b4ebf915d920cb9d02, type: 3}
+  - {fileID: 2018653521864408896, guid: 036f23e791786324b8e3dcce58021fff, type: 3}
+  - {fileID: 7521413077033911423, guid: 834074c345fcdfd4f96ff28daac806d5, type: 3}
+  - {fileID: 676092975899216068, guid: 63fe5d793a8c21e40aa10fca76531cbe, type: 3}
   firePoint: {fileID: 1302975023595120899}
+  bulletForce: 2
