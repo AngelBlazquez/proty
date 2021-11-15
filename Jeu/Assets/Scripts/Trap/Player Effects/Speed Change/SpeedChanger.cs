@@ -19,12 +19,6 @@ public class SpeedChanger : MonoBehaviour
         oldSpeed = player.GetComponent<PlayerMovement>().moveSpeed;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator boostTimeCoroutine()
     {
         player.GetComponent<PlayerMovement>().moveSpeed = playerSpeed;
@@ -34,22 +28,24 @@ public class SpeedChanger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(zone)
+        if(collider.gameObject.name == "Player")
         {
-            player.GetComponent<PlayerMovement>().moveSpeed = playerSpeed;
-        } 
-        else
-        {
-            StartCoroutine(boostTimeCoroutine());
+            if (zone)
+            {
+                player.GetComponent<PlayerMovement>().moveSpeed = playerSpeed;
+            }
+            else
+            {
+                StartCoroutine(boostTimeCoroutine());
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-        if (zone)
+        if(collider.gameObject.name == "Player" && zone)
         {
             player.GetComponent<PlayerMovement>().moveSpeed = oldSpeed;
         }
-
     }
 }

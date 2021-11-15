@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class SpikeManager : MonoBehaviour
 {
+    public float delayedSpikeTime = 2f;
+
     public int[] sequence;
+
+    public float intervalBetweenSequence = 1f;
+    public float sequenceResetInterval = 1.5f;
 
     public GameObject[] cloudSpikes;
 
@@ -16,15 +21,8 @@ public class SpikeManager : MonoBehaviour
     {
         if (spikeType == SpikeType.sequence)
         {
-            Sequence();
+            StartCoroutine(SequenceCoroutine());
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -38,14 +36,14 @@ public class SpikeManager : MonoBehaviour
             case SpikeType.delayed:
                 StartCoroutine(DelayedSpikeCoroutine());
                 break;
+            default:
+                break;
         }
     }
 
-
-
     IEnumerator DelayedSpikeCoroutine()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(delayedSpikeTime);
         DeployAllSpikes();
     }
 
@@ -56,10 +54,10 @@ public class SpikeManager : MonoBehaviour
             for (int i = 0; i < sequence.Length; i++)
             {
                 cloudSpikes[sequence[i]].GetComponent<IndividualSpike>().changeState(true);
-                yield return new WaitForSeconds(1.5f);
+                yield return new WaitForSeconds(intervalBetweenSequence);
                 cloudSpikes[sequence[i]].GetComponent<IndividualSpike>().changeState(false);
             }
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(sequenceResetInterval);
             yield return null;
         }
     }
@@ -68,13 +66,7 @@ public class SpikeManager : MonoBehaviour
     {
         foreach (GameObject g in cloudSpikes)
         {
-
             g.GetComponent<IndividualSpike>().changeState(true);
         }
-    }
-
-    void Sequence()
-    {
-        StartCoroutine(SequenceCoroutine());
     }
 }
