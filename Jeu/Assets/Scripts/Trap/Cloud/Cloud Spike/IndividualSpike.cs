@@ -21,7 +21,7 @@ public class IndividualSpike : MonoBehaviour
         manageState();
     }
 
-    void manageState()
+    private void manageState()
     {
         if (isShown)
         {

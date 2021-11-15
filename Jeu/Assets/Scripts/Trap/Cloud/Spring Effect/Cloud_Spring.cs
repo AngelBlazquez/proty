@@ -42,6 +42,5 @@ public class Cloud_Spring : MonoBehaviour
                 playerRB2D.AddForce(Vector2.right * springIntensity);
                 break;
         }
-
     }
 }

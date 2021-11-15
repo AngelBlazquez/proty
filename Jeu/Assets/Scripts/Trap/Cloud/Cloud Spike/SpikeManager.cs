@@ -14,7 +14,7 @@ public class SpikeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if ((int)spikeType == (int)SpikeType.sequence)
+        if (spikeType == SpikeType.sequence)
         {
             Sequence();
         }
@@ -37,8 +37,6 @@ public class SpikeManager : MonoBehaviour
                 break;
             case SpikeType.delayed:
                 StartCoroutine(DelayedSpikeCoroutine());
-                break;
-            case SpikeType.sequence:
                 break;
         }
     }
