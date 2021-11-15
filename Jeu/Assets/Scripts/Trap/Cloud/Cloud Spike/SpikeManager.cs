@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpikeManager : MonoBehaviour
 {
-<<<<<<< HEAD
     public float delayedSpikeTime = 2f;
 
     public int[] sequence;
@@ -12,10 +11,6 @@ public class SpikeManager : MonoBehaviour
     public float intervalBetweenSequence = 1f;
     public float sequenceResetInterval = 1.5f;
 
-=======
-    public int[] sequence;
-
->>>>>>> 668f8b2 (Nuage avec effet de rebond terminé)
     public GameObject[] cloudSpikes;
 
     public enum SpikeType { instant, delayed, sequence };
@@ -24,15 +19,12 @@ public class SpikeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
         if (spikeType == SpikeType.sequence)
         {
             StartCoroutine(SequenceCoroutine());
         }
     }
 
-=======
-        if ((int)spikeType == (int)SpikeType.sequence)
         {
             Sequence();
         }
@@ -45,7 +37,6 @@ public class SpikeManager : MonoBehaviour
 
     }
 
->>>>>>> 668f8b2 (Nuage avec effet de rebond terminé)
     private void OnTriggerEnter2D(Collider2D collider)
     {
 
@@ -57,26 +48,14 @@ public class SpikeManager : MonoBehaviour
             case SpikeType.delayed:
                 StartCoroutine(DelayedSpikeCoroutine());
                 break;
-<<<<<<< HEAD
             default:
-=======
-            case SpikeType.sequence:
->>>>>>> 668f8b2 (Nuage avec effet de rebond terminé)
                 break;
         }
     }
 
-<<<<<<< HEAD
     IEnumerator DelayedSpikeCoroutine()
     {
         yield return new WaitForSeconds(delayedSpikeTime);
-=======
-
-
-    IEnumerator DelayedSpikeCoroutine()
-    {
-        yield return new WaitForSeconds(5);
->>>>>>> 668f8b2 (Nuage avec effet de rebond terminé)
         DeployAllSpikes();
     }
 
@@ -87,17 +66,10 @@ public class SpikeManager : MonoBehaviour
             for (int i = 0; i < sequence.Length; i++)
             {
                 cloudSpikes[sequence[i]].GetComponent<IndividualSpike>().changeState(true);
-<<<<<<< HEAD
                 yield return new WaitForSeconds(intervalBetweenSequence);
                 cloudSpikes[sequence[i]].GetComponent<IndividualSpike>().changeState(false);
             }
             yield return new WaitForSeconds(sequenceResetInterval);
-=======
-                yield return new WaitForSeconds(1.5f);
-                cloudSpikes[sequence[i]].GetComponent<IndividualSpike>().changeState(false);
-            }
-            yield return new WaitForSeconds(2.5f);
->>>>>>> 668f8b2 (Nuage avec effet de rebond terminé)
             yield return null;
         }
     }
@@ -106,19 +78,7 @@ public class SpikeManager : MonoBehaviour
     {
         foreach (GameObject g in cloudSpikes)
         {
-<<<<<<< HEAD
             g.GetComponent<IndividualSpike>().changeState(true);
         }
     }
-=======
-
-            g.GetComponent<IndividualSpike>().changeState(true);
-        }
-    }
-
-    void Sequence()
-    {
-        StartCoroutine(SequenceCoroutine());
-    }
->>>>>>> 668f8b2 (Nuage avec effet de rebond terminé)
 }

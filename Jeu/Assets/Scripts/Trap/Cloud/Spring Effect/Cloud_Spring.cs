@@ -11,7 +11,6 @@ public class Cloud_Spring : MonoBehaviour
 
     public direction forceDirection;
 
-<<<<<<< HEAD
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.name == "Player")
@@ -34,7 +33,6 @@ public class Cloud_Spring : MonoBehaviour
                     break;
             }
         }
-=======
     // Start is called before the first frame update
     void Start()
     {
@@ -66,7 +64,5 @@ public class Cloud_Spring : MonoBehaviour
                 playerRB2D.AddForce(Vector2.right * springIntensity);
                 break;
         }
-
->>>>>>> 668f8b2 (Nuage avec effet de rebond terminé)
     }
 }

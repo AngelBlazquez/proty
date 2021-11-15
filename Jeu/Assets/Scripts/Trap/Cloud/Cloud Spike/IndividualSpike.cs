@@ -21,11 +21,8 @@ public class IndividualSpike : MonoBehaviour
         manageState();
     }
 
-<<<<<<< HEAD
+
     private void manageState()
-=======
-    void manageState()
->>>>>>> 668f8b2 (Nuage avec effet de rebond terminé)
     {
         if (isShown)
         {
