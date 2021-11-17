@@ -2800,6 +2800,7 @@ GameObject:
   - component: {fileID: 1558893348}
   - component: {fileID: 1558893345}
   - component: {fileID: 1558893349}
+  - component: {fileID: 1558893350}
   m_Layer: 0
   m_Name: Bloc1
   m_TagString: Untagged
@@ -2814,7 +2815,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558893344}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6a2f7e920f8e9347a0099dfb858a32a, type: 3}
   m_Name: 
@@ -2896,7 +2897,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2921,11 +2922,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 1558893344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 144ad430d3562b848b62abfcf7ea98ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 9001fb15aabcdc54d931cd6f16c32221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springIntensity: 1000
-  forceDirection: 0
+  delayedSpikeTime: 0
+  sequence: 020000000000000001000000
+  intervalBetweenSequence: 1
+  sequenceResetInterval: 1.5
+  cloudSpikes:
+  - {fileID: 2438294789158299729, guid: 4fe571d7b03f01b468c396b5b29c71a2, type: 3}
+  - {fileID: 2438294789158299729, guid: 4fe571d7b03f01b468c396b5b29c71a2, type: 3}
+  - {fileID: 2438294789158299729, guid: 4fe571d7b03f01b468c396b5b29c71a2, type: 3}
+  spikeType: 2
+--- !u!70 &1558893350
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558893344}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.011256813, y: 0.98159194}
+  m_Size: {x: 2.8826134, y: 0.82917345}
+  m_Direction: 1
 --- !u!1001 &1604696364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2946,7 +2970,7 @@ PrefabInstance:
     - target: {fileID: 5036931859746680465, guid: d32b361f5dc0c1e46820eb87e5a4421c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5520093347603204576, guid: d32b361f5dc0c1e46820eb87e5a4421c,
         type: 3}
