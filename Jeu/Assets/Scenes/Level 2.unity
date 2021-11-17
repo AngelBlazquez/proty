@@ -388,6 +388,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1901267462345664703, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
         type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1162643799}
+    - target: {fileID: -1901267462345664703, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
+        type: 3}
       propertyPath: movingUp
       value: 0
       objectReference: {fileID: 0}
