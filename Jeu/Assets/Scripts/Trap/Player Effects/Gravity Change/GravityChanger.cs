@@ -4,27 +4,25 @@ using UnityEngine;
 
 public class GravityChanger : MonoBehaviour
 {
-    //bool etat = false;
 
+    private float oldJumpForce;
     public GameObject player;
 
-    /*private void jumpReverse()
+    public void Start()
     {
-        if (etat)
-        {
-            jumpForce = jumpForce*-1;
-        } else {
-            jumpForce = +jumpForce;
-        }
-    }*/
+        oldJumpForce = player.GetComponent<PlayerMovement>().jumpForce;
+    }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.name == "Player")
         {
+
             player.GetComponent<Rigidbody2D>().gravityScale = -1;
             player.GetComponent<Rigidbody2D>().rotation = 180f;
-            //etat = false;
+            
+            player.GetComponent<PlayerMovement>().jumpForce = -oldJumpForce;
+            Debug.Log("test");
         }
 
     }
@@ -35,7 +33,8 @@ public class GravityChanger : MonoBehaviour
         {
             player.GetComponent<Rigidbody2D>().gravityScale = 1;
             player.GetComponent<Rigidbody2D>().rotation = 0f;
-            //etat = true;
+            player.GetComponent<PlayerMovement>().jumpForce = oldJumpForce;
+
         }
     }
 }
