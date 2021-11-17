@@ -528,7 +528,6 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-<<<<<<< HEAD
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -647,20 +646,12 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-<<<<<<< HEAD
   m_Origin: {x: -16, y: -5, z: 0}
-<<<<<<< HEAD
   m_Size: {x: 26, y: 5, z: 1}
->>>>>>> af7ce18 (ajout de tiles partie 1)
   m_Size: {x: 26, y: 8, z: 1}
->>>>>>> 3a0ff70 (test palette + fond)
-=======
   m_Size: {x: 30, y: 8, z: 1}
->>>>>>> 1642c91 (Test de mon coté, rien d'important pour le level)
-=======
   m_Origin: {x: 0, y: -2, z: 0}
   m_Size: {x: 13, y: 2, z: 1}
->>>>>>> d7cd8ce (conception niveau partie1)
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -680,12 +671,10 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
-<<<<<<< HEAD
 --- !u!1001 &120845264
 --- !u!1001 &76349950
 --- !u!19719996 &675129278
 TilemapCollider2D:
-=======
 --- !u!4 &507643766 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6879377711066254779, guid: e78662889153f504980eb0201534d7d4,
@@ -693,7 +682,6 @@ Transform:
   m_PrefabInstance: {fileID: 885645720}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &675129274
-=======
   m_Sprite: {fileID: 21300000, guid: dc76b49274f3ba4428bc7cdba1de7e65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -706,9 +694,7 @@ Transform:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &241312117
->>>>>>> b58d124 (finition du design du level sans tout les pièges dans les blocs)
 GameObject:
->>>>>>> d7cd8ce (conception niveau partie1)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3070,6 +3056,7 @@ GameObject:
   - component: {fileID: 1558893348}
   - component: {fileID: 1558893345}
   - component: {fileID: 1558893349}
+  - component: {fileID: 1558893350}
   m_Layer: 0
   m_Name: Bloc1
   m_TagString: Untagged
@@ -3084,7 +3071,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558893344}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6a2f7e920f8e9347a0099dfb858a32a, type: 3}
   m_Name: 
@@ -3166,7 +3153,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3191,11 +3178,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 1558893344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 144ad430d3562b848b62abfcf7ea98ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 9001fb15aabcdc54d931cd6f16c32221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  springIntensity: 1000
-  forceDirection: 0
+  delayedSpikeTime: 0
+  sequence: 020000000000000001000000
+  intervalBetweenSequence: 1
+  sequenceResetInterval: 1.5
+  cloudSpikes:
+  - {fileID: 2438294789158299729, guid: 4fe571d7b03f01b468c396b5b29c71a2, type: 3}
+  - {fileID: 2438294789158299729, guid: 4fe571d7b03f01b468c396b5b29c71a2, type: 3}
+  - {fileID: 2438294789158299729, guid: 4fe571d7b03f01b468c396b5b29c71a2, type: 3}
+  spikeType: 2
+--- !u!70 &1558893350
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558893344}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.011256813, y: 0.98159194}
+  m_Size: {x: 2.8826134, y: 0.82917345}
+  m_Direction: 1
 --- !u!1001 &1604696364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3216,7 +3226,7 @@ PrefabInstance:
     - target: {fileID: 5036931859746680465, guid: d32b361f5dc0c1e46820eb87e5a4421c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5520093347603204576, guid: d32b361f5dc0c1e46820eb87e5a4421c,
         type: 3}
@@ -3300,7 +3310,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-<<<<<<< HEAD
     m_TransformParent: {fileID: 294417831}
     m_Modifications:
     - target: {fileID: 714244072827652476, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
@@ -3327,7 +3336,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5729954766898261077, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
-=======
     m_TransformParent: {fileID: 1976096267}
     m_Modifications:
     - target: {fileID: 577627388389426429, guid: 5cdf2792843f34a4e9514e91133727d2,
@@ -3356,7 +3364,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 577627388389426429, guid: 5cdf2792843f34a4e9514e91133727d2,
->>>>>>> b58d124 (finition du design du level sans tout les pièges dans les blocs)
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -3381,7 +3388,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 5729954766898261077, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3393,7 +3399,6 @@ PrefabInstance:
       value: 9.27
       objectReference: {fileID: 0}
     - target: {fileID: 5729954766898261077, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
-=======
     - target: {fileID: 577627388389426429, guid: 5cdf2792843f34a4e9514e91133727d2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -3440,21 +3445,16 @@ PrefabInstance:
       value: -8.8132
       objectReference: {fileID: 0}
     - target: {fileID: 577627388389426429, guid: 5cdf2792843f34a4e9514e91133727d2,
->>>>>>> b58d124 (finition du design du level sans tout les pièges dans les blocs)
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 1752652370080361970, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
-=======
     - target: {fileID: 577627388389426429, guid: 5cdf2792843f34a4e9514e91133727d2,
->>>>>>> b58d124 (finition du design du level sans tout les pièges dans les blocs)
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 1752652370080361970, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -3477,60 +3477,42 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5729954766898261077, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
-=======
     - target: {fileID: 577627388389426429, guid: 5cdf2792843f34a4e9514e91133727d2,
->>>>>>> b58d124 (finition du design du level sans tout les pièges dans les blocs)
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 5729954766898261077, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
-=======
     - target: {fileID: 577627388389426429, guid: 5cdf2792843f34a4e9514e91133727d2,
->>>>>>> b58d124 (finition du design du level sans tout les pièges dans les blocs)
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 5729954766898261077, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
-=======
     - target: {fileID: 577627388389426429, guid: 5cdf2792843f34a4e9514e91133727d2,
->>>>>>> b58d124 (finition du design du level sans tout les pièges dans les blocs)
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 1
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 5729954766898261077, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
-=======
     - target: {fileID: 577627388389426429, guid: 5cdf2792843f34a4e9514e91133727d2,
->>>>>>> b58d124 (finition du design du level sans tout les pièges dans les blocs)
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 1752652370080361970, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
     - target: {fileID: 5729954766898261077, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
-=======
     - target: {fileID: 577627388389426429, guid: 5cdf2792843f34a4e9514e91133727d2,
->>>>>>> b58d124 (finition du design du level sans tout les pièges dans les blocs)
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 1752652370080361970, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
-=======
     - target: {fileID: 577627388389426429, guid: 5cdf2792843f34a4e9514e91133727d2,
->>>>>>> b58d124 (finition du design du level sans tout les pièges dans les blocs)
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50dbadf7f5f834a4892cf80ad56d6c37, type: 3}
 --- !u!4 &120845265 stripped
@@ -3543,12 +3525,10 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
 --- !u!1 &675129274
-=======
   m_SourcePrefab: {fileID: 100100000, guid: e78662889153f504980eb0201534d7d4, type: 3}
 --- !u!1 &1436208015
 GameObject:
   m_ObjectHideFlags: 0
->>>>>>> 3c608cb (résolution de bugs + création de palette pour le mapping)
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
