@@ -27,7 +27,6 @@ public class SpikeManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-
         switch (spikeType)
         {
             case SpikeType.instant:
