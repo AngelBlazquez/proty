@@ -118,12 +118,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   sequence: 020000000100000000000000
 =======
 >>>>>>> 8ea1c74 (Ajout du nuage qui chute (ou qui monte et qui chute))
 =======
   sequence: 020000000100000000000000
 >>>>>>> 1642c91 (Test de mon coté, rien d'important pour le level)
+=======
+  delayedSpikeTime: 2
+  sequence: 020000000100000000000000
+  intervalBetweenSequence: 1
+  sequenceResetInterval: 1.5
+>>>>>>> 01b7dec (retouche deadZone)
   cloudSpikes:
   - {fileID: 6953473648867108564}
   - {fileID: 1863882674244018967}
@@ -230,6 +237,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7813087277434851270, guid: 4fe571d7b03f01b468c396b5b29c71a2,
+        type: 3}
+      propertyPath: isShown
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fe571d7b03f01b468c396b5b29c71a2, type: 3}
 --- !u!1 &1863882674244018967 stripped
@@ -311,6 +323,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7813087277434851270, guid: 4fe571d7b03f01b468c396b5b29c71a2,
+        type: 3}
+      propertyPath: isShown
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fe571d7b03f01b468c396b5b29c71a2, type: 3}
 --- !u!1 &6953473648867108564 stripped
@@ -390,6 +407,11 @@ PrefabInstance:
     - target: {fileID: 6279295075445465703, guid: 4fe571d7b03f01b468c396b5b29c71a2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813087277434851270, guid: 4fe571d7b03f01b468c396b5b29c71a2,
+        type: 3}
+      propertyPath: isShown
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
