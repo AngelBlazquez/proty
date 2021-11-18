@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Saw : MonoBehaviour
+public class KillPlayer : MonoBehaviour
 {
     private DeathManager deathManager;
 

@@ -4,33 +4,47 @@ using UnityEngine;
 
 public class ThwonpMovement : MonoBehaviour
 {
-    public Vector2 direction;
+    private Rigidbody2D parentRb;
+    private Transform parentTr;
+    private Vector3 originalPos;
+
     private DeathManager deathManager;
 
-    private bool joueurEstEntre = false;
+    private bool hasCollided = false;
 
     // Start is called before the first frame update
     void Start()
     {
         deathManager = GameObject.Find("GameManager").GetComponent<DeathManager>();
+        parentTr = GetComponentInParent<Transform>();
+        parentRb = GetComponentInParent<Rigidbody2D>();
+        originalPos = parentRb.position;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (joueurEstEntre)
+        if (hasCollided)
         {
-            transform.Translate(direction * Time.deltaTime);
+            Debug.Log(parentTr.position.y + "   ;   " + originalPos.y);
+            //parentTr.position = Vector3.MoveTowards(parentTr.position, originalPos, 10 * Time.deltaTime);
+            if (parentTr.position.y >= originalPos.y)
+            {
+                hasCollided = false;
+                parentRb.gravityScale = 0;
+                parentRb.velocity = Vector2.zero; 
+            }
         }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Player"))
+        if (!hasCollided && col.gameObject.CompareTag("Player"))
         {
-            joueurEstEntre = true;
+            parentRb.gravityScale = 1;
         }
+
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -38,6 +52,11 @@ public class ThwonpMovement : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             deathManager.Death();
+        }
+        else
+        {
+            hasCollided = true;
+            parentRb.gravityScale = -1;
         }
     }
 
