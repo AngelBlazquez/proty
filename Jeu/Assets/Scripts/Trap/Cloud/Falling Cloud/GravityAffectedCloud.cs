@@ -8,11 +8,11 @@ public class GravityAffectedCloud : MonoBehaviour
     public float upMovementTime = 1f;
     public float stationnaryTime = 1f;
 
-    public GameObject gameObject;
-
-    IEnumerator DelayBeforeFalling()
+    public float delayBeforeFalling = 0.5f;
+    
+    IEnumerator DelayBeforeFallingCoroutine()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(delayBeforeFalling);
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
     }
@@ -39,7 +39,7 @@ public class GravityAffectedCloud : MonoBehaviour
             }
             else
             {
-                StartCoroutine(DelayBeforeFalling());
+                StartCoroutine(DelayBeforeFallingCoroutine());
             }
         }
         {

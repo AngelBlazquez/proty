@@ -40,6 +40,8 @@ public class IndividualSpike : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        GetComponent<DeathManager>().Death();
+        if(collider.gameObject.name == "Player") {
+                    GetComponent<DeathManager>().Death();
+        }
     }
 }
