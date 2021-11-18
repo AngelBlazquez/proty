@@ -13,9 +13,24 @@ public class GravityChanger : MonoBehaviour
     private float oldJumpForce;
     public GameObject player;
 
+    private bool RotatedReverse = false; 
+
+    private float targetRotation = 0f;
+
     public void Start()
     {
         oldJumpForce = player.GetComponent<PlayerMovement>().jumpForce;
+    }
+
+    public void FixedUpdate() {
+        float currentRotation = Mathf.Floor(player.GetComponent<Rigidbody2D>().rotation);
+        if(Mathf.Floor(currentRotation) != targetRotation) {
+            if(!RotatedReverse){
+                 player.GetComponent<Rigidbody2D>().rotation = currentRotation + 5;
+            } else if(RotatedReverse){
+                player.GetComponent<Rigidbody2D>().rotation = currentRotation - 5;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -23,7 +38,8 @@ public class GravityChanger : MonoBehaviour
         if(collider.gameObject.name == "Player")
         {
             player.GetComponent<Rigidbody2D>().gravityScale = -1;
-            player.GetComponent<Rigidbody2D>().rotation = 180f;
+            targetRotation = 180f;
+            RotatedReverse = false;
             player.GetComponent<PlayerMovement>().jumpForce = -oldJumpForce;
         }
 
@@ -60,6 +76,7 @@ public class GravityChanger : MonoBehaviour
         if (collider.gameObject.name == "Player")
         {
             player.GetComponent<Rigidbody2D>().gravityScale = 1;
+<<<<<<< HEAD
             player.GetComponent<Rigidbody2D>().rotation = 0f;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -72,6 +89,11 @@ public class GravityChanger : MonoBehaviour
             player.GetComponent<PlayerMovement>().jumpForce = oldJumpForce;
 
 >>>>>>> 4b7d28f (Saut avec gravité inversée et blocage de la vélocité du joueur lors de la levée du nuage)
+=======
+            targetRotation = 0f;
+            RotatedReverse = true;
+            player.GetComponent<PlayerMovement>().jumpForce = oldJumpForce;
+>>>>>>> 056e7b7 (Animation gravité)
         }
     }
 }
