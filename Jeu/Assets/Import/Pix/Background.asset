@@ -10,16 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD:Jeu/Assets/Tilemap/tilemapMignon_3.asset
-  m_Name: tilemapMignon_3
+  m_Name: Background
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 448471187829847037, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
-=======
-  m_Name: plateformes 2_0
-  m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 7519745413344900795, guid: 14798e4eee12139448baa7ad7c595fd0,
-    type: 3}
->>>>>>> 12313115f7b99c72b695b7d571fe7677cc9d8420:Jeu/Assets/Import/plateformes 2_0.asset
+  m_Sprite: {fileID: 21300000, guid: 5a0c7f4a45a8b8f4ba3a105e25a1fcb0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
