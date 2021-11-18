@@ -1,14 +1,11 @@
 {
   "dependencies": {
-<<<<<<< HEAD
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
       "source": "builtin",
       "dependencies": {}
     },
-=======
->>>>>>> 3c608cb (résolution de bugs + création de palette pour le mapping)
     "com.unity.2d.tilemap": {
       "version": "1.0.0",
       "depth": 0,

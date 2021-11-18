@@ -1,9 +1,6 @@
 {
   "dependencies": {
-<<<<<<< HEAD
     "com.unity.2d.sprite": "1.0.0",
-=======
->>>>>>> 3c608cb (résolution de bugs + création de palette pour le mapping)
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",
