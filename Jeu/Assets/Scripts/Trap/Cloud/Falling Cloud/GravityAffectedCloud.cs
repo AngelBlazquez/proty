@@ -40,6 +40,7 @@ public class GravityAffectedCloud : MonoBehaviour
             else
             {
                 StartCoroutine(DelayBeforeFallingCoroutine());
+<<<<<<< HEAD
             }
         }
         {
@@ -50,6 +51,8 @@ public class GravityAffectedCloud : MonoBehaviour
             else
             {
                 StartCoroutine(DelayBeforeFalling());
+=======
+>>>>>>> 759a302a2b85589fc35f5a44d5e42b3f3e8155ae
             }
         }
 

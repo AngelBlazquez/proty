@@ -119,6 +119,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   sequence: 020000000100000000000000
 =======
 >>>>>>> 8ea1c74 (Ajout du nuage qui chute (ou qui monte et qui chute))
@@ -131,6 +132,12 @@ MonoBehaviour:
   intervalBetweenSequence: 1
   sequenceResetInterval: 1.5
 >>>>>>> 01b7dec (retouche deadZone)
+=======
+  delayedSpikeTime: 2
+  sequence: 020000000100000000000000
+  intervalBetweenSequence: 1
+  sequenceResetInterval: 1.5
+>>>>>>> 759a302a2b85589fc35f5a44d5e42b3f3e8155ae
   cloudSpikes:
   - {fileID: 6953473648867108564}
   - {fileID: 1863882674244018967}
