@@ -8,15 +8,14 @@ public class deathPics : MonoBehaviour
 
     void Start()
     {
-        deathManager = GameObject.Find("GameManager").GetComponent<DeathManager>();
+        deathManager = GameObject.Find("GameManager").GetComponent<DeathManager>(); // Récupère le script DeathManager
     }
 
-    // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            deathManager.Death();
+            deathManager.Death(); // Appel de la fonction de mort
         }
     }
 }

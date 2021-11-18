@@ -8,11 +8,11 @@ public class fallingBlocks : MonoBehaviour
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody = GetComponent<Rigidbody2D>(); // Récupère le rigidbody du composant concerné
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        rigidbody.bodyType = RigidbodyType2D.Dynamic;
+        rigidbody.bodyType = RigidbodyType2D.Dynamic; // Changement du Bodytype en Dynamic (le fait tomber)
     }
 }

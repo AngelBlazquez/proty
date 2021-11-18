@@ -8,12 +8,11 @@ public class invisibleBlock : MonoBehaviour
     
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Récupère le sprite du composant concerné
     }
 
-    // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        spriteRenderer.enabled = true;
+        spriteRenderer.enabled = true; // Affichage du sprite
     }
 }
