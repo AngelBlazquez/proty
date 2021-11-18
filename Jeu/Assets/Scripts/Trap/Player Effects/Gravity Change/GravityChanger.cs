@@ -22,12 +22,9 @@ public class GravityChanger : MonoBehaviour
     {
         if(collider.gameObject.name == "Player")
         {
-
             player.GetComponent<Rigidbody2D>().gravityScale = -1;
             player.GetComponent<Rigidbody2D>().rotation = 180f;
-            
             player.GetComponent<PlayerMovement>().jumpForce = -oldJumpForce;
-            Debug.Log("test");
         }
 
 =======
