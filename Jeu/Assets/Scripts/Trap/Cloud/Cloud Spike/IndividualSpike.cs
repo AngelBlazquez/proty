@@ -9,6 +9,8 @@ public class IndividualSpike : MonoBehaviour
     public SpriteRenderer sr;
     public EdgeCollider2D ec2D;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,5 +36,10 @@ public class IndividualSpike : MonoBehaviour
             sr.enabled = false;
             ec2D.enabled = false;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        GetComponent<DeathManager>().Death();
     }
 }
