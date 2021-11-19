@@ -38,25 +38,11 @@ public class SpeedChanger : MonoBehaviour
             {
                 StartCoroutine(boostTimeCoroutine());
             }
-        if(collider.gameObject.name == "Player")
-        {
-            if (zone)
-            {
-                player.GetComponent<PlayerMovement>().moveSpeed = playerSpeed;
-            }
-            else
-            {
-                StartCoroutine(boostTimeCoroutine());
-            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-        if(collider.gameObject.name == "Player" && zone)
-        {
-            player.GetComponent<PlayerMovement>().moveSpeed = oldSpeed;
-        }
         if(collider.gameObject.name == "Player" && zone)
         {
             player.GetComponent<PlayerMovement>().moveSpeed = oldSpeed;

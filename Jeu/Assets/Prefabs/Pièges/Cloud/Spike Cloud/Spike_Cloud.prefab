@@ -116,41 +116,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9001fb15aabcdc54d931cd6f16c32221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  sequence: 020000000100000000000000
-=======
->>>>>>> 8ea1c74 (Ajout du nuage qui chute (ou qui monte et qui chute))
-=======
-  sequence: 020000000100000000000000
->>>>>>> 1642c91 (Test de mon coté, rien d'important pour le level)
-=======
   delayedSpikeTime: 2
   sequence: 020000000100000000000000
   intervalBetweenSequence: 1
   sequenceResetInterval: 1.5
->>>>>>> 01b7dec (retouche deadZone)
-=======
-  delayedSpikeTime: 2
-  sequence: 020000000100000000000000
-  intervalBetweenSequence: 1
-  sequenceResetInterval: 1.5
->>>>>>> 759a302a2b85589fc35f5a44d5e42b3f3e8155ae
   cloudSpikes:
   - {fileID: 6953473648867108564}
   - {fileID: 1863882674244018967}
   - {fileID: 8126874067213960871}
-<<<<<<< HEAD
-<<<<<<< HEAD
   spikeType: 2
-=======
-  spikeType: 0
->>>>>>> 8ea1c74 (Ajout du nuage qui chute (ou qui monte et qui chute))
-=======
-  spikeType: 2
->>>>>>> 1642c91 (Test de mon coté, rien d'important pour le level)
 --- !u!61 &9091112607654350719
 BoxCollider2D:
   m_ObjectHideFlags: 0

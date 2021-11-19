@@ -25,11 +25,6 @@ public class SpikeManager : MonoBehaviour
         }
     }
 
-        {
-            Sequence();
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collider)
     {
         switch (spikeType)
