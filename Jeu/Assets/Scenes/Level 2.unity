@@ -142,6 +142,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1901267462345664703, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1162643799}
+    - target: {fileID: -1901267462345664703, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
+        type: 3}
       propertyPath: gameObject
       value: 
       objectReference: {fileID: 1893029820}
@@ -1214,6 +1219,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1901267462345664703, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1162643799}
+    - target: {fileID: -1901267462345664703, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
+        type: 3}
       propertyPath: movingUp
       value: 1
       objectReference: {fileID: 0}
@@ -1887,6 +1897,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1921925484}
     m_Modifications:
+    - target: {fileID: -1901267462345664703, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1162643799}
     - target: {fileID: -1901267462345664703, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
         type: 3}
       propertyPath: movingUp
@@ -3261,42 +3276,22 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 754150255}
     m_ColliderPaths:
-    - - X: -620949916
-        Y: 140699959
-      - X: -620949916
-        Y: 169300041
-      - X: -620949975
-        Y: 169300100
-      - X: -649049884
-        Y: 169300100
-      - X: -649049884
-        Y: 186850041
-      - X: -649049943
-        Y: 186850100
-      - X: -700950057
-        Y: 186850100
-      - X: -700950116
-        Y: 186850041
-      - X: -700950116
+    - - X: -620950016
+        Y: 169300000
+      - X: -649049984
+        Y: 169300000
+      - X: -649049984
         Y: 186850000
       - X: -751000000
         Y: 186850000
       - X: -751000000
         Y: 143150000
-      - X: -700950116
+      - X: -649049984
         Y: 143150000
-      - X: -700950116
-        Y: 143149959
-      - X: -700950057
-        Y: 143149900
-      - X: -649050084
-        Y: 143149900
-      - X: -649050084
-        Y: 140699959
-      - X: -649050025
-        Y: 140699900
-      - X: -620949975
-        Y: 140699900
+      - X: -649049984
+        Y: 140700000
+      - X: -620950016
+        Y: 140700000
     - - X: -293150016
         Y: 106900008
       - X: -205650000
@@ -3371,14 +3366,14 @@ CompositeCollider2D:
         Y: -131000000
   m_CompositePaths:
     m_Paths:
-    - - {x: -62.095028, y: 14.06999}
-      - {x: -62.095028, y: 16.93001}
-      - {x: -64.90498, y: 16.93004}
-      - {x: -64.90502, y: 18.685009}
+    - - {x: -62.095036, y: 14.07}
+      - {x: -62.095036, y: 16.93}
+      - {x: -64.905, y: 16.930029}
+      - {x: -64.90503, y: 18.685}
       - {x: -75.1, y: 18.68497}
       - {x: -75.09997, y: 14.315001}
-      - {x: -64.905014, y: 14.3149605}
-      - {x: -64.904976, y: 14.06999}
+      - {x: -64.905, y: 14.314971}
+      - {x: -64.90497, y: 14.07}
     - - {x: -29.315031, y: 9.900001}
       - {x: -29.314974, y: 10.690001}
       - {x: -20.565, y: 10.69003}
@@ -3601,6 +3596,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1921925484}
     m_Modifications:
+    - target: {fileID: -1901267462345664703, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1162643799}
     - target: {fileID: -1901267462345664703, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
         type: 3}
       propertyPath: movingUp
@@ -4108,6 +4108,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1901267462345664703, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1162643799}
+    - target: {fileID: -1901267462345664703, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
+        type: 3}
       propertyPath: gameObject
       value: 
       objectReference: {fileID: 441756990}
@@ -4190,6 +4195,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 392775804}
     m_Modifications:
+    - target: {fileID: -1901267462345664703, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1162643799}
     - target: {fileID: -1901267462345664703, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
         type: 3}
       propertyPath: movingUp
