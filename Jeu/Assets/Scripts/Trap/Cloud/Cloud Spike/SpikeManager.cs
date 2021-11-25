@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manage the state of all the spikes on the cloud.  
+///</summary>
 public class SpikeManager : MonoBehaviour
 {
     public float delayedSpikeTime = 2f;
@@ -25,6 +28,9 @@ public class SpikeManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// When the trigger is triggered the spikes are deployed based on the choice made in the spikeType attribute.  
+    ///</summary>
     private void OnTriggerEnter2D(Collider2D collider)
     {
         switch (spikeType)
@@ -40,12 +46,18 @@ public class SpikeManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Coroutine used to delay the spike activation.
+    ///</summary>
     IEnumerator DelayedSpikeCoroutine()
     {
         yield return new WaitForSeconds(delayedSpikeTime);
         DeployAllSpikes();
     }
 
+    /// <summary>
+    /// Coroutine used to play the sequence of spikes with delays.
+    ///</summary>
     IEnumerator SequenceCoroutine()
     {
         while (true)
@@ -61,6 +73,9 @@ public class SpikeManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Deploy all the spikes instantly.
+    ///</summary>
     void DeployAllSpikes()
     {
         foreach (GameObject g in cloudSpikes)
