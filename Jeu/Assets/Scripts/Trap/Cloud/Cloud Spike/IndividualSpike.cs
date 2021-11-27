@@ -1,4 +1,4 @@
-﻿// Authors : Angel Blazquez Benjamin Gandelin
+﻿//Authors : BLAZQUEZ Angel / GANDELIN Benjamin
 
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +14,9 @@ public class IndividualSpike : MonoBehaviour
     public SpriteRenderer sr;
     public EdgeCollider2D ec2D;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Apply the defined starting on the level start.
+    /// </summary>
     void Start()
     {
         manageState();
@@ -22,7 +24,8 @@ public class IndividualSpike : MonoBehaviour
 
     /// <summary>
     /// Change the state of the spike (Shown or not) by the parameter bool new state and call manageState() to update the spike mesh. 
-    ///</summary>
+    /// </summary>
+    /// <param name="newState">The new state of the spike</param>
     public void changeState(bool newState) 
     {
         isShown = newState;
