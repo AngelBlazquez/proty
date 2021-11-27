@@ -1,7 +1,12 @@
-﻿using System.Collections;
+﻿//Authors : BLAZQUEZ Angel / GANDELIN Benjamin
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// The script that add force to player in a defined direction when it enter the collider.
+/// </summary>
 public class Cloud_Spring : MonoBehaviour
 {
 
@@ -11,6 +16,10 @@ public class Cloud_Spring : MonoBehaviour
 
     public direction forceDirection;
 
+    /// <summary>
+    /// When the player enter hte collider depending on the direction a force is applied to the player in this direction.  
+    /// </summary>
+    /// <param name="collider">The collision trigger</param>
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.name == "Player")

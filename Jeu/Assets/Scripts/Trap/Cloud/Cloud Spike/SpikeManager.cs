@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//Authors : BLAZQUEZ Angel / GANDELIN Benjamin
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

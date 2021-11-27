@@ -1,7 +1,12 @@
-﻿using System.Collections;
+﻿//Authors : BLAZQUEZ Angel / GANDELIN Benjamin
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script that change the player rotation and it's gravity to be able to walk and jump from the ceiling.  
+/// </summary>
 public class GravityChanger : MonoBehaviour
 {
 
@@ -12,11 +17,17 @@ public class GravityChanger : MonoBehaviour
 
     private float targetRotation = 0f;
 
+    /// <summary>
+    /// On the level start the player jump force default value is stored for reset purpose after it's reverse.
+    /// </summary>
     public void Start()
     {
         oldJumpForce = player.GetComponent<PlayerMovement>().jumpForce;
     }
 
+    /// <summary>
+    /// Rotate the player when it enter or exit the collider by interpolating the value every frame in the player loop. 
+    /// </summary>
     public void FixedUpdate() {
         float currentRotation = Mathf.Floor(player.GetComponent<Rigidbody2D>().rotation);
         if(Mathf.Floor(currentRotation) != targetRotation) {
@@ -28,6 +39,10 @@ public class GravityChanger : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Reverse the gravity when the player enter the area.
+    /// </summary>
+    /// <param name="collider">Area of effect</param>
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.name == "Player")
@@ -40,6 +55,10 @@ public class GravityChanger : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Reverse the gravity back to normal when the player exit the area.
+    /// </summary>
+    /// <param name="collider">Area of effect</param>
     private void OnTriggerExit2D(Collider2D collider)
     {
         if (collider.gameObject.name == "Player")
