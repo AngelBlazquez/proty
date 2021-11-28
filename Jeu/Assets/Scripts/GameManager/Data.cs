@@ -9,29 +9,27 @@ using UnityEngine;
 /// </summary>
 public class Data : MonoBehaviour
 {
-    public LastLevelNumber lastLevel;
+    public LevelsDisplay levels;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
             SaveData();
         }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            GetData();
-        }
     }
+
     public void IncrementLevel()
     {
-        lastLevel.IncrementLevel();
+
     }
 
     public void SaveData()
     {
-        string dataJson = JsonUtility.ToJson(lastLevel);
+        string dataJson = JsonUtility.ToJson(levels);
         string path = Application.persistentDataPath + "/LevelData.json";
         File.WriteAllText(path, dataJson);
+        Debug.Log(path);
     }
 
     public void GetData()
@@ -40,28 +38,35 @@ public class Data : MonoBehaviour
         {
             string path = Application.persistentDataPath + "/LevelData.json";
             string dataJson = File.ReadAllText(path);
-            lastLevel = JsonUtility.FromJson<LastLevelNumber>(dataJson);
+            levels = JsonUtility.FromJson<LevelsDisplay>(dataJson);
         }
         catch (FileNotFoundException e)
         {
-            lastLevel = new LastLevelNumber();
+            e.ToString();
+            levels = new LevelsDisplay();
         }
 
     }
 }
 
 [System.Serializable]
-public class LastLevelNumber
+public class LevelsDisplay
 {
-    public int lastLevel;
+    public List<Level> levels;
+    public GameObject chains;
 
-    public LastLevelNumber()
+    public LevelsDisplay()
     {
-        lastLevel = 1;
+
     }
 
-    public void IncrementLevel()
-    {
-        lastLevel++;
-    }
+}
+
+[System.Serializable]
+public class Level
+{
+    public GameObject levelDisplay;
+    public int levelNumber;
+    public bool isUnlocked = false;
+
 }
