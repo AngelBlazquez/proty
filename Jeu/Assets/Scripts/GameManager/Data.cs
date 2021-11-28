@@ -30,22 +30,17 @@ public class Data : MonoBehaviour
     public void SaveData()
     {
         string dataJson = JsonUtility.ToJson(lastLevel);
-        Debug.Log(dataJson);
         string path = Application.persistentDataPath + "/LevelData.json";
-        Debug.Log(path);
-        System.IO.File.WriteAllText(path, dataJson);
+        File.WriteAllText(path, dataJson);
     }
 
     public void GetData()
     {
         try
         {
-            string path = Application.persistentDataPath + "/LevelDataTest.json";
-            string dataJson = System.IO.File.ReadAllText(path);
+            string path = Application.persistentDataPath + "/LevelData.json";
+            string dataJson = File.ReadAllText(path);
             lastLevel = JsonUtility.FromJson<LastLevelNumber>(dataJson);
-            Debug.Log("Path : " + path);
-            Debug.Log("DataJson : " + dataJson);
-            Debug.Log("LastLevel : " + lastLevel.lastLevel);
         }
         catch (FileNotFoundException e)
         {
