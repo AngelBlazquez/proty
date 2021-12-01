@@ -35,16 +35,19 @@ public class SpikeManager : MonoBehaviour
     ///</summary>
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        switch (spikeType)
+        if (collider.gameObject.name == "Player")
         {
-            case SpikeType.instant:
-                DeployAllSpikes();
-                break;
-            case SpikeType.delayed:
-                StartCoroutine(DelayedSpikeCoroutine());
-                break;
-            default:
-                break;
+            switch (spikeType)
+            {
+                case SpikeType.instant:
+                    DeployAllSpikes();
+                    break;
+                case SpikeType.delayed:
+                    StartCoroutine(DelayedSpikeCoroutine());
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
