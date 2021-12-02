@@ -9,17 +9,24 @@ using UnityEngine;
 ///</summary>
 public class SpikeManager : MonoBehaviour
 {
-    public float delayedSpikeTime = 2f;
+    [SerializeField]
+    private float delayedSpikeTime = 2f;
 
-    public int[] sequence;
+    [SerializeField]
+    private int[] sequence;
 
-    public float intervalBetweenSequence = 1f;
-    public float sequenceResetInterval = 1.5f;
+    [SerializeField]
+    private float intervalBetweenSequence = 1f;
+    [SerializeField]
+    private float sequenceResetInterval = 1.5f;
 
-    public GameObject[] cloudSpikes;
+    [SerializeField]
+    private GameObject[] cloudSpikes;
 
-    public enum SpikeType { instant, delayed, sequence };
-    public SpikeType spikeType;
+    private enum SpikeType { instant, delayed, sequence };
+
+    [SerializeField]
+    private SpikeType spikeType;
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +61,7 @@ public class SpikeManager : MonoBehaviour
     /// <summary>
     /// Coroutine used to delay the spike activation.
     ///</summary>
-    IEnumerator DelayedSpikeCoroutine()
+    private IEnumerator DelayedSpikeCoroutine()
     {
         yield return new WaitForSeconds(delayedSpikeTime);
         DeployAllSpikes();
@@ -63,7 +70,7 @@ public class SpikeManager : MonoBehaviour
     /// <summary>
     /// Coroutine used to play the sequence of spikes with delays.
     ///</summary>
-    IEnumerator SequenceCoroutine()
+    private IEnumerator SequenceCoroutine()
     {
         while (true)
         {
@@ -81,7 +88,7 @@ public class SpikeManager : MonoBehaviour
     /// <summary>
     /// Deploy all the spikes instantly.
     ///</summary>
-    void DeployAllSpikes()
+    private void DeployAllSpikes()
     {
         foreach (GameObject g in cloudSpikes)
         {

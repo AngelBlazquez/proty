@@ -9,12 +9,13 @@ using UnityEngine;
 /// </summary>
 public class Cloud_Spring : MonoBehaviour
 {
+    [SerializeField]
+    private float springIntensity = 100f;
 
-    public float springIntensity = 100f;
+    private enum direction { UP, LEFT, RIGHT};
 
-    public enum direction { UP, LEFT, RIGHT};
-
-    public direction forceDirection;
+    [SerializeField]
+    private direction forceDirection;
 
     /// <summary>
     /// When the player enter hte collider depending on the direction a force is applied to the player in this direction.  

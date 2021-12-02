@@ -9,10 +9,13 @@ using UnityEngine;
 ///</summary>
 public class IndividualSpike : MonoBehaviour
 {
-    public bool isShown = false;
+    [SerializeField]
+    private bool isShown = false;
     
-    public SpriteRenderer sr;
-    public EdgeCollider2D ec2D;
+    [SerializeField]
+    private SpriteRenderer sr;
+    [SerializeField]
+    private EdgeCollider2D ec2D;
 
     /// <summary>
     /// Apply the defined starting on the level start.
