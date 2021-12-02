@@ -53,8 +53,10 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("Fall",false);
         }
 
+
         if (isJumping && isOnGround)
         {
+            animator.SetTrigger("Jump");
             playerRb.AddForce(new Vector2(0f, jumpForce));
             isJumping = false;
         }
