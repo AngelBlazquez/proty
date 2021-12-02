@@ -34,8 +34,7 @@ public class PlayerMovement : MonoBehaviour
     void MovePlayer(float _horizontalMovement)
     {
         Vector3 targetVelocity = new Vector2(_horizontalMovement, playerRb.velocity.y);
-        playerRb.velocity = Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref velocity, .05f);
-        
+        playerRb.velocity = Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref velocity, .05f);      
 
         if (isJumping && isOnGround)
         {

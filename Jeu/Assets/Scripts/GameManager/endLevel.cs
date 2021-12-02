@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 /**
  * author Yahn Bervas
  */
-public class endLevel : MonoBehaviour
+public class EndLevel : MonoBehaviour
 {
     private int nextScene;
+    private Timer timer;
 
     void Start()
     {
