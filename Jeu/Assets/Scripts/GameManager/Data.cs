@@ -9,59 +9,68 @@ using UnityEngine;
 /// </summary>
 public class Data : MonoBehaviour
 {
-    public LevelsDisplay levels;
+        public List<Level> allLevels;
+    [SerializeField]
+    private CreateLevels loader;
+
+    void Start() {
+        GetData();
+    }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             SaveData();
         }
-    }
-
-    public void IncrementLevel()
-    {
-
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            GetData();
+        }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            File.Delete(Application.persistentDataPath + "/LevelData.json");
+        }
     }
 
     public void SaveData()
     {
-        string dataJson = JsonUtility.ToJson(levels);
+        string dataJson = JsonUtility.ToJson(allLevels);
         string path = Application.persistentDataPath + "/LevelData.json";
         File.WriteAllText(path, dataJson);
-        Debug.Log(path);
+        Debug.Log("Sauvegarde des données");
+        //Debug.Log(path);
     }
-
+    
     public void GetData()
     {
         try
         {
             string path = Application.persistentDataPath + "/LevelData.json";
             string dataJson = File.ReadAllText(path);
-            levels = JsonUtility.FromJson<LevelsDisplay>(dataJson);
+            allLevels = JsonUtility.FromJson<List<Level>>(dataJson);
+            if (allLevels.Count == 0) {
+                throw new FileNotFoundException();
+            }
+        Debug.Log("Récupération des données");
+
         }
         catch (FileNotFoundException e)
         {
             e.ToString();
-            levels = new LevelsDisplay();
+            allLevels = loader.levels;
+        Debug.Log("Création des données");
+                        SaveData();
         }
 
     }
 }
 
-[System.Serializable]
-public class LevelsDisplay
-{
-    public List<Level> levels;
-    public GameObject chains;
 
-    public LevelsDisplay()
-    {
-
-    }
-
-}
-
+/// <summary>
+/// Creates a level that is displayable
+/// Made by Léo PUYASTIER
+/// </summary>
 [System.Serializable]
 public class Level
 {
