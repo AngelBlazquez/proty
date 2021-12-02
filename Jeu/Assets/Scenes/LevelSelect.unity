@@ -587,7 +587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 1610979845}
-  chains: {fileID: 0}
+  chains: {fileID: 4721104414037174997, guid: 5e6d5b91e82dee1499d3e9ec46ffa57f, type: 3}
 --- !u!1 &1610979844
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +618,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 728186e614352734584f6521af158a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allLevels: []
+  data:
+    allLevels: []
   loader: {fileID: 1610979847}
 --- !u!4 &1610979846
 Transform:

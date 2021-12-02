@@ -7,15 +7,11 @@ using UnityEngine;
 /// Saves the level and loads it back
 /// Made by Léo PUYASTIER
 /// </summary>
-public class Data : MonoBehaviour
+public class DataManager : MonoBehaviour
 {
-        public List<Level> allLevels;
+    public SavableData data;
     [SerializeField]
     private CreateLevels loader;
-
-    void Start() {
-        GetData();
-    }
 
     private void Update()
     {
@@ -35,37 +31,45 @@ public class Data : MonoBehaviour
 
     public void SaveData()
     {
-        string dataJson = JsonUtility.ToJson(allLevels);
+        string dataJson = JsonUtility.ToJson(data);
+        Debug.Log(data);
+        Debug.Log(dataJson);
         string path = Application.persistentDataPath + "/LevelData.json";
         File.WriteAllText(path, dataJson);
         Debug.Log("Sauvegarde des données");
-        //Debug.Log(path);
+        Debug.Log(path);
     }
-    
+
     public void GetData()
     {
         try
         {
             string path = Application.persistentDataPath + "/LevelData.json";
             string dataJson = File.ReadAllText(path);
-            allLevels = JsonUtility.FromJson<List<Level>>(dataJson);
-            if (allLevels.Count == 0) {
+            data = JsonUtility.FromJson<SavableData>(dataJson);
+            /*if (allLevels.Count == 0)
+            {
                 throw new FileNotFoundException();
-            }
-        Debug.Log("Récupération des données");
+            }*/
+            Debug.Log("Récupération des données");
 
         }
         catch (FileNotFoundException e)
         {
             e.ToString();
-            allLevels = loader.levels;
-        Debug.Log("Création des données");
-                        SaveData();
+            Debug.Log("Création des données");
+            data.allLevels = loader.levels;
+            SaveData();
         }
 
     }
 }
 
+[System.Serializable]
+public class SavableData
+{
+    public List<Level> allLevels;
+}
 
 /// <summary>
 /// Creates a level that is displayable
