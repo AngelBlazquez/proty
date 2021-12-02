@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class DeathManager : MonoBehaviour
 {
+    public boolean death = false;
+
     public void Death()
     {
+        //death = true;
         SceneManager.LoadScene(0);
     }
 }
