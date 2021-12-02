@@ -46,6 +46,13 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("Run",true);
         }
 
+        if (playerRb.velocity.y < -1)
+        {
+            animator.SetBool("Fall",true);
+        }else{
+            animator.SetBool("Fall",false);
+        }
+
         if (isJumping && isOnGround)
         {
             playerRb.AddForce(new Vector2(0f, jumpForce));
