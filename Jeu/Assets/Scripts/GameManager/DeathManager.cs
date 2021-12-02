@@ -5,11 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class DeathManager : MonoBehaviour
 {
-    public boolean death = false;
+    public GameObject Canvas;
+
+    void Start()
+    {
+
+    }
 
     public void Death()
     {
-        //death = true;
+        Canvas.GetComponent<deathMenu>().showMenu();
+        Time.timeScale = 0;
         SceneManager.LoadScene(0);
     }
 }
