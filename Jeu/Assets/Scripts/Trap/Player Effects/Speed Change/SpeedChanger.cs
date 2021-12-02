@@ -11,15 +11,19 @@ using UnityEngine;
 /// </summary>
 public class SpeedChanger : MonoBehaviour
 {
-    public GameObject player;
+    [SerializeField]
+    private GameObject player;
 
-    public bool zone = true;
+    [SerializeField]
+    private bool zone = true;
 
-    public float playerSpeed = 400;
+    [SerializeField]
+    private  float playerSpeed = 400;
+
+    [SerializeField]
+    private float boostTime = 1f;
+
     private float oldSpeed = 400;
-
-    public float boostTime = 1f;
-
 
     /// <summary>
     /// On the level start the player speed default value is stored for reset purpose after it's modification.

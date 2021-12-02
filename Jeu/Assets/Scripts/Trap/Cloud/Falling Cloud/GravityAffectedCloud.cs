@@ -11,14 +11,19 @@ using UnityEngine;
 /// </summary>
 public class GravityAffectedCloud : MonoBehaviour
 {
-    public bool movingUp = false;
-    public float upMovementTime = 1f;
-    public float stationnaryTime = 1f;
-
-    public float delayBeforeFalling = 0.5f;
+    [SerializeField]
+    private bool movingUp = false;
+    [SerializeField]
+    private float upMovementTime = 1f;
+    [SerializeField]
+    private float stationnaryTime = 1f;
+    [SerializeField]
+    private float delayBeforeFalling = 0.5f;
 
     private bool isOnCloud = false;
-    public GameObject player;
+
+    [SerializeField]
+    private GameObject player;
 
     /// <summary>
     /// Coroutine used to delay the fall of the object

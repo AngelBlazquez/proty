@@ -11,10 +11,11 @@ public class GravityChanger : MonoBehaviour
 {
 
     private float oldJumpForce;
-    public GameObject player;
+    [SerializeField]
+    private GameObject player;
+
 
     private bool RotatedReverse = false; 
-
     private float targetRotation = 0f;
 
     /// <summary>
