@@ -483,6 +483,7 @@ MonoBehaviour:
   jumpForce: 250
   isJumping: 0
   isOnGround: 0
+  animator: {fileID: 7322277456711279643}
 --- !u!61 &6879377711066254777
 BoxCollider2D:
   m_ObjectHideFlags: 0
