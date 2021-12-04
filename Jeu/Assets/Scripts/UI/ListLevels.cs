@@ -35,7 +35,7 @@ public class ListLevels : MonoBehaviour
                     button.interactable = false;
 
                     GameObject chain = Instantiate(chains);
-                    chain.transform.parent = display.transform;
+                    chain.transform.SetParent(display.transform);
                     chain.transform.localScale = new Vector3(1f, 1f, 1f);
                 }
                 // transform.parent = levels[i].levelDisplay.transform.parent ;
