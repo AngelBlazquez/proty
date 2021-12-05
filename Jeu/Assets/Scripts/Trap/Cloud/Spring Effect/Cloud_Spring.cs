@@ -12,7 +12,7 @@ public class Cloud_Spring : MonoBehaviour
     [SerializeField]
     private float springIntensity = 100f;
 
-    private enum direction { UP, LEFT, RIGHT};
+    private enum direction { UP, UP_LEFT, UP_RIGHT, LEFT, RIGHT};
 
     [SerializeField]
     private direction forceDirection;
@@ -32,16 +32,22 @@ public class Cloud_Spring : MonoBehaviour
                     playerRB2D.AddForce(transform.up * springIntensity);
                     break;
 
-                case direction.LEFT:
+                case direction.UP_LEFT:
                     playerRB2D.AddForce(transform.up * springIntensity);
                     playerRB2D.AddForce(Vector2.left * springIntensity);
                     break;
 
-                case direction.RIGHT:
+                case direction.UP_RIGHT:
                     playerRB2D.AddForce(transform.up * springIntensity);
                     playerRB2D.AddForce(Vector2.right * springIntensity);
                     break;
-            }
+                case direction.LEFT:
+                    playerRB2D.AddForce(Vector2.left * springIntensity);
+                    break;
+                case direction.RIGHT:
+                    playerRB2D.AddForce(Vector2.right * springIntensity);
+                    break;
+            }   
         }
     }
 }

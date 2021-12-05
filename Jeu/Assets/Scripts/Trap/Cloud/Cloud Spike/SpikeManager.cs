@@ -23,7 +23,7 @@ public class SpikeManager : MonoBehaviour
     [SerializeField]
     private GameObject[] cloudSpikes;
 
-    private enum SpikeType { instant, delayed, sequence };
+    private enum SpikeType { instant, delayed, sequence, randomSequence };
 
     [SerializeField]
     private SpikeType spikeType;
@@ -31,7 +31,7 @@ public class SpikeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (spikeType == SpikeType.sequence)
+        if (spikeType == SpikeType.sequence || spikeType == SpikeType.randomSequence)
         {
             StartCoroutine(SequenceCoroutine());
         }
@@ -68,21 +68,41 @@ public class SpikeManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Coroutine used to play the sequence of spikes with delays.
+    /// Coroutine used to play a sequence of spikes with delays.
     ///</summary>
     private IEnumerator SequenceCoroutine()
     {
         while (true)
         {
-            for (int i = 0; i < sequence.Length; i++)
+            if (spikeType == SpikeType.sequence)
             {
-                cloudSpikes[sequence[i]].GetComponent<IndividualSpike>().changeState(true);
-                yield return new WaitForSeconds(intervalBetweenSequence);
-                cloudSpikes[sequence[i]].GetComponent<IndividualSpike>().changeState(false);
+                for (int i = 0; i < sequence.Length; i++)
+                {
+                    StartCoroutine(SpikeControlWithDelay(sequence[i]));
+                }
+            } else
+            {
+                for (int i = 0; i < cloudSpikes.Length; i++)
+                {
+                    StartCoroutine(SpikeControlWithDelay((int)Random.Range(0,cloudSpikes.Length)));
+                    yield return new WaitForSeconds(intervalBetweenSequence);
+                }
             }
             yield return new WaitForSeconds(sequenceResetInterval);
             yield return null;
         }
+    }
+
+    /// <summary>
+    /// SequenceCoroutine helper that deal with the spike show and hide system with a delay.
+    /// </summary>
+    /// <param name="index">Current spike to show and hide</param>
+    /// <returns>Wait for (intervalBetweenSequence) seconds</returns>
+    private IEnumerator SpikeControlWithDelay(int index)
+    {
+        cloudSpikes[index].GetComponent<IndividualSpike>().changeState(true);
+        yield return new WaitForSeconds(intervalBetweenSequence);
+        cloudSpikes[index].GetComponent<IndividualSpike>().changeState(false);
     }
 
     /// <summary>
