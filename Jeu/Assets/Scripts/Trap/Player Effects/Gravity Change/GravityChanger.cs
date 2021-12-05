@@ -14,6 +14,9 @@ public class GravityChanger : MonoBehaviour
     [SerializeField]
     private GameObject player;
 
+    [SerializeField]
+    [Tooltip("Warning : the step must be a multiple of 5 (10 also work) to end on a round number")]
+    private int rotationStep = 5; 
 
     private bool RotatedReverse = false; 
     private float targetRotation = 0f;
@@ -33,9 +36,9 @@ public class GravityChanger : MonoBehaviour
         float currentRotation = Mathf.Floor(player.GetComponent<Rigidbody2D>().rotation);
         if(Mathf.Floor(currentRotation) != targetRotation) {
             if(!RotatedReverse){
-                 player.GetComponent<Rigidbody2D>().rotation = currentRotation + 5;
+                 player.GetComponent<Rigidbody2D>().rotation = currentRotation + rotationStep;
             } else if(RotatedReverse){
-                player.GetComponent<Rigidbody2D>().rotation = currentRotation - 5;
+                player.GetComponent<Rigidbody2D>().rotation = currentRotation - rotationStep;
             }
         }
     }
