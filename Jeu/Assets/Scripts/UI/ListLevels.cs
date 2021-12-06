@@ -38,7 +38,6 @@ public class ListLevels : MonoBehaviour
                     chain.transform.SetParent(display.transform);
                     chain.transform.localScale = new Vector3(1f, 1f, 1f);
                 }
-                // transform.parent = levels[i].levelDisplay.transform.parent ;
             }
         }
     }
