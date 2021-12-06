@@ -13,6 +13,25 @@ public class DataManager : MonoBehaviour
     [SerializeField]
     private CreateLevels loader;
 
+    private void Awake()
+    {
+        if (File.Exists(Application.persistentDataPath + "/LevelData.json"))
+        {
+            GetData();
+        }
+        else
+        {
+            CreateData();
+        }
+    }
+
+    private void CreateData()
+    {
+        Debug.Log("Création des données");
+        data.allLevels = loader.levels;
+        SaveData();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.S))
@@ -42,25 +61,14 @@ public class DataManager : MonoBehaviour
 
     public void GetData()
     {
-        try
-        {
-            string path = Application.persistentDataPath + "/LevelData.json";
-            string dataJson = File.ReadAllText(path);
-            data = JsonUtility.FromJson<SavableData>(dataJson);
-            /*if (allLevels.Count == 0)
-            {
-                throw new FileNotFoundException();
-            }*/
-            Debug.Log("Récupération des données");
 
-        }
-        catch (FileNotFoundException e)
-        {
-            e.ToString();
-            Debug.Log("Création des données");
-            data.allLevels = loader.levels;
-            SaveData();
-        }
+        string path = Application.persistentDataPath + "/LevelData.json";
+        string dataJson = File.ReadAllText(path);
+        JsonUtility.FromJsonOverwrite(dataJson, data);
+        Debug.Log("Récupération des données");
+
+
+
 
     }
 }
@@ -78,8 +86,8 @@ public class SavableData
 [System.Serializable]
 public class Level
 {
+    [SerializeReference]
     public GameObject levelDisplay;
     public int levelNumber;
     public bool isUnlocked = false;
-
 }
