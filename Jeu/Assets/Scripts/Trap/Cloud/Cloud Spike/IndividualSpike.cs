@@ -11,7 +11,7 @@ public class IndividualSpike : MonoBehaviour
 {
     [SerializeField]
     private bool isShown = false;
-    
+
     [SerializeField]
     private SpriteRenderer sr;
     [SerializeField]
@@ -29,7 +29,7 @@ public class IndividualSpike : MonoBehaviour
     /// Change the state of the spike (Shown or not) by the parameter bool new state and call manageState() to update the spike mesh. 
     /// </summary>
     /// <param name="newState">The new state of the spike</param>
-    public void changeState(bool newState) 
+    public void changeState(bool newState)
     {
         isShown = newState;
         manageState();
@@ -49,16 +49,6 @@ public class IndividualSpike : MonoBehaviour
         {
             sr.enabled = false;
             ec2D.enabled = false;
-        }
-    }
-
-    /// <summary>
-    /// Kill the player when the trigger is activated.
-    ///</summary>
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if(collider.gameObject.name == "Player") {
-            GetComponent<DeathManager>().Death();
         }
     }
 }
