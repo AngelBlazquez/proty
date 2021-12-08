@@ -79,6 +79,7 @@ public class SpikeManager : MonoBehaviour
                 for (int i = 0; i < sequence.Length; i++)
                 {
                     StartCoroutine(SpikeControlWithDelay(sequence[i]));
+                    yield return new WaitForSeconds(intervalBetweenSequence);
                 }
             } else
             {

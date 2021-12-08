@@ -48,6 +48,7 @@ public class GravityAffectedCloud : MonoBehaviour
         if(isOnCloud)
         {
             player.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
+            player.GetComponent<PlayerMovement>().isOnGround = true;
         }
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         yield return new WaitForSeconds(stationnaryTime);
