@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isJumping && isOnGround)
         {
-            animator.SetTrigger("Jump");
+            animator.SetTrigger("Jump 0");
             playerRb.AddForce(new Vector2(0f, jumpForce));
             isJumping = false;
         }
