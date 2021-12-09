@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DeathManager : MonoBehaviour
 {
-    public GameObject Canvas;
+    //public GameObject Canvas;
 
     void Start()
     {
@@ -14,8 +14,8 @@ public class DeathManager : MonoBehaviour
 
     public void Death()
     {
-        Canvas.GetComponent<deathMenu>().showMenu();
-        Time.timeScale = 0;
+        //Canvas.GetComponent<deathMenu>().showMenu();
+        //Time.timeScale = 0;
         SceneManager.LoadScene(0);
     }
 }
