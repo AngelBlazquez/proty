@@ -29,7 +29,7 @@ public class GravityAffectedCloud : MonoBehaviour
     /// Coroutine used to delay the fall of the object
     /// </summary>
     /// <returns>Wait for (delayBeforeFalling) seconds</returns>
-    IEnumerator DelayBeforeFallingCoroutine()
+    private IEnumerator DelayBeforeFallingCoroutine()
     {
         yield return new WaitForSeconds(delayBeforeFalling);
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
@@ -40,7 +40,7 @@ public class GravityAffectedCloud : MonoBehaviour
     /// Coroutine used for the UP mode sequence and it's 2 delays (upMovementTime and stationnaryTime). 
     /// </summary>
     /// <returns>Wait for (upMovementTime and stationnaryTime) seconds</returns>
-    IEnumerator MovingUpCoroutine()
+    private IEnumerator MovingUpCoroutine()
     {
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         gameObject.GetComponent<Rigidbody2D>().gravityScale = -2;
