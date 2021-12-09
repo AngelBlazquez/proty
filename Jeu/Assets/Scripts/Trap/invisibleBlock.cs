@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Fait par l'équipe 3
 public class invisibleBlock : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
