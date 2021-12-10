@@ -5,17 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class DeathManager : MonoBehaviour
 {
-    //public GameObject Canvas;
+    //private GameObject player;
+    //private float posInitX;
+    //private float posInitY;
 
-    void Start()
+    void Start() 
     {
-
+        //player = GameObject.Find("Player");
+        //posInitX = player.transform.position.x;
+        //posInitY = player.transform.position.y;
     }
 
     public void Death()
     {
-        //Canvas.GetComponent<deathMenu>().showMenu();
-        //Time.timeScale = 0;
-        SceneManager.LoadScene(0);
+        //player.gameObject.transform.position = new Vector3(posInitX, posInitY, player.gameObject.transform.position.z);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
