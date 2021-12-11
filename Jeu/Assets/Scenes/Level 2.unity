@@ -1918,6 +1918,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7522917423554655578, guid: 5cdf2792843f34a4e9514e91133727d2,
         type: 3}
+      propertyPath: sequenceResetInterval
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522917423554655578, guid: 5cdf2792843f34a4e9514e91133727d2,
+        type: 3}
       propertyPath: sequence.Array.data[0]
       value: 0
       objectReference: {fileID: 0}
@@ -18104,7 +18109,7 @@ PrefabInstance:
     - target: {fileID: -1901267462345664703, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
         type: 3}
       propertyPath: upMovementTime
-      value: 2.5
+      value: 1.95
       objectReference: {fileID: 0}
     - target: {fileID: -1901267462345664703, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
         type: 3}
@@ -20225,7 +20230,7 @@ PrefabInstance:
     - target: {fileID: 4225852325105118218, guid: 989d9ffad459e954e856e709d93211a0,
         type: 3}
       propertyPath: springIntensity
-      value: 800
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6966807047268794343, guid: 989d9ffad459e954e856e709d93211a0,
         type: 3}
@@ -22456,7 +22461,7 @@ PrefabInstance:
     - target: {fileID: 4314949455665866462, guid: 366a8dfb51831de4187746b6b052de06,
         type: 3}
       propertyPath: springIntensity
-      value: 510
+      value: 610
       objectReference: {fileID: 0}
     - target: {fileID: 5050676531597022469, guid: 366a8dfb51831de4187746b6b052de06,
         type: 3}
@@ -25072,12 +25077,12 @@ PrefabInstance:
     - target: {fileID: 6879377711066254777, guid: e78662889153f504980eb0201534d7d4,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.0377698
+      value: 0.3968506
       objectReference: {fileID: 0}
     - target: {fileID: 6879377711066254777, guid: e78662889153f504980eb0201534d7d4,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.0004990101
+      value: 0.022781372
       objectReference: {fileID: 0}
     - target: {fileID: 6879377711066254779, guid: e78662889153f504980eb0201534d7d4,
         type: 3}
@@ -25087,12 +25092,12 @@ PrefabInstance:
     - target: {fileID: 6879377711066254779, guid: e78662889153f504980eb0201534d7d4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -101.8
+      value: 2.88
       objectReference: {fileID: 0}
     - target: {fileID: 6879377711066254779, guid: e78662889153f504980eb0201534d7d4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.47
+      value: -6.8
       objectReference: {fileID: 0}
     - target: {fileID: 6879377711066254779, guid: e78662889153f504980eb0201534d7d4,
         type: 3}

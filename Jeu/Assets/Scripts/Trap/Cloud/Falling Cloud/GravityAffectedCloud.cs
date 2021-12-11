@@ -43,7 +43,7 @@ public class GravityAffectedCloud : MonoBehaviour
     private IEnumerator MovingUpCoroutine()
     {
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-        gameObject.GetComponent<Rigidbody2D>().gravityScale = -2;
+        gameObject.GetComponent<Rigidbody2D>().gravityScale = -3;
         yield return new WaitForSeconds(upMovementTime);
         if(isOnCloud)
         {
