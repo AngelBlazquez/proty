@@ -11,11 +11,14 @@ public class DontDestroy : MonoBehaviour
 
     void Start()
     {
+        //Récupère le GameObject GameManager
         gameManager = GameObject.Find("GameManager");
     }
 
     void Update()
     {
+        //Fait en sorte que le GameObject GameManager ne soit pas réinitialisé
+        //après un chargement de scène
         DontDestroyOnLoad(gameManager);
     }
 }
