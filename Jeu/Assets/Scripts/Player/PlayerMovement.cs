@@ -78,11 +78,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isOnGround = true;
+        if (collision.CompareTag("Ground"))
+        {
+            isOnGround = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isOnGround = false;
+        if (collision.CompareTag("Ground"))
+        {
+            isOnGround = false;
+        }
     }
 }
