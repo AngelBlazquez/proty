@@ -8,12 +8,16 @@ using UnityEngine.SceneManagement;
  */
 public class EndLevel : MonoBehaviour
 {
-    private int nextScene;
-    private Timer timer;
+    private static int nbNiveaux;
+    public int nextScene;
 
     void Start()
     {
-        nextScene = 0;
+        nbNiveaux = SceneManager.sceneCountInBuildSettings - 1;
+        nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextScene > nbNiveaux) {
+            nextScene = 0;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -21,7 +25,6 @@ public class EndLevel : MonoBehaviour
         if (collider.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene(nextScene);
-            nextScene += 1;
         }
     }
 }
