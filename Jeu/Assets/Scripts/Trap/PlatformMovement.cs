@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlatformMovement : MonoBehaviour
 {
+    public eventSon sons;
+
     public List<Transform> waypoints;
     private int currentWaypoint;
     private bool reverse;
@@ -37,6 +39,8 @@ public class PlatformMovement : MonoBehaviour
 
     IEnumerator ChangeWaypoint()
     {
+        sons.PlaySon();
+
         yield return new WaitForSeconds(1);
         if (!reverse)
         {
