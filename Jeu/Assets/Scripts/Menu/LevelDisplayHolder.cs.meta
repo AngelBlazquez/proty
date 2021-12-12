@@ -1,9 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 68e6fdc5e6d8bcf44b3bb940454e6645
+=======
 <<<<<<< HEAD:Jeu/Assets/Scripts/DontDestroy.cs.meta
 guid: ef6c172b3d43e6b45b743cfb0aa00f38
 =======
 guid: 68e6fdc5e6d8bcf44b3bb940454e6645
 >>>>>>> a40d757c37c34f04861a8caeb79881c0040bc582:Jeu/Assets/Scripts/GameManager/LevelDisplayHolder.cs.meta
+>>>>>>> a40d757c37c34f04861a8caeb79881c0040bc582
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
