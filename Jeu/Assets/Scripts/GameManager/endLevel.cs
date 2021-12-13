@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
  * author Yahn Bervas
  */
 public class EndLevel : MonoBehaviour
-{
+{   
+    [SerializeField]
     private winManager menuWin;
 
     private static int nbNiveaux;
@@ -15,9 +16,6 @@ public class EndLevel : MonoBehaviour
 
     void Start()
     {
-        //Récupère le script winMannager 
-        menuWin = GameObject.Find("MenuWin").GetComponent<winManager>();
-
         //Récupère le nombre de niveaux dans le build settings
         nbNiveaux = SceneManager.sceneCountInBuildSettings;
         //Récupère l'index de la scène suivante
