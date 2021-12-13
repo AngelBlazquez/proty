@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 70722224}
   - component: {fileID: 70722226}
   m_Layer: 0
-  m_Name: springElements
+  m_Name: SpringElements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20250,7 +20250,7 @@ PrefabInstance:
     - target: {fileID: 4225852325105118218, guid: 989d9ffad459e954e856e709d93211a0,
         type: 3}
       propertyPath: springIntensity
-      value: 1000
+      value: 975
       objectReference: {fileID: 0}
     - target: {fileID: 6966807047268794343, guid: 989d9ffad459e954e856e709d93211a0,
         type: 3}
@@ -25652,6 +25652,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1162643799}
+    - target: {fileID: 1170788117988418049, guid: d32b361f5dc0c1e46820eb87e5a4421c,
+        type: 3}
+      propertyPath: LeftRotation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1170788117988418049, guid: d32b361f5dc0c1e46820eb87e5a4421c,
         type: 3}
       propertyPath: rotationStep
