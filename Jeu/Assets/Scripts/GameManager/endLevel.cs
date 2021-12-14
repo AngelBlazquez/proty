@@ -8,13 +8,6 @@ using UnityEngine.SceneManagement;
  */
 public class EndLevel : MonoBehaviour
 {
-    private int nextScene;
-    private Timer timer;
-
-    void Start()
-    {
-        nextScene = 0;
-{   
     [SerializeField]
     private winManager menuWin;
 
@@ -41,13 +34,8 @@ public class EndLevel : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-<<<<<<< HEAD
-            SceneManager.LoadScene(nextScene);
-            nextScene += 1;
-=======
             //Appelle la fonction winGameMenu du script winManager
             menuWin.winGameMenu();
->>>>>>> lienNiveaux
         }
     }
 }
