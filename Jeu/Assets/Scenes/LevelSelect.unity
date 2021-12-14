@@ -998,7 +998,7 @@ MonoBehaviour:
   data: {fileID: 1610979845}
   displayHolder: {fileID: 1610979847}
   chains: {fileID: 4799783349050652637, guid: 5c530fbe63db9164780343b01a72687b, type: 3}
-  offset: 1
+  offset: 2
 --- !u!1 &1610979844
 GameObject:
   m_ObjectHideFlags: 0

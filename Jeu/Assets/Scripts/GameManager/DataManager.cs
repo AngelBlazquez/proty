@@ -104,6 +104,7 @@ public class DataManager : MonoBehaviour
 [System.Serializable]
 public class SavableData
 {
+    [SerializeField]
     private List<Level> allLevels;
 
     /// <summary>

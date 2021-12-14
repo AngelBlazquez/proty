@@ -30,7 +30,6 @@ public class ListLevels : MonoBehaviour
         levels = data.GetLevels();
         displays = displayHolder.GetDisplay();
         numPage = 0;
-
         LoadLevels();
     }
 
@@ -78,7 +77,9 @@ public class ListLevels : MonoBehaviour
     /// <param name="levelNumber">The level to load</param>
     private void LoadLevel(int levelNumber)
     {
+        Debug.Log("Bouton appuyé");
         int level = levelNumber + offset;
+        Debug.Log("Numero du niveau : " + level);
         SceneManager.LoadScene(level);
     }
 
