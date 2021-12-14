@@ -83798,6 +83798,16 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 6b81567322592194aa8a058e6af1ef12, type: 2}
+    - target: {fileID: 7521833067910693183, guid: fb9be643dd64e3e468e354e884cf563b,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7521833067910693183, guid: fb9be643dd64e3e468e354e884cf563b,
+        type: 3}
+      propertyPath: MinDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8302208483809867538, guid: fb9be643dd64e3e468e354e884cf563b,
         type: 3}
       propertyPath: m_Name

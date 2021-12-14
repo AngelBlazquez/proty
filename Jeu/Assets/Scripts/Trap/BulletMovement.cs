@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class BulletMovement : MonoBehaviour
 {
-
+    private eventSon sons;
+    
     // Start is called before the first frame update
     void Start()
     {
+        sons = GetComponent<eventSon>();
+        sons.PlaySon();
     }
 
     // Update is called once per frame
