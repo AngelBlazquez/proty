@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1752652370080361970}
   - component: {fileID: 845243966963748162}
-  - component: {fileID: 6329333786227721721}
   - component: {fileID: 4085813214487769964}
   - component: {fileID: -1901267462345664703}
   - component: {fileID: 4329153107085880389}
+  - component: {fileID: 4296641122488790826}
   m_Layer: 0
   m_Name: GravityAffectedCloud
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,22 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &6329333786227721721
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714244072827652476}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.01, y: -0.48}
-  m_Size: {x: 3.52, y: 1.04}
-  m_Direction: 1
 --- !u!50 &4085813214487769964
 Rigidbody2D:
   serializedVersion: 4
@@ -137,6 +121,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingUp: 0
   upMovementTime: 1
+  stationnaryTime: 1
+  delayBeforeFalling: 0.5
+  player: {fileID: 0}
 --- !u!61 &4329153107085880389
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -150,7 +137,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.69637954}
+  m_Offset: {x: -0.013000786, y: 0.3984878}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -161,5 +148,29 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.78, y: 0.797241}
+  m_Size: {x: 3.7886662, y: 2.302589}
   m_EdgeRadius: 0
+--- !u!68 &4296641122488790826
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714244072827652476}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.7799777, y: -1.0169134}
+  - {x: -1.7582501, y: -0.17695904}
+  - {x: -0.50046813, y: 1.0139942}
+  - {x: -0.4150418, y: 1.0138035}
+  - {x: 0.13598552, y: 1.0125728}
+  - {x: 1.7649611, y: 0.118961334}
+  - {x: 1.7970424, y: -0.95613766}
+  - {x: -1.7751428, y: -1.0238314}
