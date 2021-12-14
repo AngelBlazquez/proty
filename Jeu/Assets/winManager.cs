@@ -11,8 +11,7 @@ public class winManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("escape"))
-        {
+        if (Input.GetKeyDown("escape")) {
             if (isPaused)
             {
                 resume();
@@ -22,12 +21,13 @@ public class winManager : MonoBehaviour
             }
         }
     }
-
+    // #FFF9C1FF
+    // #C1FFFFFF
     public void resume()
     {
         Time.timeScale = 1;
-        Canvas.SetActive(false);
         nextLevel.SetActive(true);
+        Canvas.SetActive(false);
         isPaused = false;
     }
 
@@ -50,7 +50,7 @@ public class winManager : MonoBehaviour
     public void nextLevelButton()
     {
         Debug.Log("Ok Next Level");
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene(IndexOf);
         Canvas.SetActive(false);
         Time.timeScale = 1;
     }
@@ -58,7 +58,7 @@ public class winManager : MonoBehaviour
     // Methode who reload the level
     public void retryButton()
     {
-        SceneManager.LoadScene("Poubelle");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Canvas.SetActive(false);
         Time.timeScale = 1;
     }
