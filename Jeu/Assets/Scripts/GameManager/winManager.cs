@@ -53,8 +53,6 @@ public class winManager : MonoBehaviour
     // Method who load the next level
     public void nextLevelButton()
     {
-        Debug.Log(end_Level.NextScene());
-        
         SceneManager.LoadScene(end_Level.NextScene());
         Canvas.SetActive(false);
         Time.timeScale = 1;
