@@ -7,12 +7,13 @@ public class winManager : MonoBehaviour
 {
     public GameObject Canvas;
     public GameObject nextLevel;
+    public GameObject resumeButton;
+    public endLevel end_Level;
     private bool isPaused = false;
 
     void Update()
     {
-        if (Input.GetKeyDown("escape"))
-        {
+        if (Input.GetKeyDown("escape") && Time.timeScale == 1) {
             if (isPaused)
             {
                 resume();
@@ -22,12 +23,13 @@ public class winManager : MonoBehaviour
             }
         }
     }
-
+    // #FFF9C1FF
+    // #C1FFFFFF
     public void resume()
     {
         Time.timeScale = 1;
-        Canvas.SetActive(false);
         nextLevel.SetActive(true);
+        Canvas.SetActive(false);
         isPaused = false;
     }
 
@@ -43,37 +45,40 @@ public class winManager : MonoBehaviour
     public void winGameMenu()
     {
         Time.timeScale = 0;
+        //isPaused = true;
+        resumeButton.SetActive(false);
         Canvas.SetActive(true);
     }
 
-    // Methode who load the next level
+    // Method who load the next level
     public void nextLevelButton()
     {
-        Debug.Log("Ok Next Level");
-        SceneManager.LoadScene("Level3");
+        Debug.Log(end_Level.NextScene());
+        
+        SceneManager.LoadScene(end_Level.NextScene());
         Canvas.SetActive(false);
         Time.timeScale = 1;
     }
 
-    // Methode who reload the level
+    // Method who reload the level
     public void retryButton()
     {
-        SceneManager.LoadScene("Poubelle");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Canvas.SetActive(false);
         Time.timeScale = 1;
     }
 
-    // Methode who load the home menu
+    // Method who load the home menu
     public void menuButton()
     {
         // Appeler la méthode qui nous fait revenir dans un autre menu (menu principal)
         Debug.Log("Ok Menu");
-        SceneManager.LoadScene("level1");
+        SceneManager.LoadScene(0);
         Canvas.SetActive(false);
         Time.timeScale = 1;
     }
 
-    // Methode who quit the game
+    // Method who quit the game
     public void quitButton()
     {
         Application.Quit();
