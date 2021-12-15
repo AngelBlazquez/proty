@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 0
   m_Name: PointDepart
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -42,7 +42,7 @@ GameObject:
   m_Layer: 0
   m_Name: PointArrivee
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -106,7 +106,7 @@ GameObject:
   m_Layer: 0
   m_Name: PointBonus
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -134,10 +134,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1932170497377076033}
   - component: {fileID: 4912589374356470194}
-  - component: {fileID: 1206872928121690453}
   - component: {fileID: 8345046660778094357}
-  - component: {fileID: 3418974062733105062}
-  - component: {fileID: 7521833067910693183}
+  - component: {fileID: 593465170480336054}
+  - component: {fileID: 3244157821946450834}
   m_Layer: 0
   m_Name: MovingPlatform
   m_TagString: Untagged
@@ -210,32 +209,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1206872928121690453
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8345046660778094354}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.7, y: 2.67}
-    newSize: {x: 9.87, y: 3.62}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.7, y: 2.67}
-  m_EdgeRadius: 0
 --- !u!114 &8345046660778094357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,27 +221,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6efaafc2d5eb32419b62c3bfcabdef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sons: {fileID: 3418974062733105062}
+  sons: {fileID: 0}
   waypoints:
   - {fileID: 8345046659658046696}
   - {fileID: 8345046659487448589}
   - {fileID: 8345046660400265169}
---- !u!114 &3418974062733105062
-MonoBehaviour:
+--- !u!68 &593465170480336054
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8345046660778094354}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 451fc3aab24020449bd02180acc5bd32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source: {fileID: 7521833067910693183}
-  clips:
-  - {fileID: 8300000, guid: c0557ad5ed0d182458a8c7503f8332c0, type: 3}
---- !u!82 &7521833067910693183
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -2.4489913, y: 0.37475133}
+  - {x: 2.4036503, y: 0.38165903}
+  - {x: 1.5022182, y: -0.8007293}
+  - {x: -0.0045518875, y: -1.3339028}
+  - {x: -1.4990053, y: -0.7989981}
+  - {x: -2.443993, y: 0.37475133}
+--- !u!82 &3244157821946450834
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -290,9 +270,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 26
+  MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -325,7 +305,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0

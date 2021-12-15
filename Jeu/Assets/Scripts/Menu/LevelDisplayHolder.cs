@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Holds the levelDisplays
+/// Made by Léo PUYASTIER
+/// </summary>
 public class LevelDisplayHolder : MonoBehaviour
 {
     [SerializeField]
