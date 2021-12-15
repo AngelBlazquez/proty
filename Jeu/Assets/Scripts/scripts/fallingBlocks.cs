@@ -8,12 +8,12 @@ using UnityEngine;
 /// </summary>
 public class fallingBlocks : MonoBehaviour
 {
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>(); // Gets the rigidbody of the adequate componant
+        rb = GetComponent<Rigidbody2D>(); // Gets the rigidbody of the adequate componant
     }
 
     /// <summary>
@@ -22,6 +22,6 @@ public class fallingBlocks : MonoBehaviour
     /// <param name="collision">Area of collision</param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        rigidbody.bodyType = RigidbodyType2D.Dynamic; // Changes Bodytype to Dynamic (makes it fall)
+        rb.bodyType = RigidbodyType2D.Dynamic; // Changes Bodytype to Dynamic (makes it fall)
     }
 }

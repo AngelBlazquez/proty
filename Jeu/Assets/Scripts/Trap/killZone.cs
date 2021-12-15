@@ -18,7 +18,7 @@ public class killZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider) {
         if(collider.gameObject.name == "Player") {
-            GetComponent<DeathManager>().Death();
+            GetComponent<DeathManager>().StartDeathCoroutine();
         }
     }
 }

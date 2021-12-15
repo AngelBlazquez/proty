@@ -24,7 +24,7 @@ public class deathPics : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            deathManager.Death(); // Calls the death function
+            deathManager.StartDeathCoroutine(); // Calls the death function
         }
     }
 }

@@ -30,7 +30,7 @@ public class SpeedChanger : MonoBehaviour
     /// </summary>
     void Start()
     {
-        oldSpeed = player.GetComponent<PlayerMovement>().moveSpeed;
+        oldSpeed = player.GetComponent<PlayerMovement>().GetMoveSpeed();
     }
 
     /// <summary>
@@ -39,9 +39,9 @@ public class SpeedChanger : MonoBehaviour
     /// <returns>Wait for (boostTime) seconds</returns>
     IEnumerator boostTimeCoroutine()
     {
-        player.GetComponent<PlayerMovement>().moveSpeed = playerSpeed;
+        player.GetComponent<PlayerMovement>().SetMoveSpeed(playerSpeed);
         yield return new WaitForSeconds(boostTime);
-        player.GetComponent<PlayerMovement>().moveSpeed = oldSpeed;
+        player.GetComponent<PlayerMovement>().SetMoveSpeed(oldSpeed);
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ public class SpeedChanger : MonoBehaviour
         {
             if (zone)
             {
-                player.GetComponent<PlayerMovement>().moveSpeed = playerSpeed;
+                player.GetComponent<PlayerMovement>().SetMoveSpeed(playerSpeed);
             }
             else
             {
@@ -71,7 +71,7 @@ public class SpeedChanger : MonoBehaviour
     {
         if(collider.gameObject.name == "Player" && zone)
         {
-            player.GetComponent<PlayerMovement>().moveSpeed = oldSpeed;
+            player.GetComponent<PlayerMovement>().SetMoveSpeed(oldSpeed);
         }
     }
 }

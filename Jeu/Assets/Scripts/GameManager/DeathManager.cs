@@ -13,16 +13,19 @@ public class DeathManager : MonoBehaviour
     {
         playerDead = false;
     }
-    public IEnumerator Death()
+    private IEnumerator Death()
     {
-        Debug.Log("ok death1");
         playerDead = true;
         GameObject player = FindObjectOfType<PlayerMovement>().gameObject;
         Instantiate(particuleDeath, player.transform.position, Quaternion.identity);
-        Destroy(player);
+        player.SetActive(false);
 
         yield return new WaitForSeconds(2f);
-        Debug.Log("ok deaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaath");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void StartDeathCoroutine()
+    {
+        StartCoroutine(Death());
     }
 }

@@ -7,6 +7,7 @@ using UnityEngine;
  */
 public class DontDestroy : MonoBehaviour
 {
+    [SerializeField]
     private GameObject gameManager;
 
     void Start()

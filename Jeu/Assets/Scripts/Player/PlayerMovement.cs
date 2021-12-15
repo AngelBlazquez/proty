@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody2D playerRb;
-    public float moveSpeed;
-    public float jumpForce;
-    public bool isJumping;
+    [SerializeField]
+    private Rigidbody2D playerRb;
+    [SerializeField]
+    private float moveSpeed;
+    [SerializeField]
+    private float jumpForce;
+    [SerializeField]
+    private bool isJumping;
     private Vector3 velocity = Vector3.zero;
-    public bool isOnGround;
-    private Vector3 posInitial;
-    public Animator animator;
+    [SerializeField]
+    private bool isOnGround;
+    [SerializeField]
+    private Animator animator;
     private Dictionary<string, KeyCode> Keys = new Dictionary<string, KeyCode>();
 
     void Start()
     {
-        posInitial = transform.position;
-
         Keys.Add("LeftButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftButton","LeftArrow")));
         Keys.Add("RightButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightButton","RightArrow")));
         Keys.Add("RunButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RunButton","B")));
@@ -81,14 +84,28 @@ public class PlayerMovement : MonoBehaviour
     void FlipPlayer()
     {
         Vector3 PlayerDirection = transform.localScale;
-        if (Input.GetAxis("Horizontal") <0 || Input.GetKey(Keys["LeftButton"]))
+        if (GetComponent<Rigidbody2D>().rotation != 180)
         {
-            PlayerDirection.x = 1;
-        }
-        if (Input.GetAxis("Horizontal") >0 || Input.GetKey(Keys["RightButton"]))
+            if (Input.GetKey(Keys["LeftButton"]))
+            {
+                PlayerDirection.x = 1;
+            }
+            else if (Input.GetKey(Keys["RightButton"]))
+            {
+                PlayerDirection.x = -1;
+            }
+        } else
         {
-            PlayerDirection.x = -1;
+            if (Input.GetKey(Keys["RightButton"]))
+            {
+                PlayerDirection.x = 1;
+            }
+            else if (Input.GetKey(Keys["LeftButton"]))
+            {
+                PlayerDirection.x = -1;
+            }
         }
+            
         transform.localScale = PlayerDirection;
     }
 
@@ -106,5 +123,30 @@ public class PlayerMovement : MonoBehaviour
         {
             isOnGround = false;
         }
+    }
+
+    public float GetJumpForce()
+    {
+        return jumpForce;
+    }
+
+    public void SetJumpForce(float newJumpForce)
+    {
+        jumpForce = newJumpForce;
+    }
+
+    public float GetMoveSpeed()
+    {
+        return moveSpeed;
+    }
+
+    public void SetMoveSpeed(float newMoveSpeed)
+    {
+        moveSpeed = newMoveSpeed;
+    }
+
+    public void SetIsOnGround(bool onGround)
+    {
+        isOnGround = onGround;
     }
 }

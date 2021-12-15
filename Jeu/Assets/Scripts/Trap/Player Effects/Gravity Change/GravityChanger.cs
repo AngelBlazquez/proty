@@ -27,7 +27,7 @@ public class GravityChanger : MonoBehaviour
     /// </summary>
     public void Start()
     {
-        oldJumpForce = player.GetComponent<PlayerMovement>().jumpForce;
+        oldJumpForce = player.GetComponent<PlayerMovement>().GetJumpForce();
     }
 
     /// <summary>
@@ -59,7 +59,7 @@ public class GravityChanger : MonoBehaviour
             player.GetComponent<Rigidbody2D>().gravityScale = -1;
             targetRotation = 180f;
             RotatedReverse = false;
-            player.GetComponent<PlayerMovement>().jumpForce = -oldJumpForce;
+            player.GetComponent<PlayerMovement>().SetJumpForce(-oldJumpForce);
         }
 
     }
@@ -75,7 +75,7 @@ public class GravityChanger : MonoBehaviour
             player.GetComponent<Rigidbody2D>().gravityScale = 1;
             targetRotation = 0f;
             RotatedReverse = true;
-            player.GetComponent<PlayerMovement>().jumpForce = oldJumpForce;
+            player.GetComponent<PlayerMovement>().SetJumpForce(oldJumpForce);
         }
     }
 }

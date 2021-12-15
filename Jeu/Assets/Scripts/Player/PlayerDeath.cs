@@ -16,7 +16,7 @@ public class PlayerDeath : MonoBehaviour
     {
         if  (collision.CompareTag("Player"))
         {
-            deathManager.Death();
+            deathManager.StartDeathCoroutine();
         }
     }
 }

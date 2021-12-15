@@ -9,12 +9,14 @@ using UnityEngine;
 public class BulletMovement : MonoBehaviour
 {
     private eventSon sons;
-    
+    private DeathManager deathManager;
+
     // Start is called before the first frame update
     void Start()
     {
         sons = GetComponent<eventSon>();
         sons.PlaySon();
+        deathManager = GameObject.Find("GameManager").GetComponent<DeathManager>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,10 @@ public class BulletMovement : MonoBehaviour
     /// <param name="col">Area of collision</param>
     private void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            deathManager.StartDeathCoroutine();
+        }
         Destroy(gameObject);
     }
 }

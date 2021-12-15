@@ -9,36 +9,31 @@ public class winManager : MonoBehaviour
     public GameObject nextLevel;
     public GameObject resumeButton;
     public endLevel end_Level;
-    private bool isPaused = false;
 
     void Update()
     {
         if (Input.GetKeyDown("escape") && Time.timeScale == 1) {
-            if (isPaused)
-            {
-                resume();
-            } else
-            {
-                pauseGameMenu();
-            }
+            pauseGameMenu();
         }
     }
+
     // #FFF9C1FF
     // #C1FFFFFF
+
+    // Methode who resume the game
     public void resume()
     {
         Time.timeScale = 1;
         nextLevel.SetActive(true);
         Canvas.SetActive(false);
-        isPaused = false;
     }
 
+    // Methode who show the pause game menu
     public void pauseGameMenu()
     {
         Time.timeScale = 0;
         Canvas.SetActive(true);
         nextLevel.SetActive(false);
-        isPaused = true;
     }
 
     // Methode who show the next win menu
