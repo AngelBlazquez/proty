@@ -20,6 +20,7 @@ public class GravityChanger : MonoBehaviour
 
     private bool RotatedReverse = false; 
     private float targetRotation = 0f;
+    private float currentRotation;
 
     /// <summary>
     /// On the level start the player jump force default value is stored for reset purpose after it's reverse.
@@ -33,7 +34,11 @@ public class GravityChanger : MonoBehaviour
     /// Rotate the player when it enter or exit the collider by interpolating the value every frame in the player loop. 
     /// </summary>
     public void FixedUpdate() {
-        float currentRotation = Mathf.Floor(player.GetComponent<Rigidbody2D>().rotation);
+        if(!DeathManager.playerDead)
+        {
+            currentRotation = Mathf.Floor(player.GetComponent<Rigidbody2D>().rotation);
+        }
+        
         if(Mathf.Floor(currentRotation) != targetRotation) {
             if(!RotatedReverse){
                  player.GetComponent<Rigidbody2D>().rotation = currentRotation + rotationStep;
