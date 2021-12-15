@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6317625261027160459}
   - component: {fileID: 4919323119774503227}
+  - component: {fileID: 1740734937102244224}
+  - component: {fileID: 6343611219835672368}
   - component: {fileID: 4314949455665866462}
-  - component: {fileID: 3079521578986356286}
-  - component: {fileID: 8469097841670803511}
   m_Layer: 0
   m_Name: Spring_Cloud
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,21 +85,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4314949455665866462
-MonoBehaviour:
+--- !u!70 &1740734937102244224
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5050676531597022469}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 144ad430d3562b848b62abfcf7ea98ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  springIntensity: 100
-  forceDirection: 0
---- !u!61 &3079521578986356286
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.01, y: -0.48}
+  m_Size: {x: 3.52, y: 1.04}
+  m_Direction: 1
+--- !u!61 &6343611219835672368
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,7 +114,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05470705, y: 0.67599726}
+  m_Offset: {x: 0, y: 0.6081685}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -123,32 +125,17 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.8350735, y: 1.3906164}
+  m_Size: {x: 3.78, y: 0.9736631}
   m_EdgeRadius: 0
---- !u!68 &8469097841670803511
-EdgeCollider2D:
+--- !u!114 &4314949455665866462
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5050676531597022469}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 1.7091733, y: -1.0337744}
-  - {x: 1.3026304, y: -1.0347433}
-  - {x: -1.7756554, y: -1.0473719}
-  - {x: -1.7574389, y: -0.22474766}
-  - {x: -0.5258657, y: 0.9662409}
-  - {x: 0.20611706, y: 0.9690409}
-  - {x: 0.26528588, y: 0.92393684}
-  - {x: 0.43092936, y: 0.8239279}
-  - {x: 0.4809635, y: 0.79917336}
-  - {x: 1.8022815, y: 0.14543152}
-  - {x: 1.8177074, y: -1.023386}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 144ad430d3562b848b62abfcf7ea98ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

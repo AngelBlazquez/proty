@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 1047982154604673623}
   - component: {fileID: 6880704172027297792}
   - component: {fileID: 7813087277434851270}
-  - component: {fileID: 6780446207366685081}
+  - component: {fileID: 2388696215403237391}
   m_Layer: 0
+  m_Name: Spike
+  m_Name: CloudSpike
   m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +123,7 @@ MonoBehaviour:
   isShown: 0
   sr: {fileID: 1047982154604673623}
   ec2D: {fileID: 6880704172027297792}
---- !u!114 &6780446207366685081
+--- !u!114 &2388696215403237391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,6 +132,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2438294789158299729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a840cf7019c8f2945bb40a0c0a486127, type: 3}
+  m_Script: {fileID: 11500000, guid: e259a55ecc5042c4aac17c2f358e86a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

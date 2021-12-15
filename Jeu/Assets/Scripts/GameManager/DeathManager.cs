@@ -7,6 +7,6 @@ public class DeathManager : MonoBehaviour
 {
     public void Death()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(0);
     }
 }

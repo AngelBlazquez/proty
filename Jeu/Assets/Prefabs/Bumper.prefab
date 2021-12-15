@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6966807047268794343
+--- !u!1 &6401804402743488850
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2826073387798963193}
-  - component: {fileID: 4225852325105118218}
-  - component: {fileID: 4394419082026037558}
+  - component: {fileID: 652615311358369939}
+  - component: {fileID: 7383494411258546353}
+  - component: {fileID: 5595554621841325527}
   m_Layer: 0
   m_Name: Bumper
   m_TagString: Untagged
@@ -18,27 +18,43 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2826073387798963193
+--- !u!4 &652615311358369939
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6966807047268794343}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -31.17, y: -13.025, z: 0}
+  m_GameObject: {fileID: 6401804402743488850}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.19, y: -8.188508, z: -22.066406}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4225852325105118218
+--- !u!70 &7383494411258546353
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6401804402743488850}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -32.542492, y: 0.45637882}
+  m_Size: {x: 4.2076097, y: 0.3917747}
+  m_Direction: 1
+--- !u!114 &5595554621841325527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6966807047268794343}
+  m_GameObject: {fileID: 6401804402743488850}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 144ad430d3562b848b62abfcf7ea98ce, type: 3}
@@ -46,19 +62,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   springIntensity: 800
   forceDirection: 0
---- !u!70 &4394419082026037558
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6966807047268794343}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.005701695, y: 2.7212417}
-  m_Size: {x: 4.4445395, y: 0.2149935}
-  m_Direction: 1
