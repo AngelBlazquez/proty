@@ -11,24 +11,43 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     public bool isOnGround;
     private Vector3 posInitial;
+    public Animator animator;
+    private Dictionary<string, KeyCode> Keys = new Dictionary<string, KeyCode>();
 
     void Start()
     {
         posInitial = transform.position;
+
+        Keys.Add("LeftButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftButton","LeftArrow")));
+        Keys.Add("RightButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightButton","RightArrow")));
+        Keys.Add("RunButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RunButton","B")));
+        Keys.Add("JumpButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("JumpButton","Space")));
+        Keys.Add("PauseButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PauseButton","Escape")));
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
+        float horizontalMovement;
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKey(Keys["LeftButton"]))
+        {
+            horizontalMovement = Vector3.left.x * moveSpeed * Time.fixedDeltaTime;
+        } else if (Input.GetKey(Keys["RightButton"]))
+        {
+            horizontalMovement = Vector3.right.x * moveSpeed * Time.fixedDeltaTime;
+        } else {
+            horizontalMovement = 0;
+        }
+
+        if (Input.GetKeyDown(Keys["JumpButton"]))
         {
             isJumping = true;
         }
 
         MovePlayer(horizontalMovement);
+        FlipPlayer();
     }
 
     void MovePlayer(float _horizontalMovement)
@@ -36,21 +55,56 @@ public class PlayerMovement : MonoBehaviour
         Vector3 targetVelocity = new Vector2(_horizontalMovement, playerRb.velocity.y);
         playerRb.velocity = Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref velocity, .05f);
         
+        if (playerRb.velocity.x < 1 && playerRb.velocity.x > -1)
+        {
+            animator.SetBool("Run",false);
+        }else{
+            animator.SetBool("Run",true);
+        }
+
+        if (playerRb.velocity.y < -1)
+        {
+            animator.SetBool("Fall",true);
+        }else{
+            animator.SetBool("Fall",false);
+        }
+
 
         if (isJumping && isOnGround)
         {
+            animator.SetTrigger("Jump 0");
             playerRb.AddForce(new Vector2(0f, jumpForce));
             isJumping = false;
         }
     }
 
+    void FlipPlayer()
+    {
+        Vector3 PlayerDirection = transform.localScale;
+        if (Input.GetAxis("Horizontal") <0 || Input.GetKey(Keys["LeftButton"]))
+        {
+            PlayerDirection.x = 1;
+        }
+        if (Input.GetAxis("Horizontal") >0 || Input.GetKey(Keys["RightButton"]))
+        {
+            PlayerDirection.x = -1;
+        }
+        transform.localScale = PlayerDirection;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isOnGround = true;
+        if (collision.CompareTag("Ground"))
+        {
+            isOnGround = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isOnGround = false;
+        if (collision.CompareTag("Ground"))
+        {
+            isOnGround = false;
+        }
     }
 }

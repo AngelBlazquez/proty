@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages the movements of moving platforms
+/// Made by Equipe 1
+/// </summary>
 public class PlatformMovement : MonoBehaviour
 {
+    public eventSon sons;
+
     public List<Transform> waypoints;
     private int currentWaypoint;
     private bool reverse;
@@ -17,7 +23,9 @@ public class PlatformMovement : MonoBehaviour
         targetReached = false;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Updates the platform's position once per frame
+    /// </summary>
     void FixedUpdate()
     {
         Transform target = waypoints[currentWaypoint];
@@ -35,8 +43,13 @@ public class PlatformMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Changes waypoint depending on the current waypoint
+    /// </summary>
     IEnumerator ChangeWaypoint()
     {
+        sons.PlaySon();
+
         yield return new WaitForSeconds(1);
         if (!reverse)
         {

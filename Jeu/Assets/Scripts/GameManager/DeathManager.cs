@@ -11,9 +11,6 @@ public class DeathManager : MonoBehaviour
 
     private void Start()
     {
-<<<<<<< HEAD
-        SceneManager.LoadScene(0);
-=======
         playerDead = false;
     }
     public IEnumerator Death()
@@ -27,6 +24,5 @@ public class DeathManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Debug.Log("ok deaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaath");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
->>>>>>> d6da431a4aa5675022b72562fd1e2dfc192529ca
     }
 }

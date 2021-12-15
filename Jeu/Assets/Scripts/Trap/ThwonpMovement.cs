@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages the movements a thwomp
+/// Made by Equipe 1
+/// </summary>
 public class ThwonpMovement : MonoBehaviour
 {
     private Rigidbody2D parentRb;
@@ -27,12 +31,7 @@ public class ThwonpMovement : MonoBehaviour
     {
         if (hasCollided)
         {
-<<<<<<< HEAD
-            Debug.Log(parentTr.position.y + "   ;   " + originalPos.y);
-            //parentTr.position = Vector3.MoveTowards(parentTr.position, originalPos, 10 * Time.deltaTime);
-=======
            
->>>>>>> d6da431a4aa5675022b72562fd1e2dfc192529ca
             if (parentTr.position.y >= originalPos.y)
             {
                 hasCollided = false;
@@ -42,6 +41,10 @@ public class ThwonpMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Makes the thwomp go down if the player triggers it
+    /// </summary>
+    /// <param name="col">Area of collision</param>
     void OnTriggerEnter2D(Collider2D col)
     {
         if (!hasCollided && col.gameObject.CompareTag("Player"))
@@ -51,16 +54,20 @@ public class ThwonpMovement : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Makes the thwomp go down if the player triggers it
+    /// </summary>
+    /// <param name="col">Area of collision</param>
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player")) // test collision with player
         {
             deathManager.Death();
         }
         else
         {
             hasCollided = true;
-            parentRb.gravityScale = -1;
+            parentRb.gravityScale = -1; // thwomp goes back up
         }
     }
 
