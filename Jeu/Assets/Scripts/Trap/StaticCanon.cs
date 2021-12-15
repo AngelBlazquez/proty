@@ -9,9 +9,12 @@ using UnityEngine;
 /// </summary>
 public class StaticCanon : MonoBehaviour
 {
-    public List<GameObject> bulletList;
-    public Transform firePoint;
-    public int bulletForce;
+    [SerializeField]
+    private List<GameObject> bulletList;
+    [SerializeField]
+    private Transform firePoint;
+    [SerializeField]
+    private int bulletForce;
     
     private bool canFire;
 
@@ -39,7 +42,7 @@ public class StaticCanon : MonoBehaviour
     /// <summary>
     /// Delays the next fire
     /// </summary>
-    IEnumerator DelayBullet()
+    private IEnumerator DelayBullet()
     {
         yield return new WaitForSeconds(3);
         canFire = true;
