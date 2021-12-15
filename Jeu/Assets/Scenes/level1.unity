@@ -46434,6 +46434,11 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 405524068}
+    - target: {fileID: 6879377711066254776, guid: e78662889153f504980eb0201534d7d4,
+        type: 3}
+      propertyPath: keyBindMenu
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6879377711066254779, guid: e78662889153f504980eb0201534d7d4,
         type: 3}
       propertyPath: m_RootOrder
@@ -48044,7 +48049,7 @@ GameObject:
   - component: {fileID: 1841988323}
   m_Layer: 0
   m_Name: backgroundPlatform
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

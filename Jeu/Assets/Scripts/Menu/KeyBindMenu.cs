@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+///<summary>
+/// menu of keybinding
+/// by Guyot Vincent
+///<summary>
 public class KeyBindMenu : MonoBehaviour
 {
     private Dictionary<string, KeyCode> Keys = new Dictionary<string, KeyCode>();
@@ -11,14 +15,16 @@ public class KeyBindMenu : MonoBehaviour
 
     private GameObject currentKey;
 
-    // Start is called before the first frame update
+    ///<summary>
+    /// Add every couple of string and keys to the dictionary and add the text to the button
+    ///<summary>
     void Start()
     {
         Keys.Add("LeftButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftButton","LeftArrow")));
         Keys.Add("RightButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightButton","RightArrow")));
         Keys.Add("RunButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RunButton","B")));
         Keys.Add("JumpButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("JumpButton","Space")));
-        Keys.Add("PauseButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PauseButton","W")));
+        Keys.Add("PauseButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PauseButton","Escape")));
 
         left.text = Keys["LeftButton"].ToString();
         right.text = Keys["RightButton"].ToString();
@@ -27,32 +33,9 @@ public class KeyBindMenu : MonoBehaviour
         pause.text = Keys["PauseButton"].ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(Keys["LeftButton"]))
-        {
-            Debug.Log("Left");
-        }
-        if (Input.GetKeyDown(Keys["RightButton"]))
-        {
-            Debug.Log("Right");
-        }
-        if (Input.GetKeyDown(Keys["RunButton"]))
-        {
-            Debug.Log("Run");
-        }
-        if (Input.GetKeyDown(Keys["JumpButton"]))
-        {
-            Debug.Log("Jump");
-        }
-        if (Input.GetKeyDown(Keys["PauseButton"]))
-        {
-            Debug.Log("Pause");
-        }
-        
-    }
-
+    ///<summary>
+    /// if a button to link a key is clicked, wait for the user to press a key to reassign
+    ///<summary>
     void OnGUI()
     {
         if (currentKey != null)
@@ -67,11 +50,17 @@ public class KeyBindMenu : MonoBehaviour
         }
     }
 
+    ///<summary>
+    /// call if the button link to a key is clicked
+    ///<summary>
     public void ChangeKey(GameObject clicked)
     {
         currentKey = clicked;
     }
 
+    ///<summary>
+    /// save the keys assigned by the player
+    ///<summary>
     public void SaveKeys()
     {
         foreach (var key in Keys)
