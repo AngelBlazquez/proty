@@ -27,8 +27,12 @@ public class ThwonpMovement : MonoBehaviour
     {
         if (hasCollided)
         {
+<<<<<<< HEAD
             Debug.Log(parentTr.position.y + "   ;   " + originalPos.y);
             //parentTr.position = Vector3.MoveTowards(parentTr.position, originalPos, 10 * Time.deltaTime);
+=======
+           
+>>>>>>> d6da431a4aa5675022b72562fd1e2dfc192529ca
             if (parentTr.position.y >= originalPos.y)
             {
                 hasCollided = false;

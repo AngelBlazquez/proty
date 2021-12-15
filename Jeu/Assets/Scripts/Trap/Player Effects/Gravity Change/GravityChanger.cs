@@ -11,6 +11,7 @@ public class GravityChanger : MonoBehaviour
     private bool RotatedReverse = false; 
 
     private float targetRotation = 0f;
+    private float currentRotation;
 
     public void Start()
     {
@@ -18,7 +19,11 @@ public class GravityChanger : MonoBehaviour
     }
 
     public void FixedUpdate() {
-        float currentRotation = Mathf.Floor(player.GetComponent<Rigidbody2D>().rotation);
+        if(!DeathManager.playerDead)
+        {
+            currentRotation = Mathf.Floor(player.GetComponent<Rigidbody2D>().rotation);
+        }
+        
         if(Mathf.Floor(currentRotation) != targetRotation) {
             if(!RotatedReverse){
                  player.GetComponent<Rigidbody2D>().rotation = currentRotation + 5;
