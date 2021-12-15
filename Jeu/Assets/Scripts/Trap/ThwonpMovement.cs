@@ -31,7 +31,7 @@ public class ThwonpMovement : MonoBehaviour
     {
         if (hasCollided)
         {
-            Debug.Log(parentTr.position.y + "   ;   " + originalPos.y);
+           
             if (parentTr.position.y >= originalPos.y)
             {
                 hasCollided = false;

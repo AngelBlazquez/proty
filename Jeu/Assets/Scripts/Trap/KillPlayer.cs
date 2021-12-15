@@ -16,7 +16,7 @@ public class KillPlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            deathManager.Death();
+            StartCoroutine(deathManager.Death());
         }
     }
 }
