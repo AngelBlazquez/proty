@@ -9,6 +9,8 @@ public class winManager : MonoBehaviour
     public GameObject nextLevel;
     public GameObject resumeButton;
     public endLevel end_Level;
+    [SerializeField]
+    private PlayerMovement playerMvt;
 
     void Update()
     {
@@ -26,6 +28,7 @@ public class winManager : MonoBehaviour
         Time.timeScale = 1;
         nextLevel.SetActive(true);
         Canvas.SetActive(false);
+        playerMvt.enabled = true;
     }
 
     // Methode who show the pause game menu
@@ -34,6 +37,7 @@ public class winManager : MonoBehaviour
         Time.timeScale = 0;
         Canvas.SetActive(true);
         nextLevel.SetActive(false);
+        playerMvt.enabled = false;
     }
 
     // Methode who show the next win menu

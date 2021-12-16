@@ -120,6 +120,7 @@ MonoBehaviour:
   nextLevel: {fileID: 495921048027379724}
   resumeButton: {fileID: 495921048529975100}
   end_Level: {fileID: 0}
+  playerMvt: {fileID: 0}
 --- !u!1 &495921047322410169
 GameObject:
   m_ObjectHideFlags: 0
