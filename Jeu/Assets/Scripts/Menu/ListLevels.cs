@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
@@ -17,8 +16,6 @@ public class ListLevels : MonoBehaviour
     [SerializeField]
     private GameObject chains;
 
-    [SerializeField]
-    private int offset = 1; // Offset due to different menus
     private int numPage;
     private List<Level> levels;
     private List<GameObject> displays;
@@ -26,7 +23,6 @@ public class ListLevels : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        data.GetData();
         levels = data.GetLevels();
         displays = displayHolder.GetDisplay();
         numPage = 0;
@@ -46,7 +42,7 @@ public class ListLevels : MonoBehaviour
 
         for (int i = 6 * numPage; i < 6 * (numPage + 1); i++)
         {
-            if (i >= 0 && i < levels.Count && levels[i] != null && displays[i] != null)
+            if (i >= 0 && i < displayHolder.GetDisplay().Count && levels[i] != null && displays[i] != null)
             {
                 GameObject display = Instantiate(displays[i]);
                 display.transform.SetParent(transform);
@@ -55,7 +51,7 @@ public class ListLevels : MonoBehaviour
 
                 Button button = display.transform.Find("Button").gameObject.GetComponent<Button>();
                 int tmp = levels[i].GetNumber();
-                button.onClick.AddListener(() => LoadLevel(tmp));
+                button.onClick.AddListener(() => ChangeLevel.LoadLevel(tmp));
                 if (!levels[i].GetIsUnlocked())
                 {
                     Image img = display.transform.Find("Image").gameObject.GetComponent<Image>();
@@ -70,18 +66,7 @@ public class ListLevels : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Loads a particular level.
-    /// Is added to the button
-    /// </summary>
-    /// <param name="levelNumber">The level to load</param>
-    private void LoadLevel(int levelNumber)
-    {
-        Debug.Log("Bouton appuyé");
-        int level = levelNumber + offset;
-        Debug.Log("Numero du niveau : " + level);
-        SceneManager.LoadScene(level);
-    }
+    
 
 
     #region Change page

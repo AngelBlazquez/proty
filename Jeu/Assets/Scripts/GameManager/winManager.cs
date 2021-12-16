@@ -11,6 +11,7 @@ public class winManager : MonoBehaviour
     public endLevel end_Level;
     [SerializeField]
     private PlayerMovement playerMvt;
+    private int nextLevelNumber;
 
     void Update()
     {
@@ -41,8 +42,9 @@ public class winManager : MonoBehaviour
     }
 
     // Methode who show the next win menu
-    public void winGameMenu()
+    public void winGameMenu(int nextLevel)
     {
+        nextLevelNumber = nextLevel;
         Time.timeScale = 0;
         //isPaused = true;
         resumeButton.SetActive(false);
@@ -52,7 +54,7 @@ public class winManager : MonoBehaviour
     // Method who load the next level
     public void nextLevelButton()
     {
-        SceneManager.LoadScene(end_Level.NextScene());
+        ChangeLevel.LoadLevel(nextLevelNumber);
         Canvas.SetActive(false);
         Time.timeScale = 1;
     }

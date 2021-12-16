@@ -11,25 +11,21 @@ public class endLevel : MonoBehaviour
     [SerializeField]
     private winManager menuWin;
 
-    private static int nbNiveaux;
-    int nextScene;
+    [SerializeField]
+    private int nextLevel; // Update in the editor
+    [SerializeField]
+    private DataManager data;
+
 
     void Start()
     {
         NextScene();
     }
 
-    public int NextScene() {
-        //Récupère le nombre de niveaux dans le build settings
-        nbNiveaux = SceneManager.sceneCountInBuildSettings;
-        //Récupère l'index de la scène suivante
-        nextScene = SceneManager.GetActiveScene().buildIndex + 1;
-        if (nextScene == nbNiveaux) {
-            Debug.Log(nextScene);
-            nextScene = 0;
-        }
-        
-        return nextScene;
+    public int NextScene()
+    {
+        data.UnlockLevel(nextLevel);
+        return nextLevel;
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -37,7 +33,7 @@ public class endLevel : MonoBehaviour
         if (collider.gameObject.CompareTag("Player"))
         {
             //Appelle la fonction winGameMenu du script winManager
-            menuWin.winGameMenu();
+            menuWin.winGameMenu(nextLevel);
         }
     }
 }

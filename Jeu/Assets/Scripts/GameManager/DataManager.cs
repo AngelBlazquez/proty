@@ -61,7 +61,6 @@ public class DataManager : MonoBehaviour
     {
         string dataJson = JsonUtility.ToJson(data);
         Debug.Log(data);
-        Debug.Log(dataJson);
         string path = Application.persistentDataPath + "/LevelData.json";
         File.WriteAllText(path, dataJson);
         Debug.Log("Sauvegarde des données");
@@ -77,6 +76,7 @@ public class DataManager : MonoBehaviour
         string dataJson = File.ReadAllText(path);
         JsonUtility.FromJsonOverwrite(dataJson, data);
         Debug.Log("Récupération des données");
+        Debug.Log(Application.persistentDataPath);
     }
 
     /// <summary>
@@ -85,7 +85,9 @@ public class DataManager : MonoBehaviour
     /// <param name="levelNumber"></param>
     public void UnlockLevel(int levelNumber)
     {
-        data.GetLevels()[levelNumber].Unlock();
+        Debug.Log("Niveau " + levelNumber + " débloque");
+        data.UnlockLevel(levelNumber);
+        SaveData();
     }
 
     #region Getters
@@ -121,8 +123,18 @@ public class SavableData
         allLevels[0].Unlock();
     }
 
-    #region Getter
+    #region Getter & Setter
     public List<Level> GetLevels() { return allLevels; }
+
+
+    /// <summary>
+    /// Unlocks a particular level
+    /// </summary>
+    /// <param name="levelNumber"></param>
+    public void UnlockLevel(int levelNumber)
+    {
+        allLevels[levelNumber].Unlock();
+    }
     #endregion
 }
 

@@ -123,3 +123,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuWin: {fileID: 0}
+  nextLevel: 0
+  data: {fileID: 0}
