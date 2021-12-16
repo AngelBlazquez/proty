@@ -20,7 +20,7 @@ public class invisibleBlock : MonoBehaviour
     /// Makes the object visible if the player enters its trigger
     /// </summary>
     /// <param name="collision">Area of collision</param>
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         spriteRenderer.enabled = true; // shows the sprite
     }
