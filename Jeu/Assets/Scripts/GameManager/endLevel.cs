@@ -16,22 +16,11 @@ public class endLevel : MonoBehaviour
     [SerializeField]
     private DataManager data;
 
-
-    void Start()
-    {
-        NextScene();
-    }
-
-    public int NextScene()
-    {
-        data.UnlockLevel(nextLevel);
-        return nextLevel;
-    }
-
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Player"))
         {
+            data.UnlockLevel(nextLevel);
             //Appelle la fonction winGameMenu du script winManager
             menuWin.winGameMenu(nextLevel);
         }
