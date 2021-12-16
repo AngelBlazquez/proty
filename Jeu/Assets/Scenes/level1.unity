@@ -71359,6 +71359,11 @@ PrefabInstance:
       propertyPath: end_Level
       value: 
       objectReference: {fileID: 2025806092}
+    - target: {fileID: 495921047220961708, guid: c7d6cc5ade607f74ca09637699f1c871,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 495921047322410171, guid: c7d6cc5ade607f74ca09637699f1c871,
         type: 3}
       propertyPath: m_hasFontAssetChanged
