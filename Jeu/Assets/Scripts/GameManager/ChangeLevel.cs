@@ -9,11 +9,11 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class ChangeLevel : MonoBehaviour
 {    
+    // Offset = number of menus
     public static readonly int offset = 2;
 
     /// <summary>
     /// Loads a particular level.
-    /// Is added to the button
     /// </summary>
     /// <param name="levelNumber">The level to load</param>
     public static void LoadLevel(int levelNumber)

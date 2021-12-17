@@ -19,7 +19,10 @@ public class endLevel : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            data.UnlockLevel(nextLevel);
+            if (nextLevel > 0)
+            {
+                data.UnlockLevel(nextLevel);
+            }
             //Appelle la fonction winGameMenu du script winManager
             menuWin.winGameMenu(nextLevel);
         }
