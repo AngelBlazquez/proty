@@ -5,11 +5,14 @@ using UnityEngine;
 public class SingleMovement : MonoBehaviour
 {
      private PlatformMovement movement;
+    [SerializeField]
+    private Transform newParentTransform;
 
     // Start is called before the first frame update
     void Start()
     {
         movement = GetComponentInParent<PlatformMovement>();
+        transform.SetParent(newParentTransform);
     }
 
     // Update is called once per frame
