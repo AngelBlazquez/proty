@@ -6,7 +6,7 @@ using UnityEngine;
 /// Manages the fall of an object
 /// Made by Equipe 1
 /// </summary>
-public class invisibleBlock : MonoBehaviour
+public class InvisibleBlock : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
     

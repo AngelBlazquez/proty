@@ -8,13 +8,13 @@ using UnityEngine;
 /// </summary>
 public class BulletMovement : MonoBehaviour
 {
-    private eventSon sons;
+    private EventSon sons;
     private DeathManager deathManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        sons = GetComponent<eventSon>();
+        sons = GetComponent<EventSon>();
         sons.PlaySon();
         deathManager = GameObject.Find("GameManager").GetComponent<DeathManager>();
     }

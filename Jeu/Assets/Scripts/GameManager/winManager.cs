@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class winManager : MonoBehaviour
+public class WinManager : MonoBehaviour
 {
     public GameObject Canvas;
     public GameObject nextLevel;
     public GameObject resumeButton;
-    public endLevel end_Level;
+    public EndLevel end_Level;
     [SerializeField]
     private PlayerMovement playerMvt;
     private int nextLevelNumber;
+    [SerializeField]
+    private GameObject optionCanvas;
 
     void Update()
     {
@@ -63,6 +65,14 @@ public class winManager : MonoBehaviour
     public void retryButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Canvas.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    // Method who load the option menu
+    public void optionButton()
+    {
+        optionCanvas.SetActive(true);
         Canvas.SetActive(false);
         Time.timeScale = 1;
     }

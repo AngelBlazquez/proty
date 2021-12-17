@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class PlatformMovement : MonoBehaviour
 {
-    public eventSon sons;
+    public EventSon sons;
 
     public List<Transform> waypoints;
     private int currentWaypoint;

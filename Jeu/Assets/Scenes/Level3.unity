@@ -5173,37 +5173,6 @@ Transform:
   m_Father: {fileID: 7445029742350119686}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &855767162
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 855767163}
-  m_Layer: 0
-  m_Name: DeadlySaw
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &855767163
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855767162}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 63.923683, y: -13.057873, z: 5.949878}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3106935185096196326}
-  m_Father: {fileID: 1935269272}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &862983255
 GameObject:
   m_ObjectHideFlags: 0
@@ -5281,12 +5250,12 @@ PrefabInstance:
     - target: {fileID: 6879377711066254779, guid: e78662889153f504980eb0201534d7d4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.9
+      value: -3.3
       objectReference: {fileID: 0}
     - target: {fileID: 6879377711066254779, guid: e78662889153f504980eb0201534d7d4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.8
+      value: 16.3
       objectReference: {fileID: 0}
     - target: {fileID: 6879377711066254779, guid: e78662889153f504980eb0201534d7d4,
         type: 3}
@@ -25476,7 +25445,7 @@ Transform:
   m_LocalPosition: {x: -44.41368, y: 11.437873, z: -5.949878}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 855767163}
+  - {fileID: 3106935185096196326}
   - {fileID: 3154562489248100372}
   - {fileID: 89770090}
   - {fileID: 7532025910764575767}
@@ -39131,10 +39100,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3106935185096196314}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 63.923683, y: -13.057873, z: 5.949878}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 855767163}
+  m_Father: {fileID: 1935269272}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3106935185096196327
@@ -39844,11 +39813,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 3c3fd3cbe12059a42a6893d6b786da8c,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: c0557ad5ed0d182458a8c7503f8332c0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 19e0d5c68459bd445a383d09dfcd2b76, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -39944,7 +39913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 5736303842258599580}
   clips:
-  - {fileID: 8300000, guid: c0557ad5ed0d182458a8c7503f8332c0, type: 3}
+  - {fileID: 8300000, guid: 19e0d5c68459bd445a383d09dfcd2b76, type: 3}
 --- !u!4 &5736303842258599588
 Transform:
   m_ObjectHideFlags: 0

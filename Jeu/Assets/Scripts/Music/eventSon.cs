@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class eventSon : MonoBehaviour
+public class EventSon : MonoBehaviour
 {
     public AudioSource source;
     public AudioClip[] clips;
