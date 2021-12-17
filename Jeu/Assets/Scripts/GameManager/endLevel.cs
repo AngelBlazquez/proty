@@ -6,11 +6,10 @@ using UnityEngine.SceneManagement;
 /**
  * author Yahn Bervas
  */
-public class EndLevel : MonoBehaviour
+public class endLevel : MonoBehaviour
 {
     [SerializeField]
-    private WinManager menuWin;
-
+    private winManager menuWin;
     [SerializeField]
     private int nextLevel; // Update in the editor
     [SerializeField]

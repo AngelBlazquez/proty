@@ -8,7 +8,8 @@ using UnityEngine;
 /// </summary>
 public class InvisibleBlock : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
     
     // Start is called before the first frame update
     void Start()

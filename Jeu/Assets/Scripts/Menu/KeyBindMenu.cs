@@ -11,7 +11,8 @@ public class KeyBindMenu : MonoBehaviour
 {
     private Dictionary<string, KeyCode> Keys = new Dictionary<string, KeyCode>();
 
-    public Text left, right, run, jump, pause;
+    [SerializeField]
+    private Text left, right, run, jump, pause;
 
     private GameObject currentKey;
 

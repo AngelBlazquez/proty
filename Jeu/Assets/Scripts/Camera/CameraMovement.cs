@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public GameObject player;
-
+    [SerializeField]
+    private GameObject player;
 
     // Update is called once per frame
     void Update()
     {
-        if (!DeathManager.playerDead)
-        {
-            transform.position = player.transform.position + new Vector3(0, 0, -10);
-        }
-        
+        transform.position = player.transform.position + new Vector3(0, 0, -10);  
     }
 }

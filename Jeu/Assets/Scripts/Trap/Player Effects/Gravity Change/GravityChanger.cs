@@ -34,11 +34,7 @@ public class GravityChanger : MonoBehaviour
     /// Rotate the player when it enter or exit the collider by interpolating the value every frame in the player loop. 
     /// </summary>
     public void FixedUpdate() {
-        if(!DeathManager.playerDead)
-        {
-            currentRotation = Mathf.Floor(player.GetComponent<Rigidbody2D>().rotation);
-        }
-        
+        currentRotation = Mathf.Floor(player.GetComponent<Rigidbody2D>().rotation);
         if(Mathf.Floor(currentRotation) != targetRotation) {
             if(!RotatedReverse){
                  player.GetComponent<Rigidbody2D>().rotation = currentRotation + rotationStep;

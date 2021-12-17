@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         FlipPlayer();
     }
 
-    void MovePlayer(float _horizontalMovement)
+    private void MovePlayer(float _horizontalMovement)
     {
         Vector3 targetVelocity = new Vector2(_horizontalMovement, playerRb.velocity.y);
         playerRb.velocity = Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref velocity, .05f);
@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void FlipPlayer()
+    private void FlipPlayer()
     {
         Vector3 PlayerDirection = transform.localScale;
         if (GetComponent<Rigidbody2D>().rotation != 180)

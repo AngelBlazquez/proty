@@ -10,13 +10,16 @@ using UnityEngine.UI;
 ///<summary>
 public class SettingsMenu : MonoBehaviour
 {
-    public AudioMixer audioMixer;
+    [SerializeField]
+    private AudioMixer audioMixer;
 
-    public Slider slider;
+    [SerializeField]
+    private Slider slider;
 
-    public Dropdown resolutionDropdown;
+    [SerializeField]
+    private Dropdown resolutionDropdown;
 
-    Resolution[] resolutions;
+    private Resolution[] resolutions;
 
     ///<summary>
     /// lists all the resolutions of the actual screen

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class EventSon : MonoBehaviour
 {
-    public AudioSource source;
-    public AudioClip[] clips;
+    [SerializeField]
+    private AudioSource source;
+    [SerializeField]
+    private AudioClip[] clips;
 
     /// Play noise 
     public void PlaySon(){

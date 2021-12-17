@@ -8,9 +8,10 @@ using UnityEngine;
 /// </summary>
 public class PlatformMovement : MonoBehaviour
 {
-    public EventSon sons;
-
-    public List<Transform> waypoints;
+    [SerializeField]
+    private EventSon sons;
+    [SerializeField]
+    private List<Transform> waypoints;
     private int currentWaypoint;
     private bool reverse;
     private bool targetReached;
@@ -31,9 +32,9 @@ public class PlatformMovement : MonoBehaviour
         Transform target = waypoints[currentWaypoint];
         if (waypoints.Count > 0 && target != null)
         {
-            Vector3 pos = transform.position;
-            transform.position = Vector3.MoveTowards(pos, target.position, 15f * Time.fixedDeltaTime);
-            float distance = Vector3.Distance(pos, target.position);
+            Vector2 pos = transform.position;
+            transform.position = Vector2.MoveTowards(pos, target.position, 15f * Time.fixedDeltaTime);
+            float distance = Vector2.Distance(pos, target.position);
 
             if (distance < 1f && !targetReached)
             {
@@ -46,7 +47,7 @@ public class PlatformMovement : MonoBehaviour
     /// <summary>
     /// Changes waypoint depending on the current waypoint
     /// </summary>
-    IEnumerator ChangeWaypoint()
+    private IEnumerator ChangeWaypoint()
     {
         sons.PlaySon();
 

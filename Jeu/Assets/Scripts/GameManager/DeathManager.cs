@@ -5,18 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class DeathManager : MonoBehaviour
 {
-    public GameObject particuleDeath;
-
-    public static bool playerDead = false;
+    [SerializeField]
+    private GameObject particuleDeath;
+    private GameObject player;
 
     private void Start()
     {
-        playerDead = false;
+        player = FindObjectOfType<PlayerMovement>().gameObject;
     }
+
     private IEnumerator Death()
     {
-        playerDead = true;
-        GameObject player = FindObjectOfType<PlayerMovement>().gameObject;
         Instantiate(particuleDeath, player.transform.position, Quaternion.identity);
         player.SetActive(false);
 

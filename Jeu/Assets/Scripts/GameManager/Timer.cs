@@ -8,11 +8,13 @@ using UnityEngine.SceneManagement;
  */
 public class Timer : MonoBehaviour
 {
-    public int timer = 0;
-    public int activeScene;
+    [SerializeField]
+    private int timer = 0;
+    [SerializeField]
+    private int activeScene;
 
     //Fonction qui ajoute 1 au timer chaque second
-    IEnumerator CoroutineTimer() 
+    private IEnumerator CoroutineTimer() 
     {
         while (true)
         {
