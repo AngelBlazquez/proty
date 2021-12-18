@@ -87,6 +87,13 @@ public class DataManager : MonoBehaviour
     {
         Debug.Log("Niveau " + levelNumber + " débloque");
         data.UnlockLevel(levelNumber);
+    }
+
+
+
+    public void SaveTime(int levelNumber, int time)
+    {
+        data.SaveTime(levelNumber, time);
         SaveData();
     }
 
@@ -135,6 +142,12 @@ public class SavableData
     {
         allLevels[levelNumber].Unlock();
     }
+
+    public void SaveTime(int levelNumber, int time)
+    {
+        allLevels[levelNumber].SaveTime(time);
+    }
+
     #endregion
 }
 
@@ -148,11 +161,14 @@ public class Level
     private int levelNumber;
     [SerializeField]
     private bool isUnlocked;
+    [SerializeField]
+    private int bestTime;
 
     public Level(int levelNumber)
     {
         this.levelNumber = levelNumber;
         isUnlocked = false;
+        bestTime = 0;
     }
 
     #region Getters and Setters
@@ -162,5 +178,16 @@ public class Level
 
     // Setter
     public void Unlock() { isUnlocked = true; }
+
+    public void SaveTime(int time)
+    {
+        if (bestTime == 0 || time < bestTime)
+        {
+            bestTime = time;
+            Debug.Log("Meilleur temps : " + time);
+        }
+    }
+
+    public int GetTime() { return bestTime; }
     #endregion
 }

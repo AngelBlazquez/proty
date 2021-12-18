@@ -14,6 +14,8 @@ public class endLevel : MonoBehaviour
     private int nextLevel; // Update in the editor
     [SerializeField]
     private DataManager data;
+    [SerializeField]
+    private Timer timer;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -23,6 +25,7 @@ public class endLevel : MonoBehaviour
             {
                 data.UnlockLevel(nextLevel);
             }
+            data.SaveTime(SceneManager.GetActiveScene().buildIndex - ChangeLevel.offset, timer.GetTime());
             //Appelle la fonction winGameMenu du script winManager
             menuWin.winGameMenu(nextLevel);
         }
