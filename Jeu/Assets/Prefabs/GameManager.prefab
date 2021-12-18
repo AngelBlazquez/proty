@@ -64,6 +64,7 @@ MonoBehaviour:
   nextLevel: {fileID: 0}
   resumeButton: {fileID: 0}
   end_Level: {fileID: 0}
+  playerMvt: {fileID: 0}
 --- !u!114 &4130834264863482664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,12 +72,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5914589432404366525}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 730b6ae1dc610a54cb223dd2856e647a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GO: {fileID: 5914589432404366525}
+  gameManager: {fileID: 5914589432404366525}
 --- !u!114 &5992981106631832401
 MonoBehaviour:
   m_ObjectHideFlags: 0

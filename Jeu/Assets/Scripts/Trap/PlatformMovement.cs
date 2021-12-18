@@ -9,7 +9,7 @@ using UnityEngine;
 public class PlatformMovement : MonoBehaviour
 {
     [SerializeField]
-    private EventSon sons;
+    private eventSon sons;
     [SerializeField]
     private List<Transform> waypoints;
     private int currentWaypoint;

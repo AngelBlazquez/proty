@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventSon : MonoBehaviour
+public class eventSon : MonoBehaviour
 {
     [SerializeField]
     private AudioSource source;

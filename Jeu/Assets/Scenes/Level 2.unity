@@ -19592,16 +19592,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4130834264863482664, guid: 0c8204f8294b5804e831d264cbbe4ed2,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4130834264863482664, guid: 0c8204f8294b5804e831d264cbbe4ed2,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 538793668}
     - target: {fileID: 5914589432404366497, guid: 0c8204f8294b5804e831d264cbbe4ed2,
         type: 3}
       propertyPath: Canvas
@@ -19624,20 +19614,9 @@ PrefabInstance:
       objectReference: {fileID: 1689319408}
     - target: {fileID: 5914589432404366497, guid: 0c8204f8294b5804e831d264cbbe4ed2,
         type: 3}
-      propertyPath: optionCanvas
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5914589432404366497, guid: 0c8204f8294b5804e831d264cbbe4ed2,
-        type: 3}
       propertyPath: resumeButton
       value: 
       objectReference: {fileID: 1071617814}
-    - target: {fileID: 5914589432404366498, guid: 0c8204f8294b5804e831d264cbbe4ed2,
-        type: 3}
-      propertyPath: particuleDeath
-      value: 
-      objectReference: {fileID: 4736721926798614859, guid: 8312ca67efdd4f8459ede74201c511ce,
-        type: 3}
     - target: {fileID: 5914589432404366499, guid: 0c8204f8294b5804e831d264cbbe4ed2,
         type: 3}
       propertyPath: m_RootOrder
@@ -19700,12 +19679,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c8204f8294b5804e831d264cbbe4ed2, type: 3}
---- !u!1 &538793668 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5914589432404366525, guid: 0c8204f8294b5804e831d264cbbe4ed2,
-    type: 3}
-  m_PrefabInstance: {fileID: 538793667}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &549911456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23021,11 +22994,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 495921047220961681, guid: c7d6cc5ade607f74ca09637699f1c871,
-        type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 495921047220961683, guid: c7d6cc5ade607f74ca09637699f1c871,
         type: 3}
       propertyPath: m_Pivot.x
@@ -23151,56 +23119,6 @@ PrefabInstance:
       propertyPath: playerMvt
       value: 
       objectReference: {fileID: 1689319408}
-    - target: {fileID: 495921047220961708, guid: c7d6cc5ade607f74ca09637699f1c871,
-        type: 3}
-      propertyPath: optionCanvas
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 495921047322410171, guid: c7d6cc5ade607f74ca09637699f1c871,
-        type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 495921047845690491, guid: c7d6cc5ade607f74ca09637699f1c871,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 495921048027379725, guid: c7d6cc5ade607f74ca09637699f1c871,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 495921048099271712, guid: c7d6cc5ade607f74ca09637699f1c871,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 495921048356233081, guid: c7d6cc5ade607f74ca09637699f1c871,
-        type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 495921048491718004, guid: c7d6cc5ade607f74ca09637699f1c871,
-        type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 495921048529975101, guid: c7d6cc5ade607f74ca09637699f1c871,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 495921048535285751, guid: c7d6cc5ade607f74ca09637699f1c871,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1729819962754318483, guid: c7d6cc5ade607f74ca09637699f1c871,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7d6cc5ade607f74ca09637699f1c871, type: 3}
 --- !u!114 &1071617813 stripped
@@ -25706,7 +25624,7 @@ PrefabInstance:
     - target: {fileID: 6879377711066254779, guid: e78662889153f504980eb0201534d7d4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.6
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 6879377711066254779, guid: e78662889153f504980eb0201534d7d4,
         type: 3}

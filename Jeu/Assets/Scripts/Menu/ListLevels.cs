@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
@@ -93,6 +94,11 @@ public class ListLevels : MonoBehaviour
             numPage--;
             LoadLevels();
         }
+    }
+
+    public void BackPage()
+    {
+        SceneManager.LoadScene(0);
     }
 
     #endregion

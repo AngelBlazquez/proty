@@ -31,7 +31,6 @@ public class winManager : MonoBehaviour
     public void resume()
     {
         Time.timeScale = 1;
-        nextLevel.SetActive(true);
         Canvas.SetActive(false);
         playerMvt.enabled = true;
     }
