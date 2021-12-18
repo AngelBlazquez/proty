@@ -31,7 +31,7 @@ public class ListLevels : MonoBehaviour
     }
 
     /// <summary>
-    /// Loads the levels on the scene
+    /// Loads the levels on the scene and changes the display
     /// </summary>
     private void LoadLevels()
     {
@@ -53,6 +53,13 @@ public class ListLevels : MonoBehaviour
                 Button button = display.transform.Find("Button").gameObject.GetComponent<Button>();
                 int tmp = levels[i].GetNumber();
                 button.onClick.AddListener(() => ChangeLevel.LoadLevel(tmp));
+
+                TMPro.TextMeshProUGUI bestTime = display.transform.Find("Time").gameObject.GetComponent<TMPro.TextMeshProUGUI>();
+                int min = levels[i].GetTime() / 60;
+                int sec = levels[i].GetTime() % 60;
+                Debug.Log("Temps affecté : " + min + ":" + sec);
+                bestTime.text = min + ":" + sec;
+
                 if (!levels[i].GetIsUnlocked())
                 {
                     Image img = display.transform.Find("Image").gameObject.GetComponent<Image>();
@@ -67,7 +74,7 @@ public class ListLevels : MonoBehaviour
         }
     }
 
-    
+
 
 
     #region Change page

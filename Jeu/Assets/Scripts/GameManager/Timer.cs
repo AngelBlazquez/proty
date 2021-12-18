@@ -35,4 +35,8 @@ public class Timer : MonoBehaviour
         //Appelle la fonction IEnumerator
         StartCoroutine(CoroutineTimer());
     }
+
+    // Getter
+    public int GetTime() { return timer; }
+
 }
