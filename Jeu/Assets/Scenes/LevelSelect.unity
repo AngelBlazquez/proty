@@ -1266,6 +1266,8 @@ MonoBehaviour:
   data: {fileID: 1610979845}
   displayHolder: {fileID: 1610979847}
   chains: {fileID: 4799783349050652637, guid: 5c530fbe63db9164780343b01a72687b, type: 3}
+  previous: {fileID: 485042874}
+  next: {fileID: 1763289624}
 --- !u!114 &1610979845 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 612328443710172769, guid: ed6b5ee7392d2554db6943a108101e78,

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using System.Runtime.Serialization.Formatters.Binary;
 
 /// <summary>
 /// Saves the level and loads it back
@@ -16,7 +17,7 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
-        if (File.Exists(Application.persistentDataPath + "/LevelData.json"))
+        if (File.Exists(Application.persistentDataPath + "/LevelData.lp"))
         {
             GetData();
         }
@@ -41,6 +42,15 @@ public class DataManager : MonoBehaviour
             Debug.Log("Suppression des données");
             File.Delete(Application.persistentDataPath + "/LevelData.json");
         }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            Debug.Log("Triche détectée, votre tentative sera signalée à la police >:(");
+            for (int i = 0; i < data.GetLevels().Count; i++)
+            {
+                UnlockLevel(i);
+            }
+            SaveData();
+        }
     }
 
     /// <summary>
@@ -48,7 +58,6 @@ public class DataManager : MonoBehaviour
     /// </summary>
     private void CreateData()
     {
-        Debug.Log("Création des données");
         data = new SavableData(levelDisplays.GetDisplay().Count);
 
         SaveData();
@@ -59,12 +68,14 @@ public class DataManager : MonoBehaviour
     /// </summary>
     public void SaveData()
     {
-        string dataJson = JsonUtility.ToJson(data);
-        Debug.Log(data);
-        string path = Application.persistentDataPath + "/LevelData.json";
-        File.WriteAllText(path, dataJson);
-        Debug.Log("Sauvegarde des données");
-        Debug.Log(path);
+        BinaryFormatter formatter = new BinaryFormatter();
+
+        string path = Application.persistentDataPath + "/LevelData.lp";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        formatter.Serialize(stream, data);
+
+        stream.Close();
     }
 
     /// <summary>
@@ -72,11 +83,15 @@ public class DataManager : MonoBehaviour
     /// </summary>
     public void GetData()
     {
-        string path = Application.persistentDataPath + "/LevelData.json";
-        string dataJson = File.ReadAllText(path);
-        JsonUtility.FromJsonOverwrite(dataJson, data);
-        Debug.Log("Récupération des données");
-        Debug.Log(Application.persistentDataPath);
+        BinaryFormatter formatter = new BinaryFormatter();
+
+        string path = Application.persistentDataPath + "/LevelData.lp";
+        FileStream stream = new FileStream(path, FileMode.Open);
+
+        data = formatter.Deserialize(stream) as SavableData;
+
+        stream.Close();
+
     }
 
     /// <summary>
@@ -85,7 +100,6 @@ public class DataManager : MonoBehaviour
     /// <param name="levelNumber"></param>
     public void UnlockLevel(int levelNumber)
     {
-        Debug.Log("Niveau " + levelNumber + " débloque");
         data.UnlockLevel(levelNumber);
     }
 
