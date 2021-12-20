@@ -28,6 +28,7 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+<<<<<<< HEAD
     /** Choose first selected button in option: slider */
     public void openOption()
     {
