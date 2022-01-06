@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     public GameObject playButton, sliderButton, configButton;
 
     ///<summary>
-    /// when the play button is pressed, load the scene 1 in build
+    /// when the play button is pressed, load the scene 1 in build (level select)
     ///<summary>
     public void PlayGame()
     {
@@ -28,7 +28,6 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-<<<<<<< HEAD
     /** Choose first selected button in option: slider */
     public void openOption()
     {
