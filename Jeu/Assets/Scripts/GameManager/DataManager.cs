@@ -177,6 +177,8 @@ public class Level
     private bool isUnlocked;
     [SerializeField]
     private int bestTime;
+    [SerializeField]
+    private int[] stars;
 
     public Level(int levelNumber)
     {
