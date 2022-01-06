@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 ///<summary>
 /// main menu
@@ -9,6 +10,8 @@ using UnityEngine.SceneManagement;
 ///<summary>
 public class MainMenu : MonoBehaviour
 {
+    public GameObject playButton, sliderButton;
+
     ///<summary>
     /// when the play button is pressed, load the scene 1 in build
     ///<summary>
@@ -23,5 +26,23 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    /** Choose first selected button in option: slider */
+    public void openOption()
+    {
+        // selected set null
+        EventSystem.current.SetSelectedGameObject(null);
+        // select sliderButton
+        EventSystem.current.SetSelectedGameObject(sliderButton);
+    }
+
+    /** choose first selected button in main menu: play */
+    public void openMainMenu()
+    {
+        // selected set null
+        EventSystem.current.SetSelectedGameObject(null);
+        // select playButton
+        EventSystem.current.SetSelectedGameObject(playButton);
     }
 }
