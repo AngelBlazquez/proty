@@ -72,6 +72,24 @@ public class ListLevels : MonoBehaviour
                     chain.transform.SetParent(display.transform);
                     chain.transform.position = new Vector3(0, -40, 0);
                     chain.transform.localScale = new Vector3(1.3f, 1.3f, 1f);
+
+                    StarManager sm = display.transform.Find("Stars").GetComponent<StarManager>();
+                    sm.hideStars();
+
+                } else {
+                    StarManager sm = display.transform.Find("Stars").GetComponent<StarManager>();
+                    sm.displayStars();
+                    if(levels[i].GetTime() != 0) {
+                        Debug.Log(i.ToString());
+                        sm.UnlockStar(sm.GetStarsObjects()[0]);
+                    }
+                    if(levels[i].GetTime() != 0 && levels[i].GetTime() <= displayHolder.GetTimeForStars()[i]._stars[1]) {
+                        sm.UnlockStar(sm.GetStarsObjects()[1]);
+                    }
+                    if(levels[i].GetTime() != 0 && levels[i].GetTime() <= displayHolder.GetTimeForStars()[i]._stars[2]) {
+                        sm.UnlockStar(sm.GetStarsObjects()[2]);
+                    }
+
                 }
 
                 if (i + 1 >= displayHolder.GetDisplay().Count)
