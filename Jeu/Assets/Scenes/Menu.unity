@@ -15206,7 +15206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playButton: {fileID: 2131284822}
   sliderButton: {fileID: 1369589692}
-  configButton: {fileID: 0}
+  configButton: {fileID: 2074871238}
 --- !u!1 &1559148438
 GameObject:
   m_ObjectHideFlags: 0
@@ -20197,6 +20197,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2074871238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 140283841418294205, guid: 25efbd4d81f38d749934d0f1276b04fc,
+    type: 3}
+  m_PrefabInstance: {fileID: 140283842955617496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2121432881
 GameObject:
   m_ObjectHideFlags: 0
