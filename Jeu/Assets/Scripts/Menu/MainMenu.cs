@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     ///<summary>
-    /// when the play button is pressed, load the scene 1 in build
+    /// when the play button is pressed, load the scene 1 in build (level select)
     ///<summary>
     public void PlayGame()
     {
@@ -25,6 +25,9 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    ///<summary>
+    /// when the credits button is pressed, load the credits scene
+    ///<summary>
     public void LoadCredits()
     {
         SceneManager.LoadScene("Crédits");

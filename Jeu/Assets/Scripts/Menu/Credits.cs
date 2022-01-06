@@ -3,20 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndCredits : MonoBehaviour
+///<summary>
+/// Credits script
+/// by Guyot Vincent
+///<summary>
+public class Credits : MonoBehaviour
 {
+    ///<summary>
+    /// Load the main menu at the end of the credits
+    ///<summary>
     public void LoadMenu()
     {
         SceneManager.LoadScene(0);
     }
 
+    ///<summary>
+    /// Skip the credits with pressing Space or Escape
+    ///<summary>
     void Update()
     {
-        Debug.Log("Skip Credits");
-        if(Input.GetKeyDown(KeyCode.A))
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape))
         {
             LoadMenu();
-            Debug.Log("Skip Credits");
         }
     }
 }
