@@ -71250,7 +71250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1380092002}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1431391752
@@ -71489,6 +71489,11 @@ PrefabInstance:
       propertyPath: playerMvt
       value: 
       objectReference: {fileID: 345445494}
+    - target: {fileID: 495921047220961708, guid: c7d6cc5ade607f74ca09637699f1c871,
+        type: 3}
+      propertyPath: nextLevelInput
+      value: 
+      objectReference: {fileID: 1380092002}
     - target: {fileID: 495921047322410171, guid: c7d6cc5ade607f74ca09637699f1c871,
         type: 3}
       propertyPath: m_hasFontAssetChanged
