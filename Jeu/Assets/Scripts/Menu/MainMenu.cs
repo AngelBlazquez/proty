@@ -10,7 +10,7 @@ using UnityEngine.EventSystems;
 ///<summary>
 public class MainMenu : MonoBehaviour
 {
-    public GameObject playButton, sliderButton;
+    public GameObject playButton, sliderButton, configButton;
 
     ///<summary>
     /// when the play button is pressed, load the scene 1 in build
@@ -44,5 +44,13 @@ public class MainMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         // select playButton
         EventSystem.current.SetSelectedGameObject(playButton);
+    }
+
+    public void openKeyConfig()
+    {
+        // selected set null
+        EventSystem.current.SetSelectedGameObject(null);
+        // select playButton
+        EventSystem.current.SetSelectedGameObject(configButton);
     }
 }
