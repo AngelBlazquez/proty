@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 ///<summary>
-/// Credits script
+/// Introduction script
 /// by Guyot Vincent
 ///<summary>
-public class Credits : MonoBehaviour
+public class Intro : MonoBehaviour
 {
     ///<summary>
     /// Load the main menu at the end of the credits
@@ -15,16 +15,5 @@ public class Credits : MonoBehaviour
     public void LoadMenu()
     {
         SceneManager.LoadScene("Menu");
-    }
-
-    ///<summary>
-    /// Skip the credits with pressing Space or Escape
-    ///<summary>
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape))
-        {
-            LoadMenu();
-        }
     }
 }
