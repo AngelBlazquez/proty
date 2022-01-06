@@ -116,6 +116,11 @@ public class DataManager : MonoBehaviour
     {
         return data.GetLevels();
     }
+
+    public int GetTime(int levelNumber)
+    {
+        return data.GetTime(levelNumber);
+    }
     #endregion
 
 }
@@ -160,6 +165,11 @@ public class SavableData
     public void SaveTime(int levelNumber, int time)
     {
         allLevels[levelNumber].SaveTime(time);
+    }
+
+     public int GetTime(int levelNumber)
+    {
+        return allLevels[levelNumber].GetTime();
     }
 
     #endregion
