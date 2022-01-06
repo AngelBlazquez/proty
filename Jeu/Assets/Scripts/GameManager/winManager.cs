@@ -75,7 +75,7 @@ public class winManager : MonoBehaviour
     {
         // Appeler la méthode qui nous fait revenir dans un autre menu (menu principal)
         Debug.Log("Ok Menu");
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu");
         Canvas.SetActive(false);
         Time.timeScale = 1;
     }
