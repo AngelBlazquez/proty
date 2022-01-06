@@ -79,4 +79,9 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetFloat("VolumeSave", value);
         PlayerPrefs.Save();
     }
+
+    public void SetFullscreen(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+    }
 }
