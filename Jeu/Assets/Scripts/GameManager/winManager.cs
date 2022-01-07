@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class winManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject Canvas;
     [SerializeField]
-    private GameObject nextLevel;
+    private GameObject nextLevelInput;
     [SerializeField]
     private GameObject resumeButton;
     [SerializeField]
@@ -19,7 +20,7 @@ public class winManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("escape") && Time.timeScale == 1) {
+        if ( (Input.GetButtonDown("ControllerEscape") || Input.GetKeyDown("escape")) && Time.timeScale == 1 ) {
             pauseGameMenu();
         }
     }
@@ -40,8 +41,12 @@ public class winManager : MonoBehaviour
     {
         Time.timeScale = 0;
         Canvas.SetActive(true);
-        nextLevel.SetActive(false);
+        nextLevelInput.SetActive(false);
         playerMvt.enabled = false;
+
+        // controller button active
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(resumeButton);
     }
 
     // Methode who show the next win menu
@@ -52,6 +57,10 @@ public class winManager : MonoBehaviour
         //isPaused = true;
         resumeButton.SetActive(false);
         Canvas.SetActive(true);
+
+        // controller button active
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(nextLevelInput);
     }
 
     // Method who load the next level

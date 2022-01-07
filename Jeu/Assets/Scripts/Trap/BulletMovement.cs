@@ -8,6 +8,7 @@ using UnityEngine;
 /// </summary>
 public class BulletMovement : MonoBehaviour
 {
+    public GameObject particuleExplose;
     private eventSon sons;
     private DeathManager deathManager;
 
@@ -31,10 +32,11 @@ public class BulletMovement : MonoBehaviour
     /// <param name="col">Area of collision</param>
     private void OnTriggerEnter2D(Collider2D col)
     {
+        Instantiate(particuleExplose, transform.position, Quaternion.identity);
         if (col.gameObject.CompareTag("Player"))
         {
             deathManager.StartDeathCoroutine();
         }
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 }
