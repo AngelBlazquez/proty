@@ -16,6 +16,10 @@ public class ListLevels : MonoBehaviour
     private LevelDisplayHolder displayHolder;
     [SerializeField]
     private GameObject chains;
+    [SerializeField]
+    private Button previous;
+    [SerializeField]
+    private Button next;
 
     private int numPage;
     private List<Level> levels;
@@ -57,7 +61,6 @@ public class ListLevels : MonoBehaviour
                 TMPro.TextMeshProUGUI bestTime = display.transform.Find("Time").gameObject.GetComponent<TMPro.TextMeshProUGUI>();
                 int min = levels[i].GetTime() / 60;
                 int sec = levels[i].GetTime() % 60;
-                Debug.Log("Temps affecté : " + min + ":" + sec);
                 bestTime.text = min + ":" + sec;
 
                 if (!levels[i].GetIsUnlocked())
@@ -69,6 +72,23 @@ public class ListLevels : MonoBehaviour
                     chain.transform.SetParent(display.transform);
                     chain.transform.position = new Vector3(0, -40, 0);
                     chain.transform.localScale = new Vector3(1.3f, 1.3f, 1f);
+                }
+
+                if (i + 1 >= displayHolder.GetDisplay().Count)
+                {
+                    next.interactable = false;
+                }
+                else
+                {
+                    next.interactable = true;
+                }
+                if (numPage -1  < 0)
+                {
+                    previous.interactable = false;
+                }
+                else
+                {
+                    previous.interactable = true;
                 }
             }
         }

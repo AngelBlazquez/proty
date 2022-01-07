@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 ///<summary>
 /// main menu
@@ -9,6 +10,8 @@ using UnityEngine.SceneManagement;
 ///<summary>
 public class MainMenu : MonoBehaviour
 {
+    public GameObject playButton, sliderButton, configButton;
+
     ///<summary>
     /// when the play button is pressed, load the scene 1 in build (level select)
     ///<summary>
@@ -25,11 +28,29 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    ///<summary>
-    /// when the credits button is pressed, load the credits scene
-    ///<summary>
-    public void LoadCredits()
+    /** Choose first selected button in option: slider */
+    public void openOption()
     {
-        SceneManager.LoadScene("Crédits");
+        // selected set null
+        EventSystem.current.SetSelectedGameObject(null);
+        // select sliderButton
+        EventSystem.current.SetSelectedGameObject(sliderButton);
+    }
+
+    /** choose first selected button in main menu: play */
+    public void openMainMenu()
+    {
+        // selected set null
+        EventSystem.current.SetSelectedGameObject(null);
+        // select playButton
+        EventSystem.current.SetSelectedGameObject(playButton);
+    }
+
+    public void openKeyConfig()
+    {
+        // selected set null
+        EventSystem.current.SetSelectedGameObject(null);
+        // select playButton
+        EventSystem.current.SetSelectedGameObject(configButton);
     }
 }

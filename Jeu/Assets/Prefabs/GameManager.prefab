@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e259a55ecc5042c4aac17c2f358e86a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particuleDeath: {fileID: 4736721926798614859, guid: 8312ca67efdd4f8459ede74201c511ce,
+  particuleDeath: {fileID: 359199931768089002, guid: 4378c56d95108fd4b946ab18e7c4d0ea,
     type: 3}
 --- !u!114 &5914589432404366497
 MonoBehaviour:
