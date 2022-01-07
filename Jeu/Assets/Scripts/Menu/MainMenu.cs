@@ -53,4 +53,12 @@ public class MainMenu : MonoBehaviour
         // select playButton
         EventSystem.current.SetSelectedGameObject(configButton);
     }
+
+    ///<summary>
+    /// when the credits button is pressed, load the credits scene
+    ///<summary>
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene("Crédits");
+    }
 }
