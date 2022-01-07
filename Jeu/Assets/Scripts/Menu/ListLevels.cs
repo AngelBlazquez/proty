@@ -125,7 +125,7 @@ public class ListLevels : MonoBehaviour
 
     public void BackPage()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu");
     }
 
     #endregion

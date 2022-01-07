@@ -13,11 +13,11 @@ public class MainMenu : MonoBehaviour
     public GameObject playButton, sliderButton, configButton;
 
     ///<summary>
-    /// when the play button is pressed, load the scene 1 in build
+    /// when the play button is pressed, load the scene 1 in build (level select)
     ///<summary>
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("LevelSelect");
     }
 
     ///<summary>

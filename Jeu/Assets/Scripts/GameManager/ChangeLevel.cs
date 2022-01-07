@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class ChangeLevel : MonoBehaviour
 {    
     // Offset = number of menus
-    public static readonly int offset = 2;
+    public static readonly int offset = 3;
 
     /// <summary>
     /// Loads a particular level.
