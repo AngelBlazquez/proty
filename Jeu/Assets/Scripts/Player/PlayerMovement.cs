@@ -34,17 +34,17 @@ public class PlayerMovement : MonoBehaviour
     {
         float horizontalMovement;
 
-        if (Input.GetKey(Keys["LeftButton"]))
+        if (Input.GetKey(Keys["LeftButton"]) || Input.GetAxis("JoystickController")<-0.1f)
         {
             horizontalMovement = Vector3.left.x * moveSpeed * Time.fixedDeltaTime;
-        } else if (Input.GetKey(Keys["RightButton"]))
+        } else if (Input.GetKey(Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f)
         {
             horizontalMovement = Vector3.right.x * moveSpeed * Time.fixedDeltaTime;
         } else {
             horizontalMovement = 0;
         }
 
-        if (Input.GetKeyDown(Keys["JumpButton"]))
+        if (Input.GetKeyDown(Keys["JumpButton"]) || Input.GetButtonDown("Jump"))
         {
             isJumping = true;
         }
@@ -86,21 +86,21 @@ public class PlayerMovement : MonoBehaviour
         Vector3 PlayerDirection = transform.localScale;
         if (GetComponent<Rigidbody2D>().rotation != 180)
         {
-            if (Input.GetKey(Keys["LeftButton"]))
+            if (Input.GetKey(Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f)
             {
                 PlayerDirection.x = 1;
             }
-            else if (Input.GetKey(Keys["RightButton"]))
+            else if (Input.GetKey(Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f)
             {
                 PlayerDirection.x = -1;
             }
         } else
         {
-            if (Input.GetKey(Keys["RightButton"]))
+            if (Input.GetKey(Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f)
             {
                 PlayerDirection.x = 1;
             }
-            else if (Input.GetKey(Keys["LeftButton"]))
+            else if (Input.GetKey(Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f)
             {
                 PlayerDirection.x = -1;
             }
