@@ -67,8 +67,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1983151229
-  m_SortingLayer: 0
+  m_SortingLayerID: 2145750975
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 2511077824769042213, guid: 6d9c7e183a4f08a43a7a3097dab53abd,
     type: 3}
@@ -322,8 +322,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1983151229
-  m_SortingLayer: 0
+  m_SortingLayerID: 2145750975
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: -3337938889335104544, guid: 6d9c7e183a4f08a43a7a3097dab53abd,
     type: 3}
@@ -404,8 +404,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1983151229
-  m_SortingLayer: 0
+  m_SortingLayerID: 2145750975
+  m_SortingLayer: 1
   m_SortingOrder: 3
   m_Sprite: {fileID: -4669919369759341962, guid: 6d9c7e183a4f08a43a7a3097dab53abd,
     type: 3}
@@ -486,8 +486,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1983151229
-  m_SortingLayer: 0
+  m_SortingLayerID: 2145750975
+  m_SortingLayer: 1
   m_SortingOrder: 3
   m_Sprite: {fileID: -9009862496588834955, guid: 6d9c7e183a4f08a43a7a3097dab53abd,
     type: 3}
@@ -685,8 +685,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1983151229
-  m_SortingLayer: 0
+  m_SortingLayerID: 2145750975
+  m_SortingLayer: 1
   m_SortingOrder: 4
   m_Sprite: {fileID: -7101658831056668603, guid: 6d9c7e183a4f08a43a7a3097dab53abd,
     type: 3}
@@ -5521,8 +5521,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1983151229
-  m_SortingLayer: 0
+  m_SortingLayerID: 2145750975
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: -4669919369759341962, guid: 6d9c7e183a4f08a43a7a3097dab53abd,
     type: 3}
