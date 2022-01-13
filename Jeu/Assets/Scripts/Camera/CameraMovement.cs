@@ -12,7 +12,7 @@ public class CameraMovement : MonoBehaviour
     {
         if (!DeathManager.playerDead)
         {
-            transform.position = player.transform.position + new Vector3(0, 0, -10);
+            transform.position = Player.transform.position + new Vector3(0, 0, -10);
         }
         
     }
