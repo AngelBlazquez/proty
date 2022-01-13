@@ -10,18 +10,20 @@ public class PressurePlate : MonoBehaviour
 {
     public GameObject Door;
     private bool isOpen = false;
-    private bool collided = false;
+    private bool activate = false;
     private float time;
     
     public void OpenDoor()
     {
         Door.SetActive(false);
         StartCoroutine(timer());
+        activate = true;
     }
 
     public void CloseDoor()
     {
         Door.SetActive(true);
+        activate = false;
     }
 
     public void ToggleDoor()
@@ -37,9 +39,20 @@ public class PressurePlate : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if(!collided && col.gameObject.CompareTag("Player"))
+        if(!activate && col.gameObject.CompareTag("Player"))
         {
             OpenDoor();
+        }
+    }
+
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.CompareTag("Player"))
+        {
+            CloseDoor();
+            activate = false;
+            StopCoroutine(timer());
         }
     }
 
