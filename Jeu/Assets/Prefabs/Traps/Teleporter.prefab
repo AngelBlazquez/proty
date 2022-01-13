@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherPoint: {fileID: 848720418941168380}
+  delay: 5
 --- !u!61 &848720418296079754
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -275,6 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherPoint: {fileID: 848720418296079862}
+  delay: 5
 --- !u!50 &848720418941168371
 Rigidbody2D:
   serializedVersion: 4
