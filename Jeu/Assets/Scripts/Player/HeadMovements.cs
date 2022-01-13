@@ -8,13 +8,23 @@ public class HeadMovements : MonoBehaviour
     private Rigidbody2D playerRb;
     [SerializeField]
     private float moveSpeed;
-    [SerializeField]
-    private float jumpForce;
-    [SerializeField]
-    private bool isJumping;
     private Vector3 velocity = Vector3.zero;
     [SerializeField]
-    private bool isOnGround;
+    private GameObject rightLeg;
+    [SerializeField]
+    private GameObject leftLeg;
+    [SerializeField]
+    private GameObject rightArm;
+    [SerializeField]
+    private GameObject leftArm;
+    [SerializeField]
+    private GameObject Body;
+    [SerializeField]
+    private GameObject DecomposedPlayer;
+    [SerializeField]
+    private GameObject ClassicPlayer;
+    [SerializeField]
+    private HeadMovements script;
     private Dictionary<string, KeyCode> Keys = new Dictionary<string, KeyCode>();
 
     void Start()
@@ -22,7 +32,6 @@ public class HeadMovements : MonoBehaviour
         Keys.Add("LeftButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftButton","LeftArrow")));
         Keys.Add("RightButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightButton","RightArrow")));
         Keys.Add("RunButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RunButton","B")));
-        Keys.Add("JumpButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("JumpButton","Space")));
         Keys.Add("PauseButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PauseButton","Escape")));
     }
 
@@ -42,81 +51,22 @@ public class HeadMovements : MonoBehaviour
             horizontalMovement = 0;
         }
 
-        if (Input.GetKeyDown(Keys["JumpButton"]))
-        {
-            isJumping = true;
-        }
-
         MovePlayer(horizontalMovement);
-        //FlipPlayer();
     }
 
     void MovePlayer(float _horizontalMovement)
     {
-        //Vector3 targetVelocity = new Vector2(_horizontalMovement, playerRb.velocity.y);
-        //playerRb.velocity = Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref velocity, .05f);
+        Vector3 targetVelocity = new Vector2(_horizontalMovement, playerRb.velocity.y);
+        playerRb.velocity = Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref velocity, .05f);
 
-        playerRb.MoveRotation(playerRb.rotation + _horizontalMovement);
-
-        if (isJumping && isOnGround)
+        if ((rightLeg.activeSelf) && (leftLeg.activeSelf) && (rightArm.activeSelf) && (leftArm.activeSelf) && (Body.activeSelf))
         {
-            playerRb.AddForce(new Vector2(0f, jumpForce));
-            isJumping = false;
+            DecomposedPlayer.SetActive(false);
+            ClassicPlayer.SetActive(true);
+            ClassicPlayer.transform.SetParent(null);
+        } else {
+            playerRb.MoveRotation(playerRb.rotation + _horizontalMovement);
         }
-    }
-
-    void FlipPlayer()
-    {
-        Vector3 PlayerDirection = transform.localScale;
-        if (GetComponent<Rigidbody2D>().rotation != 180)
-        {
-            if (Input.GetKey(Keys["LeftButton"]))
-            {
-                PlayerDirection.x = 1;
-            }
-            else if (Input.GetKey(Keys["RightButton"]))
-            {
-                PlayerDirection.x = -1;
-            }
-        } else
-        {
-            if (Input.GetKey(Keys["RightButton"]))
-            {
-                PlayerDirection.x = 1;
-            }
-            else if (Input.GetKey(Keys["LeftButton"]))
-            {
-                PlayerDirection.x = -1;
-            }
-        }
-            
-        transform.localScale = PlayerDirection;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Ground"))
-        {
-            isOnGround = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Ground"))
-        {
-            isOnGround = false;
-        }
-    }
-
-    public float GetJumpForce()
-    {
-        return jumpForce;
-    }
-
-    public void SetJumpForce(float newJumpForce)
-    {
-        jumpForce = newJumpForce;
     }
 
     public float GetMoveSpeed()
@@ -127,10 +77,5 @@ public class HeadMovements : MonoBehaviour
     public void SetMoveSpeed(float newMoveSpeed)
     {
         moveSpeed = newMoveSpeed;
-    }
-
-    public void SetIsOnGround(bool onGround)
-    {
-        isOnGround = onGround;
     }
 }
