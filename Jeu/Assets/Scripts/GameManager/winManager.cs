@@ -8,15 +8,26 @@ public class winManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject Canvas;
+
     [SerializeField]
     private GameObject nextLevelInput;
     [SerializeField]
     private GameObject resumeButton;
+
+    [SerializeField]
+    private StarManager stars;
+
     [SerializeField]
     private endLevel end_Level;
+
     [SerializeField]
     private PlayerMovement playerMvt;
+
     private int nextLevelNumber;
+
+    void start() {
+        stars.GetComponent<StarManager>().hideStars();        
+    }
 
     void Update()
     {
@@ -87,6 +98,15 @@ public class winManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
         Canvas.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    /// <summary>
+    /// Show and unlock the stars defined by the end level script
+    /// Author : Angel Blazquez
+    /// </summary>
+    public void ShowStars(int nbStars) {
+        stars.GetComponent<StarManager>().displayStars();
+        stars.GetComponent<StarManager>().UnlockStars(nbStars);
     }
 
     // Method who quit the game
