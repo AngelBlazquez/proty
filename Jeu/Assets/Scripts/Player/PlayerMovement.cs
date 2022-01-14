@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject particleLanding;
+    public float particleLandingAppear;
+    public Transform smokePos;
+    private bool canSmokeParticule = false;
+
+
     [SerializeField]
     private Rigidbody2D playerRb;
     [SerializeField]
@@ -18,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Animator animator;
     private Dictionary<string, KeyCode> Keys = new Dictionary<string, KeyCode>();
+
 
     void Start()
     {
@@ -51,6 +58,10 @@ public class PlayerMovement : MonoBehaviour
 
         MovePlayer(horizontalMovement);
         FlipPlayer();
+
+        if(playerRb.velocity.y < particleLandingAppear){
+                canSmokeParticule=true;
+        }
     }
 
     private void MovePlayer(float _horizontalMovement)
@@ -113,6 +124,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.CompareTag("Ground"))
         {
+            if(canSmokeParticule){
+                Instantiate(particleLanding,smokePos.transform.position,Quaternion.identity);
+                canSmokeParticule=false;
+           
+            }
             isOnGround = true;
         }
     }
