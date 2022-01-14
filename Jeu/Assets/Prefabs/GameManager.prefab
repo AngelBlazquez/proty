@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5914589432404366497}
   - component: {fileID: 4130834264863482664}
   - component: {fileID: 5992981106631832401}
+  - component: {fileID: 190461101187871846}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -48,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particuleDeath: {fileID: 359199931768089002, guid: 4378c56d95108fd4b946ab18e7c4d0ea,
     type: 3}
+  CountDeath: {fileID: 0}
 --- !u!114 &5914589432404366497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 0}
-  nextLevel: {fileID: 0}
+  nextLevelInput: {fileID: 0}
   resumeButton: {fileID: 0}
   end_Level: {fileID: 0}
   playerMvt: {fileID: 0}
@@ -92,3 +94,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   activeScene: 0
+--- !u!114 &190461101187871846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5914589432404366525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e420bdb2411ddf94eb50ea60cea7148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Nb: {fileID: 0}
