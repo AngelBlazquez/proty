@@ -11,6 +11,8 @@ public class BulletMovement : MonoBehaviour
     public GameObject particuleExplose;
     private eventSon sons;
     private DeathManager deathManager;
+    [SerializeField]
+    private int rotationValue;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,7 @@ public class BulletMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 0, 3);
+        transform.Rotate(0, 0, rotationValue);
     }
 
     /// <summary>
