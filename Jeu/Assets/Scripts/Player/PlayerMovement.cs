@@ -123,10 +123,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.CompareTag("Ground"))
         {
-            if (canSmokeParticule)
-            {
-                Instantiate(particleLanding, smokePos.transform.position, Quaternion.identity);
-                canSmokeParticule = false;
+            if(canSmokeParticule){
+                Instantiate(particleLanding,smokePos.transform.position,Quaternion.identity);
+                canSmokeParticule=false;
             }
             isOnGround = true;
         }
