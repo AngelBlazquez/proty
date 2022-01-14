@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5782858372810072635}
   - component: {fileID: 5782858372810072634}
   - component: {fileID: 5782858372810072629}
-  - component: {fileID: 5782858372810072638}
+  - component: {fileID: 6771500982947360363}
   m_Layer: 0
   m_Name: RainDropplet
   m_TagString: Untagged
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840cf7019c8f2945bb40a0c0a486127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5782858372810072638
+--- !u!114 &6771500982947360363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,3 +157,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2ff79919779e24f9c124611317c6ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationValue: 0
