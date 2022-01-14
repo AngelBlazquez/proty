@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject particleLanding;
+    public float particleLandingAppear;
+    public Transform fumeePos;
+
     [SerializeField]
     private Rigidbody2D playerRb;
     [SerializeField]
@@ -18,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Animator animator;
     private Dictionary<string, KeyCode> Keys = new Dictionary<string, KeyCode>();
+
 
     void Start()
     {
@@ -113,6 +118,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.CompareTag("Ground"))
         {
+            if(playerRb.velocity.y < particleLandingAppear){
+                Instantiate(particleLanding,fumeePos.transform.position,Quaternion.identity);
+            }
             isOnGround = true;
         }
     }

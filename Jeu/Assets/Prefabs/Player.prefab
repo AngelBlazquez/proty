@@ -549,6 +549,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961155751edea6547bc3c21366322e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleLanding: {fileID: 7967091666962886321, guid: e2afa7ac3a5300947ba63882b9f7353a,
+    type: 3}
+  particleLandingAppear: -10
+  fumeePos: {fileID: 8422252412966773855}
   playerRb: {fileID: 4017401418260753225}
   moveSpeed: 220
   jumpForce: 300
