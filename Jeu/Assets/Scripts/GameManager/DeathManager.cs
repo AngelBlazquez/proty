@@ -9,6 +9,8 @@ public class DeathManager : MonoBehaviour
     private GameObject particuleDeath;
     private GameObject player;
 
+    public CountDeath CountDeath;
+
     private void Start()
     {
         player = FindObjectOfType<PlayerMovement>().gameObject;
@@ -21,6 +23,8 @@ public class DeathManager : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        CountDeath.addDeath();
     }
 
     public void StartDeathCoroutine()
