@@ -44,8 +44,7 @@ public class PressurePlate : MonoBehaviour
             OpenDoor();
         }
     }
-
-
+    
     void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.CompareTag("Player"))
