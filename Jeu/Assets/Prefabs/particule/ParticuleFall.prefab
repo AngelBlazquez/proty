@@ -41,7 +41,11 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7967091666962886321}
   serializedVersion: 6
+<<<<<<< HEAD
   lengthInSec: 2
+=======
+  lengthInSec: 5
+>>>>>>> 63765aa140da8b92211f5867fb220aa261f71678
   simulationSpeed: 1
   stopAction: 2
   cullingMode: 0
@@ -170,7 +174,11 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 1
+<<<<<<< HEAD
       minScalar: 0.6
+=======
+      minScalar: 0.5
+>>>>>>> 63765aa140da8b92211f5867fb220aa261f71678
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1544,12 +1552,21 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
+<<<<<<< HEAD
     enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 3
       scalar: -2
       minScalar: 2
+=======
+    enabled: 0
+    x:
+      serializedVersion: 2
+      minMaxState: 0
+      scalar: 0
+      minScalar: 0
+>>>>>>> 63765aa140da8b92211f5867fb220aa261f71678
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1600,7 +1617,11 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
+<<<<<<< HEAD
       minMaxState: 3
+=======
+      minMaxState: 0
+>>>>>>> 63765aa140da8b92211f5867fb220aa261f71678
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -1653,7 +1674,11 @@ ParticleSystem:
         m_RotationOrder: 4
     z:
       serializedVersion: 2
+<<<<<<< HEAD
       minMaxState: 3
+=======
+      minMaxState: 0
+>>>>>>> 63765aa140da8b92211f5867fb220aa261f71678
       scalar: 0
       minScalar: 0
       maxCurve:
