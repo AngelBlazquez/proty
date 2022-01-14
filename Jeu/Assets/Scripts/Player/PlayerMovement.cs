@@ -6,7 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public GameObject particleLanding;
     public float particleLandingAppear;
-    public Transform fumeePos;
+    public Transform smokePos;
+    private bool canSmokeParticule = false;
 
     [SerializeField]
     private Rigidbody2D playerRb;
@@ -56,6 +57,10 @@ public class PlayerMovement : MonoBehaviour
 
         MovePlayer(horizontalMovement);
         FlipPlayer();
+
+        if(playerRb.velocity.y < particleLandingAppear){
+                canSmokeParticule=true;
+        }
     }
 
     private void MovePlayer(float _horizontalMovement)
@@ -118,8 +123,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.CompareTag("Ground"))
         {
-            if(playerRb.velocity.y < particleLandingAppear){
-                Instantiate(particleLanding,fumeePos.transform.position,Quaternion.identity);
+            if(canSmokeParticule){
+                Instantiate(particleLanding,smokePos.transform.position,Quaternion.identity);
+                canSmokeParticule=false;
             }
             isOnGround = true;
         }

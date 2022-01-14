@@ -552,7 +552,7 @@ MonoBehaviour:
   particleLanding: {fileID: 7967091666962886321, guid: e2afa7ac3a5300947ba63882b9f7353a,
     type: 3}
   particleLandingAppear: -10
-  fumeePos: {fileID: 8422252412966773855}
+  smokePos: {fileID: 8422252412966773855}
   playerRb: {fileID: 4017401418260753225}
   moveSpeed: 220
   jumpForce: 300
