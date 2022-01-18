@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bordures
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+    - {fileID: 2800000, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 1027356099460988588, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+  - {fileID: 8299154671552537513, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+  - {fileID: 5514785145594037387, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+  - {fileID: 2229195209944581240, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+  - {fileID: 6264076915455979546, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+  - {fileID: 8136202232313926208, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+  - {fileID: -8882659825511198783, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+  - {fileID: 7470530167482166176, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+  - {fileID: -1440980221036405784, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+  - {fileID: 5388695136138257630, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+  - {fileID: 292129735331028476, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+  - {fileID: -5733781401960278071, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+  - {fileID: 1000440457728356744, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+  - {fileID: -4214560704313396357, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+  - {fileID: 3711647737611507086, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+  - {fileID: 4374776976774177105, guid: 6bc03b08c3c91cc45ad44d776d6af728, type: 3}
+  - {fileID: -2974920444930361601, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: -3317513230538319102, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: -7433566379712975906, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: 4512898492219782654, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: -7150294039105742734, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: -1901749254055141174, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: 6099026409178781279, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: 6938735862501328723, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: -15659167223050117, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: 4873065643424982180, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: 5468815510199672970, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: 6864773553518319136, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: -8732776332903287678, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: 448471187829847037, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: 5031203713944359960, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: -3429386008712894299, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: 8392304513507102353, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: -7009326294525607165, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: 7522935258682979056, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  - {fileID: -5367036409329813415, guid: 08d7cf798e94aea4cb77feeb99a89545, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - tilemap2_15
+  - tilemap2_14
+  - tilemap2_11
+  - tilemap2_10
+  - tilemap2_13
+  - tilemap2_12
+  - tilemap2_8
+  - tilemap2_9
+  - tilemap2_6
+  - tilemap2_7
+  - tilemap2_4
+  - tilemap2_5
+  - tilemap2_2
+  - tilemap2_3
+  - tilemap2_0
+  - tilemap2_1
+  - tilemapMignon_13
+  - tilemapMignon_12
+  - tilemapMignon_11
+  - tilemapMignon_10
+  - tilemapMignon_17
+  - tilemapMignon_16
+  - tilemapMignon_15
+  - tilemapMignon_14
+  - tilemapMignon_19
+  - tilemapMignon_18
+  - tilemapMignon_0
+  - tilemapMignon_1
+  - tilemapMignon_2
+  - tilemapMignon_3
+  - tilemapMignon_4
+  - tilemapMignon_5
+  - tilemapMignon_6
+  - tilemapMignon_7
+  - tilemapMignon_8
+  - tilemapMignon_9
+  m_Tag: Bordures
+  m_IsVariant: 0
