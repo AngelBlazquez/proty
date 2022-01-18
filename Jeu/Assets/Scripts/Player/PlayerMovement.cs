@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     public Transform smokePos;
     private bool canSmokeParticule = false;
 
-
     [SerializeField]
     private Rigidbody2D playerRb;
     [SerializeField]
@@ -127,7 +126,6 @@ public class PlayerMovement : MonoBehaviour
             if(canSmokeParticule){
                 Instantiate(particleLanding,smokePos.transform.position,Quaternion.identity);
                 canSmokeParticule=false;
-           
             }
             isOnGround = true;
         }
