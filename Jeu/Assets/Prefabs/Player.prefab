@@ -67,8 +67,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1983151229
-  m_SortingLayer: 0
+  m_SortingLayerID: 2145750975
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 2511077824769042213, guid: 6d9c7e183a4f08a43a7a3097dab53abd,
     type: 3}
@@ -322,8 +322,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1983151229
-  m_SortingLayer: 0
+  m_SortingLayerID: 2145750975
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_Sprite: {fileID: -3337938889335104544, guid: 6d9c7e183a4f08a43a7a3097dab53abd,
     type: 3}
@@ -404,8 +404,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1983151229
-  m_SortingLayer: 0
+  m_SortingLayerID: 2145750975
+  m_SortingLayer: 1
   m_SortingOrder: 3
   m_Sprite: {fileID: -4669919369759341962, guid: 6d9c7e183a4f08a43a7a3097dab53abd,
     type: 3}
@@ -486,8 +486,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1983151229
-  m_SortingLayer: 0
+  m_SortingLayerID: 2145750975
+  m_SortingLayer: 1
   m_SortingOrder: 3
   m_Sprite: {fileID: -9009862496588834955, guid: 6d9c7e183a4f08a43a7a3097dab53abd,
     type: 3}
@@ -529,7 +529,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6879377711066254791}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.180827, y: 1.65, z: -0.9012887}
+  m_LocalPosition: {x: -8.180827, y: 1.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8492367923778778494}
@@ -549,6 +549,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961155751edea6547bc3c21366322e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleLanding: {fileID: 8938664823771037776, guid: e3656ca6fe570d94b910c3130546f5c1,
+    type: 3}
+  particleLandingAppear: -10
+  smokePos: {fileID: 8422252412966773855}
   playerRb: {fileID: 4017401418260753225}
   moveSpeed: 220
   jumpForce: 300
@@ -685,8 +689,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1983151229
-  m_SortingLayer: 0
+  m_SortingLayerID: 2145750975
+  m_SortingLayer: 1
   m_SortingOrder: 4
   m_Sprite: {fileID: -7101658831056668603, guid: 6d9c7e183a4f08a43a7a3097dab53abd,
     type: 3}
@@ -5521,8 +5525,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1983151229
-  m_SortingLayer: 0
+  m_SortingLayerID: 2145750975
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: -4669919369759341962, guid: 6d9c7e183a4f08a43a7a3097dab53abd,
     type: 3}

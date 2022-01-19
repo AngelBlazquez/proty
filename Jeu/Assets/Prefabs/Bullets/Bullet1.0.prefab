@@ -289,6 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particuleExplose: {fileID: 4736721926798614859, guid: 8312ca67efdd4f8459ede74201c511ce,
     type: 3}
+  rotationValue: 3
 --- !u!114 &7355817637554762611
 MonoBehaviour:
   m_ObjectHideFlags: 0
