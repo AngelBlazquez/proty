@@ -10,10 +10,6 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!DeathManager.playerDead)
-        {
-            transform.position = player.transform.position + new Vector3(0, 0, -10);
-        }
-        
+        transform.position = player.transform.position + new Vector3(0, 0, -10);
     }
 }
