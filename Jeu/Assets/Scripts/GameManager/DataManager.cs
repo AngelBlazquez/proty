@@ -40,7 +40,7 @@ public class DataManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.V))
         {
             Debug.Log("Suppression des données");
-            File.Delete(Application.persistentDataPath + "/LevelData.json");
+            File.Delete(Application.persistentDataPath + "/LevelData.lp");
         }
         if (Input.GetKeyDown(KeyCode.U))
         {
