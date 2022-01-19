@@ -7,10 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1913066474509143992, guid: 6fd9ba08ad6705b4ebf915d920cb9d02,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 68ec57816b34d494daf872492d6780a2, type: 3}
     - target: {fileID: 6990794544372635543, guid: 6fd9ba08ad6705b4ebf915d920cb9d02,
         type: 3}
       propertyPath: m_Name
-      value: Bullet4
+      value: Bullet1.3 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6990794544372635628, guid: 6fd9ba08ad6705b4ebf915d920cb9d02,
         type: 3}
