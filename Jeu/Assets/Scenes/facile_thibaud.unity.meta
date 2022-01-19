@@ -1,6 +1,16 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 6f4b85091ba46b74d86d175243e9634e
 DefaultImporter:
+=======
+<<<<<<< HEAD:Jeu/Assets/Prefabs/Morts.prefab.meta
+guid: c69d919163941c94cbf6c392f1d2f9f3
+PrefabImporter:
+=======
+guid: 6f4b85091ba46b74d86d175243e9634e
+DefaultImporter:
+>>>>>>> 565796fc382754e9b1369ede6c0b5a0d1e19ba9a:Jeu/Assets/Scenes/facile_thibaud.unity.meta
+>>>>>>> 565796fc382754e9b1369ede6c0b5a0d1e19ba9a
   externalObjects: {}
   userData: 
   assetBundleName: 
