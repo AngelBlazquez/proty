@@ -22,7 +22,7 @@ public class Credits : MonoBehaviour
     ///<summary>
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape) || (Input.GetButtonDown("ControllerEscape")))
         {
             LoadMenu();
         }
