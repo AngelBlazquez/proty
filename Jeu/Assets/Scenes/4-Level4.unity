@@ -11086,7 +11086,7 @@ PrefabInstance:
     - target: {fileID: 4130834264863482664, guid: 0c8204f8294b5804e831d264cbbe4ed2,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4130834264863482664, guid: 0c8204f8294b5804e831d264cbbe4ed2,
         type: 3}
@@ -11310,7 +11310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 597884791}
+  m_FirstSelected: {fileID: 1118882661}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1609826823
@@ -67966,6 +67966,75 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 3.0374007}
   m_EdgeRadius: 0
+--- !u!1001 &1930876675
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1048871142673397469, guid: 677091073dfc21046945378e5f027bf9,
+        type: 3}
+      propertyPath: m_Name
+      value: MusicManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153953927108334900, guid: 677091073dfc21046945378e5f027bf9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153953927108334900, guid: 677091073dfc21046945378e5f027bf9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.2240114
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153953927108334900, guid: 677091073dfc21046945378e5f027bf9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.2775438
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153953927108334900, guid: 677091073dfc21046945378e5f027bf9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -64.77316
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153953927108334900, guid: 677091073dfc21046945378e5f027bf9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153953927108334900, guid: 677091073dfc21046945378e5f027bf9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153953927108334900, guid: 677091073dfc21046945378e5f027bf9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153953927108334900, guid: 677091073dfc21046945378e5f027bf9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153953927108334900, guid: 677091073dfc21046945378e5f027bf9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153953927108334900, guid: 677091073dfc21046945378e5f027bf9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153953927108334900, guid: 677091073dfc21046945378e5f027bf9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 677091073dfc21046945378e5f027bf9, type: 3}
 --- !u!1 &1944297089 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 495921047220961687, guid: c7d6cc5ade607f74ca09637699f1c871,
