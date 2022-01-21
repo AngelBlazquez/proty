@@ -80,7 +80,6 @@ public class ListLevels : MonoBehaviour
                     StarManager sm = display.transform.Find("Stars").GetComponent<StarManager>();
                     sm.displayStars();
                     if(levels[i].GetTime() != 0) {
-                        Debug.Log(i.ToString());
                         sm.UnlockStar(sm.GetStarsObjects()[0]);
                     }
                     if(levels[i].GetTime() != 0 && levels[i].GetTime() <= displayHolder.GetTimeForStars()[i]._stars[1]) {
