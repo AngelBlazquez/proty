@@ -25,9 +25,9 @@ public class MusicManager : MonoBehaviour
         AudioSource internalAudioPlayer = GetComponent<AudioSource>();
 
         currentIndex = index;
-        Debug.Log(index - 3);
+
         internalAudioPlayer.Stop();
-        internalAudioPlayer.clip = allMusicsInOrder[index-menuLevelOffset];
+        internalAudioPlayer.clip = allMusicsInOrder[index - menuLevelOffset];
         internalAudioPlayer.Play();
     }
 
