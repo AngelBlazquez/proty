@@ -27,11 +27,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        Keys.Add("LeftButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftButton","LeftArrow")));
-        Keys.Add("RightButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightButton","RightArrow")));
-        Keys.Add("RunButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RunButton","B")));
-        Keys.Add("JumpButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("JumpButton","Space")));
-        Keys.Add("PauseButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PauseButton","Escape")));
+        Keys.Add("LeftButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftButton", "LeftArrow")));
+        Keys.Add("RightButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightButton", "RightArrow")));
+        Keys.Add("RunButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RunButton", "B")));
+        Keys.Add("JumpButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("JumpButton", "Space")));
+        Keys.Add("PauseButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PauseButton", "Escape")));
     }
 
 
@@ -40,17 +40,20 @@ public class PlayerMovement : MonoBehaviour
     {
         float horizontalMovement;
 
-        if (Input.GetKey(Keys["LeftButton"]) || Input.GetAxis("JoystickController")<-0.1f)
+        if (Input.GetKey(Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f)
         {
             horizontalMovement = Vector3.left.x * moveSpeed * Time.fixedDeltaTime;
-        } else if (Input.GetKey(Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f)
+        }
+        else if (Input.GetKey(Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f)
         {
             horizontalMovement = Vector3.right.x * moveSpeed * Time.fixedDeltaTime;
-        } else {
+        }
+        else
+        {
             horizontalMovement = 0;
         }
 
-        if (Input.GetKeyDown(Keys["JumpButton"]) || Input.GetButtonDown("Jump"))
+        if ((Input.GetKeyDown(Keys["JumpButton"]) || Input.GetButtonDown("Jump")) && isOnGround)
         {
             isJumping = true;
         }
@@ -58,8 +61,9 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer(horizontalMovement);
         FlipPlayer();
 
-        if(playerRb.velocity.y < particleLandingAppear){
-                canSmokeParticule=true;
+        if (playerRb.velocity.y < particleLandingAppear)
+        {
+            canSmokeParticule = true;
         }
     }
 
@@ -67,19 +71,23 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 targetVelocity = new Vector2(_horizontalMovement, playerRb.velocity.y);
         playerRb.velocity = Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref velocity, .05f);
-        
+
         if (playerRb.velocity.x < 1 && playerRb.velocity.x > -1)
         {
-            animator.SetBool("Run",false);
-        }else{
-            animator.SetBool("Run",true);
+            animator.SetBool("Run", false);
+        }
+        else
+        {
+            animator.SetBool("Run", true);
         }
 
         if (playerRb.velocity.y < -1)
         {
-            animator.SetBool("Fall",true);
-        }else{
-            animator.SetBool("Fall",false);
+            animator.SetBool("Fall", true);
+        }
+        else
+        {
+            animator.SetBool("Fall", false);
         }
 
 
@@ -104,7 +112,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 PlayerDirection.x = -1;
             }
-        } else
+        }
+        else
         {
             if (Input.GetKey(Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f)
             {
@@ -115,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
                 PlayerDirection.x = -1;
             }
         }
-            
+
         transform.localScale = PlayerDirection;
     }
 
@@ -123,12 +132,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.CompareTag("Ground"))
         {
-            if(canSmokeParticule){
-                Instantiate(particleLanding,smokePos.transform.position,Quaternion.identity);
-                canSmokeParticule=false;
+            if (canSmokeParticule)
+            {
+                Instantiate(particleLanding, smokePos.transform.position, Quaternion.identity);
+                canSmokeParticule = false;
             }
-            isOnGround = true;
+            StartCoroutine(WaitJump());
         }
+    }
+
+    private IEnumerator WaitJump()
+    {
+        yield return new WaitForSeconds(0.015f);
+        isOnGround = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
