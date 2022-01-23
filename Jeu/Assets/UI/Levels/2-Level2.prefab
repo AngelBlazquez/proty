@@ -10,13 +10,19 @@ PrefabInstance:
     - target: {fileID: 4352121014374267084, guid: 6e5690b557fcba54d88b1bc361820375,
         type: 3}
       propertyPath: m_Name
-      value: Level2
+      value: 2-Level2
       objectReference: {fileID: 0}
     - target: {fileID: 4352121015576694740, guid: 6e5690b557fcba54d88b1bc361820375,
         type: 3}
       propertyPath: m_text
-      value: Level 2 - Test
+      value: Level 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4352121015785214834, guid: 6e5690b557fcba54d88b1bc361820375,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cefa1a451fce7434facba851ff4e8549,
+        type: 3}
     - target: {fileID: 4352121015827357470, guid: 6e5690b557fcba54d88b1bc361820375,
         type: 3}
       propertyPath: m_Pivot.x

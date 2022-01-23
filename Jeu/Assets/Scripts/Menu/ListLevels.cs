@@ -65,11 +65,11 @@ public class ListLevels : MonoBehaviour
 
                 if (!levels[i].GetIsUnlocked())
                 {
-                    Image img = display.transform.Find("Image").gameObject.GetComponent<Image>();
+                    //Image img = display.transform.Find("Image").gameObject.GetComponent<Image>();
                     button.interactable = false;
 
                     GameObject chain = Instantiate(chains);
-                    chain.transform.SetParent(display.transform);
+                    chain.transform.SetParent(button.transform);
                     chain.transform.position = new Vector3(0, -40, 0);
                     chain.transform.localScale = new Vector3(1.3f, 1.3f, 1f);
 
