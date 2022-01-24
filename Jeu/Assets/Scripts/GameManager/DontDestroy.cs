@@ -34,18 +34,21 @@ public class DontDestroy : MonoBehaviour
         }
 
         #region MusicManager
-        DontDestroyOnLoad(musicManager);
-
-        // Check if it's the first call of the music manager
-        if(musicManager.GetComponent<MusicManager>().GetCurrentIndex() == 0)
+        if (musicManager != null)
         {
-            musicManager.GetComponent<MusicManager>().PlayLevelSong(SceneManager.GetActiveScene().buildIndex);
-        }
+            DontDestroyOnLoad(musicManager);
 
-        // Check for level change to update the currently playing music
-        if (musicManager.GetComponent<MusicManager>().GetCurrentIndex() != SceneManager.GetActiveScene().buildIndex)
-        {
-            musicManager.GetComponent<MusicManager>().PlayLevelSong(SceneManager.GetActiveScene().buildIndex);
+            // Check if it's the first call of the music manager
+            if (musicManager.GetComponent<MusicManager>().GetCurrentIndex() == 0)
+            {
+                musicManager.GetComponent<MusicManager>().PlayLevelSong(SceneManager.GetActiveScene().buildIndex);
+            }
+
+            // Check for level change to update the currently playing music
+            if (musicManager.GetComponent<MusicManager>().GetCurrentIndex() != SceneManager.GetActiveScene().buildIndex)
+            {
+                musicManager.GetComponent<MusicManager>().PlayLevelSong(SceneManager.GetActiveScene().buildIndex);
+            }
         }
         #endregion
     }
