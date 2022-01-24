@@ -26,7 +26,7 @@ public class winManager : MonoBehaviour
     private int nextLevelNumber;
 
     void start() {
-        stars.GetComponent<StarManager>().hideStars();        
+        stars.GetComponent<StarManager>().hideStars();
     }
 
     void Update()
@@ -42,6 +42,7 @@ public class winManager : MonoBehaviour
     // Methode who resume the game
     public void resume()
     {
+        Cursor.visible = false;
         Time.timeScale = 1;
         Canvas.SetActive(false);
         playerMvt.enabled = true;
@@ -50,6 +51,7 @@ public class winManager : MonoBehaviour
     // Methode who show the pause game menu
     public void pauseGameMenu()
     {
+        Cursor.visible = true;
         Time.timeScale = 0;
         Canvas.SetActive(true);
         nextLevelInput.SetActive(false);
@@ -63,6 +65,7 @@ public class winManager : MonoBehaviour
     // Methode who show the next win menu
     public void winGameMenu(int nextLevel)
     {
+        Cursor.visible = true;
         nextLevelNumber = nextLevel;
         Time.timeScale = 0;
         //isPaused = true;
@@ -85,15 +88,18 @@ public class winManager : MonoBehaviour
     // Method who reload the level
     public void retryButton()
     {
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Canvas.SetActive(false);
         Time.timeScale = 1;
+        Cursor.visible = false;
     }
 
     // Method who load the home menu
     public void menuButton()
     {
         // Appeler la méthode qui nous fait revenir dans un autre menu (menu principal)
+        Cursor.visible = true;
         Debug.Log("Ok Menu");
         SceneManager.LoadScene("Menu");
         Canvas.SetActive(false);
