@@ -7,15 +7,14 @@ public class EndCredits : MonoBehaviour
 {
     public void LoadMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu");
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.A))
+        if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Escape))
         {
             LoadMenu();
-            Debug.Log("Skip Credits");
         }
     }
 }
