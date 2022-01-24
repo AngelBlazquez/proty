@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particuleDeath: {fileID: 359199931768089002, guid: 4378c56d95108fd4b946ab18e7c4d0ea,
     type: 3}
-  CountDeath: {fileID: 0}
+  CountDeath: {fileID: 190461101187871846}
 --- !u!114 &5914589432404366497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 5914589432404366525}
+  persistGM: 0
 --- !u!114 &5992981106631832401
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -25835,6 +25835,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: KeyConfigMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 140283842997478534, guid: 25efbd4d81f38d749934d0f1276b04fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 140283842997478535, guid: 25efbd4d81f38d749934d0f1276b04fc,
         type: 3}
       propertyPath: m_Pivot.x
@@ -26198,6 +26203,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ToggleFullscreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050804924991577390, guid: 34960d0b7b038a143ace42cde38ceaf0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0002746582
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34960d0b7b038a143ace42cde38ceaf0, type: 3}
