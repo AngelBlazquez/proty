@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 ///<summary>
 /// main menu
@@ -11,6 +13,16 @@ using UnityEngine.EventSystems;
 public class MainMenu : MonoBehaviour
 {
     public GameObject playButton, sliderButton, configButton;
+
+    public SettingsMenu settings;
+
+    [SerializeField]
+    private GameObject checkMark;
+
+    void Start()
+    {
+        settings.setVolume(PlayerPrefs.GetFloat("VolumeSave"));
+    }
 
     ///<summary>
     /// when the play button is pressed, load the scene 1 in build (level select)
@@ -35,6 +47,17 @@ public class MainMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         // select sliderButton
         EventSystem.current.SetSelectedGameObject(sliderButton);
+
+        /*
+        if (Screen.fullScreen)
+        {
+            checkMark.setActive(true);
+        }
+        else
+        {
+            checkMark.setActive(false);
+        }
+        */
     }
 
     /** choose first selected button in main menu: play */
