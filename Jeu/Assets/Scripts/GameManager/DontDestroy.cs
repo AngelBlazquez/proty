@@ -13,6 +13,10 @@ public class DontDestroy : MonoBehaviour
 
     private GameObject musicManager;
 
+    private GameObject countDeath;
+
+    private GameObject morts;
+
     [SerializeField]
     private bool persistGM = false;
 
@@ -21,6 +25,8 @@ public class DontDestroy : MonoBehaviour
         //Récupère le GameObject GameManager
         gameManager = GameObject.Find("GameManager");
         musicManager = GameObject.Find("MusicManager");
+        countDeath = GameObject.Find("CountDeath");
+        morts = GameObject.Find("Morts");
     }
 
     void Update()
@@ -51,5 +57,15 @@ public class DontDestroy : MonoBehaviour
             }
         }
         #endregion
+
+        if (countDeath != null)
+        {
+            DontDestroyOnLoad(countDeath);
+        }
+
+        if (morts != null)
+        {
+            DontDestroyOnLoad(morts);
+        }
     }
 }
