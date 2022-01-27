@@ -21,6 +21,8 @@ public class SettingsMenu : MonoBehaviour
 
     private Resolution[] resolutions;
 
+    private List<Resolution> resolutionVoulu;
+
     ///<summary>
     /// lists all the resolutions of the actual screen
     ///<summary>
@@ -33,12 +35,22 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
+        resolutionVoulu = new List<Resolution>();
 
         int currentResolutionIndex = 0;
-        for (int i = 0; i < resolutions.Length; i++)
+        string option = resolutions[0].width + " x " + resolutions[0].height;
+        options.Add(option);
+        resolutionVoulu.Add(resolutions[0]);
+
+        for (int i = 1; i < resolutions.Length; i++)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height;
-            options.Add(option);
+            if (resolutions[i].width != resolutions[i-1].width || resolutions[i].height != resolutions[i-1].height)
+            {
+                option = resolutions[i].width + " x " + resolutions[i].height;
+                options.Add(option);
+
+                resolutionVoulu.Add(resolutions[i]);
+            }
 
             if (resolutions[i].width == Screen.currentResolution.width
                 && resolutions[i].height == Screen.currentResolution.height)
@@ -65,7 +77,7 @@ public class SettingsMenu : MonoBehaviour
     ///<summary>
     public void SetResolution (int resolutionIndex)
     {
-        Resolution resolution = resolutions[resolutionIndex];
+        Resolution resolution = resolutionVoulu[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
@@ -80,6 +92,9 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    ///<summary>
+    /// change to fullscreen or not
+    ///<summary>
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;

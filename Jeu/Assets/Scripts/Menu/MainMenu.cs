@@ -16,9 +16,6 @@ public class MainMenu : MonoBehaviour
 
     public SettingsMenu settings;
 
-    [SerializeField]
-    private GameObject checkMark;
-
     void Start()
     {
         settings.setVolume(PlayerPrefs.GetFloat("VolumeSave"));
