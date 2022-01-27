@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6875576512918739827}
   - component: {fileID: 6875576512918739825}
   - component: {fileID: 7416389119078796734}
+  - component: {fileID: 5950310551694981107}
+  - component: {fileID: 249648098070497215}
   m_Layer: 0
   m_Name: PP
   m_TagString: Untagged
