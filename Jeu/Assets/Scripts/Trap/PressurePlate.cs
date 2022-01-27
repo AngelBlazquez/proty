@@ -8,13 +8,16 @@ using UnityEngine;
 /// </summary>
 public class PressurePlate : MonoBehaviour
 {
+    public Animator anim;
     public GameObject Door;
+
     private bool isOpen = false;
     private bool activate = false;
     private float time;
     
     public void OpenDoor()
     {
+        anim.SetTrigger("push");
         Door.SetActive(false);
         StartCoroutine(timer());
         activate = true;
