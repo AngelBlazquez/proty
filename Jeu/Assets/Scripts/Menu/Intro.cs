@@ -16,4 +16,9 @@ public class Intro : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+
+    public void setFullScreen()
+    {
+        Screen.fullScreen = true;
+    }
 }
