@@ -24,7 +24,11 @@ public class HeadMovements : MonoBehaviour
     [SerializeField]
     private GameObject ClassicPlayer;
     [SerializeField]
-    private HeadMovements script;
+    private GameObject LegsPlayer;
+    [SerializeField]
+    private GameObject ArmsPlayer;
+    public int etat = 0;
+
     private Dictionary<string, KeyCode> Keys = new Dictionary<string, KeyCode>();
 
     void Start()
@@ -59,13 +63,55 @@ public class HeadMovements : MonoBehaviour
         Vector3 targetVelocity = new Vector2(_horizontalMovement, playerRb.velocity.y);
         playerRb.velocity = Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref velocity, .05f);
 
+        // etat : etat = 0 : le player n'a que sa tête ou sa tête et son corps
+        //        etat = 1 : le player possède sa tête, son corps et ses jambes
+        //        etat = 2 : le player possède sa tête, son corps et ses bras
+        //        etat = 3 : le player a tout ses membres
+
+        /*
         if ((rightLeg.activeSelf) && (leftLeg.activeSelf) && (rightArm.activeSelf) && (leftArm.activeSelf) && (Body.activeSelf))
         {
             DecomposedPlayer.SetActive(false);
             ClassicPlayer.SetActive(true);
             ClassicPlayer.transform.SetParent(null);
-        } else {
-            playerRb.MoveRotation(playerRb.rotation + _horizontalMovement);
+            ClassicPlayer.transform.rotation = Quaternion.Euler(0,0,0);
+        } */
+
+        if ((rightLeg.activeSelf) && (leftLeg.activeSelf) && etat == 0) {
+            DecomposedPlayer.SetActive(false);
+            LegsPlayer.SetActive(true);
+            LegsPlayer.transform.SetParent(null);
+            LegsPlayer.transform.position = ArmsPlayer.transform.position;
+            LegsPlayer.transform.rotation = Quaternion.Euler(0,0,0);
+            etat = 1;
+        }
+
+        if ((rightArm.activeSelf) && (leftArm.activeSelf) && etat == 0) {
+            DecomposedPlayer.SetActive(false);
+            ArmsPlayer.SetActive(true);
+            ArmsPlayer.transform.SetParent(null);
+            ArmsPlayer.transform.rotation = Quaternion.Euler(0,0,0);
+            etat = 2;
+        }
+
+        if ((rightArm.activeSelf) && (leftArm.activeSelf) && etat == 1) {
+            ArmsPlayer.SetActive(false);
+            LegsPlayer.SetActive(false);
+            ClassicPlayer.SetActive(true);
+            ClassicPlayer.transform.SetParent(null);
+            ClassicPlayer.transform.position = LegsPlayer.transform.position;
+            ClassicPlayer.transform.rotation = Quaternion.Euler(0,0,0);
+            etat = 3;
+        }
+
+        if ((rightLeg.activeSelf) && (rightLeg.activeSelf) && etat == 2) {
+            LegsPlayer.SetActive(false);
+            ArmsPlayer.SetActive(false);
+            ClassicPlayer.SetActive(true);
+            ClassicPlayer.transform.SetParent(null);
+            ClassicPlayer.transform.position = ArmsPlayer.transform.position;
+            ClassicPlayer.transform.rotation = Quaternion.Euler(0,0,0);
+            etat = 3;
         }
     }
 
