@@ -15,6 +15,9 @@ public class levelStars
 public class LevelDisplayHolder : MonoBehaviour
 {
     [SerializeField]
+    private float version;
+
+    [SerializeField]
     private List<GameObject> levelDisplays;
 
     [SerializeField]
@@ -23,5 +26,6 @@ public class LevelDisplayHolder : MonoBehaviour
     #region Getter
     public List<GameObject> GetDisplay() { return levelDisplays; }
     public levelStars[] GetTimeForStars() { return timeForStars; }
+    public float GetVersion() { return version; }
     #endregion
 }
