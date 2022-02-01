@@ -47,7 +47,7 @@ public class ListLevels : MonoBehaviour
 
         for (int i = 6 * numPage; i < 6 * (numPage + 1); i++)
         {
-            if (i >= 0 && i < displayHolder.GetDisplay().Count && levels[i] != null && displays[i] != null)
+            if (i >= 0 && i < displayHolder.GetDisplay().Count && i < levels.Count && levels[i] != null && displays[i] != null)
             {
                 GameObject display = Instantiate(displays[i]);
                 display.transform.SetParent(transform);
@@ -91,7 +91,7 @@ public class ListLevels : MonoBehaviour
 
                 }
 
-                if (i + 1 >= displayHolder.GetDisplay().Count)
+                if (i + 1 >= displayHolder.GetDisplay().Count || i + 1 >= levels.Count)
                 {
                     next.interactable = false;
                 }

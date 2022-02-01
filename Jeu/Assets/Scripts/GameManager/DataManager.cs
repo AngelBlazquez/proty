@@ -58,7 +58,7 @@ public class DataManager : MonoBehaviour
     /// </summary>
     private void CreateData()
     {
-        data = new SavableData(levelDisplays.GetDisplay().Count);
+        data = new SavableData(levelDisplays.GetDisplay().Count, levelDisplays.GetVersion());
 
         SaveData();
     }
@@ -89,8 +89,17 @@ public class DataManager : MonoBehaviour
         FileStream stream = new FileStream(path, FileMode.Open);
 
         data = formatter.Deserialize(stream) as SavableData;
+        Debug.Log("Truc");
+        Debug.Log(data.GetVersion());
 
         stream.Close();
+
+        if (data.GetVersion() == 0 || data.GetVersion() < levelDisplays.GetVersion()) {
+            data.Update(levelDisplays.GetDisplay().Count, levelDisplays.GetVersion());
+            SaveData();
+            Debug.Log("Lol");
+        }
+
 
     }
 
@@ -134,12 +143,14 @@ public class SavableData
 {
     [SerializeField]
     private List<Level> allLevels;
+    [SerializeField]
+    private float version;
 
     /// <summary>
     /// Creates a new List of Level
     /// </summary>
     /// <param name="size">The number of levels in the game</param>
-    public SavableData(int size)
+    public SavableData(int size, float version)
     {
         allLevels = new List<Level>();
         for (int i = 0; i < size; i++)
@@ -147,6 +158,20 @@ public class SavableData
             allLevels.Add(new Level(i));
         }
         allLevels[0].Unlock();
+        this.version = version;
+    }
+
+    public void Update(int newSize, float version) {
+        if (newSize >= allLevels.Count){
+            for (int i = allLevels.Count; i < newSize; i++) {
+                allLevels.Add(new Level(i));
+            }
+        } else {
+            for (int i = newSize; i < allLevels.Count; i++) {
+                allLevels.Remove(allLevels[i]);
+            }
+        }
+        this.version = version;
     }
 
     #region Getter & Setter
@@ -170,6 +195,11 @@ public class SavableData
      public int GetTime(int levelNumber)
     {
         return allLevels[levelNumber].GetTime();
+    }
+
+    public float GetVersion()
+    {
+        return version;
     }
 
     #endregion
