@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// Displays a list of levels
@@ -94,6 +95,8 @@ public class ListLevels : MonoBehaviour
                 if (i + 1 >= displayHolder.GetDisplay().Count || i + 1 >= levels.Count)
                 {
                     next.interactable = false;
+                    EventSystem.current.SetSelectedGameObject(null);
+                    EventSystem.current.SetSelectedGameObject(previous.gameObject);
                 }
                 else
                 {
@@ -102,6 +105,8 @@ public class ListLevels : MonoBehaviour
                 if (numPage -1  < 0)
                 {
                     previous.interactable = false;
+                    EventSystem.current.SetSelectedGameObject(null);
+                    EventSystem.current.SetSelectedGameObject(next.gameObject);
                 }
                 else
                 {
