@@ -62,7 +62,7 @@ public class ThwonpMovement : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player")) // test collision with player
         {
-            deathManager.StartDeathCoroutine();
+            deathManager.StartDeathCoroutine(col.gameObject);
         }
         else
         {
