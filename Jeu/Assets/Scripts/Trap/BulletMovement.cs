@@ -37,7 +37,7 @@ public class BulletMovement : MonoBehaviour
         Instantiate(particuleExplose, transform.position, Quaternion.identity);
         if (col.gameObject.CompareTag("Player"))
         {
-            deathManager.StartDeathCoroutine();
+            deathManager.StartDeathCoroutine(col.gameObject);
         }
         Destroy(this.gameObject);
     }

@@ -16,8 +16,6 @@ public class DeathManager : MonoBehaviour
 
     private void Start()
     {
-        player = FindObjectOfType<PlayerMovement>().gameObject;
-
         StartCoroutine(Text());
     }
 
@@ -39,6 +37,7 @@ public class DeathManager : MonoBehaviour
                 if (g.name == "CountDeath")
                 {
                     CountDeath = g.GetComponent<CountDeath>();
+                    
                 }
             }
         }
@@ -55,8 +54,10 @@ public class DeathManager : MonoBehaviour
 
     private IEnumerator Death()
     {
-        CountDeath.addDeath();
-
+        if(CountDeath != null) {
+            CountDeath.addDeath();
+        }
+        
         Instantiate(particuleDeath, player.transform.position, Quaternion.identity);
         player.SetActive(false);
 
@@ -64,8 +65,9 @@ public class DeathManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void StartDeathCoroutine()
+    public void StartDeathCoroutine(GameObject g)
     {
+        player = g;
         StartCoroutine(Death());
     }
 }
