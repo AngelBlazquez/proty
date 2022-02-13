@@ -12,7 +12,7 @@ public class KeyBindMenu : MonoBehaviour
     private Dictionary<string, KeyCode> Keys = new Dictionary<string, KeyCode>();
 
     [SerializeField]
-    private Text left, right, jump, pause;
+    private Text left, right, jump, pause, tryhard;
 
     private GameObject currentKey;
 
@@ -25,11 +25,13 @@ public class KeyBindMenu : MonoBehaviour
         Keys.Add("RightButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightButton","RightArrow")));
         Keys.Add("JumpButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("JumpButton","Space")));
         Keys.Add("PauseButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PauseButton","Escape")));
+        Keys.Add("TryhardButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("TryhardButton","R")));
 
         left.text = Keys["LeftButton"].ToString();
         right.text = Keys["RightButton"].ToString();
         jump.text = Keys["JumpButton"].ToString();
         pause.text = Keys["PauseButton"].ToString();
+        tryhard.text = Keys["TryhardButton"].ToString();
     }
 
     ///<summary>
