@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         Keys.Add("RunButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RunButton", "B")));
         Keys.Add("JumpButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("JumpButton", "Space")));
         Keys.Add("PauseButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PauseButton", "Escape")));
+        Keys.Add("TryhardButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("TryhardButton", "R")));
         Cursor.visible = false;
     }
 
@@ -57,6 +59,11 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.GetKeyDown(Keys["JumpButton"]) || Input.GetButtonDown("Jump")) && isOnGround)
         {
             isJumping = true;
+        }
+
+        if ((Input.GetKeyDown(Keys["TryhardButton"])))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         MovePlayer(horizontalMovement);
