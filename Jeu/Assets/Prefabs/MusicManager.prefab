@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allMusicsInOrder:
   - {fileID: 8300000, guid: 2c660abe3116210449fd9b4301fe963d, type: 3}
-  - {fileID: 8300000, guid: d11d6f235bce5cd4ab207fc953de0ec6, type: 3}
+  - {fileID: 8300000, guid: fc6f9f329607e3e4fbd8de0dfeb08b98, type: 3}
   - {fileID: 8300000, guid: 60498d6335f290e45b26b9d42ba7ad75, type: 3}
   - {fileID: 8300000, guid: 8fd3076ea14781942b7e892bd86c7be7, type: 3}
   - {fileID: 8300000, guid: d3eafd395fefd9140a275e44233ca7fa, type: 3}
