@@ -14,6 +14,8 @@ public class BulletMovement : MonoBehaviour
     [SerializeField]
     private int rotationValue;
 
+    private bool collidedPlayer = false; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,11 +36,12 @@ public class BulletMovement : MonoBehaviour
     /// <param name="col">Area of collision</param>
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Instantiate(particuleExplose, transform.position, Quaternion.identity);
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player") && !collidedPlayer)
         {
+            collidedPlayer = true;
             deathManager.StartDeathCoroutine(col.gameObject);
         }
+        Instantiate(particuleExplose, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 }
