@@ -8,6 +8,9 @@ public class DeathManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject particuleDeath;
+    [SerializeField]
+    private DataManager data;
+
     private GameObject player;
 
     private CountDeath CountDeath;
@@ -55,7 +58,7 @@ public class DeathManager : MonoBehaviour
     private IEnumerator Death()
     {
         if(CountDeath != null) {
-            CountDeath.addDeath();
+            data.AddDeath();
         }
         
         Instantiate(particuleDeath, player.transform.position, Quaternion.identity);

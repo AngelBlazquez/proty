@@ -89,15 +89,14 @@ public class DataManager : MonoBehaviour
         FileStream stream = new FileStream(path, FileMode.Open);
 
         data = formatter.Deserialize(stream) as SavableData;
-        Debug.Log("Truc");
         Debug.Log(data.GetVersion());
 
         stream.Close();
 
-        if (data.GetVersion() == 0 || data.GetVersion() < levelDisplays.GetVersion()) {
+        if (data.GetVersion() == 0 || data.GetVersion() < levelDisplays.GetVersion())
+        {
             data.Update(levelDisplays.GetDisplay().Count, levelDisplays.GetVersion());
             SaveData();
-            Debug.Log("Lol");
         }
 
 
@@ -130,6 +129,18 @@ public class DataManager : MonoBehaviour
     {
         return data.GetTime(levelNumber);
     }
+
+    public void AddDeath()
+    {
+        data.AddDeath();
+        SaveData();
+    }
+
+    public int GetDeath()
+    {
+        return data.GetDeath();
+    }
+
     #endregion
 
 }
@@ -145,6 +156,8 @@ public class SavableData
     private List<Level> allLevels;
     [SerializeField]
     private float version;
+    [SerializeField]
+    private int nbDeath;
 
     /// <summary>
     /// Creates a new List of Level
@@ -159,15 +172,22 @@ public class SavableData
         }
         allLevels[0].Unlock();
         this.version = version;
+        nbDeath = 0;
     }
 
-    public void Update(int newSize, float version) {
-        if (newSize >= allLevels.Count){
-            for (int i = allLevels.Count; i < newSize; i++) {
+    public void Update(int newSize, float version)
+    {
+        if (newSize >= allLevels.Count)
+        {
+            for (int i = allLevels.Count; i < newSize; i++)
+            {
                 allLevels.Add(new Level(i));
             }
-        } else {
-            for (int i = newSize; i < allLevels.Count; i++) {
+        }
+        else
+        {
+            for (int i = newSize; i < allLevels.Count; i++)
+            {
                 allLevels.Remove(allLevels[i]);
             }
         }
@@ -192,7 +212,7 @@ public class SavableData
         allLevels[levelNumber].SaveTime(time);
     }
 
-     public int GetTime(int levelNumber)
+    public int GetTime(int levelNumber)
     {
         return allLevels[levelNumber].GetTime();
     }
@@ -201,6 +221,10 @@ public class SavableData
     {
         return version;
     }
+
+    public void AddDeath() { nbDeath++; }
+
+    public int GetDeath() { return nbDeath; }
 
     #endregion
 }

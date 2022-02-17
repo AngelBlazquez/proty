@@ -10,18 +10,18 @@ PrefabInstance:
     - target: {fileID: 4352121014374267084, guid: 6e5690b557fcba54d88b1bc361820375,
         type: 3}
       propertyPath: m_Name
-      value: 4-Level4
+      value: 4-VolcanoRoad
       objectReference: {fileID: 0}
     - target: {fileID: 4352121015576694740, guid: 6e5690b557fcba54d88b1bc361820375,
         type: 3}
       propertyPath: m_text
-      value: Level 4
+      value: Volcano Road
       objectReference: {fileID: 0}
     - target: {fileID: 4352121015785214834, guid: 6e5690b557fcba54d88b1bc361820375,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c8119ea602d896b4bb62aa1db0c6f4f4,
+      objectReference: {fileID: 21300000, guid: a6316101836ea634598d1128236318c6,
         type: 3}
     - target: {fileID: 4352121015827357470, guid: 6e5690b557fcba54d88b1bc361820375,
         type: 3}
