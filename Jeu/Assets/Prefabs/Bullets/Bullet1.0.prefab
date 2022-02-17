@@ -47,6 +47,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -149,7 +150,6 @@ GameObject:
   - component: {fileID: 6990794544372635628}
   - component: {fileID: 6990794544372635539}
   - component: {fileID: 6990794544372635538}
-  - component: {fileID: 6990794544372635537}
   - component: {fileID: 6990794544372635536}
   - component: {fileID: 7355817637554762611}
   - component: {fileID: 1913066474509143992}
@@ -190,6 +190,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -263,18 +264,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6990794544372635537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6990794544372635543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a840cf7019c8f2945bb40a0c0a486127, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6990794544372635536
 MonoBehaviour:
   m_ObjectHideFlags: 0
