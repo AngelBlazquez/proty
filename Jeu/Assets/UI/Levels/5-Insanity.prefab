@@ -10,18 +10,18 @@ PrefabInstance:
     - target: {fileID: 4352121014374267084, guid: 6e5690b557fcba54d88b1bc361820375,
         type: 3}
       propertyPath: m_Name
-      value: 5-Level5
+      value: 5-Insanity
       objectReference: {fileID: 0}
     - target: {fileID: 4352121015576694740, guid: 6e5690b557fcba54d88b1bc361820375,
         type: 3}
       propertyPath: m_text
-      value: Level 5
+      value: Insanity
       objectReference: {fileID: 0}
     - target: {fileID: 4352121015785214834, guid: 6e5690b557fcba54d88b1bc361820375,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a5711b8efabe2fd4586c31f41294f2d4,
+      objectReference: {fileID: 21300000, guid: a4f6cfdb8221dda45b67252cdc065aee,
         type: 3}
     - target: {fileID: 4352121015827357470, guid: 6e5690b557fcba54d88b1bc361820375,
         type: 3}
