@@ -70,5 +70,6 @@ public class KeyBindMenu : MonoBehaviour
         }
 
         PlayerPrefs.Save();
+        InputManager.Instance().Keys = Keys;
     }
 }
