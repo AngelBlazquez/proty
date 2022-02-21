@@ -23,18 +23,12 @@ public class PlayerMovement : MonoBehaviour
     private bool isOnGround;
     [SerializeField]
     private Animator animator;
-    private Dictionary<string, KeyCode> Keys = new Dictionary<string, KeyCode>();
 
 
     void Start()
     {
-        Keys.Add("LeftButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftButton", "LeftArrow")));
-        Keys.Add("RightButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightButton", "RightArrow")));
-        Keys.Add("RunButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RunButton", "B")));
-        Keys.Add("JumpButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("JumpButton", "Space")));
-        Keys.Add("PauseButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PauseButton", "Escape")));
-        Keys.Add("TryhardButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("TryhardButton", "R")));
         Cursor.visible = false;
+        InputManager.Instance();
     }
 
 
@@ -43,11 +37,11 @@ public class PlayerMovement : MonoBehaviour
     {
         float horizontalMovement;
 
-        if (Input.GetKey(Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f)
+        if (Input.GetKey(InputManager.Instance().Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f)
         {
             horizontalMovement = Vector3.left.x * moveSpeed * Time.fixedDeltaTime;
         }
-        else if (Input.GetKey(Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f)
+        else if (Input.GetKey(InputManager.Instance().Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f)
         {
             horizontalMovement = Vector3.right.x * moveSpeed * Time.fixedDeltaTime;
         }
@@ -56,12 +50,12 @@ public class PlayerMovement : MonoBehaviour
             horizontalMovement = 0;
         }
 
-        if ((Input.GetKeyDown(Keys["JumpButton"]) || Input.GetButtonDown("Jump")) && isOnGround)
+        if ((Input.GetKeyDown(InputManager.Instance().Keys["JumpButton"]) || Input.GetButtonDown("Jump")) && isOnGround)
         {
             isJumping = true;
         }
 
-        if ((Input.GetKeyDown(Keys["TryhardButton"])))
+        if ((Input.GetKeyDown(InputManager.Instance().Keys["TryhardButton"])))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -113,22 +107,22 @@ public class PlayerMovement : MonoBehaviour
         Vector3 PlayerDirection = transform.localScale;
         if (GetComponent<Rigidbody2D>().rotation != 180)
         {
-            if (Input.GetKey(Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f)
+            if (Input.GetKey(InputManager.Instance().Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f)
             {
                 PlayerDirection.x = 1;
             }
-            else if (Input.GetKey(Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f)
+            else if (Input.GetKey(InputManager.Instance().Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f)
             {
                 PlayerDirection.x = -1;
             }
         }
         else
         {
-            if (Input.GetKey(Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f)
+            if (Input.GetKey(InputManager.Instance().Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f)
             {
                 PlayerDirection.x = 1;
             }
-            else if (Input.GetKey(Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f)
+            else if (Input.GetKey(InputManager.Instance().Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f)
             {
                 PlayerDirection.x = -1;
             }

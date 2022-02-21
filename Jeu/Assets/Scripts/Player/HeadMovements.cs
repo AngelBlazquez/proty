@@ -29,14 +29,8 @@ public class HeadMovements : MonoBehaviour
     private GameObject ArmsPlayer;
     public int etat = 0;
 
-    private Dictionary<string, KeyCode> Keys = new Dictionary<string, KeyCode>();
-
     void Start()
     {
-        Keys.Add("LeftButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftButton","LeftArrow")));
-        Keys.Add("RightButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightButton","RightArrow")));
-        Keys.Add("RunButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RunButton","B")));
-        Keys.Add("PauseButton", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PauseButton","Escape")));
     }
 
 
@@ -45,10 +39,10 @@ public class HeadMovements : MonoBehaviour
     {
         float horizontalMovement;
 
-        if (Input.GetKey(Keys["LeftButton"]))
+        if (Input.GetKey(InputManager.Instance().Keys["LeftButton"]))
         {
             horizontalMovement = Vector3.left.x * moveSpeed * Time.fixedDeltaTime;
-        } else if (Input.GetKey(Keys["RightButton"]))
+        } else if (Input.GetKey(InputManager.Instance().Keys["RightButton"]))
         {
             horizontalMovement = Vector3.right.x * moveSpeed * Time.fixedDeltaTime;
         } else {
