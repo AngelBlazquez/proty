@@ -18,10 +18,13 @@ public class Timer : MonoBehaviour
     {
         while (true)
         {
+            TryHard();
+
             //Remet le compteur à 0, si il y a un changement de scène
             if (activeScene != SceneManager.GetActiveScene().buildIndex) {
                 timer = 0;
             }
+
             //Récupère l'index de la scène actuelle
             activeScene = SceneManager.GetActiveScene().buildIndex;
 
@@ -39,4 +42,9 @@ public class Timer : MonoBehaviour
     // Getter
     public int GetTime() { return timer; }
 
+    public void TryHard() {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            timer = 0;
+        }
+    }
 }
