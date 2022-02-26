@@ -69,6 +69,7 @@ public class deadScriptDecomposed : MonoBehaviour
 
     private IEnumerator Death(GameObject player)
     {
+        Debug.Log("ok");
         CountDeath.addDeath();
 
         Instantiate(particuleDeath, player.transform.position, Quaternion.identity);
@@ -76,25 +77,5 @@ public class deadScriptDecomposed : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void StartDeathCoroutineArmsPlayer()
-    {
-        StartCoroutine(Death(armsPlayer));
-    }
-
-    public void StartDeathCoroutineLegsPlayer()
-    {
-        StartCoroutine(Death(legsPlayer));
-    }
-
-    public void StartDeathCoroutineClassicPlayer()
-    {
-        StartCoroutine(Death(classicPlayer));
-    }
-
-    public void StartDeathCoroutineDecomposedPlayer()
-    {
-        StartCoroutine(Death(decomposedPlayer));
     }
 }
