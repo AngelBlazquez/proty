@@ -14,34 +14,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelSelect.unity
     guid: cba3bd742c34dc441ad5008003641770
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/1-FabriqueJouets.unity
     guid: cf9fbd876f9fcd3429467cfcd290a8c7
-  - enabled: 1
-    path: Assets/Scenes/2-Level2.unity
+  - enabled: 0
+    path: Assets/Scenes/2-TwoSides.unity
     guid: ede370b129c44654390de509f32f1f6e
-  - enabled: 1
-    path: Assets/Scenes/3-Flatlands.unity
+  - enabled: 0
+    path: Assets/Scenes/3-SkyHigh.unity
     guid: 6f4b85091ba46b74d86d175243e9634e
-  - enabled: 1
-    path: Assets/Scenes/4-Level4.unity
+  - enabled: 0
+    path: Assets/Scenes/4-VolcanoRoad.unity
     guid: 39dbaa80624ee514e9980f1fc7f7fc29
-  - enabled: 1
-    path: Assets/Scenes/5-Level5.unity
+  - enabled: 0
+    path: Assets/Scenes/5-Insanity.unity
     guid: 51bb5e53b4a28dd4498b6a942f83e47c
-  - enabled: 1
-    path: Assets/Scenes/6-Level6.unity
+  - enabled: 0
+    path: Assets/Scenes/6-Flatlands.unity
     guid: 0008e36123ad4704a9d3389cd6f02881
-  - enabled: 1
-    path: Assets/Scenes/7-Level7.unity
+  - enabled: 0
+    path: Assets/Scenes/7-CloudyBridge.unity
     guid: 69de4ef7b8bb60744ba35d79f0c86f41
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/8-Into_The_Depths.unity
     guid: 96c8a1756c082a84c88780cf0c60082b
-  - enabled: 1
-    path: Assets/Scenes/9-Level9.unity
+  - enabled: 0
+    path: Assets/Scenes/9-DarkManor.unity
     guid: 9ebd5fa4ff4428b428d7da08b6df584b
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/Cr\xE9dits.unity"
     guid: d7882a66ab932494e8a06aac7e2c7ed5
   m_configObjects: {}

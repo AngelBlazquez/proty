@@ -89,7 +89,6 @@ public class DataManager : MonoBehaviour
         FileStream stream = new FileStream(path, FileMode.Open);
 
         data = formatter.Deserialize(stream) as SavableData;
-        Debug.Log(data.GetVersion());
 
         stream.Close();
 
