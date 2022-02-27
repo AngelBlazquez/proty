@@ -14,4 +14,9 @@ public class TotalDeaths : MonoBehaviour
     {
         nbMorts.text = data.GetDeath().ToString();
     }
+
+    void Update()
+    {
+        nbMorts.text = data.GetDeath().ToString();
+    }
 }

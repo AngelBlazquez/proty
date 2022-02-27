@@ -13,8 +13,6 @@ public class DeathManager : MonoBehaviour
 
     private GameObject player;
 
-    private CountDeath CountDeath;
-
     public TextMeshProUGUI nbMorts;
 
     private void Start()
@@ -24,9 +22,7 @@ public class DeathManager : MonoBehaviour
 
     private IEnumerator Death()
     {
-        if(CountDeath != null) {
-            data.AddDeath();
-        }
+        data.AddDeath();
         
         Instantiate(particuleDeath, player.transform.position, Quaternion.identity);
         player.SetActive(false);
