@@ -49280,7 +49280,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Door
       value: 
-      objectReference: {fileID: 330040619}
+      objectReference: {fileID: 32147586}
     - target: {fileID: 6875576512918739827, guid: f790f7fc91de66746bdb3f4d9018128c,
         type: 3}
       propertyPath: anim
