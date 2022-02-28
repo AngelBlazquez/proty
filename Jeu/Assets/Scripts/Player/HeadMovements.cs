@@ -75,7 +75,7 @@ public class HeadMovements : MonoBehaviour
             DecomposedPlayer.SetActive(false);
             LegsPlayer.SetActive(true);
             LegsPlayer.transform.SetParent(null);
-            LegsPlayer.transform.position = ArmsPlayer.transform.position;
+            LegsPlayer.transform.position = DecomposedPlayer.transform.position;
             LegsPlayer.transform.rotation = Quaternion.Euler(0,0,0);
             etat = 1;
         }

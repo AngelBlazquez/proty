@@ -166,7 +166,7 @@ PrefabInstance:
     - target: {fileID: 4130834264863482664, guid: 0c8204f8294b5804e831d264cbbe4ed2,
         type: 3}
       propertyPath: persistGM
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4130834264863482664, guid: 0c8204f8294b5804e831d264cbbe4ed2,
         type: 3}
