@@ -60,8 +60,8 @@ public class ListLevels : MonoBehaviour
                 button.onClick.AddListener(() => ChangeLevel.LoadLevel(tmp));
 
                 TMPro.TextMeshProUGUI bestTime = display.transform.Find("Time").gameObject.GetComponent<TMPro.TextMeshProUGUI>();
-                int min = levels[i].GetTime() / 60;
-                int sec = levels[i].GetTime() % 60;
+                float min = levels[i].GetTime() / 60f;
+                float sec = levels[i].GetTime() % 60f;
                 bestTime.text = min + ":" + sec;
 
                 if (!levels[i].GetIsUnlocked())

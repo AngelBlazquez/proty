@@ -17,9 +17,6 @@ public class DontDestroy : MonoBehaviour
 
     private GameObject morts;
 
-    [SerializeField]
-    private bool persistGM = false;
-
     void Start()
     {
         //Récupère le GameObject GameManager
@@ -32,12 +29,6 @@ public class DontDestroy : MonoBehaviour
     void Update()
     {
         
-        if(persistGM) // Check if the gameManger should be persisted
-        {
-            //Fait en sorte que le GameObject GameManager ne soit pas réinitialisé
-            //après un chargement de scène
-            DontDestroyOnLoad(gameManager);
-        }
 
         #region MusicManager
         if (musicManager != null)

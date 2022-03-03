@@ -24,7 +24,7 @@ public class endLevel : MonoBehaviour
     /// Author : Angel Blazquez
     /// </summary>
     private void starsManagement() {
-        int time = data.GetLevels()[SceneManager.GetActiveScene().buildIndex - ChangeLevel.offset].GetTime();
+        float time = data.GetLevels()[SceneManager.GetActiveScene().buildIndex - ChangeLevel.offset].GetTime();
         int nbStars = 0;
         if(time != 0) {
             nbStars++;
