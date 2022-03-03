@@ -112,7 +112,7 @@ public class DataManager : MonoBehaviour
 
 
 
-    public void SaveTime(int levelNumber, int time)
+    public void SaveTime(int levelNumber, float time)
     {
         data.SaveTime(levelNumber, time);
         SaveData();
@@ -124,7 +124,7 @@ public class DataManager : MonoBehaviour
         return data.GetLevels();
     }
 
-    public int GetTime(int levelNumber)
+    public float GetTime(int levelNumber)
     {
         return data.GetTime(levelNumber);
     }
@@ -206,12 +206,12 @@ public class SavableData
         allLevels[levelNumber].Unlock();
     }
 
-    public void SaveTime(int levelNumber, int time)
+    public void SaveTime(int levelNumber, float time)
     {
         allLevels[levelNumber].SaveTime(time);
     }
 
-    public int GetTime(int levelNumber)
+    public float GetTime(int levelNumber)
     {
         return allLevels[levelNumber].GetTime();
     }
@@ -239,7 +239,7 @@ public class Level
     [SerializeField]
     private bool isUnlocked;
     [SerializeField]
-    private int bestTime;
+    private float bestTime;
     [SerializeField]
     private int[] stars;
 
@@ -247,7 +247,7 @@ public class Level
     {
         this.levelNumber = levelNumber;
         isUnlocked = false;
-        bestTime = 0;
+        bestTime = 0f;
     }
 
     #region Getters and Setters
@@ -258,15 +258,15 @@ public class Level
     // Setter
     public void Unlock() { isUnlocked = true; }
 
-    public void SaveTime(int time)
+    public void SaveTime(float time)
     {
-        if (bestTime == 0 || time < bestTime)
+        if (bestTime == 0f || time < bestTime)
         {
             bestTime = time;
             Debug.Log("Meilleur temps : " + time);
         }
     }
 
-    public int GetTime() { return bestTime; }
+    public float GetTime() { return bestTime; }
     #endregion
 }
