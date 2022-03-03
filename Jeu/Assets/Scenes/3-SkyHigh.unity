@@ -2580,6 +2580,11 @@ PrefabInstance:
       propertyPath: levelInfo
       value: 
       objectReference: {fileID: 2111197248}
+    - target: {fileID: 4256048495819655071, guid: 0bd9e65f35e30544980817e223e017f4,
+        type: 3}
+      propertyPath: nextLevel
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bd9e65f35e30544980817e223e017f4, type: 3}
 --- !u!1001 &258374569
@@ -37611,35 +37616,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 172785709}
     m_Modifications:
-    - target: {fileID: 1235174494, guid: 580047875db5f3c4d9b6bb1c25f4a8ff, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5729954766898261077, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5729954766898261077, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 5729954766898261077, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6791374053349656795, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
-        type: 3}
-      propertyPath: m_Name
-      value: Safe_Cloud (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6791374053349656795, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1302975023802232747, guid: faf9e46b4bb7fca479571a72a4db2061,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37694,6 +37670,35 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235174494, guid: 580047875db5f3c4d9b6bb1c25f4a8ff, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729954766898261077, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729954766898261077, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729954766898261077, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791374053349656795, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
+        type: 3}
+      propertyPath: m_Name
+      value: Safe_Cloud (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791374053349656795, guid: 580047875db5f3c4d9b6bb1c25f4a8ff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 580047875db5f3c4d9b6bb1c25f4a8ff, type: 3}

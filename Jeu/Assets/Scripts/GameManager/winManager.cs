@@ -18,9 +18,6 @@ public class winManager : MonoBehaviour
     private StarManager stars;
 
     [SerializeField]
-    private endLevel end_Level;
-
-    [SerializeField]
     private PlayerMovement playerMvt;
 
     private int nextLevelNumber;

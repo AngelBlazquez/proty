@@ -16,7 +16,7 @@ public class ZoneSpawner : MonoBehaviour
     private GameObject spawnableObject;
     [SerializeField]
     private float spawnTime;
-    public int force;
+    public float force;
 
     private bool canSpawn = true;
 
@@ -27,7 +27,7 @@ public class ZoneSpawner : MonoBehaviour
         if (canSpawn)
         {
             canSpawn = false;
-            int x_pos = (int)Random.Range(leftPoint.transform.position.x, rightPoint.transform.position.x);
+            float x_pos = (float)Random.Range(leftPoint.transform.position.x, rightPoint.transform.position.x);
             Vector3 pos = new Vector3(x_pos, leftPoint.transform.position.y, leftPoint.transform.position.z);
             GameObject newObject = Instantiate(spawnableObject) as GameObject;
             newObject.transform.position = pos;
