@@ -1,13 +1,2 @@
-m_EditorVersion: 2020.3.28f1
-m_EditorVersionWithRevision: 2020.3.28f1 (f5400f52e03f)
->>>>>>> 603ed62 (rajout de pièges)
->>>>>>> 61b64ee (rebase 3)
 m_EditorVersion: 2020.3.24f1
 m_EditorVersionWithRevision: 2020.3.24f1 (79c78de19888)
->>>>>>> 603ed62 (rajout de pièges)
->>>>>>> 5575b64717460659a15c088a41ce61f85b2f0e15
-m_EditorVersion: 2020.3.24f1
-m_EditorVersionWithRevision: 2020.3.24f1 (79c78de19888)
->>>>>>> 603ed62 (rajout de pièges)
->>>>>>> e67cd506e5d3bbb61878d0505bbed2c1a9075c3e
->>>>>>> 86993e7ad2af8584283e2ff2e34ebed14de3dd90
