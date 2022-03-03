@@ -8413,6 +8413,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7166564556508073171}
+  - component: {fileID: 83938770180230663}
   m_Layer: 5
   m_Name: StatsMenu
   m_TagString: Untagged
@@ -8446,3 +8447,15 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000022888, y: -0.00019264}
   m_SizeDelta: {x: 800, y: 327.20117}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &83938770180230663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7166564556508073170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7088e1bae50869242a21cc48ff71269e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
