@@ -12,13 +12,15 @@ using UnityEngine.UI;
 ///<summary>
 public class MainMenu : MonoBehaviour
 {
-    public GameObject playButton, sliderButton, configButton;
+    public GameObject playButton, sliderButton, configButton, skinMenu, backSkinButton,mainMenu;
 
     public SettingsMenu settings;
 
     void Start()
     {
         settings.setVolume(PlayerPrefs.GetFloat("VolumeSave"));
+        skinMenu.SetActive(false);
+        
     }
 
     ///<summary>
@@ -80,5 +82,28 @@ public class MainMenu : MonoBehaviour
     public void LoadCredits()
     {
         SceneManager.LoadScene("Crédits");
+    }
+
+    /// <summary>
+    /// When the skin button is pressed.
+    /// </summary>
+    public void openSkinMenu()
+    {
+        skinMenu.SetActive(true);
+        mainMenu.SetActive(false);
+        // selected set null
+        EventSystem.current.SetSelectedGameObject(null);
+        // select skinMenu
+        EventSystem.current.SetSelectedGameObject(backSkinButton);
+    }
+
+    public void closedSkinMenu()
+    {
+        skinMenu.SetActive(false);
+        mainMenu.SetActive(true);
+        // selected set null
+        EventSystem.current.SetSelectedGameObject(null);
+        // select skinMenu
+        EventSystem.current.SetSelectedGameObject(playButton);
     }
 }
