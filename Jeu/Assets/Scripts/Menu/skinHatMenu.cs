@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class skinHatMenu : MonoBehaviour
 {
     public Sprite[] hatsSprites;
-    public SpriteRenderer hat;
+    public Image hat;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class skinHatMenu : MonoBehaviour
     public void nextHat()
     {
         int indexHat = PlayerPrefs.GetInt("Hat");
-        if(indexHat < hatsSprites.Length)
+        if(indexHat < hatsSprites.Length-1)
         {
             PlayerPrefs.SetInt("Hat", indexHat + 1);
             hat.sprite = hatsSprites[indexHat + 1];

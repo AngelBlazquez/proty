@@ -65,6 +65,9 @@ TextureImporter:
   - first:
       213: -1324379232830028867
     second: chapeauxTetesSkin_20
+  - first:
+      213: 1760142363369871788
+    second: chapeauxTetesSkin_21
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -590,6 +593,27 @@ TextureImporter:
       bones: []
       spriteID: db30347ca1cde9de0800000000000000
       internalID: -1324379232830028867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_21
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 150
+        width: 38
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca917c267284d6810800000000000000
+      internalID: 1760142363369871788
       vertices: []
       indices: 
       edges: []
