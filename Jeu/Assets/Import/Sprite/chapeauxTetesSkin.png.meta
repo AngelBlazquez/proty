@@ -1,0 +1,612 @@
+fileFormatVersion: 2
+guid: 472ec20f151cb8949b526b659757c452
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8416878008308138323
+    second: chapeauxTetesSkin_0
+  - first:
+      213: -7277160568938098961
+    second: chapeauxTetesSkin_1
+  - first:
+      213: -3149236826010153325
+    second: chapeauxTetesSkin_2
+  - first:
+      213: 4415959051297135827
+    second: chapeauxTetesSkin_3
+  - first:
+      213: 9173062650471388317
+    second: chapeauxTetesSkin_4
+  - first:
+      213: 5983631373437698319
+    second: chapeauxTetesSkin_5
+  - first:
+      213: -2506513901687610707
+    second: chapeauxTetesSkin_6
+  - first:
+      213: -2359606175838926789
+    second: chapeauxTetesSkin_7
+  - first:
+      213: -8203363802839052051
+    second: chapeauxTetesSkin_8
+  - first:
+      213: 2255419734264842601
+    second: chapeauxTetesSkin_9
+  - first:
+      213: -1341942459419532084
+    second: chapeauxTetesSkin_10
+  - first:
+      213: 4649341893132674463
+    second: chapeauxTetesSkin_11
+  - first:
+      213: 936768883967520202
+    second: chapeauxTetesSkin_12
+  - first:
+      213: -617353180172119290
+    second: chapeauxTetesSkin_13
+  - first:
+      213: -5725475516142992922
+    second: chapeauxTetesSkin_14
+  - first:
+      213: 6918465297327252005
+    second: chapeauxTetesSkin_15
+  - first:
+      213: -1729372149257181974
+    second: chapeauxTetesSkin_16
+  - first:
+      213: -1870528219748239475
+    second: chapeauxTetesSkin_17
+  - first:
+      213: 2639935051685012984
+    second: chapeauxTetesSkin_18
+  - first:
+      213: -999296164211849214
+    second: chapeauxTetesSkin_19
+  - first:
+      213: -1324379232830028867
+    second: chapeauxTetesSkin_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 579
+        width: 165
+        height: 156
+      alignment: 9
+      pivot: {x: 0.47011933, y: 0.16119815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daefef4cb0e313b80800000000000000
+      internalID: -8416878008308138323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_1
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 568
+        width: 178
+        height: 170
+      alignment: 9
+      pivot: {x: 0.4704823, y: 0.152892}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee07f2c405520b90800000000000000
+      internalID: -7277160568938098961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_2
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 548
+        width: 134
+        height: 203
+      alignment: 9
+      pivot: {x: 0.47587085, y: 0.12470144}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e0618cac9ab44d0800000000000000
+      internalID: -3149236826010153325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_3
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 603
+        width: 190
+        height: 142
+      alignment: 9
+      pivot: {x: 0.46835038, y: 0.17098655}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc9c334c53a84d30800000000000000
+      internalID: 4415959051297135827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_4
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 625
+        width: 140
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.20896403}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9410cf21e34d4f70800000000000000
+      internalID: 9173062650471388317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_5
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 348
+        width: 134
+        height: 163
+      alignment: 9
+      pivot: {x: 0.48343676, y: 0.14986153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0103a018012a0350800000000000000
+      internalID: 5983631373437698319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_6
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 370
+        width: 134
+        height: 120
+      alignment: 9
+      pivot: {x: 0.48580295, y: 0.19878362}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2e451f2e2173dd0800000000000000
+      internalID: -2506513901687610707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_7
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 363
+        width: 134
+        height: 131
+      alignment: 9
+      pivot: {x: 0.48521355, y: 0.2756457}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b388d4f4faef04fd0800000000000000
+      internalID: -2359606175838926789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_8
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 379
+        width: 134
+        height: 120
+      alignment: 9
+      pivot: {x: 0.4704271, y: 0.21655324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de01b78a51cc72e80800000000000000
+      internalID: -8203363802839052051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_9
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 417
+        width: 134
+        height: 138
+      alignment: 9
+      pivot: {x: 0.47782055, y: 0.17934275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96903407c4cdc4f10800000000000000
+      internalID: 2255419734264842601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_10
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 405
+        width: 147
+        height: 120
+      alignment: 9
+      pivot: {x: 0.41912758, y: 0.21380132}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc4e84d6176706de0800000000000000
+      internalID: -1341942459419532084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_11
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 193
+        width: 194
+        height: 141
+      alignment: 9
+      pivot: {x: 0.4750344, y: 0.18957596}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95e38b81d7c58040800000000000000
+      internalID: 4649341893132674463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_12
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 209
+        width: 233
+        height: 120
+      alignment: 9
+      pivot: {x: 0.4800817, y: 0.2176754}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acde5853652100d00800000000000000
+      internalID: 936768883967520202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_13
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 205
+        width: 174
+        height: 160
+      alignment: 9
+      pivot: {x: 0.49733305, y: 0.17223272}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60312e2bd88be67f0800000000000000
+      internalID: -617353180172119290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_14
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 208
+        width: 134
+        height: 173
+      alignment: 9
+      pivot: {x: 0.47748804, y: 0.15259919}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e1c91a5a560b80b0800000000000000
+      internalID: -5725475516142992922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_15
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 203
+        width: 134
+        height: 173
+      alignment: 9
+      pivot: {x: 0.47402453, y: 0.14186873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 522ee064883530060800000000000000
+      internalID: 6918465297327252005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_16
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 31
+        width: 218
+        height: 129
+      alignment: 9
+      pivot: {x: 0.46285295, y: 0.22437969}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4621f51390008e0800000000000000
+      internalID: -1729372149257181974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_17
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 30
+        width: 138
+        height: 140
+      alignment: 9
+      pivot: {x: 0.4929135, y: 0.19032863}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d87ff8f9e7c8a06e0800000000000000
+      internalID: -1870528219748239475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_18
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 36
+        width: 134
+        height: 152
+      alignment: 9
+      pivot: {x: 0.47810638, y: 0.16759653}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f5a9c941fee2a420800000000000000
+      internalID: 2639935051685012984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_19
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 15
+        width: 146
+        height: 178
+      alignment: 9
+      pivot: {x: 0.51562834, y: 0.14656062}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2080eb2ee69c122f0800000000000000
+      internalID: -999296164211849214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chapeauxTetesSkin_20
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 11
+        width: 123
+        height: 123
+      alignment: 9
+      pivot: {x: 0.49469936, y: 0.49204943}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db30347ca1cde9de0800000000000000
+      internalID: -1324379232830028867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
