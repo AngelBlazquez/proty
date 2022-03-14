@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         MovePlayer(horizontalMovement);
-        FlipPlayer();
+        FlipPlayer(false,false);
 
         if (playerRb.velocity.y < particleLandingAppear)
         {
@@ -118,27 +118,27 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void FlipPlayer()
+    private void FlipPlayer(bool androidTouchLeft,bool androidTouchRight)
     {
         Vector3 PlayerDirection = transform.localScale;
         if (GetComponent<Rigidbody2D>().rotation != 180)
         {
-            if (Input.GetKey(InputManager.Instance().Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f)
+            if (Input.GetKey(InputManager.Instance().Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f || androidTouchLeft)
             {
                 PlayerDirection.x = 1;
             }
-            else if (Input.GetKey(InputManager.Instance().Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f)
+            else if (Input.GetKey(InputManager.Instance().Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f || androidTouchRight)
             {
                 PlayerDirection.x = -1;
             }
         }
         else
         {
-            if (Input.GetKey(InputManager.Instance().Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f)
+            if (Input.GetKey(InputManager.Instance().Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f || androidTouchLeft)
             {
                 PlayerDirection.x = 1;
             }
-            else if (Input.GetKey(InputManager.Instance().Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f)
+            else if (Input.GetKey(InputManager.Instance().Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f || androidTouchRight)
             {
                 PlayerDirection.x = -1;
             }
@@ -198,4 +198,29 @@ public class PlayerMovement : MonoBehaviour
     {
         isOnGround = onGround;
     }
+
+
+    #region Structured Movement (For android)
+    public void MoveRight()
+    {
+        float horizontalMovement = Vector3.right.x * moveSpeed * Time.fixedDeltaTime;
+        MovePlayer(horizontalMovement);
+        FlipPlayer(false,true);
+    }
+
+    public void MoveLeft()
+    {
+        float horizontalMovement = Vector3.left.x * moveSpeed * Time.fixedDeltaTime;
+        MovePlayer(horizontalMovement);
+        FlipPlayer(true,false);
+    }
+
+    public void Jump()
+    {
+        if(isOnGround)
+        {
+            isJumping = true;
+        }
+    }
+    #endregion
 }
