@@ -25,6 +25,16 @@ public class DataManager : MonoBehaviour
         {
             CreateData();
         }
+
+#if PLATFORM_ANDROID
+
+            Debug.Log("DEBUG : ANDROID");
+            for (int i = 0; i < data.GetLevels().Count; i++)
+            {
+                UnlockLevel(i);
+            }
+            SaveData();
+#endif
     }
 
     private void Update()
@@ -118,7 +128,7 @@ public class DataManager : MonoBehaviour
         SaveData();
     }
 
-    #region Getters
+#region Getters
     public List<Level> GetLevels()
     {
         return data.GetLevels();
@@ -140,7 +150,7 @@ public class DataManager : MonoBehaviour
         return data.GetDeath();
     }
 
-    #endregion
+#endregion
 
 }
 
@@ -193,7 +203,7 @@ public class SavableData
         this.version = version;
     }
 
-    #region Getter & Setter
+#region Getter & Setter
     public List<Level> GetLevels() { return allLevels; }
 
 
@@ -225,7 +235,7 @@ public class SavableData
 
     public int GetDeath() { return nbDeath; }
 
-    #endregion
+#endregion
 }
 
 /// <summary>
@@ -250,7 +260,7 @@ public class Level
         bestTime = 0f;
     }
 
-    #region Getters and Setters
+#region Getters and Setters
     public int GetNumber() { return levelNumber; }
 
     public bool GetIsUnlocked() { return isUnlocked; }
@@ -268,5 +278,5 @@ public class Level
     }
 
     public float GetTime() { return bestTime; }
-    #endregion
+#endregion
 }

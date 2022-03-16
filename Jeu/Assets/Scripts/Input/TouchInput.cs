@@ -17,10 +17,17 @@ public class TouchInput : MonoBehaviour
     [SerializeField]
     private HeadMovements hdmvPlayer;
 
+    [SerializeField]
+    private GameObject menuHolder;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        #if PLATFORM_ANDROID
+                menuHolder.SetActive(true);
+        #else
+                menuHolder.SetActive(false);
+        #endif
     }
 
 
@@ -29,23 +36,24 @@ public class TouchInput : MonoBehaviour
     {
         Touch t1;
         Touch t2;
-        if(Input.touchCount > 0)
+        if (Input.touchCount > 0)
         {
-            if(Input.touchCount == 2)
+            if (Input.touchCount == 2)
             {
                 t1 = Input.GetTouch(0);
                 t2 = Input.GetTouch(1);
 
 
                 List<bool> resultTouch1 = ClickedOnButtons(t1.position);
-                if(resultTouch1[0])
+                if (resultTouch1[0])
                 {
                     mvPlayer.Jump();
-                } 
-                else if(resultTouch1[1])
+                }
+                else if (resultTouch1[1])
                 {
                     mvPlayer.MoveLeft();
-                } else if (resultTouch1[2])
+                }
+                else if (resultTouch1[2])
                 {
                     mvPlayer.MoveRight();
                 }
@@ -64,8 +72,8 @@ public class TouchInput : MonoBehaviour
                     mvPlayer.MoveRight();
                 }
 
-            } 
-            else if(Input.touchCount == 1)
+            }
+            else if (Input.touchCount == 1)
             {
                 t1 = Input.GetTouch(0);
 
@@ -82,7 +90,7 @@ public class TouchInput : MonoBehaviour
                 {
                     mvPlayer.MoveRight();
                 }
-            } 
+            }
         }
     }
 
