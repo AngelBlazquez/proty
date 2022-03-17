@@ -39,10 +39,10 @@ public class HeadMovements : MonoBehaviour
     {
         float horizontalMovement;
 
-        if (Input.GetKey(InputManager.Instance().Keys["LeftButton"]))
+        if (Input.GetKey(InputManager.Instance().Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f)
         {
             horizontalMovement = Vector3.left.x * moveSpeed * Time.fixedDeltaTime;
-        } else if (Input.GetKey(InputManager.Instance().Keys["RightButton"]))
+        } else if (Input.GetKey(InputManager.Instance().Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f)
         {
             horizontalMovement = Vector3.right.x * moveSpeed * Time.fixedDeltaTime;
         } else {
