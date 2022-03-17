@@ -22,20 +22,35 @@ public class DeathManager : MonoBehaviour
 
     private IEnumerator Death()
     {
-        data.AddDeath();
-        
-        Instantiate(particuleDeath, player.transform.position, Quaternion.identity);
-        player.SetActive(false);
-
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        
-        nbMorts.text = data.GetDeath().ToString();
     }
 
-    public void StartDeathCoroutine(GameObject g)
+    private IEnumerator Respawn(KillPlayer piege)
+    {
+        yield return new WaitForSeconds(2f);
+        player.transform.position = TrainingMode.lastPosition;
+        player.SetActive(true);
+        TrainingMode.canSavePosition = true;
+        piege.ActivateTrap();
+    }
+
+    public void StartDeathCoroutine(GameObject g, KillPlayer piege)
     {
         player = g;
-        StartCoroutine(Death());
+        data.AddDeath();
+        Instantiate(particuleDeath, player.transform.position, Quaternion.identity);
+        player.GetComponentInChildren<Animator>().Play("IdlePerso");
+        player.GetComponentInChildren<Animator>().Update(0f);
+        player.SetActive(false);
+        if (TrainingMode.GetIsTraining())
+        {
+            StartCoroutine(Respawn(piege));
+        }
+        else
+        {
+            StartCoroutine(Death());
+        }
+        nbMorts.text = data.GetDeath().ToString();
     }
 }

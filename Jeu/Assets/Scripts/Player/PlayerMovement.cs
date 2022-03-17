@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Cursor.visible = false;
         InputManager.Instance();
+        TrainingMode.lastPosition = transform.position;
     }
 
 
@@ -67,6 +68,21 @@ public class PlayerMovement : MonoBehaviour
         {
             canSmokeParticule = true;
         }
+
+        if (TrainingMode.GetIsTraining())
+        {
+            //TrainingMode.canSavePosition = false;
+            StartCoroutine(SavePosition());
+        }
+    }
+
+    private IEnumerator SavePosition()
+    {
+        Vector3 oldPosition = transform.position;
+        yield return new WaitForSeconds(TrainingMode.GetSeconds());
+        Debug.Log("Position");
+        TrainingMode.lastPosition = oldPosition;
+        TrainingMode.canSavePosition = true;
     }
 
     private void MovePlayer(float _horizontalMovement)

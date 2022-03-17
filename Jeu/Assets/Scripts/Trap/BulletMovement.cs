@@ -10,18 +10,15 @@ public class BulletMovement : MonoBehaviour
 {
     public GameObject particuleExplose;
     private eventSon sons;
-    private DeathManager deathManager;
     [SerializeField]
     private int rotationValue;
 
-    private bool collidedPlayer = false; 
 
     // Start is called before the first frame update
     void Start()
     {
         sons = GetComponent<eventSon>();
         sons.PlaySon();
-        deathManager = GameObject.Find("GameManager").GetComponent<DeathManager>();
     }
 
     // Update is called once per frame
@@ -34,13 +31,8 @@ public class BulletMovement : MonoBehaviour
     /// Destroys the bullet when it collides with something
     /// </summary>
     /// <param name="col">Area of collision</param>
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Player") && !collidedPlayer)
-        {
-            collidedPlayer = true;
-            deathManager.StartDeathCoroutine(col.gameObject);
-        }
         Instantiate(particuleExplose, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }

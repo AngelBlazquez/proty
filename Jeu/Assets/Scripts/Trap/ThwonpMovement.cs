@@ -12,18 +12,14 @@ public class ThwonpMovement : MonoBehaviour
     private Transform parentTr;
     private Vector3 originalPos;
 
-    private DeathManager deathManager;
-
     private bool hasCollided = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        deathManager = GameObject.Find("GameManager").GetComponent<DeathManager>();
         parentTr = GetComponentInParent<Transform>();
         parentRb = GetComponentInParent<Rigidbody2D>();
         originalPos = parentRb.position;
-
     }
 
     // Update is called once per frame
@@ -31,12 +27,12 @@ public class ThwonpMovement : MonoBehaviour
     {
         if (hasCollided)
         {
-           
+
             if (parentTr.position.y >= originalPos.y)
             {
                 hasCollided = false;
                 parentRb.gravityScale = 0;
-                parentRb.velocity = Vector2.zero; 
+                parentRb.velocity = Vector2.zero;
             }
         }
     }
@@ -60,11 +56,7 @@ public class ThwonpMovement : MonoBehaviour
     /// <param name="col">Area of collision</param>
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Player")) // test collision with player
-        {
-            deathManager.StartDeathCoroutine(col.gameObject);
-        }
-        else
+        if (!col.gameObject.CompareTag("Player")) // test collision with player
         {
             hasCollided = true;
             parentRb.gravityScale = -1; // thwomp goes back up
