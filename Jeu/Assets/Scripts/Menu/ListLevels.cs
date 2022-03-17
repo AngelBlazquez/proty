@@ -55,9 +55,19 @@ public class ListLevels : MonoBehaviour
                 display.transform.localScale = new Vector3(1f, 1f, 1f);
 
 
-                Button button = display.transform.Find("Button").gameObject.GetComponent<Button>();
+                Button playButton = display.transform.Find("PlayButton").gameObject.GetComponent<Button>();
+                Button trainingButton = display.transform.Find("TrainingButton").gameObject.GetComponent<Button>();
                 int tmp = levels[i].GetNumber();
-                button.onClick.AddListener(() => ChangeLevel.LoadLevel(tmp));
+                playButton.onClick.AddListener(() => {
+                    TrainingMode.SetTrainingMode(false);
+                    ChangeLevel.LoadLevel(tmp);
+                    }
+                );
+                trainingButton.onClick.AddListener(() => {
+                    TrainingMode.SetTrainingMode(true);
+                    ChangeLevel.LoadLevel(tmp);
+                }
+                );
 
                 TMPro.TextMeshProUGUI bestTime = display.transform.Find("Time").gameObject.GetComponent<TMPro.TextMeshProUGUI>();
                 float min = levels[i].GetTime() / 60f;
@@ -67,10 +77,11 @@ public class ListLevels : MonoBehaviour
                 if (!levels[i].GetIsUnlocked())
                 {
                     //Image img = display.transform.Find("Image").gameObject.GetComponent<Image>();
-                    button.interactable = false;
+                    playButton.interactable = false;
+                    trainingButton.interactable = false;
 
                     GameObject chain = Instantiate(chains);
-                    chain.transform.SetParent(button.transform);
+                    chain.transform.SetParent(playButton.transform);
                     chain.transform.position = new Vector3(0, -40, 0);
                     chain.transform.localScale = new Vector3(1.3f, 1.3f, 1f);
 

@@ -13,12 +13,17 @@ public class KillPlayer : MonoBehaviour
         deathManager = GameObject.Find("GameManager").GetComponent<DeathManager>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && !oneDetection)
         {
             oneDetection = true;
-            deathManager.StartDeathCoroutine(collision.gameObject);
+            deathManager.StartDeathCoroutine(collision.gameObject, this);
         }
+    }
+
+    public void ActivateTrap()
+    {
+        this.oneDetection = false;
     }
 }
