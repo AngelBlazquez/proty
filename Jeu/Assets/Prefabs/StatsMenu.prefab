@@ -8420,7 +8420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7166564556508073171
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8459,3 +8459,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7088e1bae50869242a21cc48ff71269e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
+  nbTotalDeath: {fileID: 0}
+  nbLvl1: {fileID: 0}
+  nbLvl2: {fileID: 0}
+  nbLvl3: {fileID: 0}
+  nbLvl4: {fileID: 0}
+  nbLvl5: {fileID: 0}
+  nbLvl6: {fileID: 0}
+  nbLvl7: {fileID: 0}
+  nbLvl8: {fileID: 0}
+  nbLvl9: {fileID: 0}
+  nbFall: {fileID: 0}
+  nbSpikes: {fileID: 0}
+  nbSaws: {fileID: 0}
+  nbAxes: {fileID: 0}
+  nbLasers: {fileID: 0}
+  nbThwamps: {fileID: 0}
+  nbRain: {fileID: 0}
+  nbCannonBall: {fileID: 0}
+  Timer1: {fileID: 0}
+  Timer2: {fileID: 0}
+  Timer3: {fileID: 0}
+  Timer4: {fileID: 0}
+  Timer5: {fileID: 0}
+  Timer6: {fileID: 0}
+  Timer7: {fileID: 0}
+  Timer8: {fileID: 0}
+  Timer9: {fileID: 0}

@@ -243,11 +243,14 @@ public class Level
     [SerializeField]
     private int[] stars;
 
+    private int death;
+
     public Level(int levelNumber)
     {
         this.levelNumber = levelNumber;
         isUnlocked = false;
         bestTime = 0;
+        death = 0;
     }
 
     #region Getters and Setters
@@ -268,5 +271,12 @@ public class Level
     }
 
     public int GetTime() { return bestTime; }
+
+    public void SetDeath()
+    {
+        death++;
+    }
+
+    public int GetDeath() { return death; }
     #endregion
 }
