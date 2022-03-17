@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Saw
+  - Axes
+  - Spikes
+  - Void
+  - Lasers
+  - Thwamp
+  - Rain
+  - CannonBall
   layers:
   - Default
   - TransparentFX

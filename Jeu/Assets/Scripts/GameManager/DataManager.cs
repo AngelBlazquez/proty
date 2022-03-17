@@ -98,7 +98,7 @@ public class DataManager : MonoBehaviour
             SaveData();
         }
 
-
+        data.UpdateTraps();
     }
 
     /// <summary>
@@ -190,7 +190,7 @@ public class SavableData
     private int nbDeath;
     [SerializeField]
     private int nbCoin;
-    private List<Traps> allTraps;
+    private Dictionary<string,Traps> allTraps;
 
     /// <summary>
     /// Creates a new List of Level
@@ -226,6 +226,19 @@ public class SavableData
             }
         }
         this.version = version;
+    }
+
+    public void UpdateTraps()
+    {
+        allTraps = new Dictionary<string,Traps>();
+        allTraps.Add("Void", new Traps("Void"));
+        allTraps.Add("Spikes", new Traps("Spikes"));
+        allTraps.Add("Saw", new Traps("Saw"));
+        allTraps.Add("Axes", new Traps("Axes"));
+        allTraps.Add("Lasers", new Traps("Lasers"));
+        allTraps.Add("Thwamp", new Traps("Thwamp"));
+        allTraps.Add("Rain", new Traps("Rain"));
+        allTraps.Add("CannonBall", new Traps("CannonBall"));
     }
 
     #region Getter & Setter
@@ -275,12 +288,18 @@ public class SavableData
 
     public void AddDeathTraps(string tag)
     {
-        allTraps[tag].AddDeath();
+        if (allTraps.ContainsKey(tag)) {
+            allTraps[tag].AddDeath();
+        }
     }
 
     public int GetDeathTraps(string tag)
     {
-        return allTraps[tag].GetDeath();
+        int death = 0;
+        if (allTraps.ContainsKey(tag)) {
+            death = allTraps[tag].GetDeath();
+        }
+        return death;
     }
 
     #endregion
