@@ -135,9 +135,20 @@ public class DataManager : MonoBehaviour
         SaveData();
     }
 
+    public void AddCoin()
+    {
+        data.AddCoin();
+        SaveData();
+    }
+
     public int GetDeath()
     {
         return data.GetDeath();
+    }
+
+    public int GetCoin()
+    {
+        return data.GetCoin();
     }
 
     #endregion
@@ -157,6 +168,8 @@ public class SavableData
     private float version;
     [SerializeField]
     private int nbDeath;
+    [SerializeField]
+    private int nbCoin;
 
     /// <summary>
     /// Creates a new List of Level
@@ -172,6 +185,7 @@ public class SavableData
         allLevels[0].Unlock();
         this.version = version;
         nbDeath = 0;
+        nbCoin = 0;
     }
 
     public void Update(int newSize, float version)
@@ -224,6 +238,10 @@ public class SavableData
     public void AddDeath() { nbDeath++; }
 
     public int GetDeath() { return nbDeath; }
+
+    public void AddCoin() { nbCoin++; }
+
+    public int GetCoin() { return nbCoin; }
 
     #endregion
 }
