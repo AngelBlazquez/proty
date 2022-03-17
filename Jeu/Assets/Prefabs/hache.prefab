@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4711958387656783056}
   m_Layer: 0
   m_Name: hache
-  m_TagString: Untagged
+  m_TagString: Axes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

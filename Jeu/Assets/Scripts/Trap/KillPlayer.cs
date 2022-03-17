@@ -6,14 +6,14 @@ public class KillPlayer : MonoBehaviour
 {
     private DeathManager deathManager;
     private bool oneDetection = false;
-    
-    [SerializeField]
+
     private DataManager data;
 
     // Start is called before the first frame update
     void Start()
     {
         deathManager = GameObject.Find("GameManager").GetComponent<DeathManager>();
+        data = GameObject.Find("LevelsManager").GetComponent<DataManager>();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -21,7 +21,8 @@ public class KillPlayer : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && !oneDetection)
         {
             oneDetection = true;
-            deathManager.StartDeathCoroutine(collision.gameObject, this);
+            deathManager.StartDeathCoroutine(collision.gameObject);
+            data.AddDeathTraps(this.gameObject.tag);
         }
     }
 

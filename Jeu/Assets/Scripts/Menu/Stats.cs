@@ -52,14 +52,14 @@ public class Stats : MonoBehaviour
         nbLvl8.text = data.GetDeathLevel(7).ToString();
         nbLvl9.text = data.GetDeathLevel(8).ToString();
 
-        nbFall.text = data.GetDeath().ToString();
-        nbSpikes.text = data.GetDeath().ToString();
-        nbSaws.text = data.GetDeath().ToString();
-        nbAxes.text = data.GetDeath().ToString();
-        nbLasers.text = data.GetDeath().ToString();
-        nbThwamps.text = data.GetDeath().ToString();
-        nbRain.text = data.GetDeath().ToString();
-        nbCannonBall.text = data.GetDeath().ToString();
+        nbFall.text = data.GetDeathTraps("Void").ToString();
+        nbSpikes.text = data.GetDeathTraps("Spikes").ToString();
+        nbSaws.text = data.GetDeathTraps("Saw").ToString();
+        nbAxes.text = data.GetDeathTraps("Axes").ToString();
+        nbLasers.text = data.GetDeathTraps("Lasers").ToString();
+        nbThwamps.text = data.GetDeathTraps("Thwamp").ToString();
+        nbRain.text = data.GetDeathTraps("Rain").ToString();
+        nbCannonBall.text = data.GetDeathTraps("CannonBall").ToString();
 
         Timer1.text = string.Format ("{0:0}:{1:00}", Mathf.Floor(data.GetTime(0)/60), data.GetTime(0)%60);
         Timer2.text = string.Format ("{0:0}:{1:00}", Mathf.Floor(data.GetTime(1)/60), data.GetTime(1)%60);
