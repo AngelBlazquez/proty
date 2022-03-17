@@ -40,8 +40,12 @@ public class DeathManager : MonoBehaviour
         player = g;
         data.AddDeath();
         Instantiate(particuleDeath, player.transform.position, Quaternion.identity);
-        player.GetComponentInChildren<Animator>().Play("IdlePerso");
-        player.GetComponentInChildren<Animator>().Update(0f);
+        Animator animator = player.GetComponentInChildren<Animator>();
+        if (animator != null)
+        {
+            animator.Play("IdlePerso");
+            animator.Update(0f);
+        }
         player.SetActive(false);
         if (TrainingMode.GetIsTraining())
         {

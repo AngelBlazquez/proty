@@ -5,7 +5,7 @@ using UnityEngine;
 public static class TrainingMode
 {
 
-    private static bool isTraining = true;
+    private static bool isTraining = false;
     private static int saveDelaySeconds = 2;
 
     public static Vector3 lastPosition;

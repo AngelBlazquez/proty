@@ -10,7 +10,7 @@ public class conveyorBelt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,6 +20,9 @@ public class conveyorBelt : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D col)
     {
-        col.gameObject.transform.Translate (direction * speed);
+        if (col.CompareTag("Player"))
+        {
+            col.gameObject.transform.Translate(direction * speed);
+        }
     }
 }
