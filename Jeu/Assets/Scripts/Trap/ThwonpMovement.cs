@@ -13,6 +13,7 @@ public class ThwonpMovement : MonoBehaviour
     private Vector3 originalPos;
 
     private DeathManager deathManager;
+    private DataManager data;
 
     private bool hasCollided = false;
 
@@ -20,6 +21,7 @@ public class ThwonpMovement : MonoBehaviour
     void Start()
     {
         deathManager = GameObject.Find("GameManager").GetComponent<DeathManager>();
+        data = GameObject.Find("LevelsManager").GetComponent<DataManager>();
         parentTr = GetComponentInParent<Transform>();
         parentRb = GetComponentInParent<Rigidbody2D>();
         originalPos = parentRb.position;
@@ -63,6 +65,7 @@ public class ThwonpMovement : MonoBehaviour
         if (col.gameObject.CompareTag("Player")) // test collision with player
         {
             deathManager.StartDeathCoroutine(col.gameObject);
+            data.AddDeathTraps(this.gameObject.tag);
         }
         else
         {
