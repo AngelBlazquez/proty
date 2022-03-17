@@ -149,6 +149,26 @@ public class DataManager : MonoBehaviour
     public int GetCoin()
     {
         return data.GetCoin();
+    public void AddDeathLevel(int levelNumber)
+    {
+        data.AddDeathLevel(levelNumber);
+        SaveData();
+    }
+
+    public int GetDeathLevel(int levelNumber)
+    {
+        return data.GetDeathLevel(levelNumber);
+    }
+
+    public void AddDeathTraps(string tag)
+    {
+        data.AddDeathTraps(tag);
+        SaveData();
+    }
+
+    public int GetDeathTraps(string tag)
+    {
+        return data.GetDeathTraps(tag);
     }
 
     #endregion
@@ -170,6 +190,7 @@ public class SavableData
     private int nbDeath;
     [SerializeField]
     private int nbCoin;
+    private List<Traps> allTraps;
 
     /// <summary>
     /// Creates a new List of Level
@@ -242,6 +263,25 @@ public class SavableData
     public void AddCoin() { nbCoin++; }
 
     public int GetCoin() { return nbCoin; }
+    public void AddDeathLevel(int levelNumber)
+    {
+        allLevels[levelNumber].SetDeath();
+    }
+
+    public int GetDeathLevel(int levelNumber)
+    {
+        return allLevels[levelNumber].GetDeath();
+    }
+
+    public void AddDeathTraps(string tag)
+    {
+        allTraps[tag].AddDeath();
+    }
+
+    public int GetDeathTraps(string tag)
+    {
+        return allTraps[tag].GetDeath();
+    }
 
     #endregion
 }
@@ -261,7 +301,7 @@ public class Level
     [SerializeField]
     private int[] stars;
 
-    private int death;
+    private int death = 0;
 
     public Level(int levelNumber)
     {
@@ -297,4 +337,34 @@ public class Level
 
     public int GetDeath() { return death; }
     #endregion
+}
+
+[System.Serializable]
+public class Traps
+{
+    [SerializeField]
+    private string tag;
+
+    private int death;
+
+    public Traps(string tag)
+    {
+        this.tag = tag;
+        death = 0;
+    }
+
+    public int GetDeath()
+    {
+        return death;
+    }
+
+    public void AddDeath()
+    {
+        death++;
+    }
+
+    public string GetTag()
+    {
+        return tag;
+    }
 }
