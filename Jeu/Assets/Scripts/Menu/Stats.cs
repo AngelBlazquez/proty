@@ -42,15 +42,15 @@ public class Stats : MonoBehaviour
     void Start()
     {
         nbTotalDeath.text = data.GetDeath().ToString();
-        nbLvl1.text = data.GetDeath().ToString();
-        nbLvl2.text = data.GetDeath().ToString();
-        nbLvl3.text = data.GetDeath().ToString();
-        nbLvl4.text = data.GetDeath().ToString();
-        nbLvl5.text = data.GetDeath().ToString();
-        nbLvl6.text = data.GetDeath().ToString();
-        nbLvl7.text = data.GetDeath().ToString();
-        nbLvl8.text = data.GetDeath().ToString();
-        nbLvl9.text = data.GetDeath().ToString();
+        nbLvl1.text = data.GetDeathLevel(0).ToString();
+        nbLvl2.text = data.GetDeathLevel(1).ToString();
+        nbLvl3.text = data.GetDeathLevel(2).ToString();
+        nbLvl4.text = data.GetDeathLevel(3).ToString();
+        nbLvl5.text = data.GetDeathLevel(4).ToString();
+        nbLvl6.text = data.GetDeathLevel(5).ToString();
+        nbLvl7.text = data.GetDeathLevel(6).ToString();
+        nbLvl8.text = data.GetDeathLevel(7).ToString();
+        nbLvl9.text = data.GetDeathLevel(8).ToString();
 
         nbFall.text = data.GetDeath().ToString();
         nbSpikes.text = data.GetDeath().ToString();

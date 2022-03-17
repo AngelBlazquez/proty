@@ -6,6 +6,9 @@ public class KillPlayer : MonoBehaviour
 {
     private DeathManager deathManager;
     private bool oneDetection = false;
+    
+    [SerializeField]
+    private DataManager data;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +22,7 @@ public class KillPlayer : MonoBehaviour
         {
             oneDetection = true;
             deathManager.StartDeathCoroutine(collision.gameObject);
+            // self.gameObject.Tag
         }
     }
 }

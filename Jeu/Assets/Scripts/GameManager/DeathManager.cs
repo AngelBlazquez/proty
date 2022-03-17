@@ -23,6 +23,8 @@ public class DeathManager : MonoBehaviour
     private IEnumerator Death()
     {
         data.AddDeath();
+
+        data.AddDeathLevel(SceneManager.GetActiveScene().buildIndex - 3);
         
         Instantiate(particuleDeath, player.transform.position, Quaternion.identity);
         player.SetActive(false);
