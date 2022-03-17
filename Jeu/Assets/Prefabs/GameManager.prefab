@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5914589432404366499}
   - component: {fileID: 5914589432404366498}
   - component: {fileID: 5914589432404366497}
+  - component: {fileID: 2987839524707918713}
+  - component: {fileID: 4592893963297550054}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -64,5 +66,31 @@ MonoBehaviour:
   nextLevelInput: {fileID: 0}
   resumeButton: {fileID: 0}
   stars: {fileID: 0}
-  end_Level: {fileID: 0}
   playerMvt: {fileID: 0}
+--- !u!114 &2987839524707918713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5914589432404366525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730b6ae1dc610a54cb223dd2856e647a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 5914589432404366525}
+--- !u!114 &4592893963297550054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5914589432404366525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd213466e7ca1f84ab1ab4852363d5bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  mainTimer: 0

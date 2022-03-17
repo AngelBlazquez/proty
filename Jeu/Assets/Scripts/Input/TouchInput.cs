@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TouchInput : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("1 = ^ / 2 = < / 3 = >")]
+    [Tooltip("1 = ^ / 2 = < / 3 = > / 4 = pause")]
     private Button[] touchUI;
 
     [SerializeField]
@@ -16,6 +16,8 @@ public class TouchInput : MonoBehaviour
     private PlayerMovement mvPlayer;
     [SerializeField]
     private HeadMovements hdmvPlayer;
+    [SerializeField]
+    private winManager pauseRef;
 
     [SerializeField]
     private GameObject menuHolder;
@@ -32,7 +34,7 @@ public class TouchInput : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Touch t1;
         Touch t2;
@@ -57,6 +59,10 @@ public class TouchInput : MonoBehaviour
                 {
                     mvPlayer.MoveRight();
                 }
+                else if (resultTouch1[3])
+                {
+                    pauseRef.pauseGameMenu();
+                }
 
                 List<bool> resultTouch2 = ClickedOnButtons(t2.position);
                 if (resultTouch2[0])
@@ -71,12 +77,17 @@ public class TouchInput : MonoBehaviour
                 {
                     mvPlayer.MoveRight();
                 }
+                else if (resultTouch1[3])
+                {
+                    pauseRef.pauseGameMenu();
+                }
 
             }
             else if (Input.touchCount == 1)
             {
                 t1 = Input.GetTouch(0);
 
+                
                 List<bool> resultTouch1 = ClickedOnButtons(t1.position);
                 if (resultTouch1[0])
                 {
@@ -89,6 +100,10 @@ public class TouchInput : MonoBehaviour
                 else if (resultTouch1[2])
                 {
                     mvPlayer.MoveRight();
+                }
+                else if(resultTouch1[3])
+                {
+                    pauseRef.pauseGameMenu();
                 }
             }
         }
