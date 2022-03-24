@@ -33,6 +33,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet 1.0 Variant No Gravity
       objectReference: {fileID: 0}
+    - target: {fileID: 6990794544372635543, guid: 6fd9ba08ad6705b4ebf915d920cb9d02,
+        type: 3}
+      propertyPath: m_TagString
+      value: CannonBall
+      objectReference: {fileID: 0}
     - target: {fileID: 6990794544372635629, guid: 6fd9ba08ad6705b4ebf915d920cb9d02,
         type: 3}
       propertyPath: m_RootOrder

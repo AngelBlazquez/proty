@@ -95,9 +95,9 @@ public class DataManager : MonoBehaviour
         if (data.GetVersion() == 0 || data.GetVersion() < levelDisplays.GetVersion())
         {
             data.Update(levelDisplays.GetDisplay().Count, levelDisplays.GetVersion());
+            data.UpdateTraps();
             SaveData();
         }
-
 
     }
 
@@ -146,9 +146,32 @@ public class DataManager : MonoBehaviour
         return data.GetDeath();
     }
 
+<<<<<<< HEAD
     public int GetCoin()
     {
         return data.GetCoin();
+=======
+>>>>>>> 69891fd15c3cc3f6f6223f0dfeb82e3379c7accb
+    public void AddDeathLevel(int levelNumber)
+    {
+        data.AddDeathLevel(levelNumber);
+        SaveData();
+    }
+
+    public int GetDeathLevel(int levelNumber)
+    {
+        return data.GetDeathLevel(levelNumber);
+    }
+
+    public void AddDeathTraps(string tag)
+    {
+        data.AddDeathTraps(tag);
+        SaveData();
+    }
+
+    public int GetDeathTraps(string tag)
+    {
+        return data.GetDeathTraps(tag);
     }
 
     #endregion
@@ -170,6 +193,7 @@ public class SavableData
     private int nbDeath;
     [SerializeField]
     private int nbCoin;
+    private Dictionary<string,Traps> allTraps;
 
     /// <summary>
     /// Creates a new List of Level
@@ -207,6 +231,19 @@ public class SavableData
         this.version = version;
     }
 
+    public void UpdateTraps()
+    {
+        allTraps = new Dictionary<string,Traps>();
+        allTraps.Add("Void", new Traps("Void", 0));
+        allTraps.Add("Spikes", new Traps("Spikes", 0));
+        allTraps.Add("Saw", new Traps("Saw", 0));
+        allTraps.Add("Axes", new Traps("Axes", 0));
+        allTraps.Add("Lasers", new Traps("Lasers", 0));
+        allTraps.Add("Thwamp", new Traps("Thwamp", 0));
+        allTraps.Add("Rain", new Traps("Rain", 0));
+        allTraps.Add("CannonBall", new Traps("CannonBall", 0));
+    }
+
     #region Getter & Setter
     public List<Level> GetLevels() { return allLevels; }
 
@@ -239,9 +276,37 @@ public class SavableData
 
     public int GetDeath() { return nbDeath; }
 
+<<<<<<< HEAD
     public void AddCoin() { nbCoin++; }
 
     public int GetCoin() { return nbCoin; }
+=======
+>>>>>>> 69891fd15c3cc3f6f6223f0dfeb82e3379c7accb
+    public void AddDeathLevel(int levelNumber)
+    {
+        allLevels[levelNumber].SetDeath();
+    }
+
+    public int GetDeathLevel(int levelNumber)
+    {
+        return allLevels[levelNumber].GetDeath();
+    }
+
+    public void AddDeathTraps(string tag)
+    {
+        if (allTraps.ContainsKey(tag)) {
+            allTraps[tag].AddDeath();
+        }
+    }
+
+    public int GetDeathTraps(string tag)
+    {
+        int death = 0;
+        if (allTraps.ContainsKey(tag)) {
+            death = allTraps[tag].GetDeath();
+        }
+        return death;
+    }
 
     #endregion
 }
@@ -261,11 +326,14 @@ public class Level
     [SerializeField]
     private int[] stars;
 
+    private int death = 0;
+
     public Level(int levelNumber)
     {
         this.levelNumber = levelNumber;
         isUnlocked = false;
-        bestTime = 0f;
+        bestTime = 0;
+        death = 0;
     }
 
     #region Getters and Setters
@@ -285,6 +353,43 @@ public class Level
         }
     }
 
-    public float GetTime() { return bestTime; }
+    public int GetTime() { return bestTime; }
+
+    public void SetDeath()
+    {
+        death++;
+    }
+
+    public int GetDeath() { return death; }
     #endregion
+}
+
+[System.Serializable]
+public class Traps
+{
+    [SerializeField]
+    private string tag;
+
+    private int death;
+
+    public Traps(string tag, int death)
+    {
+        this.tag = tag;
+        this.death = death;
+    }
+
+    public int GetDeath()
+    {
+        return death;
+    }
+
+    public void AddDeath()
+    {
+        death++;
+    }
+
+    public string GetTag()
+    {
+        return tag;
+    }
 }
