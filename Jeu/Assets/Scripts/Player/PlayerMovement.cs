@@ -203,14 +203,14 @@ public class PlayerMovement : MonoBehaviour
     #region Structured Movement (For android)
     public void MoveRight()
     {
-        float horizontalMovement = Vector3.right.x * moveSpeed * Time.fixedDeltaTime;
+        float horizontalMovement = Vector3.right.x * moveSpeed * 1.85f * Time.fixedDeltaTime;
         MovePlayer(horizontalMovement);
         FlipPlayer(false,true);
     }
 
     public void MoveLeft()
     {
-        float horizontalMovement = Vector3.left.x * moveSpeed * Time.fixedDeltaTime;
+        float horizontalMovement = Vector3.left.x * moveSpeed * 1.85f  * Time.fixedDeltaTime;
         MovePlayer(horizontalMovement);
         FlipPlayer(true,false);
     }
