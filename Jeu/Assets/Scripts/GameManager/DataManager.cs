@@ -146,9 +146,12 @@ public class DataManager : MonoBehaviour
         return data.GetDeath();
     }
 
+<<<<<<< HEAD
     public int GetCoin()
     {
         return data.GetCoin();
+=======
+>>>>>>> 69891fd15c3cc3f6f6223f0dfeb82e3379c7accb
     public void AddDeathLevel(int levelNumber)
     {
         data.AddDeathLevel(levelNumber);
@@ -273,9 +276,12 @@ public class SavableData
 
     public int GetDeath() { return nbDeath; }
 
+<<<<<<< HEAD
     public void AddCoin() { nbCoin++; }
 
     public int GetCoin() { return nbCoin; }
+=======
+>>>>>>> 69891fd15c3cc3f6f6223f0dfeb82e3379c7accb
     public void AddDeathLevel(int levelNumber)
     {
         allLevels[levelNumber].SetDeath();
