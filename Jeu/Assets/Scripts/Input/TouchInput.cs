@@ -34,7 +34,7 @@ public class TouchInput : MonoBehaviour
 
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         Touch t1;
         Touch t2;
@@ -91,6 +91,7 @@ public class TouchInput : MonoBehaviour
                 List<bool> resultTouch1 = ClickedOnButtons(t1.position);
                 if (resultTouch1[0])
                 {
+                    Debug.Log("Test");
                     mvPlayer.Jump();
                 }
                 else if (resultTouch1[1])
@@ -115,7 +116,7 @@ public class TouchInput : MonoBehaviour
 
         foreach (Button b in touchUI)
         {
-            result.Add(RectTransformUtility.RectangleContainsScreenPoint(b.gameObject.GetComponent<RectTransform>(), point, Camera.main));
+            result.Add(RectTransformUtility.RectangleContainsScreenPoint(b.gameObject.GetComponent<RectTransform>(), point, Camera.current));
         }
 
         return result;
