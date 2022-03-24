@@ -182,9 +182,8 @@ public class DataManager : MonoBehaviour
     {
         return data.GetDeathTraps(tag);
     }
-
-    #endregion
 }
+#endregion
 
 
 /// <summary>
@@ -359,7 +358,7 @@ public class Level
         }
     }
 
-    public int GetTime() { return bestTime; }
+    public float GetTime() { return bestTime; }
 
     public void SetDeath()
     {
@@ -398,6 +397,4 @@ public class Traps
     {
         return tag;
     }
-
-#endregion
 }
