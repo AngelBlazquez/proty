@@ -200,6 +200,7 @@ public class SavableData
     private int nbDeath;
     [SerializeField]
     private int nbCoin;
+    [SerializeField]
     private Dictionary<string,Traps> allTraps;
 
     /// <summary>
