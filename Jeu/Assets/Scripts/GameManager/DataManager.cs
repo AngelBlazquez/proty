@@ -95,10 +95,10 @@ public class DataManager : MonoBehaviour
         if (data.GetVersion() == 0 || data.GetVersion() < levelDisplays.GetVersion())
         {
             data.Update(levelDisplays.GetDisplay().Count, levelDisplays.GetVersion());
+            data.UpdateTraps();
             SaveData();
         }
 
-        data.UpdateTraps();
     }
 
     /// <summary>
@@ -220,14 +220,14 @@ public class SavableData
     public void UpdateTraps()
     {
         allTraps = new Dictionary<string,Traps>();
-        allTraps.Add("Void", new Traps("Void"));
-        allTraps.Add("Spikes", new Traps("Spikes"));
-        allTraps.Add("Saw", new Traps("Saw"));
-        allTraps.Add("Axes", new Traps("Axes"));
-        allTraps.Add("Lasers", new Traps("Lasers"));
-        allTraps.Add("Thwamp", new Traps("Thwamp"));
-        allTraps.Add("Rain", new Traps("Rain"));
-        allTraps.Add("CannonBall", new Traps("CannonBall"));
+        allTraps.Add("Void", new Traps("Void", 0));
+        allTraps.Add("Spikes", new Traps("Spikes", 0));
+        allTraps.Add("Saw", new Traps("Saw", 0));
+        allTraps.Add("Axes", new Traps("Axes", 0));
+        allTraps.Add("Lasers", new Traps("Lasers", 0));
+        allTraps.Add("Thwamp", new Traps("Thwamp", 0));
+        allTraps.Add("Rain", new Traps("Rain", 0));
+        allTraps.Add("CannonBall", new Traps("CannonBall", 0));
     }
 
     #region Getter & Setter
@@ -352,10 +352,10 @@ public class Traps
 
     private int death;
 
-    public Traps(string tag)
+    public Traps(string tag, int death)
     {
         this.tag = tag;
-        death = 0;
+        this.death = death;
     }
 
     public int GetDeath()
