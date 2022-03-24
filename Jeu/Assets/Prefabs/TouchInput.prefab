@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 410, y: 135.20001}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchoredPosition: {x: 286.2, y: 100.599976}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.49999985, y: 0.49999982}
 --- !u!222 &6372803982777700951
 CanvasRenderer:
@@ -193,7 +193,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 100
-    m_Alignment: 4
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -236,8 +236,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -137, y: 135.20001}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchoredPosition: {x: -98, y: 100.599976}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1316644976300644
 CanvasRenderer:
@@ -453,7 +453,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -632,6 +632,7 @@ MonoBehaviour:
   touchInputCanvas: {fileID: 4985576226087172708}
   mvPlayer: {fileID: 0}
   hdmvPlayer: {fileID: 0}
+  menuHolder: {fileID: 7874177668737897956}
 --- !u!1 &9151530918922398829
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,8 +669,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 139, y: 135.20001}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchoredPosition: {x: 106.19995, y: 100.599976}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &305255322589107255
 CanvasRenderer:
