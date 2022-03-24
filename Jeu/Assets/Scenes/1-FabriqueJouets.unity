@@ -282,6 +282,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705ad4d93584770449de1311d3f0a6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &86639241 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4592893963297550054, guid: 0c8204f8294b5804e831d264cbbe4ed2,
+    type: 3}
+  m_PrefabInstance: {fileID: 86639239}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027187474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd213466e7ca1f84ab1ab4852363d5bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &108116041
 GameObject:
   m_ObjectHideFlags: 0
@@ -77127,7 +77139,7 @@ PrefabInstance:
         type: 3}
       propertyPath: timer
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 86639241}
     - target: {fileID: 4256048495819655071, guid: 0bd9e65f35e30544980817e223e017f4,
         type: 3}
       propertyPath: menuWin
