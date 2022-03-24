@@ -424,6 +424,10 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 3c3fd3cbe12059a42a6893d6b786da8c, type: 2}
   slider: {fileID: 2682279826394095971}
   resolutionDropdown: {fileID: 2682279825327171736}
+  keyConfigRef: {fileID: 2682279825012118236}
+  fullScreenRef: {fileID: 5986738479009723348}
+  resolutionRef: {fileID: 2682279825327171739}
+  resolutionTextRef: {fileID: 2682279825705045414}
 --- !u!1 &2682279824638740009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,7 +1045,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2682279825012118237
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1418,7 +1422,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2682279825327171737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2465,7 +2469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2682279825705045415
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3016,7 +3020,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2682279824581489095}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: setVolume
         m_Mode: 0
         m_Arguments:
@@ -3198,7 +3202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8166968566339153443
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3268,7 +3272,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2682279824581489095}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetFullscreen
         m_Mode: 0
         m_Arguments:

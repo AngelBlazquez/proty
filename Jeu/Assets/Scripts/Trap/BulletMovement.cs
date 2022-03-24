@@ -10,8 +10,6 @@ public class BulletMovement : MonoBehaviour
 {
     public GameObject particuleExplose;
     private eventSon sons;
-    private DeathManager deathManager;
-    private DataManager data;
     [SerializeField]
     private int rotationValue;
 
@@ -21,8 +19,6 @@ public class BulletMovement : MonoBehaviour
     {
         sons = GetComponent<eventSon>();
         sons.PlaySon();
-        deathManager = GameObject.Find("GameManager").GetComponent<DeathManager>();
-        data = GameObject.Find("LevelsManager").GetComponent<DataManager>();
     }
 
     // Update is called once per frame
@@ -37,12 +33,6 @@ public class BulletMovement : MonoBehaviour
     /// <param name="col">Area of collision</param>
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Player") && !collidedPlayer)
-        {
-            collidedPlayer = true;
-            deathManager.StartDeathCoroutine(col.gameObject);
-            data.AddDeathTraps(this.gameObject.tag);
-        }
         Instantiate(particuleExplose, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
