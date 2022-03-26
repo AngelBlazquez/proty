@@ -12,4 +12,9 @@ public class CameraMovement : MonoBehaviour
     {
         transform.position = player.transform.position + new Vector3(0, 0, -10);
     }
+
+    public void ChangePlayer(GameObject newPlayer)
+    {
+        player = newPlayer;
+    }
 }

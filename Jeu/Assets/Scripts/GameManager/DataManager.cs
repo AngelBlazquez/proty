@@ -128,7 +128,7 @@ public class DataManager : MonoBehaviour
         SaveData();
     }
 
-#region Getters
+    #region Getters
     public List<Level> GetLevels()
     {
         return data.GetLevels();
@@ -160,7 +160,7 @@ public class DataManager : MonoBehaviour
     {
         return data.GetCoin();
     }
-    
+
     public void AddDeathLevel(int levelNumber)
     {
         data.AddDeathLevel(levelNumber);
@@ -200,7 +200,7 @@ public class SavableData
     private int nbDeath;
     [SerializeField]
     private int nbCoin;
-    private Dictionary<string,Traps> allTraps;
+    private Dictionary<string, Traps> allTraps;
 
     /// <summary>
     /// Creates a new List of Level
@@ -216,7 +216,8 @@ public class SavableData
         allLevels[0].Unlock();
         this.version = version;
         nbDeath = 0;
-        nbCoin = 0;
+        nbCoin = 0; 
+        UpdateTraps();
     }
 
     public void Update(int newSize, float version)
@@ -240,7 +241,7 @@ public class SavableData
 
     public void UpdateTraps()
     {
-        allTraps = new Dictionary<string,Traps>();
+        allTraps = new Dictionary<string, Traps>();
         allTraps.Add("Void", new Traps("Void", 0));
         allTraps.Add("Spikes", new Traps("Spikes", 0));
         allTraps.Add("Saw", new Traps("Saw", 0));
@@ -299,7 +300,8 @@ public class SavableData
 
     public void AddDeathTraps(string tag)
     {
-        if (allTraps.ContainsKey(tag)) {
+        if (allTraps.ContainsKey(tag))
+        {
             allTraps[tag].AddDeath();
         }
     }
@@ -307,7 +309,8 @@ public class SavableData
     public int GetDeathTraps(string tag)
     {
         int death = 0;
-        if (allTraps.ContainsKey(tag)) {
+        if (allTraps.ContainsKey(tag))
+        {
             death = allTraps[tag].GetDeath();
         }
         return death;
@@ -341,7 +344,7 @@ public class Level
         death = 0;
     }
 
-#region Getters and Setters
+    #region Getters and Setters
     public int GetNumber() { return levelNumber; }
 
     public bool GetIsUnlocked() { return isUnlocked; }
