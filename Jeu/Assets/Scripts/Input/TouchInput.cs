@@ -15,8 +15,6 @@ public class TouchInput : MonoBehaviour
     [SerializeField]
     private PlayerMovement mvPlayer;
     [SerializeField]
-    private HeadMovements hdmvPlayer;
-    [SerializeField]
     private winManager pauseRef;
 
     [SerializeField]
