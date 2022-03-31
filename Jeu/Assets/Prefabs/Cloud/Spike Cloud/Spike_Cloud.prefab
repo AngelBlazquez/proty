@@ -52,6 +52,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -159,6 +160,10 @@ EdgeCollider2D:
   - {x: 0.14053893, y: 1.0535575}
   - {x: 1.704597, y: 0.16276392}
   - {x: 1.7559243, y: -0.9496987}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1001 &4038399949453822790
 PrefabInstance:
   m_ObjectHideFlags: 0
