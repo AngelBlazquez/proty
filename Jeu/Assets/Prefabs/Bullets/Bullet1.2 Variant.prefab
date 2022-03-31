@@ -7,10 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1913066474509143992, guid: 6fd9ba08ad6705b4ebf915d920cb9d02,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6990794544372635543, guid: 6fd9ba08ad6705b4ebf915d920cb9d02,
         type: 3}
       propertyPath: m_Name
-      value: Bullet3
+      value: Bullet1.2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6990794544372635628, guid: 6fd9ba08ad6705b4ebf915d920cb9d02,
         type: 3}
