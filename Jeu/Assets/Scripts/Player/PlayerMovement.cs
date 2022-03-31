@@ -23,7 +23,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isOnGround;
     [SerializeField]
     private Animator animator;
-
+    [SerializeField]
+    private bool isOnIce;
 
     void Start()
     {
@@ -116,6 +117,12 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
             isOnGround = false;
         }
+
+        if (isOnIce) {
+            while (playerRb.velocity.x > 1 && playerRb.velocity.x < -1) {
+                playerRb.velocity = playerRb.velocity / 1.1f;
+            }
+        }
     }
 
     private void FlipPlayer(bool androidTouchLeft,bool androidTouchRight)
@@ -149,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Ground"))
+        if (collision.CompareTag("Ground") || collision.CompareTag("Ice"))
         {
             if (canSmokeParticule)
             {
@@ -157,6 +164,10 @@ public class PlayerMovement : MonoBehaviour
                 canSmokeParticule = false;
             }
             StartCoroutine(WaitJump());
+        }
+
+        if (collision.CompareTag("Ice")) {
+            isOnIce = true;
         }
     }
 
@@ -168,7 +179,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Ground"))
+        if (collision.CompareTag("Ground") || collision.CompareTag("Ice"))
         {
             isOnGround = false;
         }

@@ -13,6 +13,7 @@ TagManager:
   - Thwamp
   - Rain
   - CannonBall
+  - Ice
   layers:
   - Default
   - TransparentFX

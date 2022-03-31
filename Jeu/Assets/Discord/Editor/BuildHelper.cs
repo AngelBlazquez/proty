@@ -77,6 +77,7 @@ public class ScriptBatch
 
         if (!exists)
         {
+            return;
             if (!RunRpcBuildScript())
             {
                 //UnityEngine.Debug.LogError("Build failed");
