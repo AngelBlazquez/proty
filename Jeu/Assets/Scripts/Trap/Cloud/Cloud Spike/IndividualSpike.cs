@@ -44,6 +44,7 @@ public class IndividualSpike : MonoBehaviour
         {
             sr.enabled = true;
             ec2D.enabled = true;
+            GetComponent<AudioSource>().Play();
         }
         else
         {
