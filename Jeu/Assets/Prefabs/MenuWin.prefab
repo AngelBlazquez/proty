@@ -1361,11 +1361,7 @@ Transform:
   - {fileID: 3241402552855498091}
   - {fileID: 2588307117742898523}
   - {fileID: 2367867523726142419}
-<<<<<<< HEAD
   - {fileID: 7400129188119105285}
-=======
-  - {fileID: 3177113745504644074}
->>>>>>> 41ed8226 (ajout des pieces dans moitié des niveaux)
   m_Father: {fileID: 495921047220961683}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
