@@ -200,7 +200,8 @@ public class SavableData
     private int nbDeath;
     [SerializeField]
     private int nbCoin;
-    private Dictionary<string, Traps> allTraps;
+    [SerializeField]
+    private Dictionary<string,Traps> allTraps;
 
     /// <summary>
     /// Creates a new List of Level
