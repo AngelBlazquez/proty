@@ -28,7 +28,7 @@ public class DataManager : MonoBehaviour
 
 #if PLATFORM_ANDROID
 
-            Debug.Log("DEBUG : ANDROID");
+            Debug.Log("ANDROID MODE");
             for (int i = 0; i < data.GetLevels().Count; i++)
             {
                 UnlockLevel(i);

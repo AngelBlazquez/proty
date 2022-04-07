@@ -67741,16 +67741,6 @@ PrefabInstance:
       propertyPath: pauseRef
       value: 
       objectReference: {fileID: 258547634}
-    - target: {fileID: 4985576226087172708, guid: ffec60f3ac3a46a47bf3e85aa203df85,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 878370146}
-    - target: {fileID: 4985576226087172708, guid: ffec60f3ac3a46a47bf3e85aa203df85,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -169382431
-      objectReference: {fileID: 0}
     - target: {fileID: 7874177668737897956, guid: ffec60f3ac3a46a47bf3e85aa203df85,
         type: 3}
       propertyPath: m_Name

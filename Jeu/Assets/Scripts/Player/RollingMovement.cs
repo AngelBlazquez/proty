@@ -38,7 +38,25 @@ public class RollingMovement : MonoBehaviour
 
     private void MovePlayer(float _horizontalMovement)
     {
-        Vector3 targetVelocity = new Vector2(_horizontalMovement, playerRb.velocity.y);
-        playerRb.velocity = Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref velocity, .05f);
+        if(playerRb != null)
+        {
+            Vector3 targetVelocity = new Vector2(_horizontalMovement, playerRb.velocity.y);
+            playerRb.velocity = Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref velocity, .05f);
+        }   
     }
+
+    #region TouchInput support
+    public void MoveLeft()
+    {
+        float horizontalMovement = Vector3.left.x * moveSpeed * Time.fixedDeltaTime * 1.5f;
+        MovePlayer(horizontalMovement);
+    }
+
+    public void MoveRight()
+    {
+        float horizontalMovement = Vector3.right.x * moveSpeed * Time.fixedDeltaTime * 1.5f;
+        MovePlayer(horizontalMovement);
+    }
+
+    #endregion
 }

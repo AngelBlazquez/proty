@@ -11,6 +11,9 @@ public class AssembleManager : MonoBehaviour
     private GameObject activePlayer;
     private CameraMovement cameraMvt;
 
+    [SerializeField]
+    private TouchInput touch;
+
     void Start()
     {
         activePlayer = GameObject.Find("HeadPlayer");
@@ -43,7 +46,7 @@ public class AssembleManager : MonoBehaviour
             else
             {
                 if (parts["Body"] == true)
-                {
+                {             
                     integrated = true;
                     if (name.Equals("Arms"))
                     {
@@ -75,7 +78,15 @@ public class AssembleManager : MonoBehaviour
             parts[name] = true;
             cameraMvt.ChangePlayer(newPlayer);
             Destroy(activePlayer);
-            activePlayer = newPlayer;
+            activePlayer = newPlayer; 
+            if (activePlayer.GetComponent<PlayerMovement>() != null)
+            {
+                touch.mvPlayer = activePlayer.GetComponent<PlayerMovement>();
+            }
+            if (activePlayer.GetComponent<RollingMovement>() != null)
+            {
+                touch.rmvPlayer = activePlayer.GetComponent<RollingMovement>();
+            }
         }
         return integrated;
     }

@@ -12,8 +12,11 @@ public class TouchInput : MonoBehaviour
     [SerializeField]
     private Canvas touchInputCanvas;
 
-    [SerializeField]
-    private PlayerMovement mvPlayer;
+
+    public PlayerMovement mvPlayer;
+
+    public RollingMovement rmvPlayer;
+
     [SerializeField]
     private winManager pauseRef;
 
@@ -34,6 +37,15 @@ public class TouchInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(rmvPlayer != null)
+        {
+            touchUI[0].gameObject.SetActive(false);
+        } 
+        else
+        {
+            touchUI[0].gameObject.SetActive(true);
+        }
+
         Touch t1;
         Touch t2;
         if (Input.touchCount > 0)
@@ -47,15 +59,32 @@ public class TouchInput : MonoBehaviour
                 List<bool> resultTouch1 = ClickedOnButtons(t1.position);
                 if (resultTouch1[0])
                 {
-                    mvPlayer.Jump();
+                    if(mvPlayer != null)
+                    {
+                        mvPlayer.Jump();
+                    }
                 }
                 else if (resultTouch1[1])
                 {
-                    mvPlayer.MoveLeft();
+                    if (mvPlayer != null)
+                    {
+                        mvPlayer.MoveLeft();
+                    }
+                    else
+                    {
+                        rmvPlayer.MoveLeft();
+                    }
                 }
                 else if (resultTouch1[2])
                 {
-                    mvPlayer.MoveRight();
+                    if (mvPlayer != null)
+                    {
+                        mvPlayer.MoveRight();
+                    } 
+                    else
+                    {
+                        rmvPlayer.MoveRight();
+                    }
                 }
                 else if (resultTouch1[3])
                 {
@@ -65,15 +94,34 @@ public class TouchInput : MonoBehaviour
                 List<bool> resultTouch2 = ClickedOnButtons(t2.position);
                 if (resultTouch2[0])
                 {
-                    mvPlayer.Jump();
+                    if(mvPlayer != null)
+                    {
+                        mvPlayer.Jump();
+                    }      
                 }
                 else if (resultTouch2[1])
                 {
-                    mvPlayer.MoveLeft();
+                    if(mvPlayer!=null)
+                    {
+                        mvPlayer.MoveLeft();
+                    } 
+                    else
+                    {
+                        rmvPlayer.MoveLeft();
+                    }
+                    
                 }
                 else if (resultTouch2[2])
                 {
-                    mvPlayer.MoveRight();
+                    if(mvPlayer != null)
+                    {
+                        mvPlayer.MoveRight();
+                    } 
+                    else
+                    {
+                        rmvPlayer.MoveRight();
+                    }
+                    
                 }
                 else if (resultTouch1[3])
                 {
@@ -85,20 +133,35 @@ public class TouchInput : MonoBehaviour
             {
                 t1 = Input.GetTouch(0);
 
-                
                 List<bool> resultTouch1 = ClickedOnButtons(t1.position);
                 if (resultTouch1[0])
                 {
-                    Debug.Log("Test");
-                    mvPlayer.Jump();
+                    if(mvPlayer != null)
+                    {
+                        mvPlayer.Jump();
+                    }     
                 }
                 else if (resultTouch1[1])
                 {
-                    mvPlayer.MoveLeft();
+                    if (mvPlayer != null)
+                    {
+                        mvPlayer.MoveLeft();
+                    }
+                    else
+                    {
+                        rmvPlayer.MoveLeft();
+                    }
                 }
                 else if (resultTouch1[2])
                 {
-                    mvPlayer.MoveRight();
+                    if (mvPlayer != null)
+                    {
+                        mvPlayer.MoveRight();
+                    }
+                    else
+                    {
+                        rmvPlayer.MoveRight();
+                    }
                 }
                 else if(resultTouch1[3])
                 {
