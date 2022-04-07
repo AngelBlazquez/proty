@@ -43,14 +43,16 @@ public class endLevel : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            if (nextLevel > 0)
-            {
-                data.UnlockLevel(nextLevel);
+            if ((SceneManager.GetActiveScene().buildIndex == 3 && collider.name == "Player(Clone)") || SceneManager.GetActiveScene().buildIndex != 3) {
+                if (nextLevel > 0)
+                {
+                    data.UnlockLevel(nextLevel);
+                }
+                data.SaveTime(SceneManager.GetActiveScene().buildIndex - ChangeLevel.offset, timer.GetTime());
+                //Appelle la fonction winGameMenu du script winManager
+                menuWin.winGameMenu(nextLevel);
+                starsManagement();
             }
-            data.SaveTime(SceneManager.GetActiveScene().buildIndex - ChangeLevel.offset, timer.GetTime());
-            //Appelle la fonction winGameMenu du script winManager
-            menuWin.winGameMenu(nextLevel);
-            starsManagement();
         }
     }
 }
