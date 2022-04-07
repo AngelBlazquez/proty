@@ -37,6 +37,15 @@ public class TouchInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(rmvPlayer != null)
+        {
+            touchUI[0].gameObject.SetActive(false);
+        } 
+        else
+        {
+            touchUI[0].gameObject.SetActive(true);
+        }
+
         Touch t1;
         Touch t2;
         if (Input.touchCount > 0)

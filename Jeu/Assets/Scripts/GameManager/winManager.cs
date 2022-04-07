@@ -52,8 +52,11 @@ public class winManager : MonoBehaviour
         Time.timeScale = 0;
         Canvas.SetActive(true);
         nextLevelInput.SetActive(false);
-        playerMvt.enabled = false;
-
+        if(playerMvt != null)
+        {
+            playerMvt.enabled = false;
+        }
+        
         // controller button active
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(resumeButton);
@@ -85,7 +88,6 @@ public class winManager : MonoBehaviour
     // Method who reload the level
     public void retryButton()
     {
-        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Canvas.SetActive(false);
         Time.timeScale = 1;

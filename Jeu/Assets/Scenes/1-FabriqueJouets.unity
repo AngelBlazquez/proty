@@ -77554,6 +77554,11 @@ PrefabInstance:
       propertyPath: rmvPlayer
       value: 
       objectReference: {fileID: 147172414}
+    - target: {fileID: 2781034541932143843, guid: ffec60f3ac3a46a47bf3e85aa203df85,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7874177668737897956, guid: ffec60f3ac3a46a47bf3e85aa203df85,
         type: 3}
       propertyPath: m_Name
