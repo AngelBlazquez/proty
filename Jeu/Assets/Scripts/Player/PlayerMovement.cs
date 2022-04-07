@@ -62,7 +62,12 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        MovePlayer(horizontalMovement);
+        if (!isOnIce) {
+            MovePlayer(horizontalMovement);
+        } else if (isOnIce) {
+            MovePlayer(horizontalMovement);
+        }
+
         FlipPlayer(false,false);
 
         if (playerRb.velocity.y < particleLandingAppear)
@@ -88,8 +93,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer(float _horizontalMovement)
     {
-        Vector3 targetVelocity = new Vector2(_horizontalMovement, playerRb.velocity.y);
-        playerRb.velocity = Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref velocity, .05f);
+        if (isOnIce) {
+            Vector3 targetVelocity = new Vector2(_horizontalMovement, playerRb.velocity.y);
+            playerRb.velocity = Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref velocity, .05f);
+
+        } else {
+            Vector3 targetVelocity = new Vector2(_horizontalMovement, playerRb.velocity.y);
+            playerRb.velocity = Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref velocity, .05f);
+        }
 
         if (playerRb.velocity.x < 1 && playerRb.velocity.x > -1)
         {
@@ -116,12 +127,6 @@ public class PlayerMovement : MonoBehaviour
             playerRb.AddForce(new Vector2(0f, jumpForce));
             isJumping = false;
             isOnGround = false;
-        }
-
-        if (isOnIce) {
-            while (playerRb.velocity.x > 1 && playerRb.velocity.x < -1) {
-                playerRb.velocity = playerRb.velocity / 1.1f;
-            }
         }
     }
 
@@ -234,4 +239,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     #endregion
+
+    public void MovePlayerOnIce() {
+
+    }
 }
