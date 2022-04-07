@@ -151,6 +151,23 @@ public class DataManager : MonoBehaviour
         SaveData();
     }
 
+    public void SetCoin(int price)
+    {
+        data.SetCoin(price);
+        SaveData();
+    }
+
+    public void AddAllHat(string h)
+    {
+        data.addInAllHat(h);
+        SaveData();
+    }
+
+    public bool hatInAllHat(string s)
+    {
+        return data.hatinAllHat(s);
+    }
+
     public int GetDeath()
     {
         return data.GetDeath();
@@ -160,12 +177,18 @@ public class DataManager : MonoBehaviour
     {
         return data.GetCoin();
     }
+
+    public List<string> GetAllHat()
+    {
+        return data.getAllHat();
+    }
     
     public void AddDeathLevel(int levelNumber)
     {
         data.AddDeathLevel(levelNumber);
         SaveData();
     }
+
 
     public int GetDeathLevel(int levelNumber)
     {
@@ -200,6 +223,8 @@ public class SavableData
     private int nbDeath;
     [SerializeField]
     private int nbCoin;
+    [SerializeField]
+    private List<string> allHatsBuyed  = new List<string>();
     private Dictionary<string,Traps> allTraps;
 
     /// <summary>
@@ -217,6 +242,9 @@ public class SavableData
         this.version = version;
         nbDeath = 0;
         nbCoin = 0;
+
+        allHatsBuyed.Add("normal");
+
     }
 
     public void Update(int newSize, float version)
@@ -285,7 +313,18 @@ public class SavableData
 
     public void AddCoin() { nbCoin++; }
 
+    public void SetCoin(int price) { nbCoin-=price; }
+
     public int GetCoin() { return nbCoin; }
+
+    public void addInAllHat(string h) { allHatsBuyed.Add(h); }
+    
+    public List<string> getAllHat() { return allHatsBuyed; }
+
+    public bool hatinAllHat(string s) {
+        Debug.Log(allHatsBuyed);
+        return allHatsBuyed.Contains(s);
+    }
 
     public void AddDeathLevel(int levelNumber)
     {
