@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Animator animator;
     [SerializeField]
-    private bool isOnIce;
+    public bool isOnIce;
 
     void Start()
     {
@@ -161,7 +161,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Ground") || collision.CompareTag("Ice"))
+        if (collision.CompareTag("Ground"))
         {
             if (canSmokeParticule)
             {
@@ -173,6 +173,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.CompareTag("Ice")) {
             isOnIce = true;
+            StartCoroutine(WaitJump());
         }
     }
 
@@ -184,9 +185,23 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Ground") || collision.CompareTag("Ice"))
+        if (collision.CompareTag("Ground"))
         {
             isOnGround = false;
+        }
+        if (collision.CompareTag("Ice")) {
+            isOnGround = false;
+            isOnIce = false;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision) {
+        if (collision.CompareTag("Ground")) {
+            isOnGround = true;
+        }
+        if (collision.CompareTag("Ice")) {
+            isOnGround = true;
+            isOnIce = true;
         }
     }
 

@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class IceMovement : MonoBehaviour
 {
+    
+    [SerializeField]
+    private Rigidbody2D playerRb;
+
+
+    [SerializeField]
+    public PlayerMovement playerMovement;
+
     // Transforms to act as start and end markers for the journey.
-    public Transform startMarker;
+    public Transform slideMarker;
     public Transform endMarker;
 
     // Movement speed in units per second.
@@ -19,48 +27,38 @@ public class IceMovement : MonoBehaviour
 
     bool stopMovement = false;
 
+    bool test = false;
+
     void Start()
     {
-        // Keep a note of the time the movement started.
-        startTime = Time.time;
-
         // Calculate the journey length.
-        journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
+        journeyLength = Vector3.Distance(transform.position, endMarker.position);
     }
 
     // Move to the target end position.
     void Update()
     {
-        if (Input.GetKey(InputManager.Instance().Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f
+        if ((Input.GetKey(InputManager.Instance().Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f
         || Input.GetKey(InputManager.Instance().Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f
-        || Input.GetKeyDown(InputManager.Instance().Keys["JumpButton"]) || Input.GetButtonDown("Jump")
-        || Input.GetKeyDown(InputManager.Instance().Keys["TryhardButton"])) {
-            stopMovement = true;
-        } else if (Input.GetKeyUp(InputManager.Instance().Keys["LeftButton"]) || Input.GetAxis("JoystickController") > -0.1f
-        || Input.GetKeyUp(InputManager.Instance().Keys["RightButton"]) || Input.GetAxis("JoystickController") < 0.1f
-        || Input.GetKeyUp(InputManager.Instance().Keys["JumpButton"]) || Input.GetButtonUp("Jump")
-        || Input.GetKeyUp(InputManager.Instance().Keys["TryhardButton"])) {
-            stopMovement = false;
-        }
-        if (!stopMovement) {
-            glisse();
-        } else {
-            glisse();
+        || Input.GetKeyDown(InputManager.Instance().Keys["TryhardButton"])) && !test) {
+            test = true;
             Vector3 PlayerDirection = transform.localScale;
             if (PlayerDirection.x == 1) {
                 endMarker.transform.position = new Vector3(transform.position.x - 5, transform.position.y, transform.position.z);
-                /* FAUT LERP LA POSITION DU POINT
-                endMarker.transform.position = Vector3.Lerp(endMarker.position, transform.position, )
-                */
             } else if (PlayerDirection.x == -1) {
                 endMarker.transform.position = new Vector3(transform.position.x + 5, transform.position.y, transform.position.z);
             }
             startTime = Time.time;
-            journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
+            journeyLength = Vector3.Distance(transform.position, endMarker.position);
+            StartCoroutine(Slide());
+        }
+        Debug.Log(playerRb.velocity.x);
+        if (playerMovement.isOnIce) {
+            Glisse();
         }
     }
 
-    void glisse()
+    void Glisse()
     {
         // Distance moved equals elapsed time times speed..
         float distCovered = (Time.time - startTime) * speed;
@@ -69,11 +67,13 @@ public class IceMovement : MonoBehaviour
         float fractionOfJourney = distCovered / journeyLength / 100;
 
         // Set our position as a fraction of the distance between the markers.
+        transform.position = Vector3.Lerp(transform.position, slideMarker.position, fractionOfJourney);
+        slideMarker.transform.position = Vector3.Lerp(slideMarker.position, endMarker.position, fractionOfJourney * Mathf.Abs(playerRb.velocity.x));
+    }
 
-        Debug.Log(Time.time - startTime);
-
-        if (Time.time - startTime < 1000) {
-            transform.position = Vector3.Lerp(startMarker.position, endMarker.position, fractionOfJourney);
-        }
+    private IEnumerator Slide()
+    {
+        yield return new WaitForSeconds(0.3f * Mathf.Abs(playerRb.velocity.x));
+        test = false;
     }
 }
