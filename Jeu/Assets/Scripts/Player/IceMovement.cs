@@ -29,6 +29,8 @@ public class IceMovement : MonoBehaviour
 
     bool test = false;
 
+    float dist;
+
     void Start()
     {
         // Calculate the journey length.
@@ -44,15 +46,15 @@ public class IceMovement : MonoBehaviour
             test = true;
             Vector3 PlayerDirection = transform.localScale;
             if (PlayerDirection.x == 1) {
-                endMarker.transform.position = new Vector3(transform.position.x - 5, transform.position.y, transform.position.z);
+                endMarker.transform.position = new Vector3(transform.position.x + playerRb.velocity.x, transform.position.y, transform.position.z);
             } else if (PlayerDirection.x == -1) {
-                endMarker.transform.position = new Vector3(transform.position.x + 5, transform.position.y, transform.position.z);
+                endMarker.transform.position = new Vector3(transform.position.x + playerRb.velocity.x, transform.position.y, transform.position.z);
             }
             startTime = Time.time;
             journeyLength = Vector3.Distance(transform.position, endMarker.position);
             StartCoroutine(Slide());
         }
-        Debug.Log(playerRb.velocity.x);
+
         if (playerMovement.isOnIce) {
             Glisse();
         }
@@ -67,8 +69,7 @@ public class IceMovement : MonoBehaviour
         float fractionOfJourney = distCovered / journeyLength / 100;
 
         // Set our position as a fraction of the distance between the markers.
-        transform.position = Vector3.Lerp(transform.position, slideMarker.position, fractionOfJourney);
-        slideMarker.transform.position = Vector3.Lerp(slideMarker.position, endMarker.position, fractionOfJourney * Mathf.Abs(playerRb.velocity.x));
+        transform.position = Vector3.Lerp(transform.position, endMarker.position, fractionOfJourney);
     }
 
     private IEnumerator Slide()
