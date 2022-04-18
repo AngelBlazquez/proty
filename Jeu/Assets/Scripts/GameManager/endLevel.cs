@@ -18,21 +18,25 @@ public class endLevel : MonoBehaviour
     private Timer timer;
     [SerializeField]
     private LevelDisplayHolder levelInfo;
- 
+
     /// <summary>
     /// Manage the stars shown on the end level menu
     /// Author : Angel Blazquez
     /// </summary>
-    private void starsManagement() {
+    private void starsManagement()
+    {
         float time = data.GetLevels()[SceneManager.GetActiveScene().buildIndex - ChangeLevel.offset].GetTime();
         int nbStars = 0;
-        if(time != 0) {
+        if (time != 0)
+        {
             nbStars++;
         }
-        if(time != 0 && time <= levelInfo.GetTimeForStars()[SceneManager.GetActiveScene().buildIndex - ChangeLevel.offset]._stars[1]) {
+        if (time != 0 && time <= levelInfo.GetTimeForStars()[SceneManager.GetActiveScene().buildIndex - ChangeLevel.offset]._stars[1])
+        {
             nbStars++;
         }
-        if(time != 0 && time <= levelInfo.GetTimeForStars()[SceneManager.GetActiveScene().buildIndex - ChangeLevel.offset]._stars[2]) {
+        if (time != 0 && time <= levelInfo.GetTimeForStars()[SceneManager.GetActiveScene().buildIndex - ChangeLevel.offset]._stars[2])
+        {
             nbStars++;
         }
         menuWin.ShowStars(nbStars);
@@ -43,15 +47,24 @@ public class endLevel : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            if ((SceneManager.GetActiveScene().buildIndex == 3 && collider.name == "Player(Clone)") || SceneManager.GetActiveScene().buildIndex != 3) {
-                if (nextLevel > 0)
+            if ((SceneManager.GetActiveScene().buildIndex == 3 && collider.name == "Player(Clone)") || SceneManager.GetActiveScene().buildIndex != 3)
+            {
+                if (TrainingMode.GetIsTraining())
                 {
-                    data.UnlockLevel(nextLevel);
+                    Scene currentScene = SceneManager.GetActiveScene();
+                    SceneManager.LoadScene(currentScene.name);
                 }
-                data.SaveTime(SceneManager.GetActiveScene().buildIndex - ChangeLevel.offset, timer.GetTime());
-                //Appelle la fonction winGameMenu du script winManager
-                menuWin.winGameMenu(nextLevel);
-                starsManagement();
+                else
+                {
+                    if (nextLevel > 0)
+                    {
+                        data.UnlockLevel(nextLevel);
+                    }
+                    data.SaveTime(SceneManager.GetActiveScene().buildIndex - ChangeLevel.offset, timer.GetTime());
+                    //Appelle la fonction winGameMenu du script winManager
+                    menuWin.winGameMenu(nextLevel);
+                    starsManagement();
+                }
             }
         }
     }
