@@ -24,6 +24,14 @@ public class PlatformMovement : MonoBehaviour
         targetReached = false;
     }
 
+    public bool isEmpty() {
+        return waypoints.Count == 0;
+    }
+
+    public List<Transform> getWaypoints() {
+        return waypoints;
+    }
+
     /// <summary>
     /// Updates the platform's position once per frame
     /// </summary>
