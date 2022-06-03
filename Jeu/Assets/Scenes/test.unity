@@ -5117,6 +5117,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 677091073dfc21046945378e5f027bf9, type: 3}
+--- !u!4 &732071150 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5805227250101986708, guid: b32301739f21db24db4a76a58e0a9fd5,
+    type: 3}
+  m_PrefabInstance: {fileID: 5805227249809896517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &828247521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5616,6 +5622,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: boss
       objectReference: {fileID: 0}
+    - target: {fileID: 5805227250101986698, guid: b32301739f21db24db4a76a58e0a9fd5,
+        type: 3}
+      propertyPath: pos
+      value: 
+      objectReference: {fileID: 8073070453371220034, guid: 0100f34591a3c7444bc6700bf4973912,
+        type: 3}
+    - target: {fileID: 5805227250101986698, guid: b32301739f21db24db4a76a58e0a9fd5,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 2018653521864408896, guid: 036f23e791786324b8e3dcce58021fff,
+        type: 3}
+    - target: {fileID: 5805227250101986698, guid: b32301739f21db24db4a76a58e0a9fd5,
+        type: 3}
+      propertyPath: sizeRoom
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805227250101986698, guid: b32301739f21db24db4a76a58e0a9fd5,
+        type: 3}
+      propertyPath: bossTransform
+      value: 
+      objectReference: {fileID: 732071150}
     - target: {fileID: 5805227250101986708, guid: b32301739f21db24db4a76a58e0a9fd5,
         type: 3}
       propertyPath: m_RootOrder
