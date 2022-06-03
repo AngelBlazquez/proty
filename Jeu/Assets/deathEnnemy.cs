@@ -10,7 +10,9 @@ public class deathEnnemy : MonoBehaviour
     private Collider2D characterCol;
 
     private void OnTriggerEnter2D(Collider2D col) {
-        if (col.tag == "Player" && col.IsTouching(characterCol))
+        if (col.tag == "Player" && col.IsTouching(characterCol)) {
             Destroy(ennemy);
+            Debug.Log(ennemy);
+        }
     }
 }

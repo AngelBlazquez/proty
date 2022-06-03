@@ -9,33 +9,30 @@ public class followCharacter : MonoBehaviour
     private Vector2 positionCharacterX;
     public Rigidbody2D rbEnnemy;
     [SerializeField]
-    private PlatformMovement bossMovement;
+    private PlatformMovement platformMovement;
     private bool waiting;
     private bool seeCharacter;
-    [SerializeField]
-    private PlatformMovement platformMovement;
 
     void Start()
     {
         waiting = false;
         seeCharacter = false;
         if (character == null)
-            character = GameObject.Find("Player");
-        if (platformMovement.isEmpty())
+            character = GameObject.FindWithTag("Player");
+        if (platformMovement.isEmpty()) 
             platformMovement.getWaypoints().Add(GameObject.Find("boss").transform);
     }
 
     void Update()
     {
         if (!waiting && seeCharacter) {
-            bossMovement.enabled = false;
+            platformMovement.enabled = false;
             waiting = true;
             positionCharacterX = new Vector2((character.transform.position.x - this.transform.position.x), (character.transform.position.y - this.transform.position.y));
             StartCoroutine(follow());
         } else if (waiting && !seeCharacter) {
-            bossMovement.enabled = true;
+            platformMovement.enabled = true;
         }
-        Debug.Log(rbEnnemy.velocity);
     }
 
     private IEnumerator follow() {
