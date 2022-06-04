@@ -23,7 +23,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isOnGround;
     [SerializeField]
     private Animator animator;
-
+    [SerializeField]
+    public bool isOnIce;
 
     void Start()
     {
@@ -61,7 +62,12 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        MovePlayer(horizontalMovement);
+        if (!isOnIce) {
+            MovePlayer(horizontalMovement);
+        } else if (isOnIce) {
+            MovePlayer(horizontalMovement);
+        }
+
         FlipPlayer(false,false);
 
         if (playerRb.velocity.y < particleLandingAppear)
@@ -87,8 +93,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer(float _horizontalMovement)
     {
-        Vector3 targetVelocity = new Vector2(_horizontalMovement, playerRb.velocity.y);
-        playerRb.velocity = Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref velocity, .05f);
+        if (isOnIce) {
+            Vector3 targetVelocity = new Vector2(_horizontalMovement, playerRb.velocity.y);
+            playerRb.velocity = Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref velocity, .05f);
+
+        } else {
+            Vector3 targetVelocity = new Vector2(_horizontalMovement, playerRb.velocity.y);
+            playerRb.velocity = Vector3.SmoothDamp(playerRb.velocity, targetVelocity, ref velocity, .05f);
+        }
 
         if (playerRb.velocity.x < 1 && playerRb.velocity.x > -1)
         {
@@ -158,6 +170,11 @@ public class PlayerMovement : MonoBehaviour
             }
             StartCoroutine(WaitJump());
         }
+
+        if (collision.CompareTag("Ice")) {
+            isOnIce = true;
+            StartCoroutine(WaitJump());
+        }
     }
 
     private IEnumerator WaitJump()
@@ -171,6 +188,20 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Ground"))
         {
             isOnGround = false;
+        }
+        if (collision.CompareTag("Ice")) {
+            isOnGround = false;
+            isOnIce = false;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision) {
+        if (collision.CompareTag("Ground")) {
+            isOnGround = true;
+        }
+        if (collision.CompareTag("Ice")) {
+            isOnGround = true;
+            isOnIce = true;
         }
     }
 
@@ -223,4 +254,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     #endregion
+
+    public void MovePlayerOnIce() {
+
+    }
 }
