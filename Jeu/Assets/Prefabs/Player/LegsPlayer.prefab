@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5810143156043319353}
   - component: {fileID: 1769974924864632151}
   - component: {fileID: 7649166493969284940}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 6885556888904699980}
   - component: {fileID: 5301308927363797913}
   - component: {fileID: 2124759807397710443}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "fum\xE9e"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5031,7 +5031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1647920757872575678}
   - component: {fileID: 3146667192149740393}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: jambeDroite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5114,7 +5114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6566391869939025806}
   - component: {fileID: 9189559536973260099}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: corps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5200,7 +5200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9213869232257989845}
   - component: {fileID: 1823820690199438557}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: jambeGauche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5286,7 +5286,7 @@ GameObject:
   - component: {fileID: 8365372417782004138}
   - component: {fileID: 2001855895037874931}
   - component: {fileID: 2066902906379050842}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LegsPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5404,7 +5404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6330770842600559784}
   - component: {fileID: 7459617369436729622}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tete
   m_TagString: Untagged
   m_Icon: {fileID: 0}

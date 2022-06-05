@@ -1,17 +1,13 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Manages the movements of moving platforms
-/// Made by Equipe 1
-/// </summary>
-public class PlatformMovement : MonoBehaviour
+public class PlatformVectorMovement : MonoBehaviour
 {
     [SerializeField]
     private eventSon sons;
     [SerializeField]
-    private List<Transform> waypoints;
+    private List<Vector3> waypoints;
     private int currentWaypoint;
     private bool reverse;
     private bool targetReached;
@@ -28,13 +24,13 @@ public class PlatformMovement : MonoBehaviour
     /// Updates the platform's position once per frame
     /// </summary>
     void FixedUpdate()
-    {        
-        Transform target = waypoints[currentWaypoint];
-        if (waypoints.Count > 0 && target != null)
+    {
+        if (waypoints != null && waypoints.Count > 0)
         {
+            Vector3 target = waypoints[currentWaypoint];
             Vector2 pos = transform.position;
-            transform.position = Vector2.MoveTowards(pos, target.position, 15f * Time.fixedDeltaTime);
-            float distance = Vector2.Distance(pos, target.position);
+            transform.position = Vector2.MoveTowards(pos, target, 15f * Time.fixedDeltaTime);
+            float distance = Vector2.Distance(pos, target);
 
             if (distance < 1f && !targetReached)
             {
@@ -71,5 +67,10 @@ public class PlatformMovement : MonoBehaviour
             reverse = false;
         }
         targetReached = false;
+    }
+
+    public void SetWaypoints(List<Vector3> _waypoints)
+    {
+        waypoints = _waypoints;
     }
 }
