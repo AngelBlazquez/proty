@@ -34,8 +34,8 @@ public class firstPhase : MonoBehaviour
         posEnnemy = ennemy.transform;
         posBullet = bullet.transform;
         posIceBlock = iceBlock.transform;
-        //StartCoroutine(invokeEnnemy());
-        //StartCoroutine(invokeBulletsRain());
+        StartCoroutine(invokeEnnemy());
+        StartCoroutine(invokeBulletsRain());
         StartCoroutine(invokeIceBlock());
     }
 
