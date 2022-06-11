@@ -11,6 +11,7 @@ public class firstPhase : MonoBehaviour
     [SerializeField]
     private GameObject bullet;
     private bool inFight = false;
+    private bool bossAlive = true;
     private float posEnnemyX;
     private float posEnnemyY;
     private Transform posEnnemy;
@@ -19,14 +20,23 @@ public class firstPhase : MonoBehaviour
     private Transform posBullet;
     [SerializeField]
     private int sizeRoom;
+    [SerializeField]
+    private float groundPosY;
+    [SerializeField]
+    private GameObject iceBlock;
+    private Transform posIceBlock;
+    private float posIceBlockX;
+    private GameObject iceBlockToRemove;
 
 
     void Start()
     {
         posEnnemy = ennemy.transform;
         posBullet = bullet.transform;
-        StartCoroutine(invokeEnnemy());
-        StartCoroutine(invokeBulletsRain());
+        posIceBlock = iceBlock.transform;
+        //StartCoroutine(invokeEnnemy());
+        //StartCoroutine(invokeBulletsRain());
+        StartCoroutine(invokeIceBlock());
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
@@ -40,7 +50,7 @@ public class firstPhase : MonoBehaviour
     }
 
     private IEnumerator invokeEnnemy() {
-        while (true) {
+        while (bossAlive) {
             if (inFight) {
                 posEnnemyX = Random.Range(bossTransform.position.x - (sizeRoom/2), bossTransform.position.x + (sizeRoom/2));
                 posEnnemyY = bossTransform.transform.position.y;
@@ -54,7 +64,7 @@ public class firstPhase : MonoBehaviour
     }
 
     private IEnumerator invokeBulletsRain() {
-        while (true) {
+        while (bossAlive) {
             if (inFight) {
                 yield return new WaitForSecondsRealtime(10f);
                 for (int i = 0; i < (sizeRoom/10) + 1; i++) {
@@ -79,4 +89,23 @@ public class firstPhase : MonoBehaviour
             yield return new WaitForSecondsRealtime(0f);
         }
     }
+
+    private IEnumerator invokeIceBlock() {
+        while (bossAlive) {
+            if (inFight) {
+                posIceBlockX = Random.Range(bossTransform.position.x - (sizeRoom/2), bossTransform.position.x + (sizeRoom/2));
+                posIceBlock.position = new Vector3(posIceBlockX, groundPosY, 0);
+
+                Instantiate(iceBlock, posIceBlock);
+                yield return new WaitForSecondsRealtime(3f);
+                if (iceBlockToRemove != null) {
+                    Destroy(iceBlockToRemove);
+                }
+                yield return new WaitForSecondsRealtime(3f);
+                iceBlockToRemove = GameObject.FindGameObjectWithTag("Ice");
+            }
+            yield return new WaitForSecondsRealtime(0f);
+        }
+    }
+
 }
