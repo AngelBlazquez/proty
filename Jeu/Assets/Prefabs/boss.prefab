@@ -125,3 +125,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossTransform: {fileID: 5805227250101986708}
   ennemy: {fileID: 8073070453371220094, guid: 0100f34591a3c7444bc6700bf4973912, type: 3}
+  bullet: {fileID: 2018653521864408896, guid: 036f23e791786324b8e3dcce58021fff, type: 3}
+  sizeRoom: 0
