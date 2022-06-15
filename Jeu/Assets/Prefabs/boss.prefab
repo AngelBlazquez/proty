@@ -127,6 +127,8 @@ MonoBehaviour:
   ennemy: {fileID: 8073070453371220094, guid: 0100f34591a3c7444bc6700bf4973912, type: 3}
   bullet: {fileID: 2018653521864408896, guid: 036f23e791786324b8e3dcce58021fff, type: 3}
   sizeRoom: 31
-  groundPosY: -3.5
-  iceBlock: {fileID: 1783580953797911059, guid: e2ed74182252c504ebfd7de86f383eed,
+  groundPosY: -4.5
+  iceBlock: {fileID: 4651775330214828044, guid: 5df713f3244184948aabe2aaf4c87aac,
     type: 3}
+  anim: {fileID: 0}
+  button: {fileID: 0}

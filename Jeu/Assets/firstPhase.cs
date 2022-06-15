@@ -27,6 +27,11 @@ public class firstPhase : MonoBehaviour
     private Transform posIceBlock;
     private float posIceBlockX;
     private GameObject iceBlockToRemove;
+    [SerializeField]
+    private Animator anim;
+    [SerializeField]
+    private int bossHP;
+    public GameObject button;
 
 
     void Start()
@@ -34,45 +39,78 @@ public class firstPhase : MonoBehaviour
         posEnnemy = ennemy.transform;
         posBullet = bullet.transform;
         posIceBlock = iceBlock.transform;
-        StartCoroutine(invokeEnnemy());
-        StartCoroutine(invokeBulletsRain());
-        StartCoroutine(invokeIceBlock());
+        bossHP = 1;
+        button.SetActive(false);
+        //StartCoroutine(invokeEnnemy());
+        //StartCoroutine(invokeBulletsRain());
+        //StartCoroutine(invokeIceBlock());
+        StartCoroutine(displayButton());
+    }
+
+    void update() {
+        if (getBossHP() == 0) {
+            bossDeath();
+        }
+    }
+
+    public bool getInFight() {
+        return inFight;
+    }
+
+    public void setInFight(bool isFight) {
+        inFight = isFight;
+    }
+
+    public bool getBossAlive() {
+        return bossAlive;
+    }
+
+    public void setBossAlive(bool isAlive) {
+        bossAlive = isAlive;
+    }
+
+    public int getBossHP() {
+        return bossHP;
+    }
+
+    public void bossTakeDamage() {
+        bossHP--;
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.tag == "Player")
-            inFight = true;
+            setInFight(true);
     }
 
     private void OnTriggerExit2D(Collider2D col) {
         if (col.tag == "Player")
-            inFight = false;
+            setInFight(false);
     }
 
     private IEnumerator invokeEnnemy() {
-        while (bossAlive) {
-            if (inFight) {
+        while (getBossAlive()) {
+            if (getInFight()) {
                 posEnnemyX = Random.Range(bossTransform.position.x - (sizeRoom/2), bossTransform.position.x + (sizeRoom/2));
                 posEnnemyY = bossTransform.transform.position.y;
                 posEnnemy.position = new Vector3(posEnnemyX, posEnnemyY, 0f);
 
-                Instantiate(ennemy, posEnnemy);
-                yield return new WaitForSecondsRealtime(30f);
+                Instantiate(ennemy, posEnnemy.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+                yield return new WaitForSecondsRealtime(15f);
             }
             yield return new WaitForSecondsRealtime(0f);
         }
     }
 
     private IEnumerator invokeBulletsRain() {
-        while (bossAlive) {
-            if (inFight) {
+        while (getBossAlive()) {
+            if (getInFight()) {
                 yield return new WaitForSecondsRealtime(10f);
                 for (int i = 0; i < (sizeRoom/10) + 1; i++) {
                     posBulletX = bossTransform.transform.position.x - sizeRoom/2 + 10 * i;
                     posBulletY = bossTransform.transform.position.y;
                     posBullet.position = new Vector3(posBulletX, posBulletY, 0f);
 
-                    Instantiate(bullet, posBullet);
+                    Instantiate(bullet, posBullet.position,  Quaternion.Euler(new Vector3(0, 0, 0)));
                     yield return new WaitForSecondsRealtime(1f);
                 }
                 yield return new WaitForSecondsRealtime(5f);
@@ -81,7 +119,7 @@ public class firstPhase : MonoBehaviour
                     posBulletY = bossTransform.transform.position.y;
                     posBullet.position = new Vector3(posBulletX, posBulletY, 0f);
 
-                    Instantiate(bullet, posBullet);
+                    Instantiate(bullet, posBullet.position,  Quaternion.Euler(new Vector3(0, 0, 0)));
                     yield return new WaitForSecondsRealtime(1f);
                 }
                 yield return new WaitForSecondsRealtime(10f);
@@ -91,12 +129,12 @@ public class firstPhase : MonoBehaviour
     }
 
     private IEnumerator invokeIceBlock() {
-        while (bossAlive) {
-            if (inFight) {
+        while (getBossAlive()) {
+            if (getInFight()) {
                 posIceBlockX = Random.Range(bossTransform.position.x - (sizeRoom/2), bossTransform.position.x + (sizeRoom/2));
                 posIceBlock.position = new Vector3(posIceBlockX, groundPosY, 0);
 
-                Instantiate(iceBlock, posIceBlock);
+                Instantiate(iceBlock, posIceBlock.position, Quaternion.Euler(new Vector3(0, 0, 0)));
                 yield return new WaitForSecondsRealtime(3f);
                 if (iceBlockToRemove != null) {
                     Destroy(iceBlockToRemove);
@@ -106,6 +144,21 @@ public class firstPhase : MonoBehaviour
             }
             yield return new WaitForSecondsRealtime(0f);
         }
+    }
+
+    private IEnumerator displayButton() {
+        while (getBossAlive()) {
+            if (getInFight() && button.activeSelf.Equals(false)) {
+                yield return new WaitForSecondsRealtime(10f);
+                button.SetActive(true);
+            } 
+            yield return new WaitForSecondsRealtime(0f);
+        }
+    }
+
+    private void bossDeath() {
+        setBossAlive(false);
+        Destroy(GameObject.Find("boss"));
     }
 
 }
