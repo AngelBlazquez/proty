@@ -39,16 +39,15 @@ public class firstPhase : MonoBehaviour
         posEnnemy = ennemy.transform;
         posBullet = bullet.transform;
         posIceBlock = iceBlock.transform;
-        bossHP = 1;
-        button.SetActive(false);
-        //StartCoroutine(invokeEnnemy());
-        //StartCoroutine(invokeBulletsRain());
-        //StartCoroutine(invokeIceBlock());
+        bossHP = 4;
+        StartCoroutine(invokeEnnemy());
+        StartCoroutine(invokeBulletsRain());
+        StartCoroutine(invokeIceBlock());
         StartCoroutine(displayButton());
     }
 
-    void update() {
-        if (getBossHP() == 0) {
+    void Update() {
+        if (getBossHP() <= 0) {
             bossDeath();
         }
     }
@@ -95,7 +94,7 @@ public class firstPhase : MonoBehaviour
                 posEnnemy.position = new Vector3(posEnnemyX, posEnnemyY, 0f);
 
                 Instantiate(ennemy, posEnnemy.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-                yield return new WaitForSecondsRealtime(15f);
+                yield return new WaitForSecondsRealtime(30f);
             }
             yield return new WaitForSecondsRealtime(0f);
         }
@@ -149,7 +148,7 @@ public class firstPhase : MonoBehaviour
     private IEnumerator displayButton() {
         while (getBossAlive()) {
             if (getInFight() && button.activeSelf.Equals(false)) {
-                yield return new WaitForSecondsRealtime(10f);
+                yield return new WaitForSecondsRealtime(60f);
                 button.SetActive(true);
             } 
             yield return new WaitForSecondsRealtime(0f);

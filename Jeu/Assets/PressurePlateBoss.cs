@@ -8,22 +8,17 @@ public class PressurePlateBoss : MonoBehaviour
     private firstPhase first;
     [SerializeField]
     private Animator anim;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    private bool oneTime = false;
 
     private void OnTriggerEnter2D(Collider2D col) {
-        if (col.tag == "Player") {
+        if (col.tag == "Player" && !oneTime) {
             anim.SetTrigger("push");
             first.bossTakeDamage();
             first.button.SetActive(false);
+            oneTime = true;
+        } 
+        else {
+            oneTime = false;
         }
     }
 }
