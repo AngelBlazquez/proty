@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6173066838573376593}
   - component: {fileID: 2133249571930659135}
   - component: {fileID: 1006880632929546570}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5074804424848410766}
   - component: {fileID: 4489061044805032724}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: brasDroit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2648265384612824261}
   - component: {fileID: 3755755132099523848}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: brasGauche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 6522492631826660388}
   - component: {fileID: 5519422606973452273}
   - component: {fileID: 1762680101008188931}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "fum\xE9e"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5197,7 +5197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6785349460910369766}
   - component: {fileID: 8830778534018533675}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: corps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5286,7 +5286,7 @@ GameObject:
   - component: {fileID: 8150706203202606530}
   - component: {fileID: 2216580993316880027}
   - component: {fileID: 1848156733780521778}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ArmsPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5404,7 +5404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5967708717982070976}
   - component: {fileID: 7101903411109813630}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tete
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6059148489374348782}
   - component: {fileID: 4632508825423730519}
   - component: {fileID: 7766640506736333435}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BodyPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 9163432455456666551}
   - component: {fileID: 9163432455456666545}
   - component: {fileID: 9163432455456666544}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 9163432455769026880}
   - component: {fileID: 9163432455769026882}
   - component: {fileID: 9163432455769026881}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
