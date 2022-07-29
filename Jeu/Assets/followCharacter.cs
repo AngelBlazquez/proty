@@ -7,9 +7,9 @@ public class followCharacter : MonoBehaviour
     [SerializeField]
     private GameObject character;
     private Vector2 positionCharacterX;
-    public Rigidbody2D rbBoss;
+    public Rigidbody2D rbEnnemy;
     [SerializeField]
-    private PlatformMovement bossMovement;
+    private PlatformMovement platformMovement;
     private bool waiting;
     private bool seeCharacter;
 
@@ -17,23 +17,26 @@ public class followCharacter : MonoBehaviour
     {
         waiting = false;
         seeCharacter = false;
+        if (character == null)
+            character = GameObject.FindWithTag("Player");
+        if (platformMovement.isEmpty()) 
+            platformMovement.getWaypoints().Add(GameObject.Find("boss").transform);
     }
 
     void Update()
     {
         if (!waiting && seeCharacter) {
-            bossMovement.enabled = false;
+            platformMovement.enabled = false;
             waiting = true;
             positionCharacterX = new Vector2((character.transform.position.x - this.transform.position.x), (character.transform.position.y - this.transform.position.y));
             StartCoroutine(follow());
         } else if (waiting && !seeCharacter) {
-            bossMovement.enabled = true;
+            platformMovement.enabled = true;
         }
-        Debug.Log(rbBoss.velocity);
     }
 
     private IEnumerator follow() {
-        rbBoss.AddForce(positionCharacterX.normalized * 20, ForceMode2D.Impulse);
+        rbEnnemy.AddForce(positionCharacterX.normalized * 20, ForceMode2D.Impulse);
         yield return new WaitForSeconds(3.0f);
         waiting = false;
     }

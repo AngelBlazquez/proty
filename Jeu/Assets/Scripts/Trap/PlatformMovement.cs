@@ -24,6 +24,14 @@ public class PlatformMovement : MonoBehaviour
         targetReached = false;
     }
 
+    public bool isEmpty() {
+        return waypoints.Count == 0;
+    }
+
+    public List<Transform> getWaypoints() {
+        return waypoints;
+    }
+
     /// <summary>
     /// Updates the platform's position once per frame
     /// </summary>
@@ -36,7 +44,7 @@ public class PlatformMovement : MonoBehaviour
             transform.position = Vector2.MoveTowards(pos, target.position, 15f * Time.fixedDeltaTime);
             float distance = Vector2.Distance(pos, target.position);
 
-            if (distance < 1f && !targetReached)
+            if (distance < 1f && !targetReached && waypoints.Count > 1)
             {
                 targetReached = true;
                 StartCoroutine(ChangeWaypoint());
