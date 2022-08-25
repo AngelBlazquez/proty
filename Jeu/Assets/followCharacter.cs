@@ -12,6 +12,8 @@ public class followCharacter : MonoBehaviour
     private PlatformMovement platformMovement;
     private bool waiting;
     private bool seeCharacter;
+    [SerializeField]
+    private Animator anim;
 
     void Start()
     {
@@ -36,6 +38,9 @@ public class followCharacter : MonoBehaviour
     }
 
     private IEnumerator follow() {
+        anim.SetInteger("onAttack", 1);
+        yield return new WaitForSeconds(1.16f);
+        anim.SetInteger("onAttack", 0);
         rbEnnemy.AddForce(positionCharacterX.normalized * 20, ForceMode2D.Impulse);
         yield return new WaitForSeconds(3.0f);
         waiting = false;
