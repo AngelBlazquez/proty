@@ -49,6 +49,7 @@ MonoBehaviour:
     version: 0
     nbDeath: 0
     nbCoin: 0
+    allHatsBuyed: []
   levelDisplays: {fileID: 612328443710172771}
 --- !u!114 &612328443710172771
 MonoBehaviour:
@@ -73,7 +74,9 @@ MonoBehaviour:
   - {fileID: 4337218648861170890, guid: 3b60a4bbf299350439bffa2b6ea68ca4, type: 3}
   - {fileID: 4337218648861170890, guid: f1bea57400c9a11408661aa111d04f7b, type: 3}
   - {fileID: 4337218648861170890, guid: 8073b59f4d200ea44951115928d82228, type: 3}
+  - {fileID: 4713779644345746468, guid: e9d0e8c2ce6d9ea4c816baf1e78315c0, type: 3}
   timeForStars:
+  - _stars: 00000000780000003c000000
   - _stars: 00000000780000003c000000
   - _stars: 00000000780000003c000000
   - _stars: 00000000780000003c000000

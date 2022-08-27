@@ -42,6 +42,9 @@ EditorBuildSettings:
     path: Assets/Scenes/9-DarkManor.unity
     guid: 9ebd5fa4ff4428b428d7da08b6df584b
   - enabled: 1
+    path: Assets/Scenes/10-IcySpikes.unity
+    guid: 120e568dce66cd5409af0bab649ed842
+  - enabled: 1
     path: "Assets/Scenes/Cr\xE9dits.unity"
     guid: d7882a66ab932494e8a06aac7e2c7ed5
   m_configObjects: {}
