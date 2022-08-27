@@ -34,6 +34,20 @@ public class RollingMovement : MonoBehaviour
         }
 
         MovePlayer(horizontalMovement);
+
+        if (TrainingMode.GetIsTraining())
+        {
+            StartCoroutine(SavePosition());
+        }
+    }
+
+    private IEnumerator SavePosition()
+    {
+        Vector3 oldPosition = transform.position;
+        yield return new WaitForSeconds(TrainingMode.GetSeconds());
+        Debug.Log("Position : " + oldPosition);
+        TrainingMode.lastPosition = oldPosition;
+        TrainingMode.canSavePosition = true;
     }
 
     private void MovePlayer(float _horizontalMovement)

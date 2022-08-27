@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 oldPosition = transform.position;
         yield return new WaitForSeconds(TrainingMode.GetSeconds());
-        Debug.Log("Position");
+        Debug.Log("Position : " + oldPosition);
         TrainingMode.lastPosition = oldPosition;
         TrainingMode.canSavePosition = true;
     }
