@@ -36191,7 +36191,7 @@ Transform:
   - {fileID: 109469487}
   - {fileID: 78332107}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &627697589
 GameObject:
@@ -41437,6 +41437,16 @@ PrefabInstance:
     - target: {fileID: 1752652370080361970, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296641122488790826, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296641122488790826, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
+        type: 3}
+      propertyPath: m_UsedByEffector
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4329153107085880389, guid: 50dbadf7f5f834a4892cf80ad56d6c37,
@@ -68869,6 +68879,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.y
       value: -12.384197
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796094892570345300, guid: d40df9c3a9a7a1b4fa3dbb0815bd575f,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5325324521958095742, guid: d40df9c3a9a7a1b4fa3dbb0815bd575f,
         type: 3}

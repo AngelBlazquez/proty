@@ -74,6 +74,11 @@ public class GravityAffectedCloud : MonoBehaviour
                 StartCoroutine(DelayBeforeFallingCoroutine());
             }
         }
+
+        if (collider.gameObject.tag == "Void") // Killzone collider (Void tag) bypass
+        {
+            gameObject.GetComponent<EdgeCollider2D>().isTrigger = true;
+        }
     }
 
     /// <summary>
@@ -87,5 +92,4 @@ public class GravityAffectedCloud : MonoBehaviour
             isOnCloud = false;
         }
     }
-
 }
