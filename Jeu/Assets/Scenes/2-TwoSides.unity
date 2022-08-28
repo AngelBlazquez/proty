@@ -49437,7 +49437,7 @@ PrefabInstance:
     - target: {fileID: 4256048495819655071, guid: 0bd9e65f35e30544980817e223e017f4,
         type: 3}
       propertyPath: nextLevel
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bd9e65f35e30544980817e223e017f4, type: 3}
@@ -50777,7 +50777,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Door
       value: 
-      objectReference: {fileID: 32147586}
+      objectReference: {fileID: 330040619}
     - target: {fileID: 6875576512918739827, guid: f790f7fc91de66746bdb3f4d9018128c,
         type: 3}
       propertyPath: anim
