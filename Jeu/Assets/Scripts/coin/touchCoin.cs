@@ -8,6 +8,9 @@ public class touchCoin : MonoBehaviour
     [SerializeField]
     private DataManager data;
 
+    [SerializeField]
+    private AudioSource source;
+
     private coinManager cm;
     // Start is called before the first frame update
     void Start()
@@ -18,11 +21,13 @@ public class touchCoin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && this.enabled)
         {
+            this.enabled = false;
+            source.Play();
             data.AddCoin();
             cm.ShowCoin();
-            Destroy(this.gameObject);
+            Destroy(this.gameObject,.2f);
         }
     }
 }

@@ -150,7 +150,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 31136c4faff869c42898d0c406439ae7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 0.63
   Loop: 0
   Mute: 0
@@ -599,6 +599,7 @@ MonoBehaviour:
   isJumping: 0
   isOnGround: 0
   animator: {fileID: 7322277456711279643}
+  isOnIce: 0
 --- !u!61 &6879377711066254777
 BoxCollider2D:
   m_ObjectHideFlags: 0
