@@ -18,6 +18,7 @@ public class Stats : MonoBehaviour
     public TextMeshProUGUI nbLvl7;
     public TextMeshProUGUI nbLvl8;
     public TextMeshProUGUI nbLvl9;
+    public TextMeshProUGUI nbLvl10;
 
     public TextMeshProUGUI nbFall;
     public TextMeshProUGUI nbSpikes;
@@ -37,11 +38,12 @@ public class Stats : MonoBehaviour
     public TextMeshProUGUI Timer7;
     public TextMeshProUGUI Timer8;
     public TextMeshProUGUI Timer9;
+    public TextMeshProUGUI Timer10;
 
     // Start is called before the first frame update
     void Start()
     {
-        nbTotalDeath.text = data.GetDeath().ToString();
+        nbTotalDeath.text = (data.GetDeath()/2).ToString();
         nbLvl1.text = data.GetDeathLevel(0).ToString();
         nbLvl2.text = data.GetDeathLevel(1).ToString();
         nbLvl3.text = data.GetDeathLevel(2).ToString();
@@ -51,6 +53,7 @@ public class Stats : MonoBehaviour
         nbLvl7.text = data.GetDeathLevel(6).ToString();
         nbLvl8.text = data.GetDeathLevel(7).ToString();
         nbLvl9.text = data.GetDeathLevel(8).ToString();
+        nbLvl10.text = data.GetDeathLevel(9).ToString();
 
         nbFall.text = data.GetDeathTraps("Void").ToString();
         nbSpikes.text = data.GetDeathTraps("Spikes").ToString();
@@ -70,6 +73,7 @@ public class Stats : MonoBehaviour
         Timer7.text = string.Format ("{0:0}:{1:00}", Mathf.Floor(data.GetTime(6)/60), data.GetTime(6)%60);
         Timer8.text = string.Format ("{0:0}:{1:00}", Mathf.Floor(data.GetTime(7)/60), data.GetTime(7)%60);
         Timer9.text = string.Format ("{0:0}:{1:00}", Mathf.Floor(data.GetTime(8)/60), data.GetTime(8)%60);
+        Timer10.text = string.Format ("{0:0}:{1:00}", Mathf.Floor(data.GetTime(8)/60), data.GetTime(9)%60);
     }
 
     // Update is called once per frame
