@@ -56,7 +56,7 @@ public class endLevel : MonoBehaviour
                 }
                 else
                 {
-                    if (nextLevel > 0)
+                    if (nextLevel > 0 && nextLevel < 10)
                     {
                         data.UnlockLevel(nextLevel);
                     }
