@@ -17,7 +17,7 @@ public class DeathManager : MonoBehaviour
 
     private void Start()
     {
-        nbMorts.text = data.GetDeath().ToString();
+        nbMorts.text = (data.GetDeath()/2).ToString();
     }
 
     private IEnumerator Death()

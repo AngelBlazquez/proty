@@ -12,11 +12,11 @@ public class TotalDeaths : MonoBehaviour
 
     void Start()
     {
-        nbMorts.text = data.GetDeath().ToString();
+        nbMorts.text = (data.GetDeath()/2).ToString();
     }
 
     void Update()
     {
-        nbMorts.text = data.GetDeath().ToString();
+        nbMorts.text = (data.GetDeath()/2).ToString();
     }
 }
