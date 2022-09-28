@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3106935183369368918}
   - component: {fileID: 424879104}
   - component: {fileID: 650408268820327934}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DeadlySaw
   m_TagString: Saw
   m_Icon: {fileID: 0}
