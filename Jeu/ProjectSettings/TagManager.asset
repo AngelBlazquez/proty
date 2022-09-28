@@ -14,6 +14,7 @@ TagManager:
   - Rain
   - CannonBall
   - Ice
+  - Ennemy
   layers:
   - Default
   - TransparentFX

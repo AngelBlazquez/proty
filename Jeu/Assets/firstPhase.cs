@@ -7,11 +7,11 @@ public class firstPhase : MonoBehaviour
     [SerializeField]
     private Transform bossTransform;
     [SerializeField]
-    GameObject bossPhase1;
+    private GameObject bossPhase1;
     [SerializeField]
-    GameObject bossPhase2;
+    private GameObject bossPhase2;
     [SerializeField]
-    BossPhase2 scriptBossPhase2;
+    private BossPhase2[] scriptsBossPhase2 = new BossPhase2[2];
     [SerializeField]
     private GameObject ennemy;
     [SerializeField]
@@ -38,27 +38,32 @@ public class firstPhase : MonoBehaviour
     [SerializeField]
     private int bossHP;
     public GameObject button;
+    bool phase2;
 
 
     void Start()
     {
+        phase2 = false;
         posEnnemy = ennemy.transform;
         posBullet = bullet.transform;
         posIceBlock = iceBlock.transform;
         bossHP = 4;
-        //StartCoroutine(invokeEnnemy());
-        //StartCoroutine(invokeBulletsRain());
+        StartCoroutine(invokeEnnemy());
+        StartCoroutine(invokeBulletsRain());
         StartCoroutine(invokeIceBlock());
         StartCoroutine(displayButton());
     }
 
     void Update() {
-        if (getBossHP() <= 2) {
+        if (getBossHP() <= 2 && !phase2) {
             bossPhase1.SetActive(false);
             bossPhase2.SetActive(true);
-            scriptBossPhase2.enabled = true;
+            foreach (BossPhase2 script in scriptsBossPhase2) {
+                script.enabled = true;
+            }
+            phase2 = true;
         }
-        if (getBossHP() <= 0) {
+        else if (getBossHP() <= 0) {
             bossDeath();
         }
     }
@@ -105,36 +110,36 @@ public class firstPhase : MonoBehaviour
                 posEnnemy.position = new Vector3(posEnnemyX, posEnnemyY, 0f);
 
                 Instantiate(ennemy, posEnnemy.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-                yield return new WaitForSecondsRealtime(15f);
+                yield return new WaitForSeconds(15f);
             }
-            yield return new WaitForSecondsRealtime(0f);
+            yield return new WaitForSeconds(0f);
         }
     }
 
     private IEnumerator invokeBulletsRain() {
         while (getBossAlive()) {
             if (getInFight()) {
-                yield return new WaitForSecondsRealtime(10f);
+                yield return new WaitForSeconds(10f);
                 for (int i = 0; i < (sizeRoom/10) + 1; i++) {
                     posBulletX = bossTransform.transform.position.x - sizeRoom/2 + 10 * i;
                     posBulletY = bossTransform.transform.position.y;
                     posBullet.position = new Vector3(posBulletX, posBulletY, 0f);
 
                     Instantiate(bullet, posBullet.position,  Quaternion.Euler(new Vector3(0, 0, 0)));
-                    yield return new WaitForSecondsRealtime(1f);
+                    yield return new WaitForSeconds(1f);
                 }
-                yield return new WaitForSecondsRealtime(1f);
+                yield return new WaitForSeconds(1f);
                 for (int i = 0; i < (sizeRoom/10); i++) {
                     posBulletX = bossTransform.transform.position.x + ((sizeRoom/2) -5) - 10 * i;
                     posBulletY = bossTransform.transform.position.y;
                     posBullet.position = new Vector3(posBulletX, posBulletY, 0f);
 
                     Instantiate(bullet, posBullet.position,  Quaternion.Euler(new Vector3(0, 0, 0)));
-                    yield return new WaitForSecondsRealtime(1f);
+                    yield return new WaitForSeconds(1f);
                 }
-                yield return new WaitForSecondsRealtime(10f);
+                yield return new WaitForSeconds(10f);
             }
-            yield return new WaitForSecondsRealtime(0f);
+            yield return new WaitForSeconds(0f);
         }
     }
 
@@ -145,24 +150,24 @@ public class firstPhase : MonoBehaviour
                 posIceBlock.position = new Vector3(posIceBlockX, groundPosY, 0);
 
                 Instantiate(iceBlock, posIceBlock.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-                yield return new WaitForSecondsRealtime(3f);
-                if (iceBlockToRemove != null) {
+                yield return new WaitForSeconds(3f);
+                /**if (iceBlockToRemove != null) {
                     Destroy(iceBlockToRemove);
-                }
-                yield return new WaitForSecondsRealtime(3f);
+                }*/
+                yield return new WaitForSeconds(3f);
                 iceBlockToRemove = GameObject.FindGameObjectWithTag("Ice");
             }
-            yield return new WaitForSecondsRealtime(0f);
+            yield return new WaitForSeconds(0f);
         }
     }
 
     private IEnumerator displayButton() {
         while (getBossAlive()) {
             if (getInFight() && button.activeSelf.Equals(false)) {
-                yield return new WaitForSecondsRealtime(60f);
+                yield return new WaitForSeconds(60f);
                 button.SetActive(true);
             } 
-            yield return new WaitForSecondsRealtime(0f);
+            yield return new WaitForSeconds(0f);
         }
     }
 
