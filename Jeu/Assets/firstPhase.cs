@@ -7,6 +7,12 @@ public class firstPhase : MonoBehaviour
     [SerializeField]
     private Transform bossTransform;
     [SerializeField]
+    GameObject bossPhase1;
+    [SerializeField]
+    GameObject bossPhase2;
+    [SerializeField]
+    BossPhase2 scriptBossPhase2;
+    [SerializeField]
     private GameObject ennemy;
     [SerializeField]
     private GameObject bullet;
@@ -40,13 +46,18 @@ public class firstPhase : MonoBehaviour
         posBullet = bullet.transform;
         posIceBlock = iceBlock.transform;
         bossHP = 4;
-        StartCoroutine(invokeEnnemy());
-        StartCoroutine(invokeBulletsRain());
+        //StartCoroutine(invokeEnnemy());
+        //StartCoroutine(invokeBulletsRain());
         StartCoroutine(invokeIceBlock());
         StartCoroutine(displayButton());
     }
 
     void Update() {
+        if (getBossHP() <= 2) {
+            bossPhase1.SetActive(false);
+            bossPhase2.SetActive(true);
+            scriptBossPhase2.enabled = true;
+        }
         if (getBossHP() <= 0) {
             bossDeath();
         }
@@ -94,7 +105,7 @@ public class firstPhase : MonoBehaviour
                 posEnnemy.position = new Vector3(posEnnemyX, posEnnemyY, 0f);
 
                 Instantiate(ennemy, posEnnemy.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-                yield return new WaitForSecondsRealtime(30f);
+                yield return new WaitForSecondsRealtime(15f);
             }
             yield return new WaitForSecondsRealtime(0f);
         }
@@ -112,7 +123,7 @@ public class firstPhase : MonoBehaviour
                     Instantiate(bullet, posBullet.position,  Quaternion.Euler(new Vector3(0, 0, 0)));
                     yield return new WaitForSecondsRealtime(1f);
                 }
-                yield return new WaitForSecondsRealtime(5f);
+                yield return new WaitForSecondsRealtime(1f);
                 for (int i = 0; i < (sizeRoom/10); i++) {
                     posBulletX = bossTransform.transform.position.x + ((sizeRoom/2) -5) - 10 * i;
                     posBulletY = bossTransform.transform.position.y;

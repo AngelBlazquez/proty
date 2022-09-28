@@ -42,7 +42,7 @@ public class followCharacter : MonoBehaviour
         yield return new WaitForSeconds(1.16f);
         anim.SetInteger("onAttack", 0);
         rbEnnemy.AddForce(positionCharacterX.normalized * 20, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(5.0f);
         waiting = false;
     }
 
