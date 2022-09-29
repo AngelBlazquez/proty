@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7849744943890817885}
   - component: {fileID: 2468541498750513475}
   - component: {fileID: -1849541923349331008}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MovingSaw
   m_TagString: Saw
   m_Icon: {fileID: 0}

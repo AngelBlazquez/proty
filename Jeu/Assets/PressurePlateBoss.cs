@@ -11,11 +11,16 @@ public class PressurePlateBoss : MonoBehaviour
     private bool oneTime = false;
 
     private void OnTriggerEnter2D(Collider2D col) {
+        StartCoroutine(Animation(col));
+    }
+
+    private IEnumerator Animation(Collider2D col) {
         if (col.tag == "Player" && !oneTime) {
             anim.SetTrigger("push");
             first.bossTakeDamage();
-            first.button.SetActive(false);
             oneTime = true;
+            yield return new WaitForSeconds(2.0f);
+            first.button.SetActive(false);
         } 
         else {
             oneTime = false;
