@@ -41,6 +41,8 @@ public class firstPhase : MonoBehaviour
     bool phase2;
     [SerializeField]
     private GameObject bossDoors;
+    [SerializeField]
+    GameObject apparition;
 
 
     void Start()
@@ -52,6 +54,7 @@ public class firstPhase : MonoBehaviour
         bossHP = 4;
         StartCoroutine(invokeEnnemy());
         StartCoroutine(invokeBulletsRain());
+        StartCoroutine(invokeBullets());
         StartCoroutine(invokeIceBlock());
         StartCoroutine(displayButton());
     }
@@ -143,6 +146,22 @@ public class firstPhase : MonoBehaviour
                     yield return new WaitForSeconds(1f);
                 }
                 yield return new WaitForSeconds(10f);
+            }
+            yield return new WaitForSeconds(0f);
+        }
+    }
+
+    private IEnumerator invokeBullets() {
+        while (getBossAlive()) {
+            if (getInFight()) {
+                yield return new WaitForSeconds(0.5f);
+                posBulletX = Random.Range(bossTransform.position.x - (sizeRoom/2), bossTransform.position.x + (sizeRoom/2));
+                posBulletY = bossTransform.transform.position.y;
+                posBullet.position = new Vector3(posBulletX, posBulletY, 0f);
+                Instantiate(apparition, posBullet.position,  Quaternion.Euler(new Vector3(0, 0, 0)));
+                yield return new WaitForSeconds(1f);
+                Destroy(GameObject.Find("apparitionBulletpoint(Clone)"));
+                Instantiate(bullet, posBullet.position,  Quaternion.Euler(new Vector3(0, 0, 0)));
             }
             yield return new WaitForSeconds(0f);
         }
