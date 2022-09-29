@@ -24,7 +24,6 @@ public class PressurePlateBoss : MonoBehaviour
         } 
         else {
             oneTime = false;
-            anim.SetTrigger(null);
         }
     }
 }
