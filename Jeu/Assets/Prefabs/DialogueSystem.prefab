@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1629118000621088305
 RectTransform:
   m_ObjectHideFlags: 0
@@ -134,8 +134,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -587, y: 51}
-  m_SizeDelta: {x: 224.833, y: 51.648}
+  m_AnchoredPosition: {x: -607.8, y: 98.4}
+  m_SizeDelta: {x: 216.8053, y: 38.0627}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9051591793613419606
 CanvasRenderer:
@@ -175,8 +175,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4284743679
+  m_fontColor: {r: 1, g: 1, b: 0.38823533, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -270,10 +270,10 @@ RectTransform:
   m_Father: {fileID: 1629118000621088305}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -354.05072}
-  m_SizeDelta: {x: -453.6207, y: -893.8248}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 1.5625, y: 140.0654}
+  m_SizeDelta: {x: 1463.2544, y: 257.2532}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1873463473231593041
 CanvasRenderer:
@@ -347,8 +347,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72.1, y: -27.727}
-  m_SizeDelta: {x: 1254.634, y: 105.8053}
+  m_AnchoredPosition: {x: -5.6417, y: -21.757801}
+  m_SizeDelta: {x: 1391.6992, y: 184.9447}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6249301435568588335
 CanvasRenderer:
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -484,8 +484,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0068665, y: -0.21992}
-  m_SizeDelta: {x: 1466.4, y: 185.73}
+  m_AnchoredPosition: {x: 0.77031, y: -0.00021839}
+  m_SizeDelta: {x: 1464.8, y: 257.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5445237678107380506
 CanvasRenderer:
@@ -604,6 +604,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3182061465286491052}
   - component: {fileID: 4185566730770822688}
+  - component: {fileID: 1679381}
+  - component: {fileID: 1679380}
   m_Layer: 0
   m_Name: DialogueSystem
   m_TagString: Untagged
@@ -638,16 +640,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c6cbbe2f9da56408b3f7e226338aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 0}
+  rollingMovement: {fileID: 0}
   text:
-  - What are you doing here Proty ?
-  - I'm going to take my revenge !
-  - That's not how it works Proty.
-  - You sure ? Let's fight then, you'll see !
+  - "Brhhhhh ! Je me les g\xE8le !"
+  - Je sens quelque chose...comme une aura malseine
+  - "Tu es enfin l\xE0, rejoins moi Proty"
+  - " J'arrive (j'esp\xE8re que ce n'est pas lui cette odeur car elle me met mal
+    \xE0 l'aise)"
   speaker:
-  - Boss
   - Proty
-  - Boss
+  - Proty
+  - ???
   - Proty
   speakerText: {fileID: 7807511440142011055}
   dialogueText: {fileID: 2304404212115525794}
   dialogueBackground: {fileID: 1175745914878208722}
+--- !u!61 &1679381
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8901210058174473158}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.6871185, y: 1.9542661}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.374237, y: 4.908532}
+  m_EdgeRadius: 0
+--- !u!114 &1679380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8901210058174473158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ebcff7b433a88b4d8434e5894f3a8d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSystem: {fileID: 4185566730770822688}

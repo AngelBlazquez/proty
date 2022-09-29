@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class DialogueSystem : MonoBehaviour
 {
+    [Header("Player related stuff")]
+    [SerializeField]
+    private PlayerMovement playerMovement;
+    [SerializeField]
+    private RollingMovement rollingMovement;
+
     [Header("Dialogue Text")]
     [SerializeField]
     private List<string> text;
@@ -26,6 +32,8 @@ public class DialogueSystem : MonoBehaviour
 
     public void ShowDialogue()
     {
+        playerMovement?.FreezeMovement(true);
+        rollingMovement?.FreezeMovement(true);
         dialogueBackground.SetActive(true);
         startNewLine();
     }
@@ -69,6 +77,8 @@ public class DialogueSystem : MonoBehaviour
         else if(waitForInteraction && currentIndex >= text.Count-2)
         {
             dialogueBackground.SetActive(false);
+            playerMovement?.FreezeMovement(false);
+            rollingMovement?.FreezeMovement(false);
         }
         else if (lineStarted && !skipped)
         {
