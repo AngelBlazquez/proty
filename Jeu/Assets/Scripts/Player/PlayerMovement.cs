@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         TrainingMode.lastPosition = transform.position;
     }
 
-    public void freezeMovement(bool block)
+    public void FreezeMovement(bool block)
     {
         if(block)
         {

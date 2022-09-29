@@ -15,6 +15,22 @@ public class RollingMovement : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
     }
 
+
+    public void FreezeMovement(bool state)
+    {
+        if(playerRb != null)
+        {
+            if (state)
+            {
+                playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
+            }
+            else
+            {
+                playerRb.constraints = RigidbodyConstraints2D.None;
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

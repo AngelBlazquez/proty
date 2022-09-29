@@ -32,7 +32,8 @@ public class DialogueSystem : MonoBehaviour
 
     public void ShowDialogue()
     {
-        playerMovement.freezeMovement(true);
+        playerMovement?.FreezeMovement(true);
+        rollingMovement?.FreezeMovement(true);
         dialogueBackground.SetActive(true);
         startNewLine();
     }
@@ -76,7 +77,8 @@ public class DialogueSystem : MonoBehaviour
         else if(waitForInteraction && currentIndex >= text.Count-2)
         {
             dialogueBackground.SetActive(false);
-            playerMovement.freezeMovement(false);
+            playerMovement?.FreezeMovement(false);
+            rollingMovement?.FreezeMovement(false);
         }
         else if (lineStarted && !skipped)
         {
