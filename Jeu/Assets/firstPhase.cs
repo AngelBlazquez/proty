@@ -39,6 +39,8 @@ public class firstPhase : MonoBehaviour
     private int bossHP;
     public GameObject button;
     bool phase2;
+    [SerializeField]
+    private GameObject bossDoors;
 
 
     void Start()
@@ -93,13 +95,16 @@ public class firstPhase : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
-        if (col.tag == "Player")
+        if (col.tag == "Player") {
             setInFight(true);
+            bossDoors.SetActive(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D col) {
         if (col.tag == "Player")
             setInFight(false);
+            bossDoors.SetActive(false);
     }
 
     private IEnumerator invokeEnnemy() {
@@ -151,9 +156,9 @@ public class firstPhase : MonoBehaviour
 
                 Instantiate(iceBlock, posIceBlock.position, Quaternion.Euler(new Vector3(0, 0, 0)));
                 yield return new WaitForSeconds(3f);
-                /**if (iceBlockToRemove != null) {
+                if (iceBlockToRemove != null) {
                     Destroy(iceBlockToRemove);
-                }*/
+                }
                 yield return new WaitForSeconds(3f);
                 iceBlockToRemove = GameObject.FindGameObjectWithTag("Ice");
             }
