@@ -11,10 +11,14 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player" && !oneTimeTrigger)
+        if (collision.gameObject.CompareTag("Player") && !oneTimeTrigger)
         {
             dialogueSystem.ShowDialogue();
             oneTimeTrigger = true;
+            if(collision.gameObject.name.Equals("Head"))
+            {
+                collision.gameObject.tag = "Untagged";
+            }
         }
     }
 }

@@ -33,6 +33,18 @@ public class PlayerMovement : MonoBehaviour
         TrainingMode.lastPosition = transform.position;
     }
 
+    public void FreezeMovement(bool block)
+    {
+        if(block)
+        {
+            playerRb.constraints = RigidbodyConstraints2D.FreezeAll;
+        } 
+        else
+        {
+            playerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+      
+    }
 
     // Update is called once per frame
     void Update()

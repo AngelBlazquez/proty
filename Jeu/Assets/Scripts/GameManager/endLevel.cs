@@ -18,6 +18,8 @@ public class endLevel : MonoBehaviour
     private Timer timer;
     [SerializeField]
     private LevelDisplayHolder levelInfo;
+    [SerializeField]
+    private DialogueSystem Dialogue;
 
     /// <summary>
     /// Manage the stars shown on the end level menu
@@ -49,23 +51,28 @@ public class endLevel : MonoBehaviour
         {
             if ((SceneManager.GetActiveScene().buildIndex == 3 && collider.name == "Player(Clone)") || SceneManager.GetActiveScene().buildIndex != 3)
             {
-                if (TrainingMode.GetIsTraining())
-                {
-                    Scene currentScene = SceneManager.GetActiveScene();
-                    SceneManager.LoadScene(currentScene.name);
-                }
-                else
-                {
-                    if (nextLevel > 0 && nextLevel < 10)
-                    {
-                        data.UnlockLevel(nextLevel);
-                    }
-                    data.SaveTime(SceneManager.GetActiveScene().buildIndex - ChangeLevel.offset, timer.GetTime());
-                    //Appelle la fonction winGameMenu du script winManager
-                    menuWin.winGameMenu(nextLevel);
-                    starsManagement();
-                }
+                ManageLevelEnding();
             }
         }
     }
+
+    private void ManageLevelEnding()
+    {
+        if (TrainingMode.GetIsTraining())
+        {
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
+        }
+        else
+        {
+            if (nextLevel > 0)
+            {
+                data.UnlockLevel(nextLevel);
+            }
+            data.SaveTime(SceneManager.GetActiveScene().buildIndex - ChangeLevel.offset, timer.GetTime());
+            //Appelle la fonction winGameMenu du script winManager
+            menuWin.winGameMenu(nextLevel);
+            starsManagement();
+        }
+    } 
 }
