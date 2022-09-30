@@ -37,6 +37,14 @@ public class firstPhase : MonoBehaviour
     private Animator anim1;
     private  Animator anim2;
 
+    [Header("music")]
+    [SerializeField]
+    private AudioSource source;
+    [SerializeField]
+    private AudioClip clipPhase1;
+    [SerializeField]
+    private AudioClip clipBossMort;
+
     [SerializeField]
     private int bossHP;
     public GameObject button;
@@ -98,6 +106,7 @@ public class firstPhase : MonoBehaviour
     }
 
     public void bossTakeDamage() {
+        doAnimationBool("atck2", false);
         doAnimationTrigger("hit");       
         bossHP--;
     }
@@ -106,6 +115,10 @@ public class firstPhase : MonoBehaviour
         if (col.tag == "Player") {
             setInFight(true);
             bossDoors.SetActive(true);
+
+            //lance musique boss
+            source.clip = clipPhase1;
+            source.Play();
         }
     }
 
@@ -213,6 +226,8 @@ public class firstPhase : MonoBehaviour
 
     private void bossDeath() {
         setBossAlive(false);
+        source.clip = clipBossMort;
+        source.Play();
         Destroy(GameObject.Find("boss"));
     }
 
