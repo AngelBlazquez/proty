@@ -217,7 +217,7 @@ public class firstPhase : MonoBehaviour
     private IEnumerator displayButton() {
         while (getBossAlive()) {
             if (getInFight() && button.activeSelf.Equals(false)) {
-                yield return new WaitForSeconds(60f);
+                yield return new WaitForSeconds(60);
                 button.SetActive(true);
             } 
             yield return new WaitForSeconds(0f);

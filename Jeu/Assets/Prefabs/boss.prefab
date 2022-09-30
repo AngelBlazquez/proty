@@ -358,7 +358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7650273786751557078
 Transform:
   m_ObjectHideFlags: 0
@@ -1209,6 +1209,9 @@ MonoBehaviour:
   groundPosY: 8.5
   iceBlock: {fileID: 4651775330214828044, guid: 5df713f3244184948aabe2aaf4c87aac,
     type: 3}
+  source: {fileID: 0}
+  clipPhase1: {fileID: 0}
+  clipBossMort: {fileID: 0}
   bossHP: 0
   button: {fileID: 0}
   bossDoors: {fileID: 0}
