@@ -33,8 +33,10 @@ public class firstPhase : MonoBehaviour
     private Transform posIceBlock;
     private float posIceBlockX;
     private GameObject iceBlockToRemove;
-    [SerializeField]
-    private Animator anim;
+
+    private Animator anim1;
+    private  Animator anim2;
+
     [SerializeField]
     private int bossHP;
     public GameObject button;
@@ -47,6 +49,8 @@ public class firstPhase : MonoBehaviour
 
     void Start()
     {
+        anim1 = bossPhase1.GetComponent<Animator>();
+        anim2 = bossPhase2.GetComponent<Animator>();
         phase2 = false;
         posEnnemy = ennemy.transform;
         posBullet = bullet.transform;
@@ -94,6 +98,7 @@ public class firstPhase : MonoBehaviour
     }
 
     public void bossTakeDamage() {
+        doAnimationTrigger("hit");       
         bossHP--;
     }
 
@@ -112,6 +117,7 @@ public class firstPhase : MonoBehaviour
 
     private IEnumerator invokeEnnemy() {
         while (getBossAlive()) {
+            doAnimationTrigger("atck1");
             if (getInFight()) {
                 posEnnemyX = Random.Range(bossTransform.position.x - (sizeRoom/2), bossTransform.position.x + (sizeRoom/2));
                 posEnnemyY = bossTransform.transform.position.y;
@@ -128,6 +134,7 @@ public class firstPhase : MonoBehaviour
         while (getBossAlive()) {
             if (getInFight()) {
                 yield return new WaitForSeconds(10f);
+                doAnimationBool("atck2",true);
                 for (int i = 0; i < (sizeRoom/10) + 1; i++) {
                     posBulletX = bossTransform.transform.position.x - sizeRoom/2 + 10 * i;
                     posBulletY = bossTransform.transform.position.y;
@@ -136,6 +143,7 @@ public class firstPhase : MonoBehaviour
                     Instantiate(bullet, posBullet.position,  Quaternion.Euler(new Vector3(0, 0, 0)));
                     yield return new WaitForSeconds(1f);
                 }
+                doAnimationBool("atck2", false);
                 yield return new WaitForSeconds(1f);
                 for (int i = 0; i < (sizeRoom/10); i++) {
                     posBulletX = bossTransform.transform.position.x + ((sizeRoom/2) -5) - 10 * i;
@@ -153,6 +161,10 @@ public class firstPhase : MonoBehaviour
 
     private IEnumerator invokeBullets() {
         while (getBossAlive()) {
+            if (phase2)
+            {
+                anim2.SetTrigger("atck3");
+            }
             if (getInFight()) {
                 yield return new WaitForSeconds(0.5f);
                 posBulletX = Random.Range(bossTransform.position.x - (sizeRoom/2), bossTransform.position.x + (sizeRoom/2));
@@ -169,6 +181,10 @@ public class firstPhase : MonoBehaviour
 
     private IEnumerator invokeIceBlock() {
         while (getBossAlive()) {
+            if (phase2)
+            {
+                anim2.SetTrigger("atck4");
+            }
             if (getInFight()) {
                 posIceBlockX = Random.Range(bossTransform.position.x - (sizeRoom/2), bossTransform.position.x + (sizeRoom/2));
                 posIceBlock.position = new Vector3(posIceBlockX, groundPosY, 0);
@@ -198,6 +214,36 @@ public class firstPhase : MonoBehaviour
     private void bossDeath() {
         setBossAlive(false);
         Destroy(GameObject.Find("boss"));
+    }
+
+    /**
+     * Effectue l'animation trigger en fonction de la phase du boss
+     */
+    private void doAnimationTrigger(string act1)
+    {
+        if (phase2)
+        {
+            anim2.SetTrigger(act1);
+        }
+        else
+        {
+            anim1.SetTrigger(act1);
+        }
+    }
+
+    /**
+     * Effectue l'animation booléenne en fonction de la phase du boss
+     */
+    private void doAnimationBool(string act1, bool funct)
+    {
+        if (phase2)
+        {
+            anim2.SetBool(act1, funct);
+        }
+        else
+        {
+            anim1.SetBool(act1, funct);
+        }
     }
 
 }

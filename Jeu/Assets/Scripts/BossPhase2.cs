@@ -35,6 +35,7 @@ public class BossPhase2 : MonoBehaviour
 
     private IEnumerator SpawnItemsCoroutine()
     {
+        
         SpawnItems();
 
         yield return new WaitForSeconds(spawnTime);
