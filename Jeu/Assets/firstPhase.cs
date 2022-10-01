@@ -43,6 +43,8 @@ public class firstPhase : MonoBehaviour
     [SerializeField]
     private AudioClip clipPhase1;
     [SerializeField]
+    private AudioClip clipPhase1Boucle;
+    [SerializeField]
     private AudioClip clipBossMort;
 
     [SerializeField]
@@ -79,6 +81,9 @@ public class firstPhase : MonoBehaviour
                 script.enabled = true;
             }
             phase2 = true;
+            source.Stop();
+            source.clip = clipBossMort;
+            source.Play();
         }
         else if (getBossHP() <= 0) {
             bossDeath();
@@ -117,15 +122,25 @@ public class firstPhase : MonoBehaviour
             bossDoors.SetActive(true);
 
             //lance musique boss
+            source.Stop();
             source.clip = clipPhase1;
             source.Play();
+            StartCoroutine(invokeMusicPhase1Boucle());
         }
     }
 
+    private IEnumerator invokeMusicPhase1Boucle()
+    {
+        yield return new WaitForSeconds(clipPhase1.length);
+        source.Stop();
+        source.clip = clipPhase1Boucle;
+        source.Play();
+    }
+
     private void OnTriggerExit2D(Collider2D col) {
-        if (col.tag == "Player")
-            setInFight(false);
-            bossDoors.SetActive(false);
+    if (col.tag == "Player")
+        setInFight(false);
+        bossDoors.SetActive(false);
     }
 
     private IEnumerator invokeEnnemy() {
@@ -226,8 +241,6 @@ public class firstPhase : MonoBehaviour
 
     private void bossDeath() {
         setBossAlive(false);
-        source.clip = clipBossMort;
-        source.Play();
         Destroy(GameObject.Find("boss"));
     }
 
@@ -247,7 +260,7 @@ public class firstPhase : MonoBehaviour
     }
 
     /**
-     * Effectue l'animation booléenne en fonction de la phase du boss
+     * Effectue l'animation boolï¿½enne en fonction de la phase du boss
      */
     private void doAnimationBool(string act1, bool funct)
     {

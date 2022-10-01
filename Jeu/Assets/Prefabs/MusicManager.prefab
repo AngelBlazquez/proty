@@ -54,6 +54,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d11d6f235bce5cd4ab207fc953de0ec6, type: 3}
   - {fileID: 8300000, guid: 32bbcb94c4016a54a8bee9d11eeec4ea, type: 3}
   - {fileID: 8300000, guid: 898e3befe26c6ce47bd7074d07b5b7e6, type: 3}
+  - {fileID: 8300000, guid: 82b89b5fb8dafd1409eea0c7a048ab3c, type: 3}
   menuLevelOffset: 3
 --- !u!82 &6768565119456021097
 AudioSource:

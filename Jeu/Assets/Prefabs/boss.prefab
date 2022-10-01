@@ -252,7 +252,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8c90e428c6dc4bc49b6cc1b885be5ddc, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -1211,6 +1211,7 @@ MonoBehaviour:
     type: 3}
   source: {fileID: 0}
   clipPhase1: {fileID: 0}
+  clipPhase1Boucle: {fileID: 0}
   clipBossMort: {fileID: 0}
   bossHP: 0
   button: {fileID: 0}
