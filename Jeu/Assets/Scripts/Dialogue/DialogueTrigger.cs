@@ -15,10 +15,6 @@ public class DialogueTrigger : MonoBehaviour
         {
             dialogueSystem.ShowDialogue();
             oneTimeTrigger = true;
-            if(collision.gameObject.name.Equals("Head"))
-            {
-                collision.gameObject.tag = "Untagged";
-            }
         }
     }
 }

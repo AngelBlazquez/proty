@@ -3253,7 +3253,7 @@ Transform:
   m_LocalScale: {x: 40, y: 40, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &422962132
 PrefabInstance:
@@ -51719,19 +51719,19 @@ PrefabInstance:
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[0]
-      value: "La lune ? C'est magnifique ! Ce monde n'a pas l'air tr\xE8s dangereux
-        contrairement aux autres !"
+      value: The moon ? It's beautiful ! At least this place is more welcoming than
+        the previous ones !
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[1]
-      value: "R\xE9ussi le et tu auras des r\xE9ponses !"
+      value: Complete this challenge and i'll give you some answers !
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[2]
-      value: "S\xE9rieux ! C'est vrai ? Je vais me d\xE9p\xE9cher de trouver la sortie
-        et que \xE7a saute !"
+      value: Seriously ? Is that the truth ? For sure i'll find the exit of this
+        place !
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
@@ -67988,7 +67988,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1394350087 stripped
 Transform:
@@ -69465,29 +69465,29 @@ PrefabInstance:
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[0]
-      value: "Pfiouuuu enfin fini, vous \xEAtes sacr\xE9ment sournois, pas compliqu\xE9
-        pas compliqu\xE9 mon oeil!"
+      value: 'Pfiouuuu... it''s done ! You are sneaky, did you really said that this
+        one was easy ? this one was hard as hell ! '
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[1]
-      value: "Si tu me rejoins Proty je te donnerai l'acc\xE8s au monde des humains"
+      value: If you join me, i'll grant you an access to the human world.
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[2]
-      value: "Le monde des humains? Trop bien ! Seule les peluches les plus valereuses
-        y ont eu acc\xE8s !"
+      value: The human world ? That's so cool ! Only the mightiest teddies get a
+        place in the Human world !
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[3]
-      value: Mais pour cela tu dois continuer d'avancer
+      value: But before that, you have to complete all the challenges !
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[4]
-      value: "Woshhh ! Je suis remont\xE9 \xE0 bloc, c'est partiiii !"
+      value: Woshhh ! I'm locked and loaded, human world here i come !
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
@@ -70315,7 +70315,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1717510604
 GameObject:

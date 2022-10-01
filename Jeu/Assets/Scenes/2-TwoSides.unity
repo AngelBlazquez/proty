@@ -50878,7 +50878,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &878370142
 GameObject:
@@ -50911,7 +50911,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &878370144
 MonoBehaviour:
@@ -61658,13 +61658,13 @@ PrefabInstance:
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[0]
-      value: "C'est bien Proty, tu deviens de plus en plus fort, tu vas r\xE9ussir
-        \xE0 passer toutes mes \xE9preuves !"
+      value: Good job Proty, you are getting stronger, at this rate you could even
+        finish all the challenges !
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[1]
-      value: "Des \xE9preuves ? Mais des \xE9preuves pour quoi faire ?"
+      value: Challenges ? Why are you challenging me ?
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
@@ -134619,17 +134619,18 @@ PrefabInstance:
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[0]
-      value: "D\xE9peche toi Proty, retrouve moi vite !"
+      value: Hurry Proty ! Come and join me !
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[1]
-      value: "AHHH, d'o\xF9 vient cette voix ? Qui \xEAtes vous ? Montrez vous!"
+      value: AHHH, Where do that voice is coming from ? Who are you ? Show yourself
+        !
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[2]
-      value: "Elle a l'air d'\xEAtre partie, il faut que j'en apprenne plus"
+      value: It seems like the voice is gone ? I definitely need to find some answers.
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
