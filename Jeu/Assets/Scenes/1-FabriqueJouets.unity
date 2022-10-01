@@ -80347,14 +80347,14 @@ PrefabInstance:
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[0]
-      value: "Huuum, te voil\xE0. Je te nomme Proty, prouve moi ta valeur et tu pourras
-        ressortir de cet enfer pour le paradis ! "
+      value: Huuum, here you are, i'll name you Proty, prove that your are mighty
+        and i will get you out of this hell !
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[1]
-      value: " O\xF9 suis-je ? AHHH, je n'ai plus de corps, je dois vite le retrouver
-        et comprendre ce que je fais l\xE0 !"
+      value: Where am i ? AHHH, where is my body, i need to find the missing pieces
+        and i really need to know what i'm doing here !
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
@@ -139025,9 +139025,8 @@ PrefabInstance:
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[0]
-      value: "J'ai r\xE9ussi \xE0 survivre \xE0 cet machinerie infernale et j'ai
-        retrouv\xE9 mon corps ! Je sens que je dois continuer \xE0 avancer pour avoir
-        des r\xE9ponses !"
+      value: I managed to get out of this death machinery and i finally recovered
+        my body ! I feel that i need to continue, to get more answers !
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}

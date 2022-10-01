@@ -3246,7 +3246,7 @@ Transform:
   - {fileID: 934743016}
   - {fileID: 402941685}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &254827087
 GameObject:
@@ -36305,18 +36305,18 @@ PrefabInstance:
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[0]
-      value: "Blurp ! J'ai la t\xEAte qui tourne \xE0 force de faire en haut, en
-        bas, en haut, en bas!"
+      value: Blurp ! I'm a little woozy, who tough it who be a good idea to go up,
+        down, up, down ...
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[1]
-      value: "Tu es proche, tr\xE8s proche, tu es bient\xF4t \xE0 moi..."
+      value: You are close ! You are really close ! you are almost there Proty ...
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[2]
-      value: "Youpi, j'ai bient\xF4t terminer ces \xE9preuves de la mort !"
+      value: Nice, i'm close to the end of this hell, i feel it !
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
@@ -67039,7 +67039,7 @@ Transform:
   - {fileID: 1511769791}
   - {fileID: 373056782}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1538080174
 GameObject:
@@ -67968,7 +67968,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1708483049
 MonoBehaviour:
@@ -68063,13 +68063,13 @@ PrefabInstance:
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[0]
-      value: "Je suis dans les nuages maintenant ? Je voyage vraiment n'importe o\xF9
-        et dans les endroits les plus hostiles!"
+      value: Am i in the clouds right now ? I'm going everywhere with this trial
+        even the deadliest places !
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: text.Array.data[1]
-      value: "On se d\xE9courage pas et on pense \xE0 la r\xE9compense !"
+      value: I'm not the sort to give up easily, think about the prize !
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
@@ -68709,7 +68709,7 @@ Transform:
   - {fileID: 1775717994}
   - {fileID: 7825558}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1996650165 stripped
 Transform:
@@ -68787,7 +68787,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2067836236
 GameObject:
@@ -68846,7 +68846,7 @@ Transform:
   - {fileID: 1604869280}
   - {fileID: 128826994}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2087830673 stripped
 Transform:
