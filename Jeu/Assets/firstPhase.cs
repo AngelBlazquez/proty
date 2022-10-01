@@ -87,6 +87,8 @@ public class firstPhase : MonoBehaviour
         }
         else if (getBossHP() <= 0) {
             bossDeath();
+            setInFight(false);
+            bossDoors.SetActive(false);
         }
     }
 
@@ -135,12 +137,6 @@ public class firstPhase : MonoBehaviour
         source.Stop();
         source.clip = clipPhase1Boucle;
         source.Play();
-    }
-
-    private void OnTriggerExit2D(Collider2D col) {
-    if (col.tag == "Player")
-        setInFight(false);
-        bossDoors.SetActive(false);
     }
 
     private IEnumerator invokeEnnemy() {
