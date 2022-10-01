@@ -69,8 +69,8 @@ public class DialogueSystem : MonoBehaviour
         } 
         else if(waitForInteraction && currentIndex >= text.Count-2)
         {
-            dialogueBackground.SetActive(false);
             Time.timeScale = 1.0f;
+            dialogueBackground.SetActive(false);
         }
         else if (lineStarted && !skipped)
         {
