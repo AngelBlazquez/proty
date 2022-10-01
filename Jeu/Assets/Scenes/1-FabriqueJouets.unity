@@ -80274,6 +80274,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1175745914878208722, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3182061465286491052, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: m_RootOrder
@@ -80376,6 +80381,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StartDialogueSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901210058174473158, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b, type: 3}
@@ -138952,6 +138962,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1175745914878208722, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3182061465286491052, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: m_RootOrder
@@ -139054,6 +139069,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EndDialogueSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901210058174473158, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b, type: 3}
