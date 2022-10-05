@@ -202,6 +202,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5914589432404366497, guid: 0c8204f8294b5804e831d264cbbe4ed2,
         type: 3}
+      propertyPath: touchInput
+      value: 
+      objectReference: {fileID: 18222019}
+    - target: {fileID: 5914589432404366497, guid: 0c8204f8294b5804e831d264cbbe4ed2,
+        type: 3}
       propertyPath: resumeButton
       value: 
       objectReference: {fileID: 933884217}
@@ -78783,6 +78788,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 495921047220961708, guid: c7d6cc5ade607f74ca09637699f1c871,
         type: 3}
+      propertyPath: touchInput
+      value: 
+      objectReference: {fileID: 18222019}
+    - target: {fileID: 495921047220961708, guid: c7d6cc5ade607f74ca09637699f1c871,
+        type: 3}
       propertyPath: nextLevelInput
       value: 
       objectReference: {fileID: 933884218}
@@ -80334,6 +80344,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
+        type: 3}
+      propertyPath: touchInput
+      value: 
+      objectReference: {fileID: 18222019}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: rollingMovement
@@ -139022,6 +139037,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
+        type: 3}
+      propertyPath: touchInput
+      value: 
+      objectReference: {fileID: 18222019}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: rollingMovement

@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     public bool isOnIce;
 
+    private bool blockJumpSpam = false;
+
     void Start()
     {
         Cursor.visible = false;
@@ -260,10 +262,18 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if(isOnGround)
+        if(isOnGround && !isJumping && !blockJumpSpam)
         {
             isJumping = true;
+            StartCoroutine(BlockSpamJump());
         }
+    }
+
+    private IEnumerator BlockSpamJump()
+    {
+        blockJumpSpam = true;
+        yield return new WaitForSeconds(0.1f);
+        blockJumpSpam = false;
     }
     #endregion
 

@@ -22,6 +22,7 @@ public class TouchInput : MonoBehaviour
 
     [SerializeField]
     private GameObject menuHolder;
+    private bool touchScreenState = true;
 
     // Start is called before the first frame update
     void Start()
@@ -37,135 +38,136 @@ public class TouchInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(rmvPlayer != null)
+        if (touchScreenState)
         {
-            touchUI[0].gameObject.SetActive(false);
-        } 
-        else
-        {
-            touchUI[0].gameObject.SetActive(true);
-        }
-
-        Touch t1;
-        Touch t2;
-        if (Input.touchCount > 0)
-        {
-            if (Input.touchCount == 2)
+            if (rmvPlayer != null)
             {
-                t1 = Input.GetTouch(0);
-                t2 = Input.GetTouch(1);
-
-
-                List<bool> resultTouch1 = ClickedOnButtons(t1.position);
-                if (resultTouch1[0])
-                {
-                    if(mvPlayer != null)
-                    {
-                        mvPlayer.Jump();
-                    }
-                }
-                else if (resultTouch1[1])
-                {
-                    if (mvPlayer != null)
-                    {
-                        mvPlayer.MoveLeft();
-                    }
-                    else
-                    {
-                        rmvPlayer.MoveLeft();
-                    }
-                }
-                else if (resultTouch1[2])
-                {
-                    if (mvPlayer != null)
-                    {
-                        mvPlayer.MoveRight();
-                    } 
-                    else
-                    {
-                        rmvPlayer.MoveRight();
-                    }
-                }
-                else if (resultTouch1[3])
-                {
-                    pauseRef.pauseGameMenu();
-                }
-
-                List<bool> resultTouch2 = ClickedOnButtons(t2.position);
-                if (resultTouch2[0])
-                {
-                    if(mvPlayer != null)
-                    {
-                        mvPlayer.Jump();
-                    }      
-                }
-                else if (resultTouch2[1])
-                {
-                    if(mvPlayer!=null)
-                    {
-                        mvPlayer.MoveLeft();
-                    } 
-                    else
-                    {
-                        rmvPlayer.MoveLeft();
-                    }
-                    
-                }
-                else if (resultTouch2[2])
-                {
-                    if(mvPlayer != null)
-                    {
-                        mvPlayer.MoveRight();
-                    } 
-                    else
-                    {
-                        rmvPlayer.MoveRight();
-                    }
-                    
-                }
-                else if (resultTouch1[3])
-                {
-                    pauseRef.pauseGameMenu();
-                }
-
+                touchUI[0].gameObject.SetActive(false);
             }
-            else if (Input.touchCount == 1)
+            else
             {
-                t1 = Input.GetTouch(0);
+                touchUI[0].gameObject.SetActive(true);
+            }
+            Touch t1;
+            Touch t2;
+            if (Input.touchCount > 0)
+            {
+                if (Input.touchCount == 2)
+                {
+                    t1 = Input.GetTouch(0);
+                    t2 = Input.GetTouch(1);
 
-                List<bool> resultTouch1 = ClickedOnButtons(t1.position);
-                if (resultTouch1[0])
-                {
-                    if(mvPlayer != null)
+                    List<bool> resultTouch1 = ClickedOnButtons(t1.position);
+
+                    if (resultTouch1[0])
                     {
-                        mvPlayer.Jump();
-                    }     
+                        if (mvPlayer != null)
+                        {
+                            mvPlayer.Jump();
+                        }
+                    }
+                    else if (resultTouch1[1])
+                    {
+                        if (mvPlayer != null)
+                        {
+                            mvPlayer.MoveLeft();
+                        }
+                        else
+                        {
+                            rmvPlayer.MoveLeft();
+                        }
+                    }
+                    else if (resultTouch1[2])
+                    {
+                        if (mvPlayer != null)
+                        {
+                            mvPlayer.MoveRight();
+                        }
+                        else
+                        {
+                            rmvPlayer.MoveRight();
+                        }
+                    }
+                    else if (resultTouch1[3])
+                    {
+                        pauseRef.pauseGameMenu();
+                    }
+
+                    List<bool> resultTouch2 = ClickedOnButtons(t2.position);
+                    if (resultTouch2[0])
+                    {
+                        if (mvPlayer != null)
+                        {
+                            mvPlayer.Jump();
+                        }
+                    }
+                    else if (resultTouch2[1])
+                    {
+                        if (mvPlayer != null)
+                        {
+                            mvPlayer.MoveLeft();
+                        }
+                        else
+                        {
+                            rmvPlayer.MoveLeft();
+                        }
+
+                    }
+                    else if (resultTouch2[2])
+                    {
+                        if (mvPlayer != null)
+                        {
+                            mvPlayer.MoveRight();
+                        }
+                        else
+                        {
+                            rmvPlayer.MoveRight();
+                        }
+
+                    }
+                    else if (resultTouch1[3])
+                    {
+                        pauseRef.pauseGameMenu();
+                    }
+
                 }
-                else if (resultTouch1[1])
+                else if (Input.touchCount == 1)
                 {
-                    if (mvPlayer != null)
+                    t1 = Input.GetTouch(0);
+                    List<bool> resultTouch1 = ClickedOnButtons(t1.position);
+                    if (resultTouch1[0])
                     {
-                        mvPlayer.MoveLeft();
+                        if (mvPlayer != null)
+                        {
+                            mvPlayer.Jump();
+                        }
                     }
-                    else
+                    else if (resultTouch1[1])
                     {
-                        rmvPlayer.MoveLeft();
+                        if (mvPlayer != null)
+                        {
+                            mvPlayer.MoveLeft();
+                        }
+                        else
+                        {
+                            rmvPlayer.MoveLeft();
+                        }
                     }
-                }
-                else if (resultTouch1[2])
-                {
-                    if (mvPlayer != null)
+                    else if (resultTouch1[2])
                     {
-                        mvPlayer.MoveRight();
+                        if (mvPlayer != null)
+                        {
+                            mvPlayer.MoveRight();
+                        }
+                        else
+                        {
+                            rmvPlayer.MoveRight();
+                        }
                     }
-                    else
+                    else if (resultTouch1[3])
                     {
-                        rmvPlayer.MoveRight();
+                        pauseRef.pauseGameMenu();
                     }
-                }
-                else if(resultTouch1[3])
-                {
-                    pauseRef.pauseGameMenu();
                 }
             }
         }
@@ -177,10 +179,15 @@ public class TouchInput : MonoBehaviour
 
         foreach (Button b in touchUI)
         {
-            result.Add(RectTransformUtility.RectangleContainsScreenPoint(b.gameObject.GetComponent<RectTransform>(), point, Camera.current));
+            result.Add(RectTransformUtility.RectangleContainsScreenPoint(b.gameObject.GetComponent<RectTransform>(), point));
         }
 
         return result;
     }
 
+    public void ChangeVisibility(bool visibility)
+    {
+        touchInputCanvas.gameObject.SetActive(visibility);
+        touchScreenState = visibility;
+    }
 }

@@ -5673,6 +5673,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffec60f3ac3a46a47bf3e85aa203df85, type: 3}
+--- !u!114 &731634574 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1521629757, guid: ffec60f3ac3a46a47bf3e85aa203df85,
+    type: 3}
+  m_PrefabInstance: {fileID: 731634573}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead676051203179418492f4de6e5d938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &737527842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6634,6 +6646,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
+        type: 3}
+      propertyPath: touchInput
+      value: 
+      objectReference: {fileID: 731634574}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: playerMovement
@@ -24390,7 +24407,7 @@ Transform:
   m_Children:
   - {fileID: 1581851295}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &982344912 stripped
 Transform:
@@ -24460,6 +24477,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
+        type: 3}
+      propertyPath: touchInput
+      value: 
+      objectReference: {fileID: 731634574}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: playerMovement
@@ -25139,6 +25161,11 @@ PrefabInstance:
       propertyPath: playerMvt
       value: 
       objectReference: {fileID: 258561878}
+    - target: {fileID: 495921047220961708, guid: c7d6cc5ade607f74ca09637699f1c871,
+        type: 3}
+      propertyPath: touchInput
+      value: 
+      objectReference: {fileID: 731634574}
     - target: {fileID: 495921047220961708, guid: c7d6cc5ade607f74ca09637699f1c871,
         type: 3}
       propertyPath: nextLevelInput
@@ -30089,7 +30116,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &1084304579 stripped
 Transform:
@@ -37457,6 +37484,11 @@ PrefabInstance:
       propertyPath: playerMvt
       value: 
       objectReference: {fileID: 258561878}
+    - target: {fileID: 5914589432404366497, guid: 0c8204f8294b5804e831d264cbbe4ed2,
+        type: 3}
+      propertyPath: touchInput
+      value: 
+      objectReference: {fileID: 731634574}
     - target: {fileID: 5914589432404366497, guid: 0c8204f8294b5804e831d264cbbe4ed2,
         type: 3}
       propertyPath: resumeButton
@@ -48772,7 +48804,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1850685558
 PrefabInstance:

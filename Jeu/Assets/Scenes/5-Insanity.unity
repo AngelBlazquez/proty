@@ -1971,6 +1971,11 @@ PrefabInstance:
       objectReference: {fileID: 843568564}
     - target: {fileID: 5914589432404366497, guid: 0c8204f8294b5804e831d264cbbe4ed2,
         type: 3}
+      propertyPath: touchInput
+      value: 
+      objectReference: {fileID: 1445027213}
+    - target: {fileID: 5914589432404366497, guid: 0c8204f8294b5804e831d264cbbe4ed2,
+        type: 3}
       propertyPath: resumeButton
       value: 
       objectReference: {fileID: 621233968}
@@ -4539,6 +4544,11 @@ PrefabInstance:
       propertyPath: playerMvt
       value: 
       objectReference: {fileID: 843568564}
+    - target: {fileID: 495921047220961708, guid: c7d6cc5ade607f74ca09637699f1c871,
+        type: 3}
+      propertyPath: touchInput
+      value: 
+      objectReference: {fileID: 1445027213}
     - target: {fileID: 495921047220961708, guid: c7d6cc5ade607f74ca09637699f1c871,
         type: 3}
       propertyPath: nextLevelInput
@@ -51703,6 +51713,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
+      propertyPath: touchInput
+      value: 
+      objectReference: {fileID: 1445027213}
+    - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
+        type: 3}
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 843568564}
@@ -67988,7 +68003,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1394350087 stripped
 Transform:
@@ -68154,6 +68169,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffec60f3ac3a46a47bf3e85aa203df85, type: 3}
+--- !u!114 &1445027213 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1521629757, guid: ffec60f3ac3a46a47bf3e85aa203df85,
+    type: 3}
+  m_PrefabInstance: {fileID: 1445027212}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead676051203179418492f4de6e5d938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1456118063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1302975023802232747, guid: faf9e46b4bb7fca479571a72a4db2061,
@@ -69447,6 +69474,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
+        type: 3}
+      propertyPath: touchInput
+      value: 
+      objectReference: {fileID: 1445027213}
     - target: {fileID: 4185566730770822688, guid: e9df4ccc7b0b89a43a29c9e45ff74b9b,
         type: 3}
       propertyPath: playerMovement
