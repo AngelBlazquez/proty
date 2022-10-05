@@ -56,18 +56,30 @@ public class ListLevels : MonoBehaviour
 
 
                 Button playButton = display.transform.Find("PlayButton").gameObject.GetComponent<Button>();
-                Button trainingButton = display.transform.Find("TrainingButton").gameObject.GetComponent<Button>();
                 int tmp = levels[i].GetNumber();
-                playButton.onClick.AddListener(() => {
+                playButton.onClick.AddListener(() =>
+                {
                     TrainingMode.SetTrainingMode(false);
-                    ChangeLevel.LoadLevel(tmp);
-                    }
-                );
-                trainingButton.onClick.AddListener(() => {
-                    TrainingMode.SetTrainingMode(true);
                     ChangeLevel.LoadLevel(tmp);
                 }
                 );
+
+                GameObject trainingButtonObject = display.transform.Find("TrainingButton").gameObject;
+                Button trainingButton = null;
+                if (i < levels.Count - 1)
+                {
+                    trainingButton = trainingButtonObject.GetComponent<Button>();
+                    trainingButton.onClick.AddListener(() =>
+                    {
+                        TrainingMode.SetTrainingMode(true);
+                        ChangeLevel.LoadLevel(tmp);
+                    }
+                    );
+                }
+                else
+                {
+                    Destroy(trainingButtonObject);
+                }
 
                 TMPro.TextMeshProUGUI bestTime = display.transform.Find("Time").gameObject.GetComponent<TMPro.TextMeshProUGUI>();
                 int min = Mathf.FloorToInt(levels[i].GetTime() / 60f);
@@ -78,7 +90,8 @@ public class ListLevels : MonoBehaviour
                 {
                     //Image img = display.transform.Find("Image").gameObject.GetComponent<Image>();
                     playButton.interactable = false;
-                    trainingButton.interactable = false;
+                    if (trainingButton != null)
+                        trainingButton.interactable = false;
 
                     GameObject chain = Instantiate(chains);
                     chain.transform.SetParent(playButton.transform);
@@ -88,16 +101,21 @@ public class ListLevels : MonoBehaviour
                     StarManager sm = display.transform.Find("Stars").GetComponent<StarManager>();
                     sm.hideStars();
 
-                } else {
+                }
+                else
+                {
                     StarManager sm = display.transform.Find("Stars").GetComponent<StarManager>();
                     sm.displayStars();
-                    if(levels[i].GetTime() != 0) {
+                    if (levels[i].GetTime() != 0)
+                    {
                         sm.UnlockStar(sm.GetStarsObjects()[0]);
                     }
-                    if(levels[i].GetTime() != 0 && levels[i].GetTime() <= displayHolder.GetTimeForStars()[i]._stars[1]) {
+                    if (levels[i].GetTime() != 0 && levels[i].GetTime() <= displayHolder.GetTimeForStars()[i]._stars[1])
+                    {
                         sm.UnlockStar(sm.GetStarsObjects()[1]);
                     }
-                    if(levels[i].GetTime() != 0 && levels[i].GetTime() <= displayHolder.GetTimeForStars()[i]._stars[2]) {
+                    if (levels[i].GetTime() != 0 && levels[i].GetTime() <= displayHolder.GetTimeForStars()[i]._stars[2])
+                    {
                         sm.UnlockStar(sm.GetStarsObjects()[2]);
                     }
 
@@ -113,7 +131,7 @@ public class ListLevels : MonoBehaviour
                 {
                     next.interactable = true;
                 }
-                if (numPage -1  < 0)
+                if (numPage - 1 < 0)
                 {
                     previous.interactable = false;
                     EventSystem.current.SetSelectedGameObject(null);
