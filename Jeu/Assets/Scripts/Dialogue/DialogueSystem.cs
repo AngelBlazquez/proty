@@ -3,8 +3,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Manage the whole dialogue system.
+/// Author : Angel Blazquez
+/// </summary>
 public class DialogueSystem : MonoBehaviour
 {
+
+    [SerializeField]
+    private TouchInput touchInput;
+
     [Header("Dialogue Text")]
     [SerializeField]
     private List<string> text;
@@ -26,6 +34,9 @@ public class DialogueSystem : MonoBehaviour
 
     public void ShowDialogue()
     {
+        #if PLATFORM_ANDROID
+            touchInput.ChangeVisibility(false);
+        #endif
         dialogueBackground.SetActive(true);
         Time.timeScale = 0.0f;
         startNewLine();
@@ -37,7 +48,6 @@ public class DialogueSystem : MonoBehaviour
         dialogueText.text = "";
         StartCoroutine(SlowDisplay());
     }
-
 
     private IEnumerator SlowDisplay()
     {
@@ -71,6 +81,9 @@ public class DialogueSystem : MonoBehaviour
         {
             Time.timeScale = 1.0f;
             dialogueBackground.SetActive(false);
+            #if PLATFORM_ANDROID
+                touchInput.ChangeVisibility(true);
+            #endif
         }
         else if (lineStarted && !skipped)
         {

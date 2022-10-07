@@ -15,6 +15,8 @@ public class RichPresence : MonoBehaviour
     }
 
     void Update() {
+    #if PLATFORM_ANDROID
+    #else
         if (SceneManager.GetActiveScene().buildIndex <= 1
         || SceneManager.GetActiveScene().buildIndex == 12) {
             DansMenu();
@@ -23,6 +25,7 @@ public class RichPresence : MonoBehaviour
         } else {
             DansLevel(SceneManager.GetActiveScene().buildIndex);
         }
+    #endif
     }
 
     public void DansMenu() {

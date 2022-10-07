@@ -15,6 +15,9 @@ public class winManager : MonoBehaviour
     private GameObject resumeButton;
 
     [SerializeField]
+    private TouchInput touchInput;
+
+    [SerializeField]
     private StarManager stars;
 
     [SerializeField]
@@ -39,6 +42,7 @@ public class winManager : MonoBehaviour
     // Methode who resume the game
     public void resume()
     {
+        touchInput.ChangeVisibility(true);
         Cursor.visible = false;
         Time.timeScale = 1;
         Canvas.SetActive(false);
@@ -48,6 +52,7 @@ public class winManager : MonoBehaviour
     // Methode who show the pause game menu
     public void pauseGameMenu()
     {
+        touchInput.ChangeVisibility(false);
         Cursor.visible = true;
         Time.timeScale = 0;
         Canvas.SetActive(true);
@@ -65,6 +70,7 @@ public class winManager : MonoBehaviour
     // Methode who show the next win menu
     public void winGameMenu(int nextLevel)
     {
+        touchInput.ChangeVisibility(false);
         Cursor.visible = true;
         nextLevelNumber = nextLevel;
         Time.timeScale = 0;
