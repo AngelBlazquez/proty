@@ -160,11 +160,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if (Input.GetKey(InputManager.Instance().Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f || androidTouchLeft)
+            if (Input.GetKey(InputManager.Instance().Keys["RightButton"]) || Input.GetAxis("JoystickController") > 0.1f || androidTouchRight)
             {
                 PlayerDirection.x = 1;
             }
-            else if (Input.GetKey(InputManager.Instance().Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f || androidTouchRight)
+            else if (Input.GetKey(InputManager.Instance().Keys["LeftButton"]) || Input.GetAxis("JoystickController") < -0.1f || androidTouchLeft)
             {
                 PlayerDirection.x = -1;
             }
